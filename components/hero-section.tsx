@@ -45,16 +45,6 @@ export default function HeroSection() {
                                         </Button>
                                     </div>
                                 </div>
-
-                                <div className="mt-12">
-                                    <p className="text-muted-foreground">Trusted by industry leaders</p>
-                                    {/* Placeholder logos or remove if not needed */}
-                                    <div className="**:fill-foreground mt-6 flex w-full max-w-md flex-wrap items-center gap-8 *:w-fit grayscale opacity-50">
-                                        <Spotify height={26} width="auto" />
-                                        <Supabase height={24} width="auto" />
-                                        <Beacon height={18} width="auto" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
 

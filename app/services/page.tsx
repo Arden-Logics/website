@@ -1,7 +1,9 @@
+import StatsSection from "@/components/stats-7";
+
 export default function ServicesPage() {
     return (
         <>
-            <h1>Services</h1>
+            <StatsSection />
         </>
     )
 }

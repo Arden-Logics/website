@@ -48,7 +48,7 @@ export default function HeaderOne() {
                                     href="/"
                                     aria-label="home"
                                     className="flex items-center space-x-2">
-                                    <Logo />
+                                    {/* <Logo /> */}
                                     <span className="font-bold text-xl">Arden Logics</span>
                                 </Link>
 
@@ -93,6 +93,16 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 collapsible
                 className="**:hover:no-underline -mx-4 mt-0.5 space-y-0.5">
                 <AccordionItem
+                    value="home"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="/home"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Home
+                    </Link>
+                </AccordionItem>
+                <AccordionItem
                     value="services"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
                     <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Services</AccordionTrigger>
@@ -115,6 +125,36 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                             ))}
                         </ul>
                     </AccordionContent>
+                </AccordionItem>
+                <AccordionItem
+                    value="learn"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="/learn"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Learn
+                    </Link>
+                </AccordionItem>
+                <AccordionItem
+                    value="blog"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="/blog"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Blog
+                    </Link>
+                </AccordionItem>
+                <AccordionItem
+                    value="contact"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="#contact"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Contact
+                    </Link>
                 </AccordionItem>
             </Accordion>
         </nav>
@@ -146,6 +186,13 @@ const NavMenu = () => {
             onValueChange={handleViewportHeight}
             className="**:data-[slot=navigation-menu-viewport]:bg-transparent **:data-[slot=navigation-menu-viewport]:rounded-none **:data-[slot=navigation-menu-viewport]:ring-0 **:data-[slot=navigation-menu-viewport]:border-0 **:data-[slot=navigation-menu-viewport]:shadow-none [--color-muted:color-mix(in_oklch,var(--color-foreground)_5%,transparent)] [--viewport-outer-px:2rem] max-lg:hidden">
             <NavigationMenuList className="gap-3">
+                <NavigationMenuItem>
+                    <Link href="/home" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Home
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
                 <NavigationMenuItem value="services">
                     <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
@@ -161,6 +208,27 @@ const NavMenu = () => {
                             ))}
                         </ul>
                     </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="/learn" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Learn
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="/blog" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Blog
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="#contact" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Contact
+                        </NavigationMenuLink>
+                    </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

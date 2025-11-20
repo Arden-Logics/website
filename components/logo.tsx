@@ -25,10 +25,10 @@ export const Logo = ({ className, uniColor }: { className?: string; uniColor?: b
                     x2="90"
                     y2="220"
                     gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#9B99FE" />
+                    <stop stopColor="#1a2e4a" />
                     <stop
                         offset="1"
-                        stopColor="#2BC8B7"
+                        stopColor="#2b9deb"
                     />
                 </linearGradient>
             </defs>
@@ -57,10 +57,10 @@ export const LogoIcon = ({ className, uniColor }: { className?: string; uniColor
                     x2="90"
                     y2="220"
                     gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#9B99FE" />
+                    <stop stopColor="#1a2e4a" />
                     <stop
                         offset="1"
-                        stopColor="#2BC8B7"
+                        stopColor="#2b9deb"
                     />
                 </linearGradient>
             </defs>
