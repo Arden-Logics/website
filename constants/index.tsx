@@ -1,4 +1,4 @@
-import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound } from 'lucide-react'
+import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle } from 'lucide-react'
 import React from 'react'
 
 export interface Service {
@@ -124,6 +124,12 @@ export const RESOURCES: Resource[] = [
         href: '/blog',
         description: 'Latest news, insights, and updates from our team.',
         icon: <Newspaper className="stroke-foreground fill-purple-500/15" />,
+    },
+    {
+        name: 'FAQs',
+        href: '/faqs',
+        description: 'Find answers to frequently asked questions.',
+        icon: <HelpCircle className="stroke-foreground fill-yellow-500/15" />,
     },
     {
         name: 'Who we are',

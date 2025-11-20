@@ -113,7 +113,7 @@ export default function FAQs() {
     }, [activeGroup])
 
     return (
-        <section className="bg-muted py-16 md:py-24">
+        <section className="bg-background pt-32 pb-16 md:pt-40 md:pb-24">
             <div className="mx-auto max-w-5xl px-1 md:px-6">
                 <div className="max-w-lg max-md:px-6">
                     <h2 className="text-foreground text-4xl font-semibold">FAQs</h2>
@@ -121,7 +121,7 @@ export default function FAQs() {
                 </div>
 
                 <div className="@container mt-6 grid md:mt-20 md:grid-cols-5">
-                    <div className="max-md:bg-muted sticky top-0 z-10 h-fit max-md:flex max-md:justify-center max-md:p-2 md:top-12 md:col-span-2 md:-mt-3">
+                    <div className="max-md:bg-background sticky top-0 z-10 h-fit max-md:flex max-md:justify-center max-md:p-2 md:top-12 md:col-span-2 md:-mt-3">
                         {faqItems.map((item) => {
                             const groupId = item.group.toLowerCase()
                             const isActive = activeGroup === groupId
