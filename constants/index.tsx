@@ -1,4 +1,4 @@
-import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText } from 'lucide-react'
+import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound } from 'lucide-react'
 import React from 'react'
 
 export interface Service {
@@ -112,6 +112,24 @@ export const RESOURCES: Resource[] = [
         href: '/documents',
         description: 'Access technical documentation and guides.',
         icon: <FileText className="stroke-foreground fill-green-500/15" />,
+    },
+    {
+        name: 'Client Portals',
+        href: '/client-portals',
+        description: 'Access your remote services, IT portal, and VoIP portal.',
+        icon: <KeyRound className="stroke-foreground fill-indigo-500/15" />,
+    },
+    {
+        name: 'Blog',
+        href: '/blog',
+        description: 'Latest news, insights, and updates from our team.',
+        icon: <Newspaper className="stroke-foreground fill-purple-500/15" />,
+    },
+    {
+        name: 'Who we are',
+        href: '/about',
+        description: 'Learn about our company, mission, and values.',
+        icon: <Users className="stroke-foreground fill-orange-500/15" />,
     },
 ]
 

@@ -14,7 +14,7 @@ export default function HeroSection() {
                 role="main"
                 className="overflow-x-hidden pb-6">
                 <section>
-                    <div className="relative pb-36 pt-24 md:pt-36 lg:pt-44">
+                    <div className="relative pb-36 pt-32 md:pt-40 lg:pt-48">
                         <div className="relative z-10 mx-auto w-full max-w-6xl px-6 lg:px-12">
                             <div className="md:w-1/2">
                                 <div>

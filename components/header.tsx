@@ -32,22 +32,22 @@ export default function HeaderOne() {
                 className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 top-10 z-50">
                 <div
                     className={cn(
-                        'h-18 absolute inset-x-0 top-0 z-50 border-transparent ring-1 ring-transparent transition-all duration-300',
+                        'h-16 absolute inset-x-0 top-0 z-50 border-transparent ring-1 ring-transparent transition-all duration-300',
                         'in-data-scrolled:border-foreground/5 in-data-scrolled:border-b in-data-scrolled:bg-background/75 in-data-scrolled:backdrop-blur',
                         'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:bg-card/75 has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur has-data-[state=open]:border-b has-data-[state=open]:shadow-black/10 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)]',
-                        'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-14 max-lg:overflow-hidden max-lg:border-b'
+                        'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-16 max-lg:overflow-hidden max-lg:border-b'
                     )}>
                     <div className="mx-auto max-w-6xl px-6 lg:px-12">
-                        <div className="relative flex flex-wrap items-center justify-between lg:py-5">
+                        <div className="relative flex flex-wrap items-center justify-between lg:py-4">
                             <div
                                 aria-hidden
                                 className="in-has-data-[state=open]:block absolute inset-x-0 bottom-0 hidden h-px bg-[length:4px_1px] bg-repeat-x opacity-20 [background-image:linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)]"
                             />
-                            <div className="flex justify-between gap-8 max-lg:h-14 max-lg:w-full max-lg:border-b">
+                            <div className="flex justify-between gap-8 max-lg:h-16 max-lg:w-full max-lg:border-b">
                                 <Link
                                     href="/"
                                     aria-label="home"
-                                    className="flex items-center space-x-2">
+                                    className="flex items-center space-x-2 py-2">
                                     {/* <Logo /> */}
                                     <span className="font-bold text-xl">Arden Logics</span>
                                 </Link>
@@ -139,16 +139,6 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                             ))}
                         </ul>
                     </AccordionContent>
-                </AccordionItem>
-                <AccordionItem
-                    value="blog"
-                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <Link
-                        href="/blog"
-                        onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
-                        Blog
-                    </Link>
                 </AccordionItem>
                 <AccordionItem
                     value="industries"
@@ -245,13 +235,6 @@ const NavMenu = () => {
                             ))}
                         </ul>
                     </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/blog" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Blog
-                        </NavigationMenuLink>
-                    </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem value="industries">
                     <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
