@@ -10,7 +10,7 @@ import { VercelFull } from '@/components/logos/vercel'
 
 export default function HeroSection() {
     return (
-        <section id="contact">
+        <section id="contact-form">
             <div className="bg-muted overflow-x-hidden py-24 lg:py-32">
                 <div className="mx-auto max-w-5xl px-6">
                     <span className="text-primary block text-sm font-medium max-md:text-center">Contact Us</span>

@@ -1,7 +1,9 @@
 import { EnterpriseForm } from "@/components/enterprise-form";
-
+import SecondaryHero from "@/components/secondary-hero-10";
 export default function PartnersPage() {
     return (
+        <>
+        <SecondaryHero />
         <section className="py-24">
             <div className="mx-auto max-w-5xl px-6">
                 <div className="mb-12 text-center">
@@ -16,6 +18,7 @@ export default function PartnersPage() {
                 </div>
             </div>
         </section>
+        </>
     )
 }
 

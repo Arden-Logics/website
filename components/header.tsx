@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 import { useMedia } from '@/hooks/use-media'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { cn } from '@/lib/utils'
-import { SERVICES } from '@/constants'
+import { SERVICES, INDUSTRIES, RESOURCES } from '@/constants'
 
 export default function HeaderOne() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -29,7 +29,7 @@ export default function HeaderOne() {
                 role="banner"
                 data-state={isMobileMenuOpen ? 'active' : 'inactive'}
                 {...(isScrolled && { 'data-scrolled': true })}
-                className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 top-0 z-50">
+                className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 top-10 z-50">
                 <div
                     className={cn(
                         'h-18 absolute inset-x-0 top-0 z-50 border-transparent ring-1 ring-transparent transition-all duration-300',
@@ -70,7 +70,7 @@ export default function HeaderOne() {
                                         asChild
                                         size="sm">
                                         <Link href="#contact">
-                                            <span>Contact Us</span>
+                                            <span>Contact Sales</span>
                                         </Link>
                                     </Button>
                                 </div>
@@ -92,16 +92,6 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 type="single"
                 collapsible
                 className="**:hover:no-underline -mx-4 mt-0.5 space-y-0.5">
-                <AccordionItem
-                    value="home"
-                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <Link
-                        href="/home"
-                        onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
-                        Home
-                    </Link>
-                </AccordionItem>
                 <AccordionItem
                     value="services"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
@@ -127,14 +117,28 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem
-                    value="learn"
+                    value="resources"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <Link
-                        href="/learn"
-                        onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
-                        Learn
-                    </Link>
+                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Resources</AccordionTrigger>
+                    <AccordionContent className="pb-5">
+                        <ul>
+                            {RESOURCES.map((resource, index) => (
+                                <li key={index}>
+                                    <Link
+                                        href={resource.href}
+                                        onClick={closeMenu}
+                                        className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2">
+                                        <div
+                                            aria-hidden
+                                            className="flex items-center justify-center *:size-4">
+                                            {resource.icon}
+                                        </div>
+                                        <div className="text-base">{resource.name}</div>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </AccordionContent>
                 </AccordionItem>
                 <AccordionItem
                     value="blog"
@@ -149,12 +153,26 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="industries"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <Link
-                        href="/industries"
-                        onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
-                        Industries
-                    </Link>
+                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Industries</AccordionTrigger>
+                    <AccordionContent className="pb-5">
+                        <ul>
+                            {INDUSTRIES.map((industry, index) => (
+                                <li key={index}>
+                                    <Link
+                                        href={industry.href}
+                                        onClick={closeMenu}
+                                        className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2">
+                                        <div
+                                            aria-hidden
+                                            className="flex items-center justify-center *:size-4">
+                                            {industry.icon}
+                                        </div>
+                                        <div className="text-base">{industry.name}</div>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </AccordionContent>
                 </AccordionItem>
                 <AccordionItem
                     value="partners"
@@ -164,16 +182,6 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                         onClick={closeMenu}
                         className="flex items-center justify-between px-4 py-3 text-lg">
                         Partners
-                    </Link>
-                </AccordionItem>
-                <AccordionItem
-                    value="contact"
-                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <Link
-                        href="#contact"
-                        onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
-                        Contact
                     </Link>
                 </AccordionItem>
             </Accordion>
@@ -206,17 +214,10 @@ const NavMenu = () => {
             onValueChange={handleViewportHeight}
             className="**:data-[slot=navigation-menu-viewport]:bg-transparent **:data-[slot=navigation-menu-viewport]:rounded-none **:data-[slot=navigation-menu-viewport]:ring-0 **:data-[slot=navigation-menu-viewport]:border-0 **:data-[slot=navigation-menu-viewport]:shadow-none [--color-muted:color-mix(in_oklch,var(--color-foreground)_5%,transparent)] [--viewport-outer-px:2rem] max-lg:hidden">
             <NavigationMenuList className="gap-3">
-                <NavigationMenuItem>
-                    <Link href="/home" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Home
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
                 <NavigationMenuItem value="services">
                     <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {SERVICES.map((service, index) => (
                                 <ListItem
                                     key={index}
@@ -229,12 +230,21 @@ const NavMenu = () => {
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/learn" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Learn
-                        </NavigationMenuLink>
-                    </Link>
+                <NavigationMenuItem value="resources">
+                    <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                    <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
+                        <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
+                            {RESOURCES.map((resource, index) => (
+                                <ListItem
+                                    key={index}
+                                    href={resource.href}
+                                    title={resource.name}
+                                    description={resource.description}>
+                                    {resource.icon}
+                                </ListItem>
+                            ))}
+                        </ul>
+                    </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/blog" legacyBehavior passHref>
@@ -243,24 +253,26 @@ const NavMenu = () => {
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/industries" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Industries
-                        </NavigationMenuLink>
-                    </Link>
+                <NavigationMenuItem value="industries">
+                    <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+                    <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
+                        <ul className="grid w-[500px] gap-3 p-4 grid-cols-2">
+                            {INDUSTRIES.map((industry, index) => (
+                                <ListItem
+                                    key={index}
+                                    href={industry.href}
+                                    title={industry.name}
+                                    description={industry.description}>
+                                    {industry.icon}
+                                </ListItem>
+                            ))}
+                        </ul>
+                    </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/partners" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Partners
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="#contact" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Contact
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
