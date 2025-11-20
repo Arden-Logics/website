@@ -147,6 +147,26 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                     </Link>
                 </AccordionItem>
                 <AccordionItem
+                    value="industries"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="/industries"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Industries
+                    </Link>
+                </AccordionItem>
+                <AccordionItem
+                    value="partners"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="/partners"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Partners
+                    </Link>
+                </AccordionItem>
+                <AccordionItem
                     value="contact"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
                     <Link
@@ -220,6 +240,20 @@ const NavMenu = () => {
                     <Link href="/blog" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Blog
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="/industries" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Industries
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="/partners" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Partners
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
