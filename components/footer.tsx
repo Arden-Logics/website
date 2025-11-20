@@ -1,44 +1,28 @@
 import { Logo } from '@/components/logo'
 import Link from 'next/link'
+import { SERVICES, RESOURCES, INDUSTRIES } from '@/constants'
 
 const links = [
     {
-        group: 'Product',
-        items: [
-            {
-                title: 'Features',
-                href: '#',
-            },
-            {
-                title: 'Solution',
-                href: '#',
-            },
-            {
-                title: 'Partnerships',
-                href: '#',
-            },
-            {
-                title: 'Mobile App',
-                href: '#',
-            },
-        ],
+        group: 'Services',
+        items: SERVICES.map(service => ({
+            title: service.name,
+            href: service.href,
+        })),
     },
     {
-        group: 'Company',
-        items: [
-            {
-                title: 'About',
-                href: '#',
-            },
-            {
-                title: 'Licence',
-                href: '#',
-            },
-            {
-                title: 'Privacy',
-                href: '#',
-            },
-        ],
+        group: 'Resources',
+        items: RESOURCES.map(resource => ({
+            title: resource.name,
+            href: resource.href,
+        })),
+    },
+    {
+        group: 'Industries',
+        items: INDUSTRIES.map(industry => ({
+            title: industry.name,
+            href: industry.href,
+        })),
     },
 ]
 
@@ -48,8 +32,8 @@ export default function FooterSection() {
             role="contentinfo"
             className="bg-muted py-8 sm:py-20">
             <div className="mx-auto max-w-5xl space-y-16 px-6">
-                <div className="grid gap-12 md:grid-cols-5">
-                    <div className="space-y-6 md:col-span-2 md:space-y-12">
+                <div className="grid gap-12 lg:grid-cols-5">
+                    <div className="space-y-6 lg:col-span-2 lg:space-y-12">
                         <Link
                             href="/"
                             aria-label="go home"
@@ -60,7 +44,7 @@ export default function FooterSection() {
                         <p className="text-muted-foreground text-balance text-sm">Arden Logics provides comprehensive IT, Security, and AV solutions for modern businesses.</p>
                     </div>
 
-                    <div className="col-span-3 grid gap-6 sm:grid-cols-3">
+                    <div className="lg:col-span-3 grid gap-6 grid-cols-2 md:grid-cols-4">
                         {links.map((link, index) => (
                             <div
                                 key={index}

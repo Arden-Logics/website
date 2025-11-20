@@ -25,6 +25,7 @@
         "Authorization": "Bearer ${TAILARK_API_KEY}"
       }
     },
-    "@motion-primitives": "https://motion-primitives.com/c/{name}.json"
+    "@motion-primitives": "https://motion-primitives.com/c/{name}.json",
+    "@tailark": "https://tailark.com/r/{name}.json"
   }
 }
