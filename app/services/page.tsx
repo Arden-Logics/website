@@ -1,11 +1,14 @@
-import StatsSection from "@/components/stats-7";
-import OtherServiceListings from "@/components/other-service-listings";
+import HeroSection from "@/components/hero-section-services";
+import ServicesPageContent from "@/components/services-page-content";
 
 export default function ServicesPage() {
     return (
         <>
-            <StatsSection />
-            <OtherServiceListings />
+            {/* Hero Section */}
+            <HeroSection />
+
+            {/* Services Content */}
+            <ServicesPageContent />
         </>
     )
 }

@@ -1,6 +1,6 @@
-import ServiceContentFeatures from '@/components/service-content-features'
+import IndividualServicePage from '@/components/individual-service-page'
 
-export default function Page() {
-    return <ServiceContentFeatures serviceKey="network-cabling" />
+export default function NetworkCablingPage() {
+    return <IndividualServicePage serviceKey="network-cabling" />
 }
 

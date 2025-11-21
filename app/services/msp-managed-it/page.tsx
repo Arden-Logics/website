@@ -1,6 +1,6 @@
-import ServiceContentFeatures from '@/components/service-content-features'
+import IndividualServicePage from '@/components/individual-service-page'
 
-export default function Page() {
-    return <ServiceContentFeatures serviceKey="msp-managed-it" />
+export default function MSPManagedITPage() {
+    return <IndividualServicePage serviceKey="msp-managed-it" />
 }
 

@@ -1,11 +1,10 @@
-import { Button } from '@/components/ui/button'
-import { ChevronRight } from 'lucide-react'
-import { DropdownIllustration } from "@/components/dropdown-illustration"
-import Link from 'next/link'
 import { SERVICE_CONTENT } from '@/constants'
 import OtherServiceListings from '@/components/other-service-listings'
 import ContentSection from './content-5'
 import Features from './features-4'
+import ServiceScrollNav from './service-scroll-nav'
+import ServiceSection from './service-section'
+import HeroSection from './hero-section-services'
 
 interface ServiceContentFeaturesProps {
     serviceKey: string
@@ -18,53 +17,49 @@ export default function ServiceContentFeatures({ serviceKey }: ServiceContentFea
         return null
     }
 
-    return (
-        <>
-            <section className="overflow-hidden">
-                <div className="bg-zinc-50 py-24">
-                    <div className="mx-auto w-full max-w-5xl px-6">
-                        <div className="grid items-center gap-12 pb-12 md:grid-cols-2">
-                            <div>
-                                <div className="max-w-md">
-                                    <h2 className="text-foreground text-balance text-4xl font-semibold">{content.title}</h2>
-                                    <p className="my-6 text-balance text-lg">{content.subtitle}</p>
-                                    <p className="text-muted-foreground">
-                                        {content.description}
-                                    </p>
-                                    <Button
-                                        className="mt-8 pr-2"
-                                        variant="outline"
-                                        asChild>
-                                        <Link href={content.ctaLink}>
-                                            {content.ctaText}
-                                            <ChevronRight className="size-4 opacity-50" />
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                            <DropdownIllustration />
-                        </div>
+    // Check if this service has the new redesigned layout
+    const hasNewLayout = content.heroSection && content.sections
 
-                        <div className="relative grid grid-cols-2 gap-x-3 gap-y-6 border-t pt-12 sm:gap-6 lg:grid-cols-4">
-                            {content.features.map((feature, index) => (
-                                <div key={index} className="space-y-3">
-                                    <div className="flex items-center gap-2">
-                                        <div className="[&>svg]:size-4">
-                                            {feature.icon}
-                                        </div>
-                                        <h3 className="text-sm font-medium">{feature.title}</h3>
-                                    </div>
-                                    <p className="text-muted-foreground text-sm">{feature.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+    if (hasNewLayout) {
+        // Build navigation items from sections + standard sections
+        const navItems = [
+            ...(content.sections || []).map(section => ({
+                id: section.id,
+                label: section.navLabel || section.title
+            })),
+            { id: 'content', label: 'Content' },
+            { id: 'features', label: 'Features' },
+            { id: 'other-services', label: 'Other Services' }
+        ]
+
+        return (
+            <>
+                <HeroSection />
+                <ServiceScrollNav items={navItems} />
+                
+                {/* Service-specific sections */}
+                {content.sections?.map((section, index) => (
+                    <ServiceSection
+                        key={section.id}
+                        {...section}
+                        imageOnRight={index % 2 === 0}
+                    />
+                ))}
+
+                {/* Standard sections */}
+                <div id="content" className="scroll-mt-32">
+                    <ContentSection />
                 </div>
-            </section>
-            <ContentSection />
-            <Features />
-            <OtherServiceListings />
-        </>
-    )
+                <div id="features" className="scroll-mt-32">
+                    <Features />
+                </div>
+                <div id="other-services" className="scroll-mt-32">
+                    <OtherServiceListings />
+                </div>
+            </>
+        )
+    }
+    
+    return null
 }
 

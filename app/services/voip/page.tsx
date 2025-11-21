@@ -1,5 +1,5 @@
-import ServiceContentFeatures from '@/components/service-content-features'
+import IndividualServicePage from '@/components/individual-service-page'
 
-export default function Page() {
-    return <ServiceContentFeatures serviceKey="voip" />
+export default function VoIPPage() {
+    return <IndividualServicePage serviceKey="voip" />
 }
