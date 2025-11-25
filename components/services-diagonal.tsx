@@ -237,9 +237,9 @@ export default function ServicesDiagonal() {
                         activeService.color
                       )}
                     >
-                      {React.cloneElement(activeService.icon as React.ReactElement, {
+                      {React.cloneElement(activeService.icon as React.ReactElement<any>, {
                         className: 'size-10',
-                      })}
+                      } as any)}
                     </div>
                     <p className="text-muted-foreground text-sm font-medium">
                       {activeService.name} Solutions
