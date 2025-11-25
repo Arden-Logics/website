@@ -28,9 +28,6 @@ export default function ServiceHeroSection({
                     {/* Left content */}
                     <div className="space-y-8">
                         <div className="space-y-6">
-                            <p className="text-sm text-gray-600">
-                                {breadcrumb}
-                            </p>
                             <h1 className="text-4xl font-normal leading-tight text-gray-900 md:text-5xl lg:text-6xl">
                                 {title}
                             </h1>

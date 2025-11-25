@@ -4,6 +4,7 @@ import LogoCloud from "@/components/logo-cloud";
 import ServicesExpandGrid from "@/components/services-expand-grid";
 import StatsSection from "@/components/stats-6";
 import ServicesDiagonal from "@/components/services-diagonal";
+import WhyArdenSection from "@/components/why-arden-section";
 import ContactForm from "@/components/secondary-hero-14";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <LogoCloud />
       <ServicesExpandGrid />
       <StatsSection />
+      <WhyArdenSection />
       <ServicesDiagonal />
       <ContactForm />
     </>

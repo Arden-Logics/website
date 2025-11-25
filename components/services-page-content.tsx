@@ -14,22 +14,9 @@ export default function ServicesPageContent() {
     return (
         <>
             {/* Scroll Navigation */}
-            <ServiceScrollNav items={navItems} />
+            {/* <ServiceScrollNav items={navItems} /> */}
 
-            {/* Service Sections */}
-            {SERVICES.map((service, index) => (
-                <ServiceSection
-                    key={service.href}
-                    id={service.href.split('/').pop() || ''}
-                    title={service.name}
-                    description={service.description}
-                    linkText={`Learn more about ${service.name}`}
-                    linkHref={service.href}
-                    imageSrc="/arden-logo.png"
-                    imageAlt={service.name}
-                    imageOnRight={index % 2 === 0}
-                />
-            ))}
+            
         </>
     )
 }
