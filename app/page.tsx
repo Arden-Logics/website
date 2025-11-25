@@ -1,18 +1,20 @@
 
 import Hero from "@/components/hero-section";
 import LogoCloud from "@/components/logo-cloud";
-import ContactForm from "@/components/secondary-hero-14";
+import ServicesExpandGrid from "@/components/services-expand-grid";
 import StatsSection from "@/components/stats-6";
-import TestimonialsSection from "@/components/testimonials-6";
+import ServicesDiagonal from "@/components/services-diagonal";
+import ContactForm from "@/components/secondary-hero-14";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <LogoCloud />
+      <ServicesExpandGrid />
       <StatsSection />
+      <ServicesDiagonal />
       <ContactForm />
-      <TestimonialsSection />
     </>
   );
 }
