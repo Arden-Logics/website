@@ -40,7 +40,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
     ]
 
     return (
-        <>
+        <div className="min-h-screen flex flex-col">
             <ServiceHeroSection {...content.heroSection!} />
             {/* <ServiceScrollNav items={navItems} />
             
@@ -53,7 +53,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
                 />
             ))} */}
 
-<div id="features" className="scroll-mt-32">
+            <div id="features" className="scroll-mt-32">
                 <Features />
             </div>
             <div id="content" className="scroll-mt-32">
@@ -71,7 +71,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
             <div id="contact" className="scroll-mt-32"> 
                 <CallToAction />
             </div>
-        </>
+        </div>
     )
 }
 

@@ -1,10 +1,9 @@
 'use client'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { CheckCircle2, Target, Users, Award, Clock, Shield, Lightbulb, Heart } from 'lucide-react'
-import Link from 'next/link'
+import CTASection from '@/components/cta-section'
 
 const TEAM_MEMBERS = [
     {
@@ -294,35 +293,7 @@ export default function AboutPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 px-6 lg:px-12">
-                <div className="mx-auto max-w-7xl">
-                    <Card className="bg-gradient-to-br from-primary/10 via-background to-background border-primary/20">
-                        <CardHeader className="text-center">
-                            <CardTitle className="text-2xl md:text-3xl mb-4">
-                                Ready to Partner With Us?
-                            </CardTitle>
-                            <CardDescription className="text-base max-w-2xl mx-auto">
-                                Let's discuss how our expertise and dedication can help your business achieve its technology goals. Get in touch with our team today.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button
-                                asChild
-                                size="lg"
-                                className="min-w-[200px]">
-                                <Link href="/#contact">Contact Us</Link>
-                            </Button>
-                            <Button
-                                asChild
-                                variant="outline"
-                                size="lg"
-                                className="min-w-[200px]">
-                                <Link href="/services">Our Services</Link>
-                            </Button>
-                        </CardContent>
-                    </Card>
-                </div>
-            </section>
+            <CTASection />
         </div>
     )
 }

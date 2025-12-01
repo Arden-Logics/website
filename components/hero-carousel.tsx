@@ -1,0 +1,309 @@
+"use client";
+
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+interface CarouselSlide {
+  id: number;
+  headline: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
+const slides: CarouselSlide[] = [
+  {
+    id: 1,
+    headline: "Managed IT Services That Power Your Business",
+    description:
+      "Arden Logic recognized as a trusted partner for comprehensive managed IT solutions, providing 24/7 support and proactive monitoring for businesses across industries.",
+    buttonText: "Learn more",
+    buttonLink: "/services/msp-managed-it",
+  },
+  {
+    id: 2,
+    headline: "Enterprise-Grade Cybersecurity Protection",
+    description:
+      "Protect your business with advanced threat detection, compliance management, and security frameworks designed for modern digital enterprises.",
+    buttonText: "Explore security",
+    buttonLink: "/services/cybersecurity",
+  },
+  {
+    id: 3,
+    headline: "Transform Communication with VoIP Solutions",
+    description:
+      "Unified communications that scale with your business. Crystal-clear voice, seamless video conferencing, and intelligent call routing for the modern workplace.",
+    buttonText: "Discover VoIP",
+    buttonLink: "/services/voip",
+  },
+  {
+    id: 4,
+    headline: "Smart Audio-Visual & Security Systems",
+    description:
+      "From conference room AV installations to comprehensive access control and camera systems, we design and deploy technology that keeps your facilities connected and secure.",
+    buttonText: "View solutions",
+    buttonLink: "/services/audio-visual",
+  },
+];
+
+const SLIDE_DURATION = 6000;
+
+export default function HeroCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const progressRef = useRef<NodeJS.Timeout | null>(null);
+
+  const nextSlide = useCallback(() => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection("next");
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setProgress(0);
+    setTimeout(() => setIsAnimating(false), 800);
+  }, [isAnimating]);
+
+  const prevSlide = useCallback(() => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection("prev");
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setProgress(0);
+    setTimeout(() => setIsAnimating(false), 800);
+  }, [isAnimating]);
+
+  const goToSlide = (index: number) => {
+    if (isAnimating || index === currentSlide) return;
+    setIsAnimating(true);
+    setDirection(index > currentSlide ? "next" : "prev");
+    setCurrentSlide(index);
+    setProgress(0);
+    setIsAutoPlaying(false);
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIsAutoPlaying(true);
+    }, 800);
+  };
+
+  // Progress bar animation
+  useEffect(() => {
+    if (!isAutoPlaying) {
+      setProgress(0);
+      return;
+    }
+
+    const interval = 50;
+    const increment = (interval / SLIDE_DURATION) * 100;
+
+    progressRef.current = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          nextSlide();
+          return 0;
+        }
+        return prev + increment;
+      });
+    }, interval);
+
+    return () => {
+      if (progressRef.current) {
+        clearInterval(progressRef.current);
+      }
+    };
+  }, [isAutoPlaying, nextSlide, currentSlide]);
+
+  const handleNavClick = (dir: "prev" | "next") => {
+    setIsAutoPlaying(false);
+    if (dir === "prev") {
+      prevSlide();
+    } else {
+      nextSlide();
+    }
+    setTimeout(() => setIsAutoPlaying(true), 5000);
+  };
+
+  const getSlideClasses = (index: number) => {
+    const isActive = index === currentSlide;
+    const baseClasses = "absolute inset-0 flex flex-col justify-center";
+
+    if (isActive) {
+      return `${baseClasses} z-10`;
+    }
+    return `${baseClasses} z-0 pointer-events-none`;
+  };
+
+  const getAnimationStyles = (index: number): React.CSSProperties => {
+    const isActive = index === currentSlide;
+    const translateX = direction === "next" ? "60px" : "-60px";
+
+    return {
+      opacity: isActive ? 1 : 0,
+      transform: isActive ? "translateX(0) scale(1)" : `translateX(${translateX}) scale(0.98)`,
+      filter: isActive ? "blur(0px)" : "blur(4px)",
+      transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+    };
+  };
+
+  return (
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-secondary">
+      {/* Decorative mesh pattern - bottom right */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] opacity-20 pointer-events-none">
+        <svg
+          viewBox="0 0 500 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+        >
+          {Array.from({ length: 25 }).map((_, i) => (
+            <path
+              key={`h-${i}`}
+              d={`M 0 ${350 - i * 12} Q ${150 + i * 8} ${320 - i * 10}, ${300 + i * 5} ${280 - i * 8} T 500 ${200 - i * 6}`}
+              className="stroke-primary"
+              strokeWidth="1"
+              fill="none"
+              opacity={0.3 + i * 0.02}
+            />
+          ))}
+          {Array.from({ length: 20 }).map((_, i) => (
+            <path
+              key={`v-${i}`}
+              d={`M ${200 + i * 15} 400 Q ${220 + i * 14} ${300 - i * 5}, ${250 + i * 12} ${200 - i * 3} T ${300 + i * 10} 0`}
+              className="stroke-primary"
+              strokeWidth="1"
+              fill="none"
+              opacity={0.2 + i * 0.025}
+            />
+          ))}
+        </svg>
+      </div>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 pointer-events-none" />
+
+      {/* Left Navigation Arrow */}
+      <button
+        onClick={() => handleNavClick("prev")}
+        className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-20 text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-300 p-3 rounded-full group"
+        aria-label="Previous slide"
+        disabled={isAnimating}
+      >
+        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:-translate-x-0.5" strokeWidth={1.5} />
+      </button>
+
+      {/* Right Navigation Arrow */}
+      <button
+        onClick={() => handleNavClick("next")}
+        className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-20 text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-300 p-3 rounded-full group"
+        aria-label="Next slide"
+        disabled={isAnimating}
+      >
+        <ChevronRight className="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-0.5" strokeWidth={1.5} />
+      </button>
+
+      {/* Slides Container */}
+      <div className="relative w-full max-w-6xl mx-auto px-6 md:px-24 lg:px-32 min-h-[400px]">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={getSlideClasses(index)}
+            style={getAnimationStyles(index)}
+          >
+            {/* Triangle Accent + Headline */}
+            <div className="flex items-start gap-4 mb-2">
+              <div
+                className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
+                style={{
+                  opacity: index === currentSlide ? 1 : 0,
+                  transform: index === currentSlide ? "translateX(0)" : "translateX(-20px)",
+                  transitionDelay: index === currentSlide ? "200ms" : "0ms",
+                }}
+              />
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.1] tracking-tight max-w-3xl"
+                style={{
+                  opacity: index === currentSlide ? 1 : 0,
+                  transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                  transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                  transitionDelay: index === currentSlide ? "100ms" : "0ms",
+                }}
+              >
+                {slide.headline}
+              </h1>
+            </div>
+
+            {/* Description */}
+            <p
+              className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
+              style={{
+                opacity: index === currentSlide ? 1 : 0,
+                transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                transitionDelay: index === currentSlide ? "250ms" : "0ms",
+              }}
+            >
+              {slide.description}
+            </p>
+
+            {/* CTA Button */}
+            <div
+              className="ml-[34px]"
+              style={{
+                opacity: index === currentSlide ? 1 : 0,
+                transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                transitionDelay: index === currentSlide ? "400ms" : "0ms",
+              }}
+            >
+              <Link
+                href={slide.buttonLink}
+                className="inline-flex items-center justify-between gap-8 px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[180px] rounded-md"
+              >
+                <span className="font-medium">{slide.buttonText}</span>
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom Indicators with Progress */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className="relative h-1 rounded-full overflow-hidden transition-all duration-500 bg-border hover:bg-muted-foreground/40"
+            style={{
+              width: index === currentSlide ? "64px" : "40px",
+            }}
+            aria-label={`Go to slide ${index + 1}`}
+          >
+            {/* Progress fill for active slide */}
+            {index === currentSlide && (
+              <div
+                className="absolute inset-y-0 left-0 bg-primary rounded-full transition-all duration-100 ease-linear"
+                style={{
+                  width: `${progress}%`,
+                }}
+              />
+            )}
+            {/* Completed slides indicator */}
+            {index < currentSlide && (
+              <div className="absolute inset-0 bg-primary/60 rounded-full" />
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* Slide counter */}
+      <div className="absolute bottom-12 right-8 md:right-16 text-sm text-muted-foreground font-medium">
+        <span className="text-foreground">{String(currentSlide + 1).padStart(2, "0")}</span>
+        <span className="mx-1">/</span>
+        <span>{String(slides.length).padStart(2, "0")}</span>
+      </div>
+    </section>
+  );
+}
