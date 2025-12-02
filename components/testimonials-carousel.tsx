@@ -111,7 +111,7 @@ export default function TestimonialsCarousel() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <p className="text-primary font-semibold tracking-wide uppercase text-sm mb-3">

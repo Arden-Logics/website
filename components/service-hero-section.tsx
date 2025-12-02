@@ -23,7 +23,7 @@ export default function ServiceHeroSection({
 }: ServiceHeroSectionProps) {
     return (
         <section className="bg-white py-16 md:py-24">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="grid items-center gap-12 lg:grid-cols-2">
                     {/* Left content */}
                     <div className="space-y-8">

@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 export default function StatsSection() {
     return (
         <section className="bg-background py-16 md:py-24">
-            <div className="mx-auto max-w-5xl px-6">
+            <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
                     <div>
                         <p className="text-muted-foreground text-lg">From products to the APIs and platforms helping developers and businesses innovate</p>

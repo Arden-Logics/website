@@ -110,7 +110,7 @@ export default function AboutPage() {
         <div className="min-h-screen bg-background">
             {/* Hero Section */}
             <section className="relative pt-32 pb-16 px-6 lg:px-12">
-                <div className="mx-auto max-w-7xl">
+                <div className="w-full">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
                             Who We Are
@@ -124,7 +124,7 @@ export default function AboutPage() {
 
             {/* Stats Section */}
             <section className="py-12 px-6 lg:px-12 bg-muted/50">
-                <div className="mx-auto max-w-7xl">
+                <div className="w-full">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {STATS.map((stat, index) => (
                             <div key={index} className="text-center">
@@ -142,7 +142,7 @@ export default function AboutPage() {
 
             {/* Mission Section */}
             <section className="py-16 px-6 lg:px-12">
-                <div className="mx-auto max-w-7xl">
+                <div className="w-full">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -192,7 +192,7 @@ export default function AboutPage() {
 
             {/* Values Section */}
             <section className="py-16 px-6 lg:px-12 bg-muted/50">
-                <div className="mx-auto max-w-7xl">
+                <div className="w-full">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Core Values
@@ -219,7 +219,7 @@ export default function AboutPage() {
 
             {/* Timeline Section */}
             <section className="py-16 px-6 lg:px-12">
-                <div className="mx-auto max-w-7xl">
+                <div className="w-full">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Journey
@@ -262,7 +262,7 @@ export default function AboutPage() {
 
             {/* Team Section */}
             <section className="py-16 px-6 lg:px-12 bg-muted/50">
-                <div className="mx-auto max-w-7xl">
+                <div className="w-full">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Meet Our Leadership Team

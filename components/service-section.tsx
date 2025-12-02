@@ -24,7 +24,7 @@ export default function ServiceSection({
 }: ServiceSectionProps) {
     return (
         <section id={id} className="bg-gray-50 py-16 md:py-20 scroll-mt-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className={`grid items-center gap-12 lg:grid-cols-2 ${!imageOnRight ? 'lg:grid-flow-dense' : ''}`}>
                     {/* Content */}
                     <div className={`space-y-6 ${!imageOnRight ? 'lg:col-start-2' : ''}`}>

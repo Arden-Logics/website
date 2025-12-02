@@ -7,7 +7,7 @@ export default function StatsSection() {
                 <div className="mask-radial-to-75% absolute inset-0 max-md:hidden">
                     <Map />
                 </div>
-                <div className="mx-auto max-w-5xl px-6">
+                <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                     <div className="md:max-w-3/5 lg:max-w-1/2 bg-card ring-border-illustration relative rounded-xl p-6 shadow-xl shadow-black/10 ring-1 sm:p-10">
                         <div className="mb-8 space-y-4">
                             <h2 className="text-muted-foreground text-balance text-3xl font-semibold">

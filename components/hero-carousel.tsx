@@ -17,33 +17,33 @@ const slides: CarouselSlide[] = [
     id: 1,
     headline: "Managed IT Services That Power Your Business",
     description:
-      "Arden Logic recognized as a trusted partner for comprehensive managed IT solutions, providing 24/7 support and proactive monitoring for businesses across industries.",
-    buttonText: "Learn more",
+      "Arden Logics delivers fully managed IT services, remote helpdesk support, proactive monitoring, patching, and strategic IT management for businesses of all sizes. Improve reliability, security, and performance with a dedicated MSP partner.",
+    buttonText: "Learn More",
     buttonLink: "/services/msp-managed-it",
   },
   {
     id: 2,
-    headline: "Enterprise-Grade Cybersecurity Protection",
+    headline: "Modern VoIP & Unified Communications for a Connected Workforce",
     description:
-      "Protect your business with advanced threat detection, compliance management, and security frameworks designed for modern digital enterprises.",
-    buttonText: "Explore security",
-    buttonLink: "/services/cybersecurity",
-  },
-  {
-    id: 3,
-    headline: "Transform Communication with VoIP Solutions",
-    description:
-      "Unified communications that scale with your business. Crystal-clear voice, seamless video conferencing, and intelligent call routing for the modern workplace.",
-    buttonText: "Discover VoIP",
+      "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
+    buttonText: "Explore VoIP Solutions",
     buttonLink: "/services/voip",
   },
   {
-    id: 4,
-    headline: "Smart Audio-Visual & Security Systems",
+    id: 3,
+    headline: "Cloud, Networking & Infrastructure Built for Reliability",
     description:
-      "From conference room AV installations to comprehensive access control and camera systems, we design and deploy technology that keeps your facilities connected and secure.",
-    buttonText: "View solutions",
-    buttonLink: "/services/audio-visual",
+      "From Microsoft 365 and Azure to on-prem servers, networking, and disaster recovery we design, implement, and maintain infrastructure that keeps your business running.",
+    buttonText: "View Cloud & Infrastructure",
+    buttonLink: "/services",
+  },
+  {
+    id: 4,
+    headline: "Tailored IT Solutions for Healthcare, Education & Growing Businesses",
+    description:
+      "Deep expertise delivering secure, compliant technology environments across multi-site medical practices, school districts, and enterprise organizations.",
+    buttonText: "See Industry Expertise",
+    buttonLink: "/industries",
   },
 ];
 
@@ -204,7 +204,7 @@ export default function HeroCarousel() {
       </button>
 
       {/* Slides Container */}
-      <div className="relative w-full max-w-6xl mx-auto px-6 md:px-24 lg:px-32 min-h-[400px]">
+      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32 min-h-[400px]">
         {slides.map((slide, index) => (
           <div
             key={slide.id}

@@ -114,7 +114,7 @@ export default function FAQs() {
 
     return (
         <section className="bg-background pt-32 pb-16 md:pt-40 md:pb-24">
-            <div className="mx-auto max-w-5xl px-1 md:px-6">
+            <div className="w-full px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32">
                 <div className="max-w-lg max-md:px-6">
                     <h2 className="text-foreground text-4xl font-semibold">FAQs</h2>
                     <p className="text-muted-foreground mt-4 text-balance text-lg">Discover quick and comprehensive answers to common questions about our platform, services, and features.</p>

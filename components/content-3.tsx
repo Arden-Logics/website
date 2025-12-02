@@ -4,7 +4,7 @@ export default function ContentSection() {
     return (
         <section className="bg-background">
             <div className="bg-muted/25 py-16 md:py-32">
-                <div className="mx-auto max-w-4xl px-6">
+                <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                     <div className="grid gap-12 md:grid-cols-2">
                         <div className="row-span-3 grid grid-rows-subgrid gap-6">
                             <h3 className="text-muted-foreground">Visual Intelligence</h3>

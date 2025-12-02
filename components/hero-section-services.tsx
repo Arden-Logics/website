@@ -40,7 +40,7 @@ export default function HeroSection() {
                 <section>
                     <div className="relative pt-24">
                         <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
-                        <div className="mx-auto max-w-5xl px-6">
+                        <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                             <div className="sm:mx-auto lg:mr-auto lg:mt-0">
                                 <TextEffect
                                     preset="fade-in-blur"
@@ -110,7 +110,7 @@ export default function HeroSection() {
                                 ...transitionVariants,
                             }}>
                             <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative w-full overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                                         src="/mail2.png"
@@ -131,7 +131,7 @@ export default function HeroSection() {
                     </div>
                 </section>
                 <section className="bg-background pb-16 pt-16 md:pb-32">
-                    <div className="group relative m-auto max-w-5xl px-6">
+                    <div className="group relative w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                         <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
                             <Link
                                 href="/"

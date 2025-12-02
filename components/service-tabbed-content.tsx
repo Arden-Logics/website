@@ -26,7 +26,7 @@ export default function ServiceTabbedContent({ tabs }: ServiceTabbedContentProps
 
     return (
         <section className="bg-gray-50 py-16 md:py-20">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 {/* Tab buttons */}
                 <div className="flex justify-center mb-16">
                     <div className="inline-flex items-center gap-2 rounded-full bg-gray-200 p-1">

@@ -35,7 +35,7 @@ export default function ClientPortalsPage() {
         <div className="min-h-screen bg-background">
             {/* Hero Section */}
             <section className="relative pt-32 pb-16 px-6 lg:px-12">
-                <div className="mx-auto max-w-6xl">
+                <div className="w-full">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">Client Portals</h1>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

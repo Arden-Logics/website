@@ -48,7 +48,7 @@ export default function ServiceScrollNav({ items }: ServiceScrollNavProps) {
 
     return (
         <div className="sticky top-32 z-30 bg-gray-50 py-6 border-b border-gray-200">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="flex justify-center">
                     <div className="inline-flex items-center gap-2 rounded-full bg-gray-200 p-1">
                         {items.map((item) => (

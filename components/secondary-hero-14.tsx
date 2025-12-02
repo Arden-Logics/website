@@ -12,7 +12,7 @@ export default function HeroSection() {
     return (
         <section id="contact-form">
             <div className="bg-muted overflow-x-hidden py-24 lg:py-32">
-                <div className="mx-auto max-w-5xl px-6">
+                <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                     <span className="text-primary block text-sm font-medium max-md:text-center">Contact Us</span>
                     <div className="mt-8 grid gap-16 md:grid-cols-2 md:gap-12 lg:gap-12">
                         <div className="max-md:text-center">

@@ -7,18 +7,17 @@ import { Primevideo } from '@/components/logos/prime'
 import { Stripe } from '@/components/logos/stripe'
 import VisualStudioCode from '@/components/logos/vs-code'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
-import { Button } from '@/components/ui/button'
-import { ChevronRight } from 'lucide-react'
-import Link from 'next/link'
 
 export default function LogoCloud() {
     return (
         <section className="bg-muted/50 overflow-hidden py-16">
-            <div className="group relative m-auto max-w-5xl px-6">
+            <div className="group relative w-full px-6 lg:px-12">
                 <div className="text-center">
-                    <div className="mx-auto max-w-xl text-balance">
-                        <h2 className="text-4xl font-semibold">You're in good company</h2>
-                        <p className="text-muted-foreground mt-4 text-lg">Tailark is trusted by innovative companies worldwide to deliver exceptional products and services that drive business growth.</p>
+                    <div className="mx-auto max-w-2xl text-balance">
+                        <h2 className="text-4xl font-semibold">Trusted by businesses over 50+ industries</h2>
+                        <p className="text-muted-foreground mt-4 text-lg">
+                        From small businesses to multi-site enterprises, Arden Logics helps clients modernize their technology, strengthen security, and improve productivity through reliable, strategic IT solutions.
+                        </p>
                     </div>
 
                     <div className="mask-x-from-90% relative py-12">
@@ -69,16 +68,6 @@ export default function LogoCloud() {
                             />
                         </InfiniteSlider>
                     </div>
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        asChild
-                        className="pr-2">
-                        <Link href="#">
-                            Read customer stories
-                            <ChevronRight className="size-3.5!" />
-                        </Link>
-                    </Button>
                 </div>
             </div>
         </section>

@@ -77,7 +77,7 @@ function NavigationMenuViewport({ className, ...props }: React.ComponentProps<ty
     return (
         <div
             data-slot="navigation-menu-viewport-parent"
-            className={cn('px-(--viewport-outer-px) fixed inset-x-0 top-12 isolate z-50 mx-auto flex max-w-6xl')}>
+            className={cn('px-(--viewport-outer-px) fixed inset-x-0 top-12 isolate z-50 mx-auto flex w-full px-8 sm:px-12 lg:px-24 xl:px-32')}>
             <NavigationMenuPrimitive.Viewport
                 data-slot="navigation-menu-viewport"
                 className={cn('bg-popover text-popover-foreground h-(--radix-navigation-menu-viewport-height) ring-foreground/10 rounded-(--radius) md:w-(--radix-navigation-menu-viewport-width) relative mt-1.5 w-full origin-top overflow-hidden border border-transparent p-0.5 shadow-xl shadow-black/10 ring-1 transition-[width,height] duration-200', 'data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in', className)}

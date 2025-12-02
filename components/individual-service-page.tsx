@@ -1,10 +1,7 @@
 import { SERVICE_CONTENT } from '@/constants'
-import OtherServiceListings from '@/components/other-service-listings'
 import ContentSection from './content-5'
 import Features from './features-4'
-import ServiceHeroSection from './service-hero-section'
-import ServiceScrollNav from './service-scroll-nav'
-import ServiceSection from './service-section'
+import FeaturesHero from './features-14'
 import WhyArdenSection from './why-arden-section'
 import ServicesDiagonal from './services-diagonal'
 import ServicesExpandGrid from './services-expand-grid'
@@ -41,7 +38,8 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
 
     return (
         <div className="min-h-screen flex flex-col">
-            <ServiceHeroSection {...content.heroSection!} />
+            {/* Hero section - Service-specific content */}
+            <FeaturesHero serviceKey={serviceKey} />
             {/* <ServiceScrollNav items={navItems} />
             
             

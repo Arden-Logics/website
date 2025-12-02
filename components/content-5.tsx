@@ -6,7 +6,7 @@ import StatsSection from './stats-8'
 export default function ContentSection() {
     return (
         <section className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl px-6">
+            <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="grid gap-6 md:grid-cols-2 md:gap-12 lg:gap-24">
                     <div>
                         <h2 className="text-muted-foreground text-4xl font-semibold">

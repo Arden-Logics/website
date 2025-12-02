@@ -85,12 +85,12 @@ export default function ServicesDiagonal() {
 
   return (
     <section className="py-24 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <p className="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Our Expertise</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Technology Solutions
+            Our Industries
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Comprehensive IT services designed to transform and protect your business

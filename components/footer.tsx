@@ -31,7 +31,7 @@ export default function FooterSection() {
         <footer
             role="contentinfo"
             className="bg-muted py-8 sm:py-20">
-            <div className="mx-auto max-w-5xl space-y-16 px-6">
+            <div className="w-full space-y-16 px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="grid gap-12 lg:grid-cols-5">
                     <div className="space-y-6 lg:col-span-2 lg:space-y-12">
                         <Link

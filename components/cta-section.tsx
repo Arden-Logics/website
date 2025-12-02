@@ -21,7 +21,7 @@ export default function CTASection({
 }: CTASectionProps) {
     return (
         <section className="py-16 px-6 lg:px-12">
-            <div className="mx-auto max-w-7xl">
+            <div className="w-full">
                 <Card className="bg-gradient-to-br from-primary/10 via-background to-background border-primary/20">
                     <CardHeader className="text-center">
                         <CardTitle className="text-2xl md:text-3xl mb-4">

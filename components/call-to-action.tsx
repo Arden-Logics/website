@@ -36,7 +36,7 @@ export default function CallToAction() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         <div className="grid lg:grid-cols-[1fr_0.8fr] gap-12 lg:gap-16 items-center">
           {/* Left content */}
           <div className="space-y-8">

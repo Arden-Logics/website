@@ -81,7 +81,7 @@ export default function ServicesWhyUs() {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">

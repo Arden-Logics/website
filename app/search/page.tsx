@@ -85,7 +85,7 @@ export default function SearchPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20 px-6">
-            <div className="mx-auto max-w-4xl">
+            <div className="w-full max-w-4xl mx-auto">
                 <h1 className="text-5xl md:text-7xl font-bold text-center mb-12 text-foreground">
                     Arden Logics
                 </h1>

@@ -49,7 +49,7 @@ export default function Features() {
 
     return (
         <section className="py-12 md:py-20">
-            <div className="mx-auto max-w-6xl space-y-12 px-6 md:space-y-16">
+            <div className="w-full space-y-12 px-8 sm:px-12 lg:px-24 xl:px-32 md:space-y-16">
                 <div className="relative z-10 mx-auto max-w-3xl space-y-4 text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-gray-900">MFA that meets you where you are</h2>
                     <p className="text-lg text-gray-600">Duo wraps your entire organization in protection with powerful, scalable tools that work anywhere and grow with you.</p>

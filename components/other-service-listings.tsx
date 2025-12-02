@@ -6,7 +6,7 @@ export default function OtherServiceListings() {
     return (
         <section className="bg-background border-t">
             <div className="bg-muted/30 py-16 md:py-24">
-                <div className="mx-auto max-w-5xl px-6">
+                <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                     <h2 className="text-foreground text-balance text-3xl font-semibold md:w-2/3 mb-12">
                         Explore Our Other Services
                     </h2>

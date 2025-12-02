@@ -26,28 +26,28 @@ const frameworkSteps = [
   {
     number: '1',
     title: 'Envision & Align',
-    description: "Let's work together to nail down your priorities, identify your gaps, and create a plan for success.",
+    description: 'We work with you to define your goals, understand your challenges, and map out the technology strategy that best supports your business.',
     icon: Target,
     color: 'from-blue-500 to-blue-600',
   },
   {
     number: '2',
     title: 'Build & Prepare',
-    description: 'We collaborate with you to prepare systems, assign roles, and align teams to meet your goals.',
+    description: 'Our team prepares your systems, configures infrastructure, and coordinates the details so everything is ready for a smooth, disruption-free rollout.',
     icon: Wrench,
     color: 'from-blue-500 to-blue-600',
   },
   {
     number: '3',
     title: 'Launch & Refine',
-    description: 'We deploy, test, and refine systems while our service team assumes their responsibilities.',
+    description: 'We deploy and validate your environment, fine-tune performance, and transition your team into fully supported operations.',
     icon: Rocket,
     color: 'from-blue-500 to-blue-600',
   },
   {
     number: '4',
     title: 'Optimize & Grow',
-    description: 'We partner with you for ongoing support, consulting, and strategic technology roadmaps.',
+    description: 'Technology evolves and so do your needs. We provide ongoing support, consulting, and strategic guidance to help your business scale securely and efficiently.',
     icon: TrendingUp,
     color: 'from-blue-500 to-blue-600',
   },
@@ -78,7 +78,7 @@ function StatCard({
 export default function WhyArdenSection() {
   return (
     <section className="py-20 md:py-32 bg-background overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Problem Section */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 md:mb-32">
           {/* Left - Text Content */}
@@ -214,7 +214,7 @@ export default function WhyArdenSection() {
         {/* Framework Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Here's our <span className="underline decoration-primary decoration-4 underline-offset-8">proven</span>, flexible framework.
+          Our Proven, Flexible Framework
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We start with structure, but we're ready to adapt to your needs.
