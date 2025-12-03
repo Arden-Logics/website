@@ -24,6 +24,14 @@ const links = [
             href: industry.href,
         })),
     },
+    {
+        group: 'Quick Links',
+        items: [
+            { title: 'Client Portals', href: '/client-portals' },
+            { title: 'Contact Support', href: '#' },
+            { title: 'Contact Sales', href: '#' },
+        ],
+    },
 ]
 
 export default function FooterSection() {

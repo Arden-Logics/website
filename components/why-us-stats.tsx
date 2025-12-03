@@ -5,23 +5,23 @@ import React from 'react'
 const stats = [
   {
     value: '15+',
-    label: 'Years of experience',
+    label: 'Years of industry experience',
   },
   {
     value: '500+',
-    label: 'Clients served',
+    label: 'Organizations supported',
   },
   {
     value: '99.9%',
-    label: 'Uptime guarantee',
+    label: 'Infrastructure uptime across all managed services',
   },
   {
     value: '24/7',
-    label: 'Support availability',
+    label: 'Live support and rapid response availability',
   },
   {
     value: '10,000+',
-    label: 'Endpoints managed',
+    label: 'Endpoints, users, and systems managed daily',
   },
 ]
 
@@ -45,22 +45,25 @@ export default function WhyUsStats() {
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-amber-800/80 mb-4 block">
-            Proven Reliability & Scale
+            Proven Performance & Trusted Expertise
           </span>
           
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-foreground leading-[1.1] mb-6">
-            The trusted partner in{' '}
-            <span className="block sm:inline">IT solutions</span>
+            Your dedicated partner for modern IT, security, and communications
           </h2>
           
           {/* Description */}
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mb-12">
-            Arden Logic delivers{' '}
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mb-4">
+            Arden Logics delivers{' '}
             <span className="text-foreground underline decoration-primary/40 decoration-2 underline-offset-4">
-              enterprise-grade IT solutions
+              enterprise-grade technology solutions
             </span>{' '}
-            for organizations of all sizes. From startups to established enterprises, businesses across industries rely on Arden Logic to stay connected, secure, and efficient—from anywhere.
+            that help organizations operate securely, efficiently, and without interruption.
+          </p>
+          
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mb-12">
+            From fast-growing startups to established enterprises, businesses across every industry rely on Arden Logics to strengthen their security posture, optimize their systems, and stay connected—from anywhere.
           </p>
 
           {/* Stats Grid - Below Content */}

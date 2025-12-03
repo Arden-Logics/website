@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 import { useMedia } from '@/hooks/use-media'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { cn } from '@/lib/utils'
-import { SERVICES, INDUSTRIES, RESOURCES } from '@/constants'
+import { SERVICES, INDUSTRIES, RESOURCES, SOLUTIONS } from '@/constants'
 
 export default function HeaderOne() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -141,24 +141,31 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem
-                    value="industries"
+                    value="solutions"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Industries</AccordionTrigger>
+                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Solutions</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
-                            {INDUSTRIES.map((industry, index) => (
-                                <li key={index}>
-                                    <Link
-                                        href={industry.href}
-                                        onClick={closeMenu}
-                                        className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2">
-                                        <div
-                                            aria-hidden
-                                            className="flex items-center justify-center *:size-4">
-                                            {industry.icon}
-                                        </div>
-                                        <div className="text-base">{industry.name}</div>
-                                    </Link>
+                            {SOLUTIONS.map((category, categoryIndex) => (
+                                <li key={categoryIndex}>
+                                    <div className="px-4 py-2 text-sm font-semibold text-muted-foreground">{category.title}</div>
+                                    <ul className="space-y-0">
+                                        {category.items.map((item, index) => (
+                                            <li key={index}>
+                                                <Link
+                                                    href={item.href}
+                                                    onClick={closeMenu}
+                                                    className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-6 py-2">
+                                                    <div
+                                                        aria-hidden
+                                                        className="flex items-center justify-center *:size-4">
+                                                        {item.icon}
+                                                    </div>
+                                                    <div className="text-base">{item.name}</div>
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </li>
                             ))}
                         </ul>
@@ -172,6 +179,16 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                         onClick={closeMenu}
                         className="flex items-center justify-between px-4 py-3 text-lg">
                         Partners
+                    </Link>
+                </AccordionItem>
+                <AccordionItem
+                    value="who-we-are"
+                    className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
+                    <Link
+                        href="/about"
+                        onClick={closeMenu}
+                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        Who we are
                     </Link>
                 </AccordionItem>
             </Accordion>
@@ -236,26 +253,40 @@ const NavMenu = () => {
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem value="industries">
-                    <NavigationMenuTrigger>Industries</NavigationMenuTrigger>
+                <NavigationMenuItem value="solutions">
+                    <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
-                        <ul className="grid w-[500px] gap-3 p-4 grid-cols-2">
-                            {INDUSTRIES.map((industry, index) => (
-                                <ListItem
-                                    key={index}
-                                    href={industry.href}
-                                    title={industry.name}
-                                    description={industry.description}>
-                                    {industry.icon}
-                                </ListItem>
+                        <div className="w-[700px] grid grid-cols-2 gap-6 p-6">
+                            {SOLUTIONS.map((category, categoryIndex) => (
+                                <div key={categoryIndex}>
+                                    <h3 className="text-sm font-semibold text-foreground mb-4 px-2">{category.title}</h3>
+                                    <ul className="space-y-2">
+                                        {category.items.map((item, index) => (
+                                            <ListItem
+                                                key={index}
+                                                href={item.href}
+                                                title={item.name}
+                                                description={item.description}>
+                                                {item.icon}
+                                            </ListItem>
+                                        ))}
+                                    </ul>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/partners" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Partners
+                        </NavigationMenuLink>
+                    </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                    <Link href="/about" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            Who we are
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

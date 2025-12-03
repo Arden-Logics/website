@@ -1,8 +1,17 @@
 import { Lock, Zap, Shield, CheckCircle, Fingerprint, Cpu } from 'lucide-react'
 import Link from 'next/link'
+import { SERVICE_CONTENT } from '@/constants'
 
-export default function Features() {
-    const features = [
+interface FeaturesProps {
+    serviceKey?: string
+}
+
+export default function Features({ serviceKey }: FeaturesProps) {
+    // Get service-specific content if available
+    const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+    
+    // Use service-specific features if available
+    const features = serviceContent?.contentFeatures || [
         {
             icon: Zap,
             title: "MFA integration",
@@ -46,31 +55,41 @@ export default function Features() {
             href: "#"
         }
     ]
+    
+    const sectionTitle = serviceContent?.featuresSectionTitle || "MFA that meets you where you are"
+    const sectionDescription = serviceContent?.featuresSectionDescription || "Duo wraps your entire organization in protection with powerful, scalable tools that work anywhere and grow with you."
 
     return (
         <section className="py-12 md:py-20">
             <div className="w-full space-y-12 px-8 sm:px-12 lg:px-24 xl:px-32 md:space-y-16">
                 <div className="relative z-10 mx-auto max-w-3xl space-y-4 text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-gray-900">MFA that meets you where you are</h2>
-                    <p className="text-lg text-gray-600">Duo wraps your entire organization in protection with powerful, scalable tools that work anywhere and grow with you.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-gray-900">{sectionTitle}</h2>
+                    <p className="text-lg text-gray-600">{sectionDescription}</p>
                 </div>
 
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {features.map((feature, index) => {
-                        const Icon = feature.icon
+                        // Handle both icon as component and icon as JSX element
+                        const Icon = typeof feature.icon === 'function' ? feature.icon : null
                         return (
                             <div key={index} className="flex flex-col space-y-6">
                                 <div className="flex items-start gap-4">
                                     <div className="shrink-0">
-                                        <Icon className="size-8 text-green-700" strokeWidth={1.5} />
+                                        {Icon ? (
+                                            <Icon className="size-8 text-green-700" strokeWidth={1.5} />
+                                        ) : (
+                                            <div className="size-8 text-green-700">
+                                                {feature.icon}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="space-y-3">
                                     <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
                                     <p className="text-base text-gray-700 leading-relaxed">{feature.description}</p>
                                 </div>
-                                <Link href={feature.href} className="inline-flex items-center text-green-700 font-medium hover:underline">
-                                    {feature.link} →
+                                <Link href={feature.linkHref || feature.href || "#"} className="inline-flex items-center text-green-700 font-medium hover:underline">
+                                    {feature.linkText || feature.link} →
                                 </Link>
                             </div>
                         )

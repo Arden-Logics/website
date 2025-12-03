@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Search, Mail, Phone } from 'lucide-react'
+import { Search, Phone } from 'lucide-react'
 
 export default function TopBar() {
     return (
@@ -21,13 +21,6 @@ export default function TopBar() {
                         >
                             Support
                         </Link>
-                        <a
-                            href="mailto:info@junipertechteam.com"
-                            className="flex items-center gap-1 hover:text-foreground transition-colors"
-                        >
-                            <Mail className="size-4" />
-                            <span>info@junipertechteam.com</span>
-                        </a>
                         <a
                             href="tel:8563359895"
                             className="flex items-center gap-1 hover:text-foreground transition-colors"

@@ -1,45 +1,64 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-
 export default function StatsSection() {
     return (
         <section className="bg-background py-16 md:py-24">
             <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
-                <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
-                    <div>
-                        <p className="text-muted-foreground text-lg">From products to the APIs and platforms helping developers and businesses innovate</p>
-                        <div className="mb-12 mt-6 grid grid-cols-2 gap-2 divide-x md:mb-0">
-                            <div className="space-y-2">
-                                <div className="bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-4xl font-bold text-transparent">+1200</div>
-                                <p className="text-muted-foreground text-sm">Stars on GitHub</p>
-                            </div>
-                            <div className="space-y-2 pl-6">
-                                <div className="bg-linear-to-b from-foreground to-muted-foreground bg-clip-text text-4xl font-bold text-transparent">+500</div>
-                                <p className="text-muted-foreground text-sm">Powered Apps</p>
-                            </div>
-                        </div>
+                <div className="flex flex-col items-center justify-center space-y-12">
+                    {/* Section Title */}
+                    <div className="text-center">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2">
+                            Powered by Partners
+                        </h2>
+                        <p className="text-muted-foreground text-lg">
+                            Trusted by industry leaders to deliver exceptional solutions
+                        </p>
                     </div>
-                    <div className="relative">
-                        <blockquote className="before:bg-primary relative max-w-xl space-y-6 pl-6 before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full">
-                            <img
-                                className="h-5 w-fit"
-                                src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                alt="Nvidia Logo"
-                                height="20"
-                                width="auto"
-                            />
-                            <p className="text-foreground">Using Tailark has been like unlocking a secret design superpower. </p>
 
-                            <div className="flex gap-2">
-                                <Avatar className="ring-foreground/10 size-6 border border-transparent shadow ring-1">
-                                    <AvatarImage
-                                        src="https://avatars.githubusercontent.com/u/68236786?v=4"
-                                        alt="Théo Balick"
-                                    />
-                                    <AvatarFallback>TB</AvatarFallback>
-                                </Avatar>
-                                <cite className="block font-medium">John Doe, CEO</cite>
-                            </div>
-                        </blockquote>
+                    {/* Partners Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 w-full items-center justify-items-center">
+                        {/* Microsoft */}
+                        <div className="flex items-center justify-center h-20 hover:opacity-75 transition-opacity">
+                            <svg className="w-32 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="50" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" dominantBaseline="middle">
+                                    Microsoft
+                                </text>
+                            </svg>
+                        </div>
+
+                        {/* AWS */}
+                        <div className="flex items-center justify-center h-20 hover:opacity-75 transition-opacity">
+                            <svg className="w-32 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="50" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" dominantBaseline="middle">
+                                    AWS
+                                </text>
+                            </svg>
+                        </div>
+
+                        {/* CDW */}
+                        <div className="flex items-center justify-center h-20 hover:opacity-75 transition-opacity">
+                            <svg className="w-32 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="50" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" dominantBaseline="middle">
+                                    CDW
+                                </text>
+                            </svg>
+                        </div>
+
+                        {/* ADI */}
+                        <div className="flex items-center justify-center h-20 hover:opacity-75 transition-opacity">
+                            <svg className="w-32 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="50" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" dominantBaseline="middle">
+                                    ADI
+                                </text>
+                            </svg>
+                        </div>
+
+                        {/* Cisco */}
+                        <div className="flex items-center justify-center h-20 hover:opacity-75 transition-opacity">
+                            <svg className="w-32 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50" y="50" textAnchor="middle" fontSize="14" fontWeight="bold" fill="currentColor" dominantBaseline="middle">
+                                    Cisco
+                                </text>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
