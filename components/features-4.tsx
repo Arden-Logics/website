@@ -75,12 +75,8 @@ export default function Features({ serviceKey }: FeaturesProps) {
                             <div key={index} className="flex flex-col space-y-6">
                                 <div className="flex items-start gap-4">
                                     <div className="shrink-0">
-                                        {Icon ? (
+                                        {Icon && (
                                             <Icon className="size-8 text-green-700" strokeWidth={1.5} />
-                                        ) : (
-                                            <div className="size-8 text-green-700">
-                                                {feature.icon}
-                                            </div>
                                         )}
                                     </div>
                                 </div>
@@ -88,8 +84,8 @@ export default function Features({ serviceKey }: FeaturesProps) {
                                     <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
                                     <p className="text-base text-gray-700 leading-relaxed">{feature.description}</p>
                                 </div>
-                                <Link href={feature.linkHref || feature.href || "#"} className="inline-flex items-center text-green-700 font-medium hover:underline">
-                                    {feature.linkText || feature.link} →
+                                <Link href={(('linkHref' in feature && feature.linkHref) || ('href' in feature && feature.href) || "#")} className="inline-flex items-center text-green-700 font-medium hover:underline">
+                                    {(('linkText' in feature && feature.linkText) || ('link' in feature && feature.link) || "")} →
                                 </Link>
                             </div>
                         )

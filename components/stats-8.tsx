@@ -5,11 +5,17 @@ interface StatsSectionProps {
     serviceKey?: string
 }
 
+interface Metric {
+    value: string
+    label: string
+    suffix?: string
+}
+
 export default function StatsSection({ serviceKey }: StatsSectionProps) {
     const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
     
     const metricsTitle = serviceContent?.metricsSection?.title || 'Building the next generation of AI-powered Marketing Tools'
-    const metrics = serviceContent?.metricsSection?.metrics || [
+    const metrics: Metric[] = serviceContent?.metricsSection?.metrics || [
         { value: '99.9', label: 'Uptime guarantee for all our services.', suffix: '%' },
         { value: '24/7', label: '24/7 support available around the clock.', suffix: '' },
         { value: '12', label: 'Faster processing than previous generation.', suffix: 'X' },
@@ -36,7 +42,7 @@ export default function StatsSection({ serviceKey }: StatsSectionProps) {
                             {metrics.map((metric, index) => (
                                 <div key={index} className="space-y-3 *:block">
                                     <span className="text-3xl font-semibold">
-                                        {metric.value} {metric.suffix && <span className="text-muted-foreground text-lg">{metric.suffix}</span>}
+                                        {metric.value} {metric.suffix ? <span className="text-muted-foreground text-lg">{metric.suffix}</span> : null}
                                     </span>
                                     <p className="text-muted-foreground text-balance text-sm">
                                         {metric.label}
