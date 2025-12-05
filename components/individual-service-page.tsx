@@ -21,24 +21,6 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
         return null
     }
 
-    // Check if this service has the new redesigned layout
-    const hasNewLayout = content.heroSection && content.sections
-
-    if (!hasNewLayout) {
-        return null
-    }
-
-    // Build navigation items from sections + standard sections
-    const navItems = [
-        ...(content.sections || []).map(section => ({
-            id: section.id,
-            label: section.navLabel || section.title
-        })),
-        { id: 'content', label: 'Content' },
-        { id: 'features', label: 'Features' },
-        { id: 'other-services', label: 'Other Services' }
-    ]
-
     return (
         <div className="min-h-screen flex flex-col">
             {/* Hero section - Service-specific content */}

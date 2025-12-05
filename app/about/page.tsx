@@ -38,32 +38,32 @@ const VALUES = [
     {
         icon: <Shield className="w-6 h-6" />,
         title: 'Integrity',
-        description: 'We conduct business with honesty, transparency, and ethical practices in every interaction.',
+        description: 'We operate with honesty, transparency, and accountability delivering exactly what we promise and standing by every decision we make.',
     },
     {
         icon: <Lightbulb className="w-6 h-6" />,
         title: 'Innovation',
-        description: 'We continuously explore new technologies and methodologies to deliver cutting-edge solutions.',
+        description: 'We continually evaluate new technologies, methodologies, and AI-driven tools to bring clients forward-thinking, future-proof solutions.',
     },
     {
         icon: <Users className="w-6 h-6" />,
         title: 'Collaboration',
-        description: 'We work closely with our clients as partners, understanding their unique needs and challenges.',
+        description: 'We work as a true partner, aligning closely with your internal teams to understand your goals and overcome challenges together.',
     },
     {
         icon: <Award className="w-6 h-6" />,
         title: 'Excellence',
-        description: 'We strive for the highest quality in everything we do, from service delivery to customer support.',
+        description: 'We hold ourselves to the highest standards in engineering, communication, documentation, and service delivery.',
     },
     {
         icon: <Heart className="w-6 h-6" />,
         title: 'Client-Centric',
-        description: 'Our clients\' success is our success. We prioritize their needs and build lasting relationships.',
+        description: 'Your success is our priority. We design every engagement, workflow, and support process around delivering measurable outcomes for you.',
     },
     {
         icon: <Clock className="w-6 h-6" />,
         title: 'Reliability',
-        description: 'We deliver on our promises with consistent, dependable service and 24/7 support.',
+        description: 'We deliver consistent, dependable service with 24/7 monitoring, rapid response, and long-term support you can count on.',
     },
 ]
 
@@ -103,25 +103,25 @@ const MILESTONES = [
 const CUSTOMER_STATS = [
     { 
         value: '200+', 
-        label: 'branch locations implemented in six weeks.',
-        highlight: 'Ryder Systems',
-        highlightLink: '#'
+        label: 'Multi-location deployments delivered across corporate, healthcare, education, and government environments.',
+        highlight: '',
+        highlightLink: ''
     },
     { 
         value: '30%', 
-        label: 'Savings on overall communication costs at',
-        highlight: 'First Bank.',
-        highlightLink: '#'
+        label: 'Average reduction in communication and IT support costs for clients who transition to Arden Logics\' managed platforms.',
+        highlight: '',
+        highlightLink: ''
     },
     { 
         value: '7 days', 
-        label: 'From contract signature to nationwide deployment of RingEX for',
-        highlight: 'Carbon Health.',
-        highlightLink: '#'
+        label: 'Fastest full-scale rollout from discovery to deployment for enterprise environments requiring immediate activation.',
+        highlight: '',
+        highlightLink: ''
     },
     { 
         value: '20%', 
-        label: "Of time saved with RingCX's AI-powered automations.",
+        label: 'Average time savings achieved through AI-supported automations and proactive IT workflows.',
         highlight: '',
         highlightLink: ''
     },
@@ -149,10 +149,10 @@ export default function AboutPage() {
                         <div className="max-w-xl">
                             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl">
                                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                                    Technology that begins, and stays with people
+                                    Technology that starts with people and scales with ambition
                                 </h1>
                                 <p className="text-gray-700 text-lg leading-relaxed">
-                                    At Arden Logics, it starts with people. The ones using our solutions, the ones building them, and the ones they're meant to protect. That includes over 1,000 customers who trust us every day. That's why we lead with trust to build technology that fits into real lives.
+                                    At Arden Logics, everything begins with the people behind the technology: the teams who rely on it, the leaders who shape it, and the communities it protects. We support thousands of users across dozens of industries, and every relationship is built on one principle — <strong>trust first, technology second</strong>.
                                 </p>
                             </div>
                         </div>
@@ -170,13 +170,16 @@ export default function AboutPage() {
                                 Our Mission
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                                Empowering Businesses Through Technology
+                                Enabling organizations to grow with confidence
                             </h2>
                             <p className="text-lg text-muted-foreground mb-6">
-                                At Arden Logics, our mission is to deliver comprehensive technology solutions that enable businesses to thrive in an increasingly digital world. We believe that the right technology, implemented correctly and supported properly, can transform operations and drive growth.
+                                Our mission is simple: to give businesses the clarity, reliability, and security they need in a digital-first world. We believe technology is most powerful when it's thoughtfully implemented, expertly supported, and aligned to real business goals.
+                            </p>
+                            <p className="text-lg text-muted-foreground mb-6">
+                                Arden Logics partners with organizations across healthcare, education, financial services, government, fitness, manufacturing, and more. We take time to understand the challenges behind the scenes and deliver solutions that make operations smoother, teams more productive, and growth more achievable.
                             </p>
                             <p className="text-lg text-muted-foreground">
-                                We partner with organizations across industries to understand their unique challenges and provide tailored solutions that not only solve today's problems but also prepare them for tomorrow's opportunities.
+                                Whether it's modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security — <strong>we help businesses not just adapt to the future, but lead it.</strong>
                             </p>
                         </div>
                         <div className="relative">
@@ -187,19 +190,22 @@ export default function AboutPage() {
                                 <CardContent>
                                     <ul className="space-y-4">
                                         {[
-                                            'Proactive approach to IT management',
-                                            'Industry-certified expert technicians',
-                                            'Customized solutions for every client',
-                                            'Transparent pricing with no hidden fees',
-                                            '24/7 monitoring and support',
-                                            'Proven track record of success',
+                                            { title: 'Strategic, forward-looking IT leadership', desc: 'We don\'t just fix issues — we prevent them with proactive planning and long-term roadmaps.' },
+                                            { title: 'Engineers with deep multi-industry expertise', desc: 'Certified professionals across cybersecurity, AV, cloud, networking, physical security, and collaboration tools.' },
+                                            { title: 'Solutions tailored to each environment', desc: 'Every client is different. Every design reflects real-world workflows and goals.' },
+                                            { title: 'Clear, predictable pricing — no surprises', desc: 'Transparent agreements built to support scaling, not restrict it.' },
+                                            { title: 'Always-on monitoring and rapid support', desc: 'Real-time visibility with U.S.-based support to resolve issues before they cause impact.' },
+                                            { title: 'A proven record of reliability and trust', desc: 'From small offices to multi-site enterprises, our work powers mission-critical operations every day.' },
                                         ].map((item, index) => (
                                             <li
                                                 key={index}
                                                 className="flex items-start gap-3"
                                             >
                                                 <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                                                <span className="text-muted-foreground">{item}</span>
+                                                <div>
+                                                    <span className="font-medium text-foreground">{item.title}</span>
+                                                    <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
+                                                </div>
                                             </li>
                                         ))}
                                     </ul>
@@ -273,9 +279,12 @@ export default function AboutPage() {
 
                         {/* Right Side - Stats */}
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-12">
-                                Serving the world's<br />largest brands
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                Trusted by Industry Leaders Nationwide
                             </h2>
+                            <p className="text-lg text-muted-foreground mb-12">
+                                More than 1,000 organizations from regional enterprises to national brands rely on Arden Logics to modernize their technology, strengthen security, and improve operational efficiency.
+                            </p>
                             
                             <div className="grid grid-cols-2 gap-8">
                                 {CUSTOMER_STATS.map((stat, index) => (
@@ -325,7 +334,7 @@ export default function AboutPage() {
                             Our Core Values
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                            These principles guide everything we do and shape how we serve our clients and support our team.
+                            These principles define how we serve our clients, support our team, and build long-lasting partnerships.
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

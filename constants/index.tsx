@@ -510,7 +510,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Strategic IT guidance',
             },
         ],
-        featuresSectionTitle: 'MFA that meets you where you are',
+        featuresSectionTitle: 'Managed IT that meets you where you are',
         featuresSectionDescription: 'Arden Logics delivers comprehensive IT management and security solutions that protect your organization.',
         contentFeatures: [
             {
@@ -1198,8 +1198,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Call analytics',
             },
         ],
-        featuresSectionTitle: 'MFA that meets you where you are',
-        featuresSectionDescription: 'Arden Logics delivers modern VoIP solutions for today\'s hybrid workplace.',
+        featuresSectionTitle: 'VoIP that works the way your business communicates',
+        featuresSectionDescription: 'Arden Logics delivers a flexible, cloud-based phone system designed to keep your team connected from anywhere. With intelligent routing, mobility tools, and crystal-clear call quality, our solution grows with your organization and adapts to how you work.',
         contentFeatures: [
             {
                 icon: <Zap className="stroke-foreground fill-foreground/10" />,
@@ -1439,9 +1439,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             title: 'Experience cybersecurity built for real defense.',
             highlights: [
                 'When your organization is protected the right way, you gain control, clarity, and confidence.',
-                'With Arden Logics, you get: ✔ Real-time SOC monitoring ✔ Zero-trust identity and access controls ✔ Automated patching and security updates ✔ Endpoint protection across laptops, servers, and mobile devices ✔ Secure cloud configuration and policy enforcement ✔ Transparent pricing with no hidden fees ✔ A year-round cybersecurity roadmap ✔ A guarantee of continuous security improvement',
-                'Cybersecurity shouldn\'t feel overwhelming. But most organizations deal with fragmented tools, reactive support, and constant uncertainty. The result? Gaps and vulnerabilities no one notices until it\'s too late.',
-                '❌ Outdated antivirus or unmanaged endpoints ❌ Weak or reused passwords across the company ❌ No centralized monitoring or alerting ❌ Employees falling for phishing attacks ❌ Unpatched systems and insecure cloud apps ❌ Vendors who don\'t understand compliance requirements',
+                'Arden Logics delivers modern, adaptive cybersecurity built to defend your organization from today\'s threats and tomorrow\'s unknowns.',
+                'From endpoint protection to full threat monitoring, we secure your systems, data, and people with solutions that scale effortlessly.',
                 'Security doesn\'t have to be this difficult — it just has to be done right.',
             ]
         },
@@ -1453,7 +1452,57 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 { value: '92%', label: 'Reduction in successful phishing attempts with layered protection.' },
                 { value: '3.5x', label: 'Faster incident response with automated alert triaging.' },
             ]
-        }
+        },
+        whyArdenContent: {
+            problemTitle: 'Cybersecurity shouldn\'t feel overwhelming.',
+            problemSubtitle: 'But most organizations deal with fragmented tools, reactive support, and constant uncertainty. The result? Gaps and vulnerabilities no one notices until it\'s too late.',
+            painPoints: [
+                'Outdated antivirus or unmanaged endpoints',
+                'Weak or reused passwords across the company',
+                'No centralized monitoring or alerting',
+                'Employees falling for phishing attacks',
+                'Unpatched systems and insecure cloud apps',
+                'Vendors who don\'t understand compliance requirements',
+            ],
+            solutionTitle: 'Experience cybersecurity built for real defense.',
+            solutionSubtitle: 'When your organization is protected the right way, you gain control, clarity, and confidence. With Arden Logics, you get:',
+            benefits: [
+                'Real-time SOC monitoring',
+                'Zero-trust identity and access controls',
+                'Automated patching and security updates',
+                'Endpoint protection across laptops, servers, and mobile devices',
+                'Secure cloud configuration and policy enforcement',
+                'Transparent pricing with no hidden fees',
+                'A year-round cybersecurity roadmap',
+                'A guarantee of continuous security improvement',
+            ],
+            differenceText: 'Security doesn\'t have to be this difficult — it just has to be done right.',
+            differenceButtonText: 'Explore the features',
+            frameworkTitle: 'Our Proven Cybersecurity Framework',
+            frameworkSubtitle: 'We build security that evolves with your business.',
+            frameworkSteps: [
+                {
+                    number: '1',
+                    title: 'Assess & Identify',
+                    description: 'We perform full security assessments: endpoints, cloud apps, network weaknesses, identity risks, user behavior, and compliance gaps.',
+                },
+                {
+                    number: '2',
+                    title: 'Secure & Configure',
+                    description: 'We deploy the right security stack — EDR, MFA, logging, policies, segmentation, backups, and email filtering — all tailored to your environment.',
+                },
+                {
+                    number: '3',
+                    title: 'Monitor & Detect',
+                    description: 'Our systems and team monitor your infrastructure 24/7, catching threats instantly and validating alerts before they become incidents.',
+                },
+                {
+                    number: '4',
+                    title: 'Respond & Improve',
+                    description: 'We isolate threats, remediate issues, patch vulnerabilities, and continuously enhance your security posture month after month.',
+                },
+            ],
+        },
     },
 }
 

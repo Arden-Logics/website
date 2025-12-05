@@ -188,7 +188,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                         href="/about"
                         onClick={closeMenu}
                         className="flex items-center justify-between px-4 py-3 text-lg">
-                        Who we are
+                        Company
                     </Link>
                 </AccordionItem>
             </Accordion>
@@ -286,7 +286,7 @@ const NavMenu = () => {
                 <NavigationMenuItem>
                     <Link href="/about" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Who we are
+                            Company
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
