@@ -90,7 +90,7 @@ export default function ServicesDiagonal() {
         <div className="mb-16 text-center">
           <p className="text-primary font-semibold tracking-wide uppercase text-sm mb-3">Our Expertise</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Industries
+            Solutions for every industry
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Comprehensive IT services designed to transform and protect your business

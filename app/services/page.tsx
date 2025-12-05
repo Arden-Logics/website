@@ -3,6 +3,7 @@ import ServicesDiagonal from "@/components/services-diagonal";
 import ServicesExpandGrid from "@/components/services-expand-grid";
 import ServicesWhyUs from "@/components/services-why-us";
 import CTASection from "@/components/cta-section";
+import IndustriesSection from "@/components/industries-section";
 
 export default function ServicesPage() {
     return (
@@ -16,7 +17,7 @@ export default function ServicesPage() {
             {/* Why Choose Us */}
             <ServicesWhyUs />
 
-            <ServicesDiagonal />
+            <IndustriesSection />
 
             {/* CTA Section */}
             <CTASection 

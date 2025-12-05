@@ -275,6 +275,35 @@ export interface ServiceContent {
             label: string
         }>
     }
+    // Security-specific fields
+    painPoints?: string[]
+    whyArdenBenefits?: Array<{
+        title: string
+        description: string
+    }>
+    processSteps?: Array<{
+        number: string
+        title: string
+        description: string
+    }>
+    // Service-specific Why Arden content
+    whyArdenContent?: {
+        problemTitle: string
+        problemSubtitle: string
+        painPoints: string[]
+        solutionTitle: string
+        solutionSubtitle: string
+        benefits: string[]
+        differenceText: string
+        differenceButtonText: string
+        frameworkTitle: string
+        frameworkSubtitle: string
+        frameworkSteps: Array<{
+            number: string
+            title: string
+            description: string
+        }>
+    }
 }
 
 export interface SuccessStory {
@@ -549,8 +578,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     },
     'network-cabling': {
         title: 'Network & Cabling',
-        subtitle: 'Reliable Infrastructure from the Ground Up',
-        description: 'Professional cabling and network design that deliver speed, stability, and long-term scalability. Arden Logics builds infrastructure designed to support new users, devices, and applications with organized cable management and future-ready planning.',
+        subtitle: 'Network & Cabling Solutions That Meet You Where You Are',
+        description: 'Arden Logics builds fast, reliable, and scalable network infrastructure with structured cabling solutions designed to support your organization today and grow with you tomorrow.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
         features: [
@@ -577,8 +606,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         ],
         heroSection: {
             breadcrumb: 'Solutions / Network Infrastructure',
-            title: 'Reliable Infrastructure from the Ground Up',
-            description: 'Professional cabling and network design that deliver speed, stability, and long-term scalability. Arden Logics builds infrastructure designed to support new users, devices, and applications with organized cable management and future-ready planning.',
+            title: 'Network & Cabling Solutions That Meet You Where You Are',
+            description: 'Arden Logics builds fast, reliable, and scalable network infrastructure with structured cabling solutions designed to support your organization today and grow with you tomorrow.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
             imageSrc: '/arden-logo.png',
@@ -626,39 +655,104 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Growth-ready infrastructure',
             },
         ],
+        featuresSectionTitle: 'Network & Cabling Solutions That Meet You Where You Are',
+        featuresSectionDescription: 'Arden Logics builds fast, reliable, and scalable network infrastructure with structured cabling solutions designed to support your organization today and grow with you tomorrow.',
+        contentFeatures: [
+            {
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                title: 'Seamless Cabling Integration',
+                description: 'Our cabling solutions connect cleanly with your existing environments from offices to warehouses, clinics, classrooms, and multi-site enterprises. Fast installation, clean routing, and zero workflow disruption.',
+                linkText: 'Explore cabling integrations →',
+                linkHref: '#',
+            },
+            {
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+                title: 'Scale Network Performance as You Grow',
+                description: 'Your network shouldn\'t slow you down. Arden designs cabling and switching infrastructure that supports future expansion more users, more devices, and more bandwidth without rework or downtime.',
+                linkText: 'Learn how scalable networks work →',
+                linkHref: '#',
+            },
+            {
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                title: 'Adaptive Network Design',
+                description: 'Every environment is different. We engineer cabling paths and network layouts based on location, building structure, usage patterns, and device density to ensure stable, high-performance connectivity.',
+                linkText: 'Learn more about adaptive network design →',
+                linkHref: '#',
+            },
+            {
+                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
+                title: 'Installation That Just Works',
+                description: 'We take the complexity out of network buildouts. Our team handles planning, labeling, routing, testing, certification, and cleanup so your cabling and network come online smoothly with minimal disruption.',
+                linkText: 'Discover hassle-free installation →',
+                linkHref: '#',
+            },
+            {
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'Skip the Bottlenecks, Not Reliability',
+                description: 'Well-designed cabling means fewer outages, fewer dead zones, and consistent network quality. We eliminate bad wiring, poor terminations, and messy legacy cabling to improve performance everywhere.',
+                linkText: 'See how clean cabling improves reliability →',
+                linkHref: '#',
+            },
+            {
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                title: 'Cabling That Powers Every System You Use',
+                description: 'Our cabling supports everything switches, APs, VoIP phones, cameras, access control, servers, AV systems, sensors, and more. Whether it\'s copper, fiber, backbone, or rack-to-rack connectivity, we build it right.',
+                linkText: 'Secure and scale every connection →',
+                linkHref: '#',
+            },
+        ],
+        contentSection: {
+            title: 'Enterprise-Grade Network & Structured Cabling Designed for Performance at Scale',
+            highlights: [
+                'Arden Logics delivers mission-critical network and cabling infrastructure engineered for resilience, scalability, and high availability ensuring your organization stays connected and operational across every environment.',
+                'Arden Logics builds network foundations that support large-scale operations, high-density device environments, and bandwidth-intensive workloads. Every installation follows industry standards, ensuring predictable performance and long-term reliability.',
+                'Our structured cabling solutions are engineered for operational continuity with certified terminations, optimized routing, redundant pathways, and properly balanced switching architecture that mitigates single points of failure.',
+                'We take a lifecycle approach to infrastructure: from assessment and design to installation, testing, and ongoing management. This ensures your network can scale seamlessly as user demands, locations, and mission-critical systems continue to grow.',
+                'Arden Logics delivers infrastructure that is secure, compliant, and future-ready enabling your organization to operate with speed, stability, and confidence across all business units.',
+            ]
+        },
+        metricsSection: {
+            title: 'Enterprise-Grade Network & Cabling Infrastructure',
+            metrics: [
+                { value: '99.99%', label: 'Designed uptime with compliant, standards-based installations' },
+                { value: '24/7', label: 'Monitoring, support, and rapid dispatch for critical environments' },
+                { value: '40%', label: 'Increase in throughput with optimized switching & cable architecture' },
+                { value: '12×', label: 'Improved stability after remediation of legacy cabling' },
+            ]
+        }
     },
     'audio-visual': {
         title: 'Audio & Visual Solutions',
-        subtitle: 'Professional AV Solutions for Meetings, Collaboration & Events',
-        description: 'Modern displays, conferencing systems, and audio engineering that elevate communication. Arden Logics delivers seamless integrations with Zoom, Teams, Webex, and hybrid setups with crystal-clear microphones and speakers optimized for every room size.',
+        subtitle: 'AV Solutions That Elevate Every Space',
+        description: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization. From conference rooms to campus-wide systems, we design, install, and support AV environments that work anywhere—and grow with you.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
         features: [
             {
-                title: 'Commercial Display Systems',
-                description: 'High-quality screens for conference rooms, signage, and training spaces.',
+                title: 'Unified AV Integration',
+                description: 'Seamlessly integrates with existing hardware, conferencing platforms, and room technologies.',
                 icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Conference Room Audio',
-                description: 'Crystal-clear microphones and speakers optimized for every room size.',
+                title: 'Scalable Multi-Location',
+                description: 'Add rooms, displays, or conference systems anytime without re-engineering.',
                 icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Video Conferencing',
-                description: 'Seamless integrations with Zoom, Teams, Webex, and hybrid setups.',
+                title: 'Intelligent Automation',
+                description: 'Automated controls for lighting, audio, displays, and conferencing.',
                 icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Installation & Integration',
-                description: 'Clean, professional installs configured to your exact space and workflow.',
+                title: 'Future-Ready Designs',
+                description: 'Built on HDMI 2.1, 4K/8K, PoE, IP-based AV, and cloud-connected management.',
                 icon: <Cpu className="stroke-foreground fill-foreground/10" />,
             },
         ],
         heroSection: {
             breadcrumb: 'Solutions / Audio Visual',
-            title: 'Professional AV Solutions for Meetings, Collaboration & Events',
-            description: 'Modern displays, conferencing systems, and audio engineering that elevate communication. Arden Logics delivers seamless integrations with Zoom, Teams, Webex, and hybrid setups with crystal-clear microphones and speakers optimized for every room size.',
+            title: 'AV Solutions That Elevate Every Space',
+            description: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization. From conference rooms to campus-wide systems, we design, install, and support AV environments that work anywhere—and grow with you.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
             imageSrc: '/arden-logo.png',
@@ -666,79 +760,192 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         },
         sections: [
             {
-                id: 'commercial-displays',
-                navLabel: 'Commercial Display Systems',
-                title: 'Commercial Display Systems',
-                description: 'High-quality screens for conference rooms, signage, and training spaces.',
+                id: 'unified-integration',
+                navLabel: 'Unified AV Integration',
+                title: 'Unified AV Integration',
+                description: 'Our AV systems seamlessly integrate with your existing hardware, conferencing platforms, and room technologies. Fast deployment, minimal downtime, and engineered for long-term reliability.',
                 linkText: 'Contact Us',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Commercial display systems',
+                imageAlt: 'Unified AV Integration',
             },
             {
-                id: 'conference-audio',
-                navLabel: 'Conference Room Audio',
-                title: 'Conference Room Audio',
-                description: 'Crystal-clear microphones and speakers optimized for every room size.',
+                id: 'scalable-av',
+                navLabel: 'Scalable AV Solutions',
+                title: 'Scalable AV for Multi-Location Growth',
+                description: 'Whether you\'re outfitting a single boardroom or standardizing across dozens of sites, our AV designs scale effortlessly. Add rooms, displays, or conference systems anytime without re-engineering your entire setup.',
                 linkText: 'Contact Us',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Conference room audio',
+                imageAlt: 'Scalable AV Solutions',
             },
             {
-                id: 'video-conferencing',
-                navLabel: 'Video Conferencing',
-                title: 'Video Conferencing',
-                description: 'Seamless integrations with Zoom, Teams, Webex, and hybrid setups.',
+                id: 'room-automation',
+                navLabel: 'Room Automation',
+                title: 'Intelligent Room Automation',
+                description: 'Automated controls for lighting, audio, displays, and conferencing ensure every meeting starts smoothly. Touchless options, presets, and monitoring reduce support tickets and improve the user experience.',
                 linkText: 'Contact Us',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Video conferencing',
+                imageAlt: 'Room Automation',
             },
             {
-                id: 'installation',
-                navLabel: 'Installation & Integration',
-                title: 'Installation & Integration',
-                description: 'Clean, professional installs configured to your exact space and workflow.',
+                id: 'user-friendly',
+                navLabel: 'User-Friendly Operation',
+                title: 'Simple, User-Friendly Operation',
+                description: 'Your team shouldn\'t need IT expertise to run a meeting. Our AV environments are designed around intuitive controls so users can connect, present, and collaborate in seconds.',
                 linkText: 'Contact Us',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'AV installation',
+                imageAlt: 'User-Friendly AV',
             },
         ],
+        featuresSectionTitle: 'AV Solutions That Meet You Where You Are',
+        featuresSectionDescription: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization.',
+        contentFeatures: [
+            {
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+                title: 'Unified AV Integration',
+                description: 'Our AV systems seamlessly integrate with your existing hardware, conferencing platforms, and room technologies. Fast deployment, minimal downtime, and engineered for long-term reliability.',
+                linkText: 'Explore AV integrations →',
+                linkHref: '#',
+            },
+            {
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                title: 'Scalable AV for Multi-Location Growth',
+                description: 'Whether you\'re outfitting a single boardroom or standardizing across dozens of sites, our AV designs scale effortlessly. Add rooms, displays, or conference systems anytime without re-engineering your entire setup.',
+                linkText: 'See scalable AV solutions →',
+                linkHref: '#',
+            },
+            {
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                title: 'Intelligent Room Automation',
+                description: 'Automated controls for lighting, audio, displays, and conferencing ensure every meeting starts smoothly. Touchless options, presets, and monitoring reduce support tickets and improve the user experience.',
+                linkText: 'Learn about room automation →',
+                linkHref: '#',
+            },
+            {
+                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
+                title: 'Simple, User-Friendly Operation',
+                description: 'Your team shouldn\'t need IT expertise to run a meeting. Our AV environments are designed around intuitive controls so users can connect, present, and collaborate in seconds.',
+                linkText: 'View user-friendly AV →',
+                linkHref: '#',
+            },
+            {
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                title: 'Future-Ready Designs',
+                description: 'We build AV systems on modern standards—HDMI 2.1, 4K/8K support, PoE, IP-based AV, and cloud-connected management—so your investments stay relevant for years.',
+                linkText: 'Explore future-ready AV →',
+                linkHref: '#',
+            },
+            {
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'AV Security & Reliability',
+                description: 'Every AV deployment includes enterprise security controls, network segmentation best practices, and remote diagnostics to ensure uptime and protect your environment.',
+                linkText: 'Review AV security standards →',
+                linkHref: '#',
+            },
+        ],
+        contentSection: {
+            title: 'Building the Next Generation of Smart AV Environments',
+            highlights: [
+                'Our AV platform combines cutting-edge display technologies, cloud-connected conferencing systems, and intelligent room controls to unify your communication experience.',
+                'With automated diagnostics and remote monitoring, your IT team can prevent issues before they occur—keeping rooms online and ready for every meeting.',
+                'Our comprehensive suite includes digital displays, meeting room systems, multi-room audio, enterprise signage, and broadcast-grade solutions for hybrid collaboration.',
+                'Every system is engineered with enterprise-grade security, network segmentation, and compliance built in. You get scalable, standardized AV environments that minimize downtime, reduce support overhead, and enhance user satisfaction.',
+            ]
+        },
+        metricsSection: {
+            title: 'Building the next generation of smart AV environments',
+            metrics: [
+                { value: '99.9%', label: 'System uptime' },
+                { value: '24/7', label: 'Live support & monitoring' },
+                { value: '3x', label: 'Faster room startup times' },
+                { value: '40%', label: 'Reduction in AV-related tickets' },
+            ]
+        },
+        // AV-specific Why Arden content
+        whyArdenContent: {
+            problemTitle: 'Working with AV Should Be Seamless.',
+            problemSubtitle: 'Yet many AV solutions create more frustration than value. Poor installs, mismatched equipment, and untrained vendors lead to issues that should never happen.',
+            painPoints: [
+                'Unreliable conference rooms',
+                'Confusing or outdated equipment',
+                'Vendors who don\'t understand IT environments',
+                'No standardization across rooms or locations',
+                'Frequent downtime or "no audio/no video" issues',
+            ],
+            solutionTitle: 'Experience AV That Just Works.',
+            solutionSubtitle: 'Imagine AV that never slows your meetings down. With Arden Logics, you get:',
+            benefits: [
+                'Standardized AV across every room & location',
+                'Enterprise-grade hardware from Sony, Samsung, QSC, Shure, Poly, Logitech & more',
+                'Seamless integration with Zoom, Teams, Google Meet, Webex',
+                'Remote monitoring & instant support',
+                'Predictable, all-inclusive pricing & lifecycle planning',
+                'A 3-year AV roadmap tailored to your growth',
+                'Professional installation aligned with IT best practices',
+            ],
+            differenceText: 'This is the Arden AV Difference.',
+            differenceButtonText: 'Explore the Arden AV Difference',
+            frameworkTitle: 'Our Proven AV Deployment Framework',
+            frameworkSubtitle: 'We start with structure but tailor every system to your space.',
+            frameworkSteps: [
+                {
+                    number: '1',
+                    title: 'Envision & Align',
+                    description: 'We assess your spaces, goals, and workflows to design AV systems that elevate communication and collaboration.',
+                },
+                {
+                    number: '2',
+                    title: 'Build & Prepare',
+                    description: 'We install, configure, and test your displays, audio, control systems, and conferencing technologies for flawless performance.',
+                },
+                {
+                    number: '3',
+                    title: 'Launch & Refine',
+                    description: 'We validate real-world performance, train your team, and fine-tune every room for clarity and reliability.',
+                },
+                {
+                    number: '4',
+                    title: 'Optimize & Grow',
+                    description: 'We provide ongoing AV support, monitoring, updates, and future planning so your technology evolves with your business.',
+                },
+            ],
+        },
     },
     'camera-access-security': {
         title: 'Camera Access & Security',
-        subtitle: 'Modern Physical Security to Protect Your People & Property',
-        description: 'Advanced surveillance, access control, and monitoring systems for real-time visibility and protection. Arden Logics delivers cloud and remote monitoring accessible from anywhere, with secure and compliant storage with encrypted retention.',
+        subtitle: 'Protect What Matters Most With Intelligent Physical Security',
+        description: 'Modern security isn\'t just cameras on walls — it\'s an integrated, intelligent system that keeps people safe, protects assets, and gives you real-time visibility across every facility.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
         features: [
             {
-                title: 'High-Definition Surveillance',
-                description: 'Clear, reliable video capture for any location or lighting condition.',
+                title: 'Connected Camera Ecosystems',
+                description: 'Modern camera systems that link seamlessly with your network, VMS, and cloud platforms.',
                 icon: <Camera className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Access Control Systems',
-                description: 'Manage doors, credentials, and permissions with precision.',
-                icon: <Camera className="stroke-foreground fill-foreground/10" />,
+                title: 'Adaptive Access Management',
+                description: 'Automated door schedules, mobile credentials, and role-based access.',
+                icon: <Fingerprint className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Cloud & Remote Monitoring',
-                description: 'View cameras and logs from anywhere, on any device.',
-                icon: <Camera className="stroke-foreground fill-foreground/10" />,
+                title: 'AI-Assisted Threat Detection',
+                description: 'Real-time alerts for motion, intrusion, loitering, and more.',
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Secure, Compliant Storage',
-                description: 'Encrypted retention and audit-ready security logging.',
-                icon: <Camera className="stroke-foreground fill-foreground/10" />,
+                title: 'Future-Secure Infrastructure',
+                description: 'Cloud VMS, encrypted streams, and ONVIF-compatible hardware.',
+                icon: <Lock className="stroke-foreground fill-foreground/10" />,
             },
         ],
         heroSection: {
             breadcrumb: 'Solutions / Physical Security',
-            title: 'Modern Physical Security to Protect Your People & Property',
-            description: 'Advanced surveillance, access control, and monitoring systems for real-time visibility and protection. Arden Logics delivers cloud and remote monitoring accessible from anywhere, with secure and compliant storage with encrypted retention.',
+            title: 'Protect What Matters Most With Intelligent Physical Security',
+            description: 'Modern security isn\'t just cameras on walls — it\'s an integrated, intelligent system that keeps people safe, protects assets, and gives you real-time visibility across every facility.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
             imageSrc: '/arden-logo.png',
@@ -746,44 +953,169 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         },
         sections: [
             {
-                id: 'hd-surveillance',
-                navLabel: 'High-Definition Surveillance',
-                title: 'High-Definition Surveillance',
-                description: 'Clear, reliable video capture for any location or lighting condition.',
-                linkText: 'Contact Us',
+                id: 'camera-ecosystems',
+                navLabel: 'Camera Ecosystems',
+                title: 'Connected Camera Ecosystems',
+                description: 'Modern camera systems that link seamlessly with your network, VMS, and cloud platforms. Easy deployment and instant remote visibility from any device.',
+                linkText: 'Explore camera systems',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'HD surveillance',
+                imageAlt: 'Connected camera systems',
             },
             {
-                id: 'access-control',
-                navLabel: 'Access Control Systems',
-                title: 'Access Control Systems',
-                description: 'Manage doors, credentials, and permissions with precision.',
-                linkText: 'Contact Us',
+                id: 'access-management',
+                navLabel: 'Access Management',
+                title: 'Adaptive Access Management',
+                description: 'Automated door schedules, mobile credentials, and role-based access ensure your people get where they need to be — and no one else does.',
+                linkText: 'Learn about access control',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Access control systems',
+                imageAlt: 'Access management',
             },
             {
-                id: 'remote-monitoring',
-                navLabel: 'Cloud & Remote Monitoring',
-                title: 'Cloud & Remote Monitoring',
-                description: 'View cameras and logs from anywhere, on any device.',
-                linkText: 'Contact Us',
+                id: 'threat-detection',
+                navLabel: 'AI Detection',
+                title: 'AI-Assisted Threat Detection',
+                description: 'Real-time alerts for motion, intrusion, loitering, license plates, crowding, tailgating, and more — powered by onboard analytics.',
+                linkText: 'See AI detection features',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Remote monitoring',
+                imageAlt: 'AI threat detection',
             },
             {
-                id: 'secure-storage',
-                navLabel: 'Secure, Compliant Storage',
-                title: 'Secure, Compliant Storage',
-                description: 'Encrypted retention and audit-ready security logging.',
-                linkText: 'Contact Us',
+                id: 'credential-control',
+                navLabel: 'Credential Control',
+                title: 'Effortless Credential Control',
+                description: 'Quickly add, remove, or modify credentials for staff, contractors, and visitors across all locations.',
+                linkText: 'Manage credentials',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Secure storage',
+                imageAlt: 'Credential control',
+            },
+        ],
+        featuresSectionTitle: 'Intelligent Physical Security Solutions',
+        featuresSectionDescription: 'Arden Logics delivers comprehensive security systems that protect your people, assets, and facilities with modern technology.',
+        contentFeatures: [
+            {
+                icon: <Camera className="stroke-foreground fill-foreground/10" />,
+                title: 'Connected camera ecosystems',
+                description: 'Modern camera systems that link seamlessly with your network, VMS, and cloud platforms. Easy deployment and instant remote visibility from any device.',
+                linkText: 'Explore camera systems →',
+                linkHref: '#contact',
+            },
+            {
+                icon: <Fingerprint className="stroke-foreground fill-foreground/10" />,
+                title: 'Adaptive access management',
+                description: 'Automated door schedules, mobile credentials, and role-based access ensure your people get where they need to be — and no one else does.',
+                linkText: 'Learn about access control →',
+                linkHref: '#contact',
+            },
+            {
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'AI-assisted threat detection',
+                description: 'Real-time alerts for motion, intrusion, loitering, license plates, crowding, tailgating, and more — powered by onboard analytics.',
+                linkText: 'See AI detection features →',
+                linkHref: '#contact',
+            },
+            {
+                icon: <KeyRound className="stroke-foreground fill-foreground/10" />,
+                title: 'Effortless credential control',
+                description: 'Quickly add, remove, or modify credentials for staff, contractors, and visitors across all locations.',
+                linkText: 'Manage credentials →',
+                linkHref: '#contact',
+            },
+            {
+                icon: <Lock className="stroke-foreground fill-foreground/10" />,
+                title: 'Future-secure infrastructure',
+                description: 'Cloud VMS, encrypted streams, PoE access readers, and ONVIF-compatible hardware built for long-term reliability.',
+                linkText: 'See modern security tech →',
+                linkHref: '#contact',
+            },
+            {
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                title: 'Security that integrates everywhere',
+                description: 'Tie cameras, access, alarms, and sensors into one unified management dashboard for full situational awareness.',
+                linkText: 'Explore unified security →',
+                linkHref: '#contact',
+            },
+        ],
+        contentSection: {
+            title: 'Outdated Security Creates Invisible Risks',
+            highlights: [
+                'Threats don\'t announce themselves — and gaps in your physical security can lead to serious consequences.',
+                'Most businesses deal with issues like blind spots & poor camera placement, outdated DVR/NVR systems with no backups, and unsecured access points & shared badges.',
+                'Organizations also struggle with no unified monitoring or alerting, inconsistent installs across locations, and vendors who don\'t understand IT & security requirements.',
+                'If these feel familiar, you\'re not alone — and you don\'t have to live with them.',
+            ]
+        },
+        metricsSection: {
+            title: 'Security That Delivers Measurable Protection',
+            metrics: [
+                { value: '99.9%', label: 'System Uptime' },
+                { value: '72%', label: 'Faster Incident Response' },
+                { value: '48%', label: 'Reduction in Physical Security Risks' },
+                { value: '24/7', label: 'Monitoring & Alerts' },
+            ]
+        },
+        painPoints: [
+            'Blind spots & poor camera placement',
+            'Outdated DVR/NVR systems with no backups',
+            'Unsecured access points & shared badges',
+            'No unified monitoring or alerting',
+            'Inconsistent installs across locations',
+            'Vendors who don\'t understand IT & security requirements',
+        ],
+        whyArdenBenefits: [
+            {
+                title: 'IT-Aligned Installation Standards',
+                description: 'Cabling, networking, switching, segmentation — done correctly.',
+            },
+            {
+                title: 'Enterprise Hardware Partners',
+                description: 'Axis, Verkada, Hanwha, Avigilon, Brivo, OpenPath, Ubiquiti & more.',
+            },
+            {
+                title: 'Unified Security Ecosystems',
+                description: 'One pane of glass for cameras, access control, and alerts.',
+            },
+            {
+                title: 'Remote Health Monitoring',
+                description: 'Know instantly when something goes offline.',
+            },
+            {
+                title: 'Predictable, Transparent Pricing',
+                description: 'No hidden fees, no surprise add-ons, no confusing contracts.',
+            },
+            {
+                title: 'Proactive Security Roadmaps',
+                description: 'Plan ahead instead of reacting after the fact.',
+            },
+        ],
+        processSteps: [
+            {
+                number: '1',
+                title: 'Security Assessment & Mapping',
+                description: 'We walk your facility, identify vulnerabilities, and design coverage using industry standards and risk analysis.',
+            },
+            {
+                number: '2',
+                title: 'System Engineering & Network Architecture',
+                description: 'We build a secure backbone for cameras, access controllers, and cloud services using proper VLANs, PoE budgets, and redundant paths.',
+            },
+            {
+                number: '3',
+                title: 'Deployment With Precision',
+                description: 'Our technicians install cameras, readers, sensors, cabling, and controllers with clean, professional workmanship.',
+            },
+            {
+                number: '4',
+                title: 'Validation, Training & Hardening',
+                description: 'We test every device, configure alerts, train your staff, and harden your system to protect against tampering and cyber threats.',
+            },
+            {
+                number: '5',
+                title: 'Ongoing Monitoring & Support',
+                description: 'Firmware updates, alerts, audits, and rapid-response support keep your system healthy and secure 24/7.',
             },
         ],
     },
@@ -929,87 +1261,199 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 { value: '15x', label: 'Faster call connection times compared to legacy on-prem systems.' },
                 { value: '92%', label: 'Average reduction in dropped calls after migrating to Arden Logics VoIP.' },
             ]
-        }
+        },
+        whyArdenContent: {
+            problemTitle: 'Communication should be effortless.',
+            problemSubtitle: 'Yet most phone providers make it frustrating. Delays, outages, and inflexible systems slow your team down and cost your business money. With Arden Logics VoIP, communication becomes a strategic advantage.',
+            painPoints: [
+                'Dropped calls and poor voice quality',
+                'Complicated phone systems no one understands',
+                'Slow support when something breaks',
+                'Systems that can\'t grow with your business',
+            ],
+            solutionTitle: 'Experience crystal-clear communication.',
+            solutionSubtitle: 'Imagine a phone system that just works every call, every device, every location. With Arden Logics VoIP, you get:',
+            benefits: [
+                'HD-quality voice and video every time',
+                'A system that scales as fast as you grow',
+                'Unlimited support and 24/7 monitoring',
+                'Predictable, all-inclusive monthly pricing',
+                'Seamless mobile + desk phone integration',
+                'Advanced features like call queues, IVRs, and SMS',
+                'Zero-downtime migration to our platform',
+            ],
+            differenceText: 'This is the Arden Logics VoIP Difference.',
+            differenceButtonText: 'Explore VoIP Solutions',
+            frameworkTitle: 'Our Proven VoIP Deployment Framework',
+            frameworkSubtitle: 'We ensure a seamless transition to modern cloud communication.',
+            frameworkSteps: [
+                {
+                    number: '1',
+                    title: 'Assess & Plan',
+                    description: 'We evaluate your current phone systems, call flows, and communication needs to design the ideal VoIP solution.',
+                },
+                {
+                    number: '2',
+                    title: 'Configure & Provision',
+                    description: 'We set up your cloud phone system, configure call routing, auto-attendants, and provision all devices.',
+                },
+                {
+                    number: '3',
+                    title: 'Migrate & Port',
+                    description: 'We handle number porting and migration with zero downtime, ensuring business continuity throughout.',
+                },
+                {
+                    number: '4',
+                    title: 'Train & Support',
+                    description: 'We train your team and provide ongoing 24/7 support to keep your communications running flawlessly.',
+                },
+            ],
+        },
     },
     'cybersecurity': {
         title: 'Cyber Security',
-        subtitle: 'Enterprise-Grade Protection for a Modern Threat Landscape',
-        description: 'Layered defenses, continuous monitoring, and zero-trust security built to secure every user, device, and system. Arden Logics delivers 24/7 monitoring and rapid incident remediation with HIPAA-, FERPA-, and industry-ready controls for audit-friendly security.',
+        subtitle: 'Cybersecurity that evolves with your business.',
+        description: 'Arden Logics delivers modern, adaptive cybersecurity built to defend your organization from today\'s threats and tomorrow\'s unknowns. From endpoint protection to full threat monitoring, we secure your systems, data, and people with solutions that scale effortlessly.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
         features: [
             {
-                title: 'Threat Detection & Response',
-                description: '24/7 monitoring and rapid incident remediation.',
+                title: 'Advanced Threat Protection',
+                description: 'Real-time detection of malware, ransomware, phishing attempts, and zero-day attacks across every device.',
                 icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Zero-Trust Controls',
-                description: 'Identity, access, and device policies that reduce risk across your environment.',
-                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'Identity & Access Security',
+                description: 'Zero-trust authentication, role-based permissions, and identity controls.',
+                icon: <Fingerprint className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Vulnerability Management',
-                description: 'Ongoing scanning and remediation to close security gaps.',
-                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'Continuous Vulnerability Scanning',
+                description: 'Automated scans detect system weaknesses, misconfigurations, and exploitable risks.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
             },
             {
-                title: 'Compliance Alignment',
-                description: 'HIPAA-, FERPA-, and industry-ready controls for audit-friendly security.',
-                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'Compliance-Ready Protection',
+                description: 'Built-in support for HIPAA, CJIS, PCI, NIST, FERPA, and SOC2 controls.',
+                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
             },
         ],
         heroSection: {
             breadcrumb: 'Solutions / Cybersecurity',
-            title: 'Enterprise-Grade Protection for a Modern Threat Landscape',
-            description: 'Layered defenses, continuous monitoring, and zero-trust security built to secure every user, device, and system. Arden Logics delivers 24/7 monitoring and rapid incident remediation with HIPAA-, FERPA-, and industry-ready controls for audit-friendly security.',
+            title: 'Cybersecurity that evolves with your business.',
+            description: 'Arden Logics delivers modern, adaptive cybersecurity built to defend your organization from today\'s threats and tomorrow\'s unknowns. From endpoint protection to full threat monitoring, we secure your systems, data, and people with solutions that scale effortlessly.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
             imageSrc: '/arden-logo.png',
-            imageAlt: 'Enterprise security solutions',
+            imageAlt: 'Enterprise cybersecurity solutions',
         },
         sections: [
             {
-                id: 'threat-detection',
-                navLabel: 'Threat Detection & Response',
-                title: 'Threat Detection & Response',
-                description: '24/7 monitoring and rapid incident remediation.',
-                linkText: 'Contact Us',
+                id: 'assess-identify',
+                navLabel: '1. Assess & Identify',
+                title: '1. Assess & Identify',
+                description: 'We perform full security assessments: endpoints, cloud apps, network weaknesses, identity risks, user behavior, and compliance gaps.',
+                linkText: 'Learn More',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Threat detection',
+                imageAlt: 'Security assessment',
             },
             {
-                id: 'zero-trust',
-                navLabel: 'Zero-Trust Controls',
-                title: 'Zero-Trust Controls',
-                description: 'Identity, access, and device policies that reduce risk across your environment.',
-                linkText: 'Contact Us',
+                id: 'secure-configure',
+                navLabel: '2. Secure & Configure',
+                title: '2. Secure & Configure',
+                description: 'We deploy the right security stack — EDR, MFA, logging, policies, segmentation, backups, and email filtering — all tailored to your environment.',
+                linkText: 'Learn More',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Zero-trust controls',
+                imageAlt: 'Security configuration',
             },
             {
-                id: 'vulnerability',
-                navLabel: 'Vulnerability Management',
-                title: 'Vulnerability Management',
-                description: 'Ongoing scanning and remediation to close security gaps.',
-                linkText: 'Contact Us',
+                id: 'monitor-detect',
+                navLabel: '3. Monitor & Detect',
+                title: '3. Monitor & Detect',
+                description: 'Our systems and team monitor your infrastructure 24/7, catching threats instantly and validating alerts before they become incidents.',
+                linkText: 'Learn More',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Vulnerability management',
+                imageAlt: 'Security monitoring',
             },
             {
-                id: 'compliance',
-                navLabel: 'Compliance Alignment',
-                title: 'Compliance Alignment',
-                description: 'HIPAA-, FERPA-, and industry-ready controls for audit-friendly security.',
-                linkText: 'Contact Us',
+                id: 'respond-improve',
+                navLabel: '4. Respond & Improve',
+                title: '4. Respond & Improve',
+                description: 'We isolate threats, remediate issues, patch vulnerabilities, and continuously enhance your security posture month after month.',
+                linkText: 'Learn More',
                 linkHref: '#contact',
                 imageSrc: '/arden-logo.png',
-                imageAlt: 'Compliance',
+                imageAlt: 'Incident response',
             },
         ],
+        featuresSectionTitle: 'Advanced threat protection',
+        featuresSectionDescription: 'Real-time detection of malware, ransomware, phishing attempts, and zero-day attacks across every device.',
+        contentFeatures: [
+            {
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                title: 'Advanced threat protection',
+                description: 'Real-time detection of malware, ransomware, phishing attempts, and zero-day attacks across every device.',
+                linkText: 'Explore threat protection →',
+                linkHref: '#',
+            },
+            {
+                icon: <Fingerprint className="stroke-foreground fill-foreground/10" />,
+                title: 'Identity & access security',
+                description: 'Zero-trust authentication, role-based permissions, and identity controls that ensure the right people access the right systems.',
+                linkText: 'Learn about identity security →',
+                linkHref: '#',
+            },
+            {
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                title: 'Continuous vulnerability scanning',
+                description: 'Automated scans detect system weaknesses, misconfigurations, outdated software, and exploitable risks before attackers find them.',
+                linkText: 'View vulnerability insights →',
+                linkHref: '#',
+            },
+            {
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                title: 'Endpoint monitoring & response',
+                description: 'AI-driven endpoint protection keeps workstations, servers, and mobile devices monitored 24/7 — no manual work required.',
+                linkText: 'See endpoint defense →',
+                linkHref: '#',
+            },
+            {
+                icon: <Lock className="stroke-foreground fill-foreground/10" />,
+                title: 'Cloud & network hardening',
+                description: 'We secure firewalls, cloud apps, servers, and wireless networks with policies, audits, and best practices rooted in zero-trust frameworks.',
+                linkText: 'Strengthen your cloud & network →',
+                linkHref: '#',
+            },
+            {
+                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
+                title: 'Compliance-ready protection',
+                description: 'Built-in support for HIPAA, CJIS, PCI, NIST, FERPA, and SOC2 controls — all with audit-friendly reporting.',
+                linkText: 'Explore compliance services →',
+                linkHref: '#',
+            },
+        ],
+        contentSection: {
+            title: 'Experience cybersecurity built for real defense.',
+            highlights: [
+                'When your organization is protected the right way, you gain control, clarity, and confidence.',
+                'With Arden Logics, you get: ✔ Real-time SOC monitoring ✔ Zero-trust identity and access controls ✔ Automated patching and security updates ✔ Endpoint protection across laptops, servers, and mobile devices ✔ Secure cloud configuration and policy enforcement ✔ Transparent pricing with no hidden fees ✔ A year-round cybersecurity roadmap ✔ A guarantee of continuous security improvement',
+                'Cybersecurity shouldn\'t feel overwhelming. But most organizations deal with fragmented tools, reactive support, and constant uncertainty. The result? Gaps and vulnerabilities no one notices until it\'s too late.',
+                '❌ Outdated antivirus or unmanaged endpoints ❌ Weak or reused passwords across the company ❌ No centralized monitoring or alerting ❌ Employees falling for phishing attacks ❌ Unpatched systems and insecure cloud apps ❌ Vendors who don\'t understand compliance requirements',
+                'Security doesn\'t have to be this difficult — it just has to be done right.',
+            ]
+        },
+        metricsSection: {
+            title: 'Security that delivers measurable resilience',
+            metrics: [
+                { value: '99.99%', label: 'Threat detection uptime across monitored environments.' },
+                { value: '24/7', label: 'Security operations monitoring & rapid-response availability.' },
+                { value: '92%', label: 'Reduction in successful phishing attempts with layered protection.' },
+                { value: '3.5x', label: 'Faster incident response with automated alert triaging.' },
+            ]
+        }
     },
 }
 

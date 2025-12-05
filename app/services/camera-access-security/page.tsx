@@ -1,6 +1,5 @@
-import IndividualServicePage from '@/components/individual-service-page'
+import CameraSecurityPage from '@/components/camera-security-page'
 
 export default function CameraAccessSecurityPage() {
-    return <IndividualServicePage serviceKey="camera-access-security" />
+    return <CameraSecurityPage />
 }
-

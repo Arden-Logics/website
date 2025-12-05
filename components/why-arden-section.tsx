@@ -5,15 +5,16 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { X, Check, Target, Wrench, Rocket, TrendingUp, ShieldAlert, AlertTriangle } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { SERVICE_CONTENT } from '@/constants'
 
-const painPoints = [
+const defaultPainPoints = [
   'Unpredictable billing',
   'Unfriendly technicians',
   'Not focused on mutual success',
   'Lack of comprehensive expertise',
 ]
 
-const benefits = [
+const defaultBenefits = [
   'A partner focused on mutual success',
   'Great people with deep experience',
   'Unlimited service and 24/7 US-based support',
@@ -22,7 +23,7 @@ const benefits = [
   'A cybersecurity service guarantee',
 ]
 
-const frameworkSteps = [
+const defaultFrameworkSteps = [
   {
     number: '1',
     title: 'Envision & Align',
@@ -53,6 +54,8 @@ const frameworkSteps = [
   },
 ]
 
+const stepIcons = [Target, Wrench, Rocket, TrendingUp]
+
 // Floating stat card component
 function StatCard({ 
   label, 
@@ -75,7 +78,36 @@ function StatCard({
   )
 }
 
-export default function WhyArdenSection() {
+interface WhyArdenSectionProps {
+  serviceKey?: string
+}
+
+export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
+  // Get service-specific content if available
+  const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+  const whyArdenContent = serviceContent?.whyArdenContent
+
+  // Use service-specific content or defaults
+  const problemTitle = whyArdenContent?.problemTitle || 'Working with technology should be simple.'
+  const problemSubtitle = whyArdenContent?.problemSubtitle || 'Yet MSPs (managed service providers) often make it more complicated. They create headaches that should never happen.'
+  const painPoints = whyArdenContent?.painPoints || defaultPainPoints
+  
+  const solutionTitle = whyArdenContent?.solutionTitle || 'Experience our simplicity.'
+  const solutionSubtitle = whyArdenContent?.solutionSubtitle || 'Imagine if technology didn\'t keep you up at night. You would get:'
+  const benefits = whyArdenContent?.benefits || defaultBenefits
+  
+  const differenceText = whyArdenContent?.differenceText || 'This is the Arden Difference.'
+  const differenceButtonText = whyArdenContent?.differenceButtonText || 'Explore the Arden Difference'
+  
+  const frameworkTitle = whyArdenContent?.frameworkTitle || 'Our Proven, Flexible Framework'
+  const frameworkSubtitle = whyArdenContent?.frameworkSubtitle || 'We start with structure, but we\'re ready to adapt to your needs.'
+  
+  // Build framework steps with icons
+  const frameworkSteps = whyArdenContent?.frameworkSteps?.map((step, index) => ({
+    ...step,
+    icon: stepIcons[index] || Target,
+    color: 'from-blue-500 to-blue-600',
+  })) || defaultFrameworkSteps
   return (
     <section className="py-20 md:py-32 bg-background overflow-hidden">
       <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
@@ -84,10 +116,10 @@ export default function WhyArdenSection() {
           {/* Left - Text Content */}
           <div className="order-2 lg:order-1">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Working with technology should be simple.
+              {problemTitle}
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Yet MSPs <span className="text-primary font-medium">(managed service providers)</span> often make it more complicated. They create headaches that should never happen.
+              {problemSubtitle}
             </p>
             
             <ul className="space-y-4">
@@ -184,10 +216,10 @@ export default function WhyArdenSection() {
           {/* Right - Text Content */}
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Experience our simplicity.
+              {solutionTitle}
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Imagine if technology didn't keep you up at night. You would get:
+              {solutionSubtitle}
             </p>
             
             <ul className="space-y-4 mb-10">
@@ -201,11 +233,11 @@ export default function WhyArdenSection() {
               ))}
             </ul>
             
-            <p className="text-primary font-semibold mb-6">This is the Arden Difference.</p>
+            <p className="text-primary font-semibold mb-6">{differenceText}</p>
             
             <Button asChild size="lg" className="px-8">
               <Link href="#contact-form">
-                Explore the Arden Difference
+                {differenceButtonText}
               </Link>
             </Button>
           </div>
@@ -214,10 +246,10 @@ export default function WhyArdenSection() {
         {/* Framework Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-          Our Proven, Flexible Framework
+            {frameworkTitle}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            We start with structure, but we're ready to adapt to your needs.
+            {frameworkSubtitle}
           </p>
         </div>
         

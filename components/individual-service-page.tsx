@@ -7,6 +7,7 @@ import ServicesDiagonal from './services-diagonal'
 import ServicesExpandGrid from './services-expand-grid'
 import CallToAction from './call-to-action'
 import ServiceTestimonials from './service-testimonials'
+import IndustriesSection from './industries-section'
 
 
 interface IndividualServicePageProps {
@@ -42,16 +43,6 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
         <div className="min-h-screen flex flex-col">
             {/* Hero section - Service-specific content */}
             <FeaturesHero serviceKey={serviceKey} />
-            {/* <ServiceScrollNav items={navItems} />
-            
-            
-            {content.sections?.map((section, index) => (
-                <ServiceSection
-                    key={section.id}
-                    {...section}
-                    imageOnRight={index % 2 === 0}
-                />
-            ))} */}
 
             <div id="features" className="scroll-mt-32">
                 <Features serviceKey={serviceKey} />
@@ -60,7 +51,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
                 <ContentSection serviceKey={serviceKey} />
             </div>
             <div id="why-us" className="scroll-mt-32">  
-                <WhyArdenSection />
+                <WhyArdenSection serviceKey={serviceKey} />
             </div>
             <div id="testimonials" className="scroll-mt-32">
                 <ServiceTestimonials 
@@ -68,7 +59,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
                 />
             </div>
             <div id="industries">
-                <ServicesDiagonal />
+            <IndustriesSection />
             </div>
             <div id="other-services" className="scroll-mt-32">
                 <ServicesExpandGrid />
