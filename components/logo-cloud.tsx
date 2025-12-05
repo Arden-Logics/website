@@ -8,17 +8,17 @@ import { Stripe } from '@/components/logos/stripe'
 import VisualStudioCode from '@/components/logos/vs-code'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 
-export default function LogoCloud() {
+export default function LogoCloud({ displayText = true }: { displayText?: boolean }) {
     return (
         <section className="bg-muted/50 overflow-hidden py-16">
             <div className="group relative w-full px-6 lg:px-12">
                 <div className="text-center">
-                    <div className="mx-auto max-w-2xl text-balance">
+                    {displayText && <div className="mx-auto max-w-4xl text-balance">
                         <h2 className="text-4xl font-semibold">Trusted by businesses over 50+ industries</h2>
                         <p className="text-muted-foreground mt-4 text-lg">
                         From small businesses to multi-site enterprises, Arden Logics helps clients modernize their technology, strengthen security, and improve productivity through reliable, strategic IT solutions.
                         </p>
-                    </div>
+                    </div>}
 
                     <div className="mask-x-from-90% relative py-12">
                         <div

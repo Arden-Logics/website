@@ -20,67 +20,29 @@ export default function FeaturesSection({ serviceKey }: FeaturesHeroProps) {
     const features = content?.features || []
 
     return (
-        <section className="overflow-hidden">
-            <div className="bg-zinc-50 py-24">
-                <div className="mx-auto w-full max-w-5xl px-6">
-                    <div className="grid items-center gap-12 pb-12 md:grid-cols-2">
+        <section className="overflow-hidden h-screen flex items-center">
+            <div className="bg-zinc-50 py-24 w-full">
+                {/* Full-width hero content */}
+                <div className="mx-auto w-full max-w-[90rem] px-8 lg:px-16">
+                    <div className="grid items-center gap-16 md:grid-cols-2 lg:gap-24">
                         <div>
-                            <div className="max-w-md">
-                                <h2 className="text-foreground text-balance text-4xl font-semibold">{title}</h2>
-                                <p className="my-6 text-balance text-lg">{description}</p>
+                            <div className="w-full">
+                                <h2 className="text-foreground text-balance text-5xl lg:text-6xl font-semibold leading-tight">{title}</h2>
+                                <p className="my-8 text-balance text-xl lg:text-2xl text-muted-foreground justify-between">{description}</p>
                                 <Button
-                                    className="mt-8 pr-2"
+                                    className="mt-8 pr-3 text-base py-6 px-6"
                                     variant="outline"
                                     asChild>
                                     <Link href={buttonLink}>
                                         {buttonText}
-                                        <ChevronRight className="size-4 opacity-50" />
+                                        <ChevronRight className="size-5 opacity-50" />
                                     </Link>
                                 </Button>
                             </div>
                         </div>
-                        <DropdownIllustration />
-                    </div>
-
-                    <div className="relative grid grid-cols-2 gap-x-3 gap-y-6 border-t pt-12 sm:gap-6 lg:grid-cols-4">
-                        {features.length > 0 ? (
-                            features.map((feature, index) => (
-                                <div key={index} className="space-y-3">
-                                    <div className="flex items-center gap-2">
-                                        {feature.icon}
-                                        <h3 className="text-sm font-medium">{feature.title}</h3>
-                                    </div>
-                                    <p className="text-muted-foreground text-sm">{feature.description}</p>
-                                </div>
-                            ))
-                        ) : (
-                            <>
-                                <div className="space-y-3">
-                                    <div className="flex items-center gap-2">
-                                        <h3 className="text-sm font-medium">Faaast</h3>
-                                    </div>
-                                    <p className="text-muted-foreground text-sm">It supports an entire helping developers and innovate.</p>
-                                </div>
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2">
-                                        <h3 className="text-sm font-medium">Powerful</h3>
-                                    </div>
-                                    <p className="text-muted-foreground text-sm">It supports an entire helping developers and businesses.</p>
-                                </div>
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2">
-                                        <h3 className="text-sm font-medium">Security</h3>
-                                    </div>
-                                    <p className="text-muted-foreground text-sm">An helping developers businesses innovate.</p>
-                                </div>
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2">
-                                        <h3 className="text-sm font-medium">AI Powered</h3>
-                                    </div>
-                                    <p className="text-muted-foreground text-sm">Helping developers businesses innovate.</p>
-                                </div>
-                            </>
-                        )}
+                        <div className="flex justify-center lg:justify-end">
+                            <DropdownIllustration className="scale-125 lg:scale-150 origin-center" />
+                        </div>
                     </div>
                 </div>
             </div>

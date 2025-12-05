@@ -5,92 +5,73 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+interface Stat {
+  value: string
+  label: string
+}
+
 interface CustomerStory {
   id: number
   companyName: string
-  logo: React.ReactNode
   headline: string
   highlightedText: string
-  description: string
+  stats: Stat[]
+  services: string[]
   image: string
   link: string
 }
 
-// Placeholder logos as SVG components
-const HealthcareLogo = () => (
-  <svg viewBox="0 0 140 40" fill="none" className="h-8 w-auto">
-    <circle cx="20" cy="20" r="16" stroke="currentColor" strokeWidth="2" fill="none" />
-    <path d="M20 10v20M10 20h20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    <text x="45" y="26" className="fill-current text-sm font-semibold" style={{ fontSize: '14px' }}>MedTech</text>
-  </svg>
-)
-
-const EducationLogo = () => (
-  <svg viewBox="0 0 160 40" fill="none" className="h-8 w-auto">
-    <path d="M8 28L20 20L32 28L20 36L8 28Z" stroke="currentColor" strokeWidth="2" fill="none" />
-    <path d="M20 20V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="20" cy="10" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <text x="42" y="26" className="fill-current text-sm font-semibold" style={{ fontSize: '14px' }}>EduFirst</text>
-  </svg>
-)
-
-const FinanceLogo = () => (
-  <svg viewBox="0 0 140 40" fill="none" className="h-8 w-auto">
-    <rect x="6" y="8" width="28" height="24" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
-    <path d="M6 16h28M14 8v-4M26 8v-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <text x="42" y="26" className="fill-current text-sm font-bold" style={{ fontSize: '13px' }}>FIRST</text>
-    <text x="42" y="36" className="fill-current text-sm font-bold" style={{ fontSize: '13px' }}>BANK</text>
-  </svg>
-)
-
-const EnterpriseLogo = () => (
-  <svg viewBox="0 0 180 40" fill="none" className="h-8 w-auto">
-    <path d="M10 35V12L25 5L40 12V35" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round" />
-    <path d="M18 35V25h14v10" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <path d="M18 20h4M28 20h4M18 15h4M28 15h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <text x="50" y="28" className="fill-current font-light tracking-wider" style={{ fontSize: '16px' }}>SYMPHONY</text>
-  </svg>
-)
-
 const stories: CustomerStory[] = [
   {
     id: 1,
-    companyName: 'MedTech Healthcare',
-    logo: <HealthcareLogo />,
-    headline: 'Arden Logic delivers',
-    highlightedText: 'secure, HIPAA-compliant IT infrastructure',
-    description: 'for MedTech Healthcare.',
-    image: '/api/placeholder/600/500',
+    companyName: 'Advocare Medical Group',
+    headline: 'Advocare Medical Group relies on Juniper to',
+    highlightedText: 'keep their practices secure, connected, and running smoothly across every location.',
+    stats: [
+      { value: '1998', label: 'Founded' },
+      { value: '600+', label: 'Providers & Staff' },
+    ],
+    services: ['VoIP & Unified Communications', 'Managed IT', 'Cybersecurity'],
+    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800&auto=format&fit=crop',
     link: '/resources/client-success',
   },
   {
     id: 2,
-    companyName: 'EduFirst School District',
-    logo: <EducationLogo />,
-    headline: 'Managed IT drives',
-    highlightedText: 'seamless digital learning and enhanced security',
-    description: 'for EduFirst School District.',
-    image: '/api/placeholder/600/500',
+    companyName: 'Edge Fitness',
+    headline: 'Juniper powers the tech behind Edge Fitness',
+    highlightedText: 'helping each location stay connected, supported, and member-ready with reliable IT and AV solutions.',
+    stats: [
+      { value: '50%', label: 'Faster issue resolution' },
+      { value: '8hrs', label: 'Saved weekly across management teams' },
+    ],
+    services: ['IT Support', 'Audio/Visual Solutions'],
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop',
     link: '/resources/client-success',
   },
   {
     id: 3,
-    companyName: 'First Bank',
-    logo: <FinanceLogo />,
-    headline: 'VoIP solutions enable',
-    highlightedText: 'unified communications and cost savings',
-    description: 'for First Bank.',
-    image: '/api/placeholder/600/500',
+    companyName: 'Ives Bank',
+    headline: 'Ives Bank relies on Juniper to',
+    highlightedText: 'secure their infrastructure, streamline support, and maintain high-performing IT systems across their growing financial network.',
+    stats: [
+      { value: '35%', label: 'Reduction in support overhead' },
+      { value: '1000+', label: 'Users protected & supported' },
+    ],
+    services: ['Managed IT Services', 'Network Monitoring'],
+    image: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?q=80&w=800&auto=format&fit=crop',
     link: '/resources/client-success',
   },
   {
     id: 4,
-    companyName: 'Symphony Enterprises',
-    logo: <EnterpriseLogo />,
-    headline: 'Cloud migration powers',
-    highlightedText: 'scalable growth and operational efficiency',
-    description: 'for Symphony Enterprises.',
-    image: '/api/placeholder/600/500',
+    companyName: 'Middlesex College',
+    headline: 'Middlesex College enhances campus technology and student experiences with',
+    highlightedText: "Juniper's reliable IT and AV solutions.",
+    stats: [
+      { value: '13,000+', label: 'Students served annually' },
+      { value: '100+', label: 'Classrooms & labs supported' },
+    ],
+    services: ['Managed IT', 'AV Support & Integration'],
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop',
     link: '/resources/client-success',
   },
 ]
@@ -124,7 +105,7 @@ export default function FeaturedStories() {
     return () => clearInterval(interval)
   }, [isAutoPlaying, currentStory])
 
-  const handleLogoClick = (index: number) => {
+  const handleTabClick = (index: number) => {
     setIsAutoPlaying(false)
     goToStory(index)
     setTimeout(() => setIsAutoPlaying(true), 8000)
@@ -133,39 +114,33 @@ export default function FeaturedStories() {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
-        {/* Header with CTA */}
-        <div className="flex items-center justify-center mb-12">
-          <Link 
-            href="/resources/client-success" 
-            className="group inline-flex items-center gap-3 text-foreground font-medium hover:text-primary transition-colors"
-          >
-            <span className="text-lg">See all customer stories</span>
-            <div className="flex items-center justify-center size-10 rounded-full bg-primary text-primary-foreground group-hover:scale-105 transition-transform">
-              <ArrowRight className="size-5" />
-            </div>
-          </Link>
-        </div>
+        {/* Section Header */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-12 md:mb-16">
+          Customer Stories
+        </h2>
 
-        {/* Logo Navigation Tabs */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-16">
+        {/* Company Name Navigation Tabs */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-12 md:mb-16">
           {stories.map((story, index) => (
             <button
               key={story.id}
-              onClick={() => handleLogoClick(index)}
+              onClick={() => handleTabClick(index)}
               className={cn(
-                'relative py-6 px-4 flex items-center justify-center transition-all duration-300',
+                'relative py-5 px-4 text-left transition-all duration-300',
                 'border-b-2',
                 index === currentStory 
-                  ? 'border-foreground text-foreground' 
-                  : 'border-border text-muted-foreground/60 hover:text-muted-foreground hover:border-muted-foreground/40'
+                  ? 'border-foreground' 
+                  : 'border-border hover:border-muted-foreground/40'
               )}
             >
-              <div className={cn(
-                'transition-all duration-300',
-                index === currentStory ? 'opacity-100 scale-100' : 'opacity-50 scale-95 grayscale'
+              <span className={cn(
+                'text-sm md:text-base font-medium transition-all duration-300',
+                index === currentStory 
+                  ? 'text-foreground' 
+                  : 'text-muted-foreground/60 hover:text-muted-foreground'
               )}>
-                {story.logo}
-              </div>
+                {story.companyName}
+              </span>
               
               {/* Progress indicator for active tab */}
               {index === currentStory && (
@@ -181,7 +156,7 @@ export default function FeaturedStories() {
         {/* Story Content - Split Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image Side */}
-          <div className="relative aspect-[4/3] lg:aspect-[5/4] rounded-2xl overflow-hidden bg-gradient-to-br from-muted to-muted/50">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-muted to-muted/50">
             {stories.map((story, index) => (
               <div
                 key={story.id}
@@ -194,37 +169,19 @@ export default function FeaturedStories() {
                       : 'opacity-0 scale-105 translate-x-8'
                 )}
               >
-                {/* Placeholder image with gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200">
-                  {/* Abstract decorative pattern */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      {/* Floating geometric shapes */}
-                      <div className="absolute -top-12 -left-16 size-24 rounded-full bg-primary/10 blur-xl" />
-                      <div className="absolute -bottom-8 -right-12 size-32 rounded-full bg-blue-400/10 blur-xl" />
-                      
-                      {/* Person silhouette placeholder */}
-                      <div className="relative z-10">
-                        <div className="size-40 md:size-52 rounded-full bg-gradient-to-br from-slate-300 to-slate-400 shadow-lg flex items-center justify-center">
-                          <div className="size-24 md:size-32 rounded-full bg-gradient-to-br from-slate-400 to-slate-500" />
-                        </div>
-                      </div>
-                      
-                      {/* Decorative elements */}
-                      <div className="absolute -right-6 top-4 size-3 rounded-full bg-primary/40" />
-                      <div className="absolute -left-4 bottom-8 size-2 rounded-full bg-blue-400/40" />
-                    </div>
-                  </div>
-                </div>
-                
+                <img
+                  src={story.image}
+                  alt={`${story.companyName}`}
+                  className="w-full h-full object-cover"
+                />
                 {/* Subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
             ))}
           </div>
 
           {/* Content Side */}
-          <div className="relative min-h-[200px]">
+          <div className="relative min-h-[300px]">
             {stories.map((story, index) => (
               <div
                 key={story.id}
@@ -235,20 +192,41 @@ export default function FeaturedStories() {
                     : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
                 )}
               >
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-snug">
-                  <span className="text-primary">{story.headline}</span>{' '}
-                  <span className="font-semibold">{story.highlightedText}</span>{' '}
-                  <span>{story.description}</span>
+                {/* Headline */}
+                <h3 className="text-xl md:text-2xl lg:text-3xl text-foreground leading-snug mb-8">
+                  <span className="italic">{story.headline}</span>{' '}
+                  <span className="font-semibold">{story.highlightedText}</span>
                 </h3>
                 
-                <div className="mt-8">
-                  <Link 
-                    href={story.link}
-                    className="inline-flex items-center gap-2 text-primary font-medium hover:underline underline-offset-4 group"
-                  >
-                    <span>Read the full story</span>
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                {/* Stats Grid */}
+                <div className="flex gap-8 md:gap-12 mb-8">
+                  {story.stats.map((stat, statIndex) => (
+                    <div key={statIndex}>
+                      <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm md:text-base text-muted-foreground mt-1">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-border my-6" />
+
+                {/* Services Used */}
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-sm font-medium text-foreground">Services used:</span>
+                  {story.services.map((service, serviceIndex) => (
+                    <span 
+                      key={serviceIndex}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border text-sm text-muted-foreground bg-background"
+                    >
+                      <span className="size-1.5 rounded-full bg-primary" />
+                      {service}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -260,7 +238,7 @@ export default function FeaturedStories() {
           {stories.map((_, index) => (
             <button
               key={index}
-              onClick={() => handleLogoClick(index)}
+              onClick={() => handleTabClick(index)}
               className={cn(
                 'size-2 rounded-full transition-all duration-300',
                 index === currentStory 
@@ -271,8 +249,25 @@ export default function FeaturedStories() {
             />
           ))}
         </div>
+
+        {/* Footer CTA */}
+        <div className="mt-16 md:mt-20 pt-8 border-t border-border">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <p className="text-muted-foreground text-base md:text-lg">
+              Trusted by leading organizations across multiple industries
+            </p>
+            <Link 
+              href="/resources/client-success" 
+              className="group inline-flex items-center gap-3 text-foreground font-medium hover:text-primary transition-colors"
+            >
+              <span className="text-base">See all customer stories</span>
+              <div className="flex items-center justify-center size-10 rounded-full bg-primary text-primary-foreground group-hover:scale-105 transition-transform">
+                <ArrowRight className="size-5" />
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   )
 }
-

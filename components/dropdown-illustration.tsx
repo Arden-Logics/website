@@ -13,9 +13,13 @@ const USERS: User[] = [
     { id: 4, name: 'Glodie Ng', avatar: 'https://avatars.githubusercontent.com/u/99137927?v=4' },
 ]
 
-export const DropdownIllustration = () => {
+interface DropdownIllustrationProps {
+    className?: string
+}
+
+export const DropdownIllustration = ({ className = '' }: DropdownIllustrationProps) => {
     return (
-        <div className="relative overflow-hidden rounded-2xl bg-black p-2">
+        <div className={`relative overflow-hidden rounded-2xl bg-black p-2 ${className}`}>
             <div className="mask-r-from-50% absolute inset-0 items-center [background:radial-gradient(150%_115%_at_50%_5%,transparent_25%,var(--color-emerald-500)_60%,var(--color-white)_100%)]"></div>
             <div className="mask-l-from-35% absolute inset-0 items-center [background:radial-gradient(150%_115%_at_50%_5%,transparent_25%,var(--color-sky-500)_60%,var(--color-white)_100%)]"></div>
 

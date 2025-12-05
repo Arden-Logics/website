@@ -12,7 +12,9 @@ import IndustriesSection from "@/components/industries-section";
 export default function Home() {
   return (
     <>
+    <div>
       <HeroCarousel />
+      </div>
       <LogoCloud />
       <div className="w-full py-16 md:py-20 px-8 sm:px-12 lg:px-24 xl:px-32">
         <div className="w-full">

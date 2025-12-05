@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface CarouselSlide {
@@ -15,6 +15,14 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
+    headline: "Your Trusted Partner for IT, Security & Business Communications",
+    description:
+      "We provide fully managed IT services, cybersecurity protection, VoIP solutions, and expert support to help your business stay secure, efficient, and always connected.",
+    buttonText: "Get Started",
+    buttonLink: "/services",
+  },
+  {
+    id: 2,
     headline: "Managed IT Services That Power Your Business",
     description:
       "Arden Logics delivers fully managed IT services, remote helpdesk support, proactive monitoring, patching, and strategic IT management for businesses of all sizes. Improve reliability, security, and performance with a dedicated MSP partner.",
@@ -22,7 +30,7 @@ const slides: CarouselSlide[] = [
     buttonLink: "/services/msp-managed-it",
   },
   {
-    id: 2,
+    id: 3,
     headline: "Modern VoIP & Unified Communications for a Connected Workforce",
     description:
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
@@ -30,20 +38,12 @@ const slides: CarouselSlide[] = [
     buttonLink: "/services/voip",
   },
   {
-    id: 3,
+    id: 4,
     headline: "Cloud, Networking & Infrastructure Built for Reliability",
     description:
       "From Microsoft 365 and Azure to on-prem servers, networking, and disaster recovery we design, implement, and maintain infrastructure that keeps your business running.",
     buttonText: "View Cloud & Infrastructure",
     buttonLink: "/services",
-  },
-  {
-    id: 4,
-    headline: "Tailored IT Solutions for Healthcare, Education & Growing Businesses",
-    description:
-      "Deep expertise delivering secure, compliant technology environments across multi-site medical practices, school districts, and enterprise organizations.",
-    buttonText: "See Industry Expertise",
-    buttonLink: "/industries",
   },
 ];
 
@@ -115,16 +115,6 @@ export default function HeroCarousel() {
     };
   }, [isAutoPlaying, nextSlide, currentSlide]);
 
-  const handleNavClick = (dir: "prev" | "next") => {
-    setIsAutoPlaying(false);
-    if (dir === "prev") {
-      prevSlide();
-    } else {
-      nextSlide();
-    }
-    setTimeout(() => setIsAutoPlaying(true), 5000);
-  };
-
   const getSlideClasses = (index: number) => {
     const isActive = index === currentSlide;
     const baseClasses = "absolute inset-0 flex flex-col justify-center";
@@ -183,35 +173,15 @@ export default function HeroCarousel() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 pointer-events-none" />
 
-      {/* Left Navigation Arrow */}
-      <button
-        onClick={() => handleNavClick("prev")}
-        className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-20 text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-300 p-3 rounded-full group"
-        aria-label="Previous slide"
-        disabled={isAnimating}
-      >
-        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:-translate-x-0.5" strokeWidth={1.5} />
-      </button>
-
-      {/* Right Navigation Arrow */}
-      <button
-        onClick={() => handleNavClick("next")}
-        className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-20 text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all duration-300 p-3 rounded-full group"
-        aria-label="Next slide"
-        disabled={isAnimating}
-      >
-        <ChevronRight className="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-0.5" strokeWidth={1.5} />
-      </button>
-
       {/* Slides Container */}
-      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32 min-h-[400px]">
+      <div className="relative w-full px-8 sm:px-12 md:pl-[calc(10%+120px)] lg:pl-[calc(15%+120px)] xl:pl-[calc(18%+120px)] min-h-[400px]">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
             className={getSlideClasses(index)}
             style={getAnimationStyles(index)}
           >
-            {/* Triangle Accent + Headline */}
+            
             <div className="flex items-start gap-4 mb-2">
               <div
                 className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
@@ -234,7 +204,6 @@ export default function HeroCarousel() {
               </h1>
             </div>
 
-            {/* Description */}
             <p
               className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
               style={{
@@ -298,12 +267,6 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Slide counter */}
-      <div className="absolute bottom-12 right-8 md:right-16 text-sm text-muted-foreground font-medium">
-        <span className="text-foreground">{String(currentSlide + 1).padStart(2, "0")}</span>
-        <span className="mx-1">/</span>
-        <span>{String(slides.length).padStart(2, "0")}</span>
-      </div>
     </section>
   );
 }

@@ -282,7 +282,7 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
                 
                 {/* Connector line (hidden on last item and mobile) */}
                 {index < frameworkSteps.length - 1 && (
-                  <div className="absolute top-1/2 -right-3 w-6 h-0.5 bg-border hidden lg:block" />
+                  <div className="absolute top-1/2 left-full w-6 h-px bg-border hidden lg:block -translate-y-1/2" />
                 )}
               </div>
             )

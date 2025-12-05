@@ -32,8 +32,8 @@ export default function HeaderOne() {
                 className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 top-10 z-50">
                 <div
                     className={cn(
-                        'h-16 absolute inset-x-0 top-0 z-50 border-transparent ring-1 ring-transparent transition-all duration-300',
-                        'in-data-scrolled:border-foreground/5 in-data-scrolled:border-b in-data-scrolled:bg-background/75 in-data-scrolled:backdrop-blur',
+                        'h-16 absolute inset-x-0 top-0 z-50 border-b-4 border-foreground/20 ring-1 ring-transparent transition-all duration-300 pb-8',
+                        'in-data-scrolled:border-foreground/20 in-data-scrolled:border-b-2 in-data-scrolled:bg-background/75 in-data-scrolled:backdrop-blur in-data-scrolled:pb-8',
                         'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:bg-card/75 has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur has-data-[state=open]:border-b has-data-[state=open]:shadow-black/10 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)]',
                         'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-16 max-lg:overflow-hidden max-lg:border-b'
                     )}>

@@ -2,19 +2,20 @@
 
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { ArrowRight, Phone, Mail, Clock, CheckCircle, Shield, Zap, HeartHandshake } from 'lucide-react'
+import { ArrowRight, Phone, Mail, CheckCircle, Zap, Download } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const trustIndicators = [
-  { icon: Shield, label: 'Enterprise Security' },
-  { icon: Clock, label: '24/7 Support' },
-  { icon: HeartHandshake, label: 'Dedicated Team' },
+const trustBadges = [
+  { label: 'Free technology assessment' },
+  { label: 'Custom solution roadmap' },
+  { label: 'HIPAA-Ready' },
+  { label: 'FERPA-Compliant' },
 ]
 
 const quickStats = [
-  { value: '99.9%', label: 'Uptime SLA' },
-  { value: '< 15min', label: 'Response Time' },
-  { value: '500+', label: 'Clients Served' },
+  { value: '99.9%', label: 'Uptime Across Managed Infrastructure' },
+  { value: '< 15 Min', label: 'Guaranteed Response Time' },
+  { value: '500+', label: 'Organizations Supported Nationwide' },
 ]
 
 export default function CallToAction() {
@@ -43,7 +44,7 @@ export default function CallToAction() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/10 backdrop-blur-sm border border-background/10">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-background/90">Ready to Transform Your Business?</span>
+              <span className="text-sm font-medium text-background/90">Ready to get started?</span>
             </div>
             
             {/* Headline */}
@@ -51,28 +52,28 @@ export default function CallToAction() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-background leading-[1.1]">
                 Let's Build Your
                 <span className="block mt-2 text-primary">
-                  Technology Future
+                  Technology Future, Together
                 </span>
               </h2>
               <p className="text-lg md:text-xl text-background/70 max-w-xl leading-relaxed">
-                Partner with Arden Logic for comprehensive IT solutions that drive growth, enhance security, and simplify your operations.
+                Your organization deserves technology that's secure, reliable, and built to scale.
+              </p>
+              <p className="text-base text-background/60 max-w-xl leading-relaxed">
+                Arden Logics delivers enterprise-grade IT, cybersecurity, VoIP, AV, and security solutions that help your business operate smarter, safer, and faster every single day.
               </p>
             </div>
             
-            {/* Trust indicators */}
-            <div className="flex flex-wrap gap-4">
-              {trustIndicators.map((item) => {
-                const Icon = item.icon
-                return (
-                  <div
-                    key={item.label}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/5 border border-background/10"
-                  >
-                    <Icon className="size-4 text-primary" />
-                    <span className="text-sm text-background/80">{item.label}</span>
-                  </div>
-                )
-              })}
+            {/* Trust Badges */}
+            <div className="flex flex-wrap gap-3">
+              {trustBadges.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background/5 border border-background/10"
+                >
+                  <CheckCircle className="size-4 text-primary" />
+                  <span className="text-sm text-background/80">{item.label}</span>
+                </div>
+              ))}
             </div>
             
             {/* CTA Buttons */}
@@ -84,7 +85,7 @@ export default function CallToAction() {
               >
                 <Link href="#contact-form">
                   <span className="flex items-center gap-2">
-                    Schedule a Consultation
+                    Schedule a Free Consultation
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
@@ -96,12 +97,17 @@ export default function CallToAction() {
                 variant="outline"
                 className="bg-background/5 border-background/20 text-background hover:bg-background/10 hover:border-background/30 hover:text-background px-8 py-6 text-base rounded-xl backdrop-blur-sm transition-all duration-300"
               >
-                <Link href="tel:+1234567890" className="flex items-center gap-2">
+                <Link href="tel:8563359895" className="flex items-center gap-2">
                   <Phone className="size-4" />
                   Call Us Now
                 </Link>
               </Button>
             </div>
+            
+            {/* Immediate contact */}
+            <p className="text-sm text-background/60">
+              For immediate needs — <a href="tel:8563359895" className="text-primary hover:underline">856-335-9895</a>
+            </p>
           </div>
           
           {/* Right side - Stats card */}
@@ -117,8 +123,7 @@ export default function CallToAction() {
                   <Zap className="size-6 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-background">Quick Response</h3>
-                  <p className="text-sm text-background/60">Get started in minutes</p>
+                  <h3 className="text-xl font-bold text-background">Why hundreds trust Arden Logics</h3>
                 </div>
               </div>
               
@@ -130,46 +135,36 @@ export default function CallToAction() {
                     className="text-center p-4 rounded-xl bg-background/5 border border-background/5"
                   >
                     <div className="text-2xl md:text-3xl font-bold text-background mb-1">{stat.value}</div>
-                    <div className="text-xs text-background/60">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Benefits list */}
-              <div className="space-y-3 mb-8">
-                {[
-                  'Free technology assessment',
-                  'Custom solution roadmap',
-                  'No long-term contracts required',
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="flex items-center justify-center size-5 rounded-full bg-primary/20">
-                      <CheckCircle className="size-3 text-primary" />
-                    </div>
-                    <span className="text-sm text-background/80">{benefit}</span>
+                    <div className="text-xs text-background/60 leading-tight">{stat.label}</div>
                   </div>
                 ))}
               </div>
               
               {/* Contact info */}
-              <div className="pt-6 border-t border-background/10 space-y-3">
+              <div className="space-y-4 mb-6">
+                <p className="text-sm font-medium text-background/80">Prefer email?</p>
                 <a 
-                  href="mailto:contact@ardenlogic.com"
+                  href="mailto:support@ardenlogics.com"
                   className="flex items-center gap-3 text-background/70 hover:text-background transition-colors group"
                 >
                   <div className="flex items-center justify-center size-10 rounded-lg bg-background/5 group-hover:bg-background/10 transition-colors">
                     <Mail className="size-4" />
                   </div>
-                  <span className="text-sm">contact@ardenlogic.com</span>
+                  <span className="text-sm">support@ardenlogics.com</span>
                 </a>
+              </div>
+              
+              {/* Download guide */}
+              <div className="pt-6 border-t border-background/10">
+                <p className="text-sm text-background/60 mb-3">Not ready to schedule yet?</p>
                 <a 
-                  href="tel:+1234567890"
-                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors group"
+                  href="#"
+                  className="flex items-center gap-3 text-background/80 hover:text-background transition-colors group"
                 >
-                  <div className="flex items-center justify-center size-10 rounded-lg bg-background/5 group-hover:bg-background/10 transition-colors">
-                    <Phone className="size-4" />
+                  <div className="flex items-center justify-center size-10 rounded-lg bg-primary/20 group-hover:bg-primary/30 transition-colors">
+                    <Download className="size-4 text-primary" />
                   </div>
-                  <span className="text-sm">(123) 456-7890</span>
+                  <span className="text-sm">Download our free guide: <span className="font-medium">"2025 Business Technology Roadmap"</span></span>
                 </a>
               </div>
             </div>
