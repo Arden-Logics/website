@@ -1,5 +1,5 @@
 import IndividualSolutionPage from '@/components/individual-solution-page'
-import { SOLUTION_CONTENT } from '@/constants'
+import { SOLUTION_PAGE_CONTENT } from '@/constants/solution-page-content'
 import { notFound } from 'next/navigation'
 
 interface SolutionPageProps {
@@ -13,7 +13,7 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
     const solutionKey = solution
     
     // Check if solution exists
-    if (!SOLUTION_CONTENT[solutionKey]) {
+    if (!SOLUTION_PAGE_CONTENT[solutionKey]) {
         notFound()
     }
     
