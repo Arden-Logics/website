@@ -32,7 +32,7 @@ const stories: CustomerStory[] = [
       { value: '600+', label: 'Providers & Staff' },
     ],
     services: ['VoIP & Unified Communications', 'Managed IT', 'Cybersecurity'],
-    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=800&auto=format&fit=crop',
+    image: '/advocare-medical-group.jpeg',
     link: '/resources/client-success',
   },
   {

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface CarouselSlide {
   id: number;
@@ -10,6 +11,8 @@ interface CarouselSlide {
   description: string;
   buttonText: string;
   buttonLink: string;
+  image: string;
+  imageAlt: string;
 }
 
 const slides: CarouselSlide[] = [
@@ -20,6 +23,8 @@ const slides: CarouselSlide[] = [
       "We provide fully managed IT services, cybersecurity protection, VoIP solutions, and expert support to help your business stay secure, efficient, and always connected.",
     buttonText: "Get Started",
     buttonLink: "/services",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop",
+    imageAlt: "Modern office team collaborating on technology solutions",
   },
   {
     id: 2,
@@ -28,6 +33,8 @@ const slides: CarouselSlide[] = [
       "Arden Logics delivers fully managed IT services, remote helpdesk support, proactive monitoring, patching, and strategic IT management for businesses of all sizes. Improve reliability, security, and performance with a dedicated MSP partner.",
     buttonText: "Learn More",
     buttonLink: "/services/msp-managed-it",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1534&auto=format&fit=crop",
+    imageAlt: "Server room with modern IT infrastructure",
   },
   {
     id: 3,
@@ -36,6 +43,8 @@ const slides: CarouselSlide[] = [
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
     buttonText: "Explore VoIP Solutions",
     buttonLink: "/services/voip",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1470&auto=format&fit=crop",
+    imageAlt: "Business professionals in video conference meeting",
   },
   {
     id: 4,
@@ -44,6 +53,8 @@ const slides: CarouselSlide[] = [
       "From Microsoft 365 and Azure to on-prem servers, networking, and disaster recovery we design, implement, and maintain infrastructure that keeps your business running.",
     buttonText: "View Cloud & Infrastructure",
     buttonLink: "/services",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472&auto=format&fit=crop",
+    imageAlt: "Global cloud network visualization",
   },
 ];
 
@@ -181,58 +192,85 @@ export default function HeroCarousel() {
             className={getSlideClasses(index)}
             style={getAnimationStyles(index)}
           >
-            <div className="w-full container mx-auto flex flex-col">
-              <div className="flex items-start gap-4 mb-2">
-                <div
-                  className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
-                  style={{
-                    opacity: index === currentSlide ? 1 : 0,
-                    transform: index === currentSlide ? "translateX(0)" : "translateX(-20px)",
-                    transitionDelay: index === currentSlide ? "200ms" : "0ms",
-                  }}
-                />
-                <h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.1] tracking-tight max-w-3xl"
+            <div className="w-full container mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
+              {/* Text Content - Left Side */}
+              <div className="flex-1 flex flex-col lg:max-w-[55%]">
+                <div className="flex items-start gap-4 mb-2">
+                  <div
+                    className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
+                    style={{
+                      opacity: index === currentSlide ? 1 : 0,
+                      transform: index === currentSlide ? "translateX(0)" : "translateX(-20px)",
+                      transitionDelay: index === currentSlide ? "200ms" : "0ms",
+                    }}
+                  />
+                  <h1
+                    className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-foreground leading-[1.1] tracking-tight"
+                    style={{
+                      opacity: index === currentSlide ? 1 : 0,
+                      transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                      transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                      transitionDelay: index === currentSlide ? "100ms" : "0ms",
+                    }}
+                  >
+                    {slide.headline}
+                  </h1>
+                </div>
+
+                <p
+                  className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
                   style={{
                     opacity: index === currentSlide ? 1 : 0,
                     transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
                     transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-                    transitionDelay: index === currentSlide ? "100ms" : "0ms",
+                    transitionDelay: index === currentSlide ? "250ms" : "0ms",
                   }}
                 >
-                  {slide.headline}
-                </h1>
+                  {slide.description}
+                </p>
+
+                {/* CTA Button */}
+                <div
+                  className="ml-[34px]"
+                  style={{
+                    opacity: index === currentSlide ? 1 : 0,
+                    transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                    transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                    transitionDelay: index === currentSlide ? "400ms" : "0ms",
+                  }}
+                >
+                  <Link
+                    href={slide.buttonLink}
+                    className="inline-flex items-center justify-between gap-8 px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[180px] rounded-md"
+                  >
+                    <span className="font-medium">{slide.buttonText}</span>
+                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
 
-              <p
-                className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
-                style={{
-                  opacity: index === currentSlide ? 1 : 0,
-                  transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
-                  transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-                  transitionDelay: index === currentSlide ? "250ms" : "0ms",
-                }}
-              >
-                {slide.description}
-              </p>
-
-              {/* CTA Button */}
+              {/* Image - Right Side */}
               <div
-                className="ml-[34px]"
+                className="hidden lg:block flex-1 lg:max-w-[45%]"
                 style={{
                   opacity: index === currentSlide ? 1 : 0,
-                  transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
-                  transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-                  transitionDelay: index === currentSlide ? "400ms" : "0ms",
+                  transform: index === currentSlide ? "translateX(0) scale(1)" : "translateX(40px) scale(0.95)",
+                  transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1)",
+                  transitionDelay: index === currentSlide ? "150ms" : "0ms",
                 }}
               >
-                <Link
-                  href={slide.buttonLink}
-                  className="inline-flex items-center justify-between gap-8 px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[180px] rounded-md"
-                >
-                  <span className="font-medium">{slide.buttonText}</span>
-                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src={slide.image}
+                    alt={slide.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 0vw, 45vw"
+                    priority={index === 0}
+                  />
+                  {/* Subtle gradient overlay for better integration */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
+                </div>
               </div>
             </div>
           </div>
