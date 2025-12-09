@@ -7,6 +7,7 @@ import CTASection from '@/components/cta-section'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import LogoCloud from '@/components/logo-cloud'
+import FeaturesSectionNine from '@/components/features-9'
 
 const TEAM_MEMBERS = [
     {
@@ -164,58 +165,29 @@ export default function AboutPage() {
             {/* Mission Section */}
             <section className="py-16 px-6 lg:px-12">
                 <div className="w-full">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-                                <Target className="w-4 h-4" />
-                                Our Mission
-                            </div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                                Enabling organizations to grow with confidence
-                            </h2>
-                            <p className="text-lg text-muted-foreground mb-6">
-                                Our mission is simple: to give businesses the clarity, reliability, and security they need in a digital-first world. We believe technology is most powerful when it's thoughtfully implemented, expertly supported, and aligned to real business goals.
-                            </p>
-                            <p className="text-lg text-muted-foreground mb-6">
-                                Arden Logics partners with organizations across healthcare, education, financial services, government, fitness, manufacturing, and more. We take time to understand the challenges behind the scenes and deliver solutions that make operations smoother, teams more productive, and growth more achievable.
-                            </p>
-                            <p className="text-lg text-muted-foreground">
-                                Whether it's modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security — <strong>we help businesses not just adapt to the future, but lead it.</strong>
-                            </p>
+                    <div>
+                        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            <Target className="w-4 h-4" />
+                            Our Mission
                         </div>
-                        <div className="relative">
-                            <Card className="bg-gradient-to-br from-primary/10 to-background border-primary/20">
-                                <CardHeader>
-                                    <CardTitle className="text-2xl mb-4">What Sets Us Apart</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <ul className="space-y-4">
-                                        {[
-                                            { title: 'Strategic, forward-looking IT leadership', desc: 'We don\'t just fix issues — we prevent them with proactive planning and long-term roadmaps.' },
-                                            { title: 'Engineers with deep multi-industry expertise', desc: 'Certified professionals across cybersecurity, AV, cloud, networking, physical security, and collaboration tools.' },
-                                            { title: 'Solutions tailored to each environment', desc: 'Every client is different. Every design reflects real-world workflows and goals.' },
-                                            { title: 'Clear, predictable pricing — no surprises', desc: 'Transparent agreements built to support scaling, not restrict it.' },
-                                            { title: 'Always-on monitoring and rapid support', desc: 'Real-time visibility with U.S.-based support to resolve issues before they cause impact.' },
-                                            { title: 'A proven record of reliability and trust', desc: 'From small offices to multi-site enterprises, our work powers mission-critical operations every day.' },
-                                        ].map((item, index) => (
-                                            <li
-                                                key={index}
-                                                className="flex items-start gap-3"
-                                            >
-                                                <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                                                <div>
-                                                    <span className="font-medium text-foreground">{item.title}</span>
-                                                    <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                            </Card>
-                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                            Enabling organizations to grow with confidence
+                        </h2>
+                        <p className="text-lg text-muted-foreground mb-6">
+                            Our mission is simple: to give businesses the clarity, reliability, and security they need in a digital-first world. We believe technology is most powerful when it's thoughtfully implemented, expertly supported, and aligned to real business goals.
+                        </p>
+                        <p className="text-lg text-muted-foreground mb-6">
+                            Arden Logics partners with organizations across healthcare, education, financial services, government, fitness, manufacturing, and more. We take time to understand the challenges behind the scenes and deliver solutions that make operations smoother, teams more productive, and growth more achievable.
+                        </p>
+                        <p className="text-lg text-muted-foreground">
+                            Whether it's modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security — <strong>we help businesses not just adapt to the future, but lead it.</strong>
+                        </p>
                     </div>
                 </div>
             </section>
+
+            {/* What Sets Us Apart Section */}
+            <FeaturesSectionNine />
 
             <LogoCloud displayText={false} />
 
