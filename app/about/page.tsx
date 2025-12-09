@@ -6,6 +6,7 @@ import { CheckCircle2, Target, Users, Award, Clock, Shield, Lightbulb, Heart, Ar
 import CTASection from '@/components/cta-section'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import LogoCloud from '@/components/logo-cloud'
 
 const TEAM_MEMBERS = [
     {
@@ -215,6 +216,8 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            <LogoCloud displayText={false} />
 
             {/* Why Customers Choose Us Section */}
             <section className="py-20 px-6 lg:px-12">

@@ -10,7 +10,7 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider'
 
 export default function LogoCloud({ displayText = true }: { displayText?: boolean }) {
     return (
-        <section className="bg-muted/50 overflow-hidden py-16">
+        <section className="overflow-hidden py-16">
             <div className="group relative w-full px-6 lg:px-12">
                 <div className="text-center">
                     {displayText && <div className="mx-auto max-w-4xl text-balance">
