@@ -29,28 +29,28 @@ const defaultFrameworkSteps = [
     title: 'Envision & Align',
     description: 'We work with you to define your goals, understand your challenges, and map out the technology strategy that best supports your business.',
     icon: Target,
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-primary to-primary',
   },
   {
     number: '2',
     title: 'Build & Prepare',
     description: 'Our team prepares your systems, configures infrastructure, and coordinates the details so everything is ready for a smooth, disruption-free rollout.',
     icon: Wrench,
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-primary to-primary',
   },
   {
     number: '3',
     title: 'Launch & Refine',
     description: 'We deploy and validate your environment, fine-tune performance, and transition your team into fully supported operations.',
     icon: Rocket,
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-primary to-primary',
   },
   {
     number: '4',
     title: 'Optimize & Grow',
     description: 'Technology evolves and so do your needs. We provide ongoing support, consulting, and strategic guidance to help your business scale securely and efficiently.',
     icon: TrendingUp,
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-primary to-primary',
   },
 ]
 
@@ -106,7 +106,7 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
   const frameworkSteps = whyArdenContent?.frameworkSteps?.map((step, index) => ({
     ...step,
     icon: stepIcons[index] || Target,
-    color: 'from-blue-500 to-blue-600',
+    color: 'from-primary to-primary',
   })) || defaultFrameworkSteps
   return (
     <section className="py-20 md:py-32 bg-background overflow-hidden">
@@ -188,7 +188,7 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
               
               {/* Decorative laptop element */}
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 h-32 bg-slate-700 rounded-t-lg shadow-xl">
-                <div className="absolute inset-2 bg-gradient-to-br from-blue-400 to-primary rounded-t-md" />
+                <div className="absolute inset-2 bg-gradient-to-br from-primary to-primary rounded-t-md" />
               </div>
             </div>
             

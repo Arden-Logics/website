@@ -129,7 +129,7 @@ const CUSTOMER_STATS = [
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background pt-26">
             {/* Hero Section with Image and Quote */}
             <section className="relative w-full h-[500px] overflow-hidden">
                 {/* Background Image */}
@@ -144,7 +144,7 @@ export default function AboutPage() {
                 </div>
                 
                 {/* Content */}
-                <div className="relative h-full flex items-center">
+                <div className="relative h-full flex items-start pt-16">
                     <div className="w-full px-6 lg:px-12">
                         <div className="max-w-xl">
                             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl">

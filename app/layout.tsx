@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/top-bar";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Arden Logics | MSP, VoIP, Security & AV Solutions",
@@ -24,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${inter.variable} antialiased h-full flex flex-col`}
+        className="font-sans antialiased h-full flex flex-col"
       >
         <TopBar />
         <Header />

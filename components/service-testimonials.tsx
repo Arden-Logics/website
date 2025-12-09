@@ -63,6 +63,13 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
+        {/* Section Title */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
+            Partnered With Companies Nationwide to Keep Their Technology Running Flawlessly
+          </h2>
+        </div>
+        
         {/* Header with CTA */}
         <div className="flex items-center justify-center mb-12">
           <Link 
@@ -131,7 +138,7 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
                     <div className="relative">
                       {/* Floating geometric shapes */}
                       <div className="absolute -top-12 -left-16 size-24 rounded-full bg-primary/10 blur-xl" />
-                      <div className="absolute -bottom-8 -right-12 size-32 rounded-full bg-blue-400/10 blur-xl" />
+                      <div className="absolute -bottom-8 -right-12 size-32 rounded-full bg-primary/10 blur-xl" />
                       
                       {/* Person silhouette placeholder */}
                       <div className="relative z-10">
@@ -142,7 +149,7 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
                       
                       {/* Decorative elements */}
                       <div className="absolute -right-6 top-4 size-3 rounded-full bg-primary/40" />
-                      <div className="absolute -left-4 bottom-8 size-2 rounded-full bg-blue-400/40" />
+                      <div className="absolute -left-4 bottom-8 size-2 rounded-full bg-primary/40" />
                     </div>
                   </div>
                 </div>

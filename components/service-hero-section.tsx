@@ -36,7 +36,7 @@ export default function ServiceHeroSection({
                             </p>
                         </div>
                         <Button
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-md text-base"
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6 py-3 rounded-md text-base"
                             asChild
                         >
                             <a href={buttonLink}>{buttonText}</a>

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -83,6 +83,11 @@ export default function FeaturedStories() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [progress, setProgress] = useState(0)
 
+  // Reset progress whenever story changes
+  useEffect(() => {
+    setProgress(0)
+  }, [currentStory])
+
   const goToStory = useCallback((index: number) => {
     setCurrentStory(index)
     setProgress(0)
@@ -90,25 +95,34 @@ export default function FeaturedStories() {
 
   // Auto-advance with progress
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying) {
+      return
+    }
 
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
-          setCurrentStory((current) => (current + 1) % stories.length)
+        const newProgress = prev + (100 / (SLIDE_DURATION / 50))
+        if (newProgress >= 100) {
+          setCurrentStory((current) => {
+            const nextStory = (current + 1) % stories.length
+            return nextStory
+          })
           return 0
         }
-        return prev + (100 / (SLIDE_DURATION / 50))
+        return newProgress
       })
     }, 50)
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, currentStory])
+  }, [isAutoPlaying])
 
   const handleTabClick = (index: number) => {
     setIsAutoPlaying(false)
     goToStory(index)
-    setTimeout(() => setIsAutoPlaying(true), 8000)
+    // Restart auto-play after a short delay
+    setTimeout(() => {
+      setIsAutoPlaying(true)
+    }, 100)
   }
 
   return (
@@ -116,7 +130,7 @@ export default function FeaturedStories() {
       <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-12 md:mb-16">
-          Customer Stories
+          Partnered With Companies Nationwide to Keep Their Technology Running Flawlessly
         </h2>
 
         {/* Company Name Navigation Tabs */}
@@ -126,11 +140,7 @@ export default function FeaturedStories() {
               key={story.id}
               onClick={() => handleTabClick(index)}
               className={cn(
-                'relative py-5 px-4 text-left transition-all duration-300',
-                'border-b-2',
-                index === currentStory 
-                  ? 'border-foreground' 
-                  : 'border-border hover:border-muted-foreground/40'
+                'relative py-5 px-4 text-left transition-all duration-300'
               )}
             >
               <span className={cn(
@@ -176,6 +186,18 @@ export default function FeaturedStories() {
                 />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                {/* CTA Button - Bottom Right */}
+                {index === currentStory && (
+                  <div className="absolute bottom-4 right-4 z-10">
+                    <Link
+                      href={story.link}
+                      className="group inline-flex items-center justify-between gap-3 px-6 py-3 bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary transition-all duration-300 rounded-md shadow-lg"
+                    >
+                      <span className="font-medium">See all customer stories</span>
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -250,23 +272,6 @@ export default function FeaturedStories() {
           ))}
         </div>
 
-        {/* Footer CTA */}
-        <div className="mt-16 md:mt-20 pt-8 border-t border-border">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <p className="text-muted-foreground text-base md:text-lg">
-              Trusted by leading organizations across multiple industries
-            </p>
-            <Link 
-              href="/resources/client-success" 
-              className="group inline-flex items-center gap-3 text-foreground font-medium hover:text-primary transition-colors"
-            >
-              <span className="text-base">See all customer stories</span>
-              <div className="flex items-center justify-center size-10 rounded-full bg-primary text-primary-foreground group-hover:scale-105 transition-transform">
-                <ArrowRight className="size-5" />
-              </div>
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   )

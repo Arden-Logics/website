@@ -84,7 +84,7 @@ export default function Features({ serviceKey }: FeaturesProps) {
                                     <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
                                     <p className="text-base text-gray-700 leading-relaxed">{feature.description}</p>
                                 </div>
-                                <Link href={(('linkHref' in feature && feature.linkHref) || ('href' in feature && feature.href) || "#")} className="inline-flex items-center text-green-700 font-medium hover:underline">
+                                <Link href={(('linkHref' in feature && feature.linkHref) || ('href' in feature && feature.href) || "#")} className="inline-flex items-center text-primary font-medium hover:underline">
                                     {(('linkText' in feature && feature.linkText) || ('link' in feature && feature.link) || "")} →
                                 </Link>
                             </div>

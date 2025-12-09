@@ -2,7 +2,7 @@
 import HeroCarousel from "@/components/hero-carousel";
 import LogoCloud from "@/components/logo-cloud";
 import ServicesExpandGrid from "@/components/services-expand-grid";
-import StatsSection from "@/components/stats-6";
+import IntegrationsSection from "@/components/integrations-1";
 import WhyUsStats from "@/components/why-us-stats";
 import FeaturedStories from "@/components/featured-stories";
 import ContactForm from "@/components/secondary-hero-14";
@@ -18,13 +18,13 @@ export default function Home() {
       <LogoCloud />
       <div className="w-full py-16 md:py-20 px-8 sm:px-12 lg:px-24 xl:px-32">
         <div className="w-full">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-center mb-4">
-            Our Services
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-center mb-4 font-bold">
+            Secure, Scalable Technology Services for Modern Businesses
           </h2>
         </div>
       </div>
       <ServicesExpandGrid />
-      <StatsSection />
+      <IntegrationsSection />
       <WhyUsStats />
       <FeaturedStories />
       <Blog showMoreArticles={false} />

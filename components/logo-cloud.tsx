@@ -14,10 +14,7 @@ export default function LogoCloud({ displayText = true }: { displayText?: boolea
             <div className="group relative w-full px-6 lg:px-12">
                 <div className="text-center">
                     {displayText && <div className="mx-auto max-w-4xl text-balance">
-                        <h2 className="text-4xl font-semibold">Trusted by businesses over 50+ industries</h2>
-                        <p className="text-muted-foreground mt-4 text-lg">
-                        From small businesses to multi-site enterprises, Arden Logics helps clients modernize their technology, strengthen security, and improve productivity through reliable, strategic IT solutions.
-                        </p>
+                        <h2 className="text-4xl font-semibold">Trusted by Thousands of Clients in Every Major Industry</h2>
                     </div>}
 
                     <div className="mask-x-from-90% relative py-12">

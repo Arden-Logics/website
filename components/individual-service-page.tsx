@@ -6,7 +6,6 @@ import WhyArdenSection from './why-arden-section'
 import ServicesExpandGrid from './services-expand-grid'
 import CallToAction from './call-to-action'
 import ServiceTestimonials from './service-testimonials'
-import IndustriesSection from './industries-section'
 import LogoCloud from './logo-cloud'
 
 
@@ -86,9 +85,6 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
                 <ServiceTestimonials 
                     testimonials={SERVICE_TESTIMONIALS[serviceKey] || []}
                 />
-            </div>
-            <div id="industries">
-            <IndustriesSection />
             </div>
             <div id="other-services" className="scroll-mt-32">
                 <ServicesExpandGrid />

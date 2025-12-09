@@ -138,7 +138,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-secondary">
+    <section className="relative h-screen flex items-center overflow-hidden bg-secondary">
       {/* Decorative mesh pattern - bottom right */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[400px] opacity-20 pointer-events-none">
         <svg
@@ -174,77 +174,78 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 pointer-events-none" />
 
       {/* Slides Container */}
-      <div className="relative w-full px-8 sm:px-12 md:pl-[calc(10%+120px)] lg:pl-[calc(15%+120px)] xl:pl-[calc(18%+120px)] min-h-[400px]">
+      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32 min-h-[400px]">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
             className={getSlideClasses(index)}
             style={getAnimationStyles(index)}
           >
-            
-            <div className="flex items-start gap-4 mb-2">
-              <div
-                className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
-                style={{
-                  opacity: index === currentSlide ? 1 : 0,
-                  transform: index === currentSlide ? "translateX(0)" : "translateX(-20px)",
-                  transitionDelay: index === currentSlide ? "200ms" : "0ms",
-                }}
-              />
-              <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.1] tracking-tight max-w-3xl"
+            <div className="w-full container mx-auto flex flex-col">
+              <div className="flex items-start gap-4 mb-2">
+                <div
+                  className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
+                  style={{
+                    opacity: index === currentSlide ? 1 : 0,
+                    transform: index === currentSlide ? "translateX(0)" : "translateX(-20px)",
+                    transitionDelay: index === currentSlide ? "200ms" : "0ms",
+                  }}
+                />
+                <h1
+                  className="text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.1] tracking-tight max-w-3xl"
+                  style={{
+                    opacity: index === currentSlide ? 1 : 0,
+                    transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                    transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                    transitionDelay: index === currentSlide ? "100ms" : "0ms",
+                  }}
+                >
+                  {slide.headline}
+                </h1>
+              </div>
+
+              <p
+                className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
                 style={{
                   opacity: index === currentSlide ? 1 : 0,
                   transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
                   transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-                  transitionDelay: index === currentSlide ? "100ms" : "0ms",
+                  transitionDelay: index === currentSlide ? "250ms" : "0ms",
                 }}
               >
-                {slide.headline}
-              </h1>
-            </div>
+                {slide.description}
+              </p>
 
-            <p
-              className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
-              style={{
-                opacity: index === currentSlide ? 1 : 0,
-                transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
-                transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-                transitionDelay: index === currentSlide ? "250ms" : "0ms",
-              }}
-            >
-              {slide.description}
-            </p>
-
-            {/* CTA Button */}
-            <div
-              className="ml-[34px]"
-              style={{
-                opacity: index === currentSlide ? 1 : 0,
-                transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
-                transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-                transitionDelay: index === currentSlide ? "400ms" : "0ms",
-              }}
-            >
-              <Link
-                href={slide.buttonLink}
-                className="inline-flex items-center justify-between gap-8 px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[180px] rounded-md"
+              {/* CTA Button */}
+              <div
+                className="ml-[34px]"
+                style={{
+                  opacity: index === currentSlide ? 1 : 0,
+                  transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
+                  transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+                  transitionDelay: index === currentSlide ? "400ms" : "0ms",
+                }}
               >
-                <span className="font-medium">{slide.buttonText}</span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+                <Link
+                  href={slide.buttonLink}
+                  className="inline-flex items-center justify-between gap-8 px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[180px] rounded-md"
+                >
+                  <span className="font-medium">{slide.buttonText}</span>
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Bottom Indicators with Progress */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3">
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className="relative h-1 rounded-full overflow-hidden transition-all duration-500 bg-border hover:bg-muted-foreground/40"
+            className="relative h-1 rounded-full overflow-hidden transition-all duration-500 bg-primary/20 hover:bg-primary/30"
             style={{
               width: index === currentSlide ? "64px" : "40px",
             }}
@@ -253,7 +254,7 @@ export default function HeroCarousel() {
             {/* Progress fill for active slide */}
             {index === currentSlide && (
               <div
-                className="absolute inset-y-0 left-0 bg-primary rounded-full transition-all duration-100 ease-linear"
+                className="absolute inset-y-0 left-0 bg-primary/60 rounded-full transition-all duration-100 ease-linear"
                 style={{
                   width: `${progress}%`,
                 }}

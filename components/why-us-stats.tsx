@@ -28,23 +28,11 @@ const stats = [
 export default function WhyUsStats() {
   return (
     <section aria-label="Why choose Arden Logic" className="relative py-20 md:py-28 overflow-hidden">
-      {/* Warm gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50/80 to-yellow-50/60" />
-      
-      {/* Subtle pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(251, 191, 36, 0.15) 0%, transparent 50%), 
-                           radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.1) 0%, transparent 50%)`,
-        }}
-      />
-
       <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Content - Single Column Layout */}
         <div className="max-w-3xl">
           {/* Eyebrow */}
-          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-amber-800/80 mb-4 block">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
             Proven Performance & Trusted Expertise
           </span>
           

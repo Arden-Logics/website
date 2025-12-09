@@ -21,8 +21,8 @@ const services: ServiceSquare[] = [
     href: "/services/msp-managed-it",
     description: "24/7 monitoring, proactive maintenance, and expert support for your entire IT infrastructure.",
     icon: <Cpu className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-blue-600",
-    accentColor: "text-blue-200",
+    bgColor: "bg-primary",
+    accentColor: "text-primary/70",
   },
   {
     id: "voip",
