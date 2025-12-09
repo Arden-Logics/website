@@ -1,17 +1,20 @@
 import { Lock, Zap, Shield, CheckCircle, Fingerprint, Cpu } from 'lucide-react'
 import Link from 'next/link'
-import { SERVICE_CONTENT } from '@/constants'
+import { SERVICE_CONTENT, SOLUTION_CONTENT } from '@/constants'
 
 interface FeaturesProps {
     serviceKey?: string
+    solutionKey?: string
 }
 
-export default function Features({ serviceKey }: FeaturesProps) {
-    // Get service-specific content if available
+export default function Features({ serviceKey, solutionKey }: FeaturesProps) {
+    // Get service or solution-specific content if available
     const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+    const solutionContent = solutionKey ? SOLUTION_CONTENT[solutionKey] : null
+    const content = serviceContent || solutionContent
     
-    // Use service-specific features if available
-    const features = serviceContent?.contentFeatures || [
+    // Use service/solution-specific features if available
+    const features = content?.contentFeatures || [
         {
             icon: Zap,
             title: "MFA integration",
@@ -56,8 +59,8 @@ export default function Features({ serviceKey }: FeaturesProps) {
         }
     ]
     
-    const sectionTitle = serviceContent?.featuresSectionTitle || "MFA that meets you where you are"
-    const sectionDescription = serviceContent?.featuresSectionDescription || "Duo wraps your entire organization in protection with powerful, scalable tools that work anywhere and grow with you."
+    const sectionTitle = content?.featuresSectionTitle || "MFA that meets you where you are"
+    const sectionDescription = content?.featuresSectionDescription || "Duo wraps your entire organization in protection with powerful, scalable tools that work anywhere and grow with you."
 
     return (
         <section className="py-12 md:py-20">

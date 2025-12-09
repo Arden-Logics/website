@@ -1,8 +1,9 @@
 import { Map } from "@/components/map"
-import { SERVICE_CONTENT } from "@/constants"
+import { SERVICE_CONTENT, SOLUTION_CONTENT } from "@/constants"
 
 interface StatsSectionProps {
     serviceKey?: string
+    solutionKey?: string
 }
 
 interface Metric {
@@ -11,11 +12,13 @@ interface Metric {
     suffix?: string
 }
 
-export default function StatsSection({ serviceKey }: StatsSectionProps) {
+export default function StatsSection({ serviceKey, solutionKey }: StatsSectionProps) {
     const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+    const solutionContent = solutionKey ? SOLUTION_CONTENT[solutionKey] : null
+    const content = serviceContent || solutionContent
     
-    const metricsTitle = serviceContent?.metricsSection?.title || 'Building the next generation of AI-powered Marketing Tools'
-    const metrics: Metric[] = serviceContent?.metricsSection?.metrics || [
+    const metricsTitle = content?.metricsSection?.title || 'Building the next generation of AI-powered Marketing Tools'
+    const metrics: Metric[] = content?.metricsSection?.metrics || [
         { value: '99.9', label: 'Uptime guarantee for all our services.', suffix: '%' },
         { value: '24/7', label: '24/7 support available around the clock.', suffix: '' },
         { value: '12', label: 'Faster processing than previous generation.', suffix: 'X' },
@@ -32,9 +35,9 @@ export default function StatsSection({ serviceKey }: StatsSectionProps) {
                                 {metricsTitle}
                             </h2>
 
-                            {serviceContent?.contentSection?.highlights?.[0] && (
+                            {content?.contentSection?.highlights?.[0] && (
                                 <p className="text-muted-foreground">
-                                    {serviceContent.contentSection.highlights[0]}
+                                    {content.contentSection.highlights[0]}
                                 </p>
                             )}
                         </div>

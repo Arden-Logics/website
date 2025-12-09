@@ -2,15 +2,18 @@ import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 import { DropdownIllustration } from "@/components/dropdown-illustration"
 import Link from 'next/link'
-import { SERVICE_CONTENT } from '@/constants'
+import { SERVICE_CONTENT, SOLUTION_CONTENT } from '@/constants'
 
 interface FeaturesHeroProps {
     serviceKey?: string
+    solutionKey?: string
 }
 
-export default function FeaturesSection({ serviceKey }: FeaturesHeroProps) {
-    // Get dynamic content if serviceKey is provided
-    const content = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+export default function FeaturesSection({ serviceKey, solutionKey }: FeaturesHeroProps) {
+    // Get dynamic content if serviceKey or solutionKey is provided
+    const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+    const solutionContent = solutionKey ? SOLUTION_CONTENT[solutionKey] : null
+    const content = serviceContent || solutionContent
     
     // Use dynamic content if available, otherwise fall back to defaults
     const title = content?.heroSection?.title || "Power of LLMs in Your Editor"

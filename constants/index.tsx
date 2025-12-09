@@ -1506,6 +1506,429 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     },
 }
 
+export interface SolutionContent {
+    title: string
+    subtitle: string
+    description: string
+    ctaText: string
+    ctaLink: string
+    features: ServiceFeature[]
+    heroSection?: {
+        breadcrumb: string
+        title: string
+        description: string
+        buttonText: string
+        buttonLink: string
+        imageSrc: string
+        imageAlt: string
+    }
+    sections?: ServiceSection[]
+    featuresSectionTitle?: string
+    featuresSectionDescription?: string
+    contentFeatures?: Array<{
+        icon: React.ReactElement
+        title: string
+        description: string
+        linkText?: string
+        linkHref?: string
+    }>
+    contentSection?: {
+        title: string
+        highlights: string[]
+        calloutText?: string
+    }
+    metricsSection?: {
+        title: string
+        metrics: Array<{
+            value: string
+            label: string
+        }>
+    }
+}
+
+export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
+    'enterprise': {
+        title: 'Enterprise Solutions',
+        subtitle: 'Enterprise-Grade IT Solutions for Large Organizations',
+        description: 'Arden Logics delivers comprehensive, scalable IT solutions designed for enterprise organizations. From infrastructure management to security and compliance, we provide the technology foundation your business needs to thrive.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Scalable Infrastructure',
+                description: 'Enterprise-grade infrastructure that grows with your organization.',
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Advanced Security',
+                description: 'Multi-layered security and compliance frameworks.',
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: '24/7 Support',
+                description: 'Round-the-clock monitoring and support for critical operations.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Strategic Planning',
+                description: 'Long-term technology roadmaps aligned with business goals.',
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Enterprise',
+            title: 'Enterprise-Grade IT Solutions for Large Organizations',
+            description: 'Arden Logics delivers comprehensive, scalable IT solutions designed for enterprise organizations. From infrastructure management to security and compliance, we provide the technology foundation your business needs to thrive.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Enterprise IT solutions',
+        },
+    },
+    'small-business': {
+        title: 'Small Business Solutions',
+        subtitle: 'Scalable Solutions Designed for Growing Businesses',
+        description: 'Tailored IT solutions that help small businesses compete with larger enterprises. We provide cost-effective technology solutions that scale as your business grows.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Cost-Effective',
+                description: 'Affordable solutions designed for small business budgets.',
+                icon: <Briefcase className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Easy to Scale',
+                description: 'Solutions that grow seamlessly with your business.',
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Quick Setup',
+                description: 'Fast deployment to get you up and running quickly.',
+                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Dedicated Support',
+                description: 'Personalized support from our expert team.',
+                icon: <Users className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Small Business',
+            title: 'Scalable Solutions Designed for Growing Businesses',
+            description: 'Tailored IT solutions that help small businesses compete with larger enterprises. We provide cost-effective technology solutions that scale as your business grows.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Small business IT solutions',
+        },
+    },
+    'startups': {
+        title: 'Startup Solutions',
+        subtitle: 'Flexible Solutions for Innovative Startups',
+        description: 'Technology solutions built for startups that need flexibility, speed, and scalability. Get enterprise-grade technology without the enterprise complexity.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Flexible Pricing',
+                description: 'Pricing models that adapt to your startup\'s needs.',
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Rapid Deployment',
+                description: 'Quick setup to get your startup running fast.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Modern Stack',
+                description: 'Cutting-edge technology for innovative companies.',
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Growth-Ready',
+                description: 'Infrastructure that scales with your success.',
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Startups',
+            title: 'Flexible Solutions for Innovative Startups',
+            description: 'Technology solutions built for startups that need flexibility, speed, and scalability. Get enterprise-grade technology without the enterprise complexity.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Startup IT solutions',
+        },
+    },
+    'tech': {
+        title: 'Tech Industry Solutions',
+        subtitle: 'Technology-Focused IT Solutions',
+        description: 'Specialized IT solutions for technology companies. We understand the unique needs of tech businesses and deliver solutions that keep you ahead of the curve.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Developer-Focused',
+                description: 'Solutions designed for technical teams.',
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Cloud-Native',
+                description: 'Modern cloud infrastructure and services.',
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'API Integration',
+                description: 'Seamless integration with your tech stack.',
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Security First',
+                description: 'Enterprise security for your code and data.',
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Tech Industry',
+            title: 'Technology-Focused IT Solutions',
+            description: 'Specialized IT solutions for technology companies. We understand the unique needs of tech businesses and deliver solutions that keep you ahead of the curve.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Tech industry IT solutions',
+        },
+    },
+    'manufacturing': {
+        title: 'Manufacturing Solutions',
+        subtitle: 'Industrial Automation and Production IT',
+        description: 'IT solutions designed for manufacturing operations. From production line systems to industrial automation, we keep your manufacturing operations running smoothly.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Industrial IoT',
+                description: 'Connect and monitor production equipment.',
+                icon: <Factory className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Production Systems',
+                description: 'IT infrastructure for manufacturing operations.',
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Uptime Guarantee',
+                description: 'Reliable systems for continuous production.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Safety Compliance',
+                description: 'IT solutions that meet industry safety standards.',
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Manufacturing',
+            title: 'Industrial Automation and Production IT',
+            description: 'IT solutions designed for manufacturing operations. From production line systems to industrial automation, we keep your manufacturing operations running smoothly.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Manufacturing IT solutions',
+        },
+    },
+    'construction': {
+        title: 'Construction Solutions',
+        subtitle: 'Construction Industry IT Solutions',
+        description: 'Technology solutions tailored for construction companies. From job site connectivity to project management systems, we support your construction operations.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Job Site Connectivity',
+                description: 'Reliable network infrastructure for construction sites.',
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Mobile Solutions',
+                description: 'Technology that works in the field.',
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Project Management',
+                description: 'IT systems for construction project coordination.',
+                icon: <Building2 className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Safety Systems',
+                description: 'Technology solutions for construction safety.',
+                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Construction',
+            title: 'Construction Industry IT Solutions',
+            description: 'Technology solutions tailored for construction companies. From job site connectivity to project management systems, we support your construction operations.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Construction IT solutions',
+        },
+    },
+    'real-estate': {
+        title: 'Real Estate Solutions',
+        subtitle: 'Real Estate Industry Solutions',
+        description: 'Comprehensive IT solutions for real estate professionals. From property management systems to client communication tools, we support your real estate business.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Property Management',
+                description: 'IT systems for managing properties and tenants.',
+                icon: <Building2 className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Client Communication',
+                description: 'Tools for staying connected with clients.',
+                icon: <Phone className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Document Management',
+                description: 'Secure storage and management of real estate documents.',
+                icon: <FileText className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Virtual Tours',
+                description: 'Technology solutions for virtual property viewing.',
+                icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Real Estate',
+            title: 'Real Estate Industry Solutions',
+            description: 'Comprehensive IT solutions for real estate professionals. From property management systems to client communication tools, we support your real estate business.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Real estate IT solutions',
+        },
+    },
+    'nonprofit': {
+        title: 'Nonprofit Solutions',
+        subtitle: 'Solutions for Nonprofit Organizations',
+        description: 'Affordable IT solutions designed for nonprofit organizations. We help nonprofits maximize their technology impact while staying within budget.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Budget-Friendly',
+                description: 'Affordable solutions for nonprofit budgets.',
+                icon: <Heart className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Donor Management',
+                description: 'Technology for managing donors and fundraising.',
+                icon: <Users className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Volunteer Coordination',
+                description: 'Systems for organizing and managing volunteers.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Grant Compliance',
+                description: 'IT solutions that support grant requirements.',
+                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Nonprofit',
+            title: 'Solutions for Nonprofit Organizations',
+            description: 'Affordable IT solutions designed for nonprofit organizations. We help nonprofits maximize their technology impact while staying within budget.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Nonprofit IT solutions',
+        },
+    },
+    'automotive': {
+        title: 'Automotive Solutions',
+        subtitle: 'Automotive Industry IT Solutions',
+        description: 'Specialized IT solutions for automotive businesses. From dealership management to service center operations, we support your automotive business.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Dealership Systems',
+                description: 'IT infrastructure for automotive dealerships.',
+                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Service Management',
+                description: 'Technology for managing service operations.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Inventory Management',
+                description: 'Systems for tracking vehicles and parts.',
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Customer Relations',
+                description: 'CRM and communication tools for automotive businesses.',
+                icon: <Users className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Automotive',
+            title: 'Automotive Industry IT Solutions',
+            description: 'Specialized IT solutions for automotive businesses. From dealership management to service center operations, we support your automotive business.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Automotive IT solutions',
+        },
+    },
+    'transportation-logistics': {
+        title: 'Transportation & Logistics Solutions',
+        subtitle: 'Transportation and Logistics Solutions',
+        description: 'IT solutions for transportation and logistics companies. From fleet management to route optimization, we keep your logistics operations running efficiently.',
+        ctaText: 'Contact Us',
+        ctaLink: '#contact',
+        features: [
+            {
+                title: 'Fleet Management',
+                description: 'Technology for managing transportation fleets.',
+                icon: <Network className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Route Optimization',
+                description: 'Systems for optimizing delivery routes.',
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Real-Time Tracking',
+                description: 'Live tracking of shipments and vehicles.',
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+            },
+            {
+                title: 'Warehouse Systems',
+                description: 'IT solutions for warehouse operations.',
+                icon: <Building2 className="stroke-foreground fill-foreground/10" />,
+            },
+        ],
+        heroSection: {
+            breadcrumb: 'Solutions / Transportation & Logistics',
+            title: 'Transportation and Logistics Solutions',
+            description: 'IT solutions for transportation and logistics companies. From fleet management to route optimization, we keep your logistics operations running efficiently.',
+            buttonText: 'Contact Us',
+            buttonLink: '#contact',
+            imageSrc: '/arden-logo.png',
+            imageAlt: 'Transportation and logistics IT solutions',
+        },
+    },
+}
+
 export interface ServiceTestimonial {
     id: number
     companyName: string

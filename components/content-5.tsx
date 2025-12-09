@@ -2,17 +2,20 @@ import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import StatsSection from './stats-8'
-import { SERVICE_CONTENT } from '@/constants'
+import { SERVICE_CONTENT, SOLUTION_CONTENT } from '@/constants'
 
 interface ContentSectionProps {
     serviceKey?: string
+    solutionKey?: string
 }
 
-export default function ContentSection({ serviceKey }: ContentSectionProps) {
+export default function ContentSection({ serviceKey, solutionKey }: ContentSectionProps) {
     const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+    const solutionContent = solutionKey ? SOLUTION_CONTENT[solutionKey] : null
+    const content = serviceContent || solutionContent
     
-    const title = serviceContent?.contentSection?.title || 'Building the next generation of AI-powered Marketing Tools'
-    const highlights = serviceContent?.contentSection?.highlights || [
+    const title = content?.contentSection?.title || 'Building the next generation of AI-powered Marketing Tools'
+    const highlights = content?.contentSection?.highlights || [
         'Our platform combines cutting-edge AI models with intuitive interfaces to streamline your development workflow and boost productivity.',
         'With intelligent code completion and automated testing, developers can focus on solving complex problems rather than getting caught up in repetitive tasks.',
         'Our comprehensive suite of tools provides real-time collaboration features, allowing teams to work seamlessly together regardless of location. Share code, debug together, and deploy with confidence.',
@@ -34,7 +37,7 @@ export default function ContentSection({ serviceKey }: ContentSectionProps) {
                             })}
                         </h2>
                         <div className="mt-12">
-                            <StatsSection serviceKey={serviceKey} />
+                            <StatsSection serviceKey={serviceKey} solutionKey={solutionKey} />
                         </div>
                     </div>
                     <div className="space-y-6">
