@@ -277,18 +277,18 @@ const NavMenu = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/partners" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <NavigationMenuLink asChild>
+                        <Link href="/partners" className={navigationMenuTriggerStyle()}>
                             Partnership Program
-                        </NavigationMenuLink>
-                    </Link>
+                        </Link>
+                    </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/about" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <NavigationMenuLink asChild>
+                        <Link href="/about" className={navigationMenuTriggerStyle()}>
                             Company
-                        </NavigationMenuLink>
-                    </Link>
+                        </Link>
+                    </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

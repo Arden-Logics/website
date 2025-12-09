@@ -10,8 +10,7 @@ interface ServiceSquare {
   href: string
   description: string
   icon: React.ReactNode
-  bgColor: string
-  accentColor: string
+  bgImage: string
 }
 
 const services: ServiceSquare[] = [
@@ -20,54 +19,48 @@ const services: ServiceSquare[] = [
     name: "MSP Managed IT",
     href: "/services/msp-managed-it",
     description: "24/7 monitoring, proactive maintenance, and expert support for your entire IT infrastructure.",
-    icon: <Cpu className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-primary",
-    accentColor: "text-primary/70",
+    icon: <Cpu className="size-8 md:size-12" strokeWidth={1.5} />,
+    bgImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
   },
   {
     id: "voip",
     name: "VoIP",
     href: "/services/voip",
     description: "Crystal-clear voice communication with flexible cloud-based phone systems.",
-    icon: <Phone className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-emerald-600",
-    accentColor: "text-emerald-200",
+    icon: <Phone className="size-8 md:size-12" strokeWidth={1.5} />,
+    bgImage: "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80",
   },
   {
     id: "network",
     name: "Network & Cabling",
     href: "/services/network-cabling",
     description: "Structured cabling and robust network infrastructure built for reliability.",
-    icon: <Network className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-amber-600",
-    accentColor: "text-amber-200",
+    icon: <Network className="size-8 md:size-12" strokeWidth={1.5} />,
+    bgImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
   },
   {
     id: "av",
     name: "Audio & Visual",
     href: "/services/audio-visual",
     description: "Professional AV systems for conference rooms, presentations, and digital signage.",
-    icon: <MonitorPlay className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-violet-600",
-    accentColor: "text-violet-200",
+    icon: <MonitorPlay className="size-8 md:size-12" strokeWidth={1.5} />,
+    bgImage: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1200&q=80",
   },
   {
     id: "security",
     name: "Camera & Security",
     href: "/services/camera-access-security",
     description: "Advanced surveillance and access control to protect your premises.",
-    icon: <Camera className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-rose-600",
-    accentColor: "text-rose-200",
+    icon: <Camera className="size-8 md:size-12" strokeWidth={1.5} />,
+    bgImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80",
   },
   {
     id: "cyber",
     name: "Cyber Security",
     href: "/services/cybersecurity",
     description: "Multi-layered protection against evolving cyber threats and vulnerabilities.",
-    icon: <ShieldCheck className="size-10 md:size-14" strokeWidth={1.5} />,
-    bgColor: "bg-indigo-600",
-    accentColor: "text-indigo-200",
+    icon: <ShieldCheck className="size-8 md:size-12" strokeWidth={1.5} />,
+    bgImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
   },
 ]
 
@@ -75,126 +68,88 @@ export default function ServicesExpandGrid() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-neutral-900">
       {/* Full-width diagonal grid */}
       <div 
-        className="relative flex h-[600px] md:h-[700px] w-full"
+        className="relative flex h-[500px] md:h-[600px] w-full pb-8 -mb-8"
         onMouseLeave={() => setHoveredId(null)}
-        style={{
-          marginLeft: "-10%",
-          marginRight: "-10%",
-          width: "120%",
-        }}
       >
         {services.map((service, index) => {
           const isHovered = hoveredId === service.id
           const hasHover = hoveredId !== null
-          const skewAngle = -12
+          const skewAngle = -8
 
           return (
             <Link
               key={service.id}
               href={service.href}
-              className={`
-                relative flex flex-col justify-end
-                ${service.bgColor}
-                text-white overflow-hidden
-                transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-                group cursor-pointer
-              `}
+              className="relative flex flex-col justify-end text-white overflow-hidden transition-all duration-500 ease-out group cursor-pointer"
               style={{
                 flex: isHovered 
-                  ? "4" 
+                  ? "2.5" 
                   : hasHover 
-                    ? "0.5" 
+                    ? "0.7" 
                     : "1",
                 transform: `skewX(${skewAngle}deg)`,
-                marginLeft: index === 0 ? "0" : "-3rem",
+                marginLeft: index === 0 ? "-4rem" : "-2rem",
+                marginRight: index === services.length - 1 ? "-4rem" : "0",
                 zIndex: isHovered ? 10 : services.length - index,
               }}
               onMouseEnter={() => setHoveredId(service.id)}
             >
+              {/* Background Image - extended inset to cover skew gaps at bottom */}
+              <div 
+                className="absolute bg-cover bg-center transition-transform duration-700"
+                style={{
+                  backgroundImage: `url(${service.bgImage})`,
+                  transform: `skewX(${-skewAngle}deg) scale(1.4)`,
+                  inset: "-25%",
+                }}
+              />
+              
+              {/* Dark overlay for readability */}
+              <div className="absolute inset-0" />
+
               {/* Inner container - counter-skew to straighten content */}
               <div 
-                className="absolute inset-0 flex flex-col justify-end p-8 md:p-12"
+                className="absolute inset-0 flex flex-col justify-end p-6 md:p-10"
                 style={{
                   transform: `skewX(${-skewAngle}deg)`,
-                  paddingLeft: "3rem",
-                  paddingRight: "3rem",
                 }}
               >
-                {/* Background Pattern */}
-                <div 
-                  className="absolute inset-0 opacity-[0.07]"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, white 1px, transparent 1px), linear-gradient(-135deg, white 1px, transparent 1px)`,
-                    backgroundSize: "40px 40px",
-                  }}
-                />
-                
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+                {/* Gradient Overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                 {/* Animated light beam on hover */}
                 <div 
                   className={`
-                    absolute inset-0 transition-opacity duration-700
-                    bg-gradient-to-br from-white/20 via-transparent to-transparent
+                    absolute inset-0 transition-opacity duration-500
+                    bg-gradient-to-br from-white/10 via-transparent to-transparent
                     ${isHovered ? "opacity-100" : "opacity-0"}
                   `}
                 />
 
                 {/* Content Container */}
-                <div className="relative z-10 flex flex-col h-full justify-between">
-                  {/* Icon at top */}
-                  <div 
-                    className={`
-                      ${service.accentColor}
-                      transition-all duration-700 pt-4
-                      ${isHovered ? "scale-125 translate-y-0" : "scale-100"}
-                    `}
-                  >
-                    {service.icon}
-                  </div>
+                <div className="relative z-10 flex flex-col h-full justify-between items-center text-center px-1 md:px-2">
 
                   {/* Text Content at bottom */}
-                  <div className="mt-auto">
-                    {/* Service Number */}
-                    <span 
-                      className={`
-                        block text-white/30 font-mono text-sm mb-2
-                        transition-all duration-500
-                        ${isHovered ? "opacity-100" : "opacity-0"}
-                      `}
-                    >
-                      0{index + 1}
-                    </span>
-
-                    {/* Title */}
-                    <h3 
-                      className={`
-                        font-bold text-white
-                        transition-all duration-700 ease-out
-                        ${isHovered 
-                          ? "text-3xl md:text-4xl lg:text-5xl mb-4" 
-                          : "text-lg md:text-xl lg:text-2xl mb-2"
-                        }
-                      `}
-                    >
+                  <div className="mt-auto w-full flex flex-col items-center">
+                    {/* Title - always visible, centered */}
+                    <h3 className="font-bold text-white text-sm md:text-lg lg:text-xl mb-2 text-center leading-tight">
                       {service.name}
                     </h3>
 
                     {/* Description - visible on hover */}
                     <p 
                       className={`
-                        text-white/80 text-base md:text-lg leading-relaxed max-w-md
-                        transition-all duration-700 overflow-hidden
-                        ${isHovered 
-                          ? "opacity-100 max-h-32 mb-6" 
-                          : "opacity-0 max-h-0 mb-0"
-                        }
+                        text-white/85 text-sm md:text-base leading-relaxed max-w-sm mx-auto
+                        transition-opacity duration-300 overflow-hidden
+                        ${isHovered ? "opacity-100" : "opacity-0 h-0"}
                       `}
+                      style={{ 
+                        height: isHovered ? 'auto' : 0,
+                        marginBottom: isHovered ? '1rem' : 0 
+                      }}
                     >
                       {service.description}
                     </p>
@@ -202,49 +157,33 @@ export default function ServicesExpandGrid() {
                     {/* CTA - visible on hover */}
                     <div 
                       className={`
-                        inline-flex items-center gap-3 text-base font-semibold
-                        bg-white/10 backdrop-blur-sm px-5 py-3 rounded-full
-                        transition-all duration-700
-                        hover:bg-white/20
-                        ${isHovered 
-                          ? "opacity-100 translate-y-0" 
-                          : "opacity-0 translate-y-8 pointer-events-none"
-                        }
+                        inline-flex items-center gap-2 text-sm font-semibold
+                        bg-white/15 backdrop-blur-sm px-4 py-2.5 rounded-full
+                        transition-opacity duration-300
+                        hover:bg-white/25
+                        ${isHovered ? "opacity-100" : "opacity-0 pointer-events-none"}
                       `}
                     >
                       <span>Explore</span>
-                      <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
                 </div>
-
-                {/* Decorative corner accent */}
-                <div 
-                  className={`
-                    absolute top-8 right-8 w-20 h-20
-                    border-t-2 border-r-2 border-white/20
-                    transition-all duration-700
-                    ${isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75"}
-                  `}
-                />
               </div>
 
               {/* Edge highlight */}
               <div 
                 className={`
                   absolute inset-y-0 right-0 w-px
-                  bg-gradient-to-b from-transparent via-white/30 to-transparent
-                  transition-opacity duration-500
-                  ${isHovered ? "opacity-100" : "opacity-30"}
+                  bg-gradient-to-b from-transparent via-white/20 to-transparent
+                  transition-opacity duration-300
+                  ${isHovered ? "opacity-100" : "opacity-20"}
                 `}
               />
             </Link>
           )
         })}
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
