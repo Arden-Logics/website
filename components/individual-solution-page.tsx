@@ -4,6 +4,7 @@ import SolutionFeaturesGrid from './solution-features-grid'
 import SolutionContentSplit from './solution-content-split'
 import SolutionTestimonial from './solution-testimonial'
 import SolutionSecurityFeatures from './solution-security-features'
+import SolutionInlineCTA from './solution-inline-cta'
 import CallToAction from './call-to-action'
 
 interface IndividualSolutionPageProps {
@@ -34,6 +35,13 @@ export default function IndividualSolutionPage({ solutionKey }: IndividualSoluti
             <SolutionFeaturesGrid
                 title={content.section2.title}
                 features={content.section2.features}
+            />
+            
+            {/* Inline CTA */}
+            <SolutionInlineCTA 
+                title="Experience Arden Logics in action"
+                buttonText="Contact us"
+                buttonLink="/#contact-us"
             />
             
             {/* Section 3: Content Split (Image Left) */}
