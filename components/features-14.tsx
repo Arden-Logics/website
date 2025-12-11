@@ -24,15 +24,15 @@ export default function FeaturesSection({ serviceKey, solutionKey }: FeaturesHer
     const imageAlt = content?.heroSection?.imageAlt || "Service illustration"
 
     return (
-        <section className="overflow-hidden h-screen flex items-center">
+        <section className="overflow-hidden min-h-screen flex items-center sm:py-16 md:py-0">
             <div className="bg-zinc-50 py-24 w-full">
                 {/* Full-width hero content */}
                 <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                     <div className="grid items-center gap-8 md:grid-cols-[1.2fr_2fr] lg:gap-12">
                         <div>
                             <div className="w-full max-w-2xl">
-                                <h2 className="text-foreground text-balance text-5xl lg:text-6xl font-semibold leading-tight">{title}</h2>
-                                <p className="my-8 text-balance text-xl lg:text-2xl text-muted-foreground justify-between">{description}</p>
+                                <h2 className="text-foreground text-balance text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">{title}</h2>
+                                <p className="my-8 text-balance text-lg sm:text-xl lg:text-2xl text-muted-foreground justify-between">{description}</p>
                                 <Button
                                     className="mt-8 pr-3 text-base py-6 px-6 rounded-xl"
                                     variant="outline"

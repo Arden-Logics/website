@@ -13,7 +13,7 @@ import { SERVICES, INDUSTRIES, RESOURCES, SOLUTIONS } from '@/constants'
 export default function HeaderOne() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
-    const isLarge = useMedia('(min-width: 64rem)')
+    const isLarge = useMedia('(min-width: 80rem)') // Changed from 64rem (1024px) to 80rem (1280px) to prevent overflow at 1368px
 
     React.useEffect(() => {
         const handleScroll = () => {
