@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -13,6 +14,7 @@ interface Stat {
 interface CustomerStory {
   id: number
   companyName: string
+  logo: string
   headline: string
   highlightedText: string
   stats: Stat[]
@@ -25,7 +27,8 @@ const stories: CustomerStory[] = [
   {
     id: 1,
     companyName: 'Advocare Medical Group',
-    headline: 'Advocare Medical Group relies on Juniper to',
+    logo: '/partered-with-companies/Advocare-Logo-Blue.png',
+    headline: 'Advocare Medical Group relies on Arden to',
     highlightedText: 'keep their practices secure, connected, and running smoothly across every location.',
     stats: [
       { value: '1998', label: 'Founded' },
@@ -38,7 +41,8 @@ const stories: CustomerStory[] = [
   {
     id: 2,
     companyName: 'Edge Fitness',
-    headline: 'Juniper powers the tech behind Edge Fitness',
+    logo: '/partered-with-companies/The_Edge_Fitness_Clubs_Logo.jpg',
+    headline: 'Arden powers the tech behind Edge Fitness',
     highlightedText: 'helping each location stay connected, supported, and member-ready with reliable IT and AV solutions.',
     stats: [
       { value: '50%', label: 'Faster issue resolution' },
@@ -51,7 +55,8 @@ const stories: CustomerStory[] = [
   {
     id: 3,
     companyName: 'Ives Bank',
-    headline: 'Ives Bank relies on Juniper to',
+    logo: '/partered-with-companies/og-ives-bank.jpg',
+    headline: 'Ives Bank relies on Arden to',
     highlightedText: 'secure their infrastructure, streamline support, and maintain high-performing IT systems across their growing financial network.',
     stats: [
       { value: '35%', label: 'Reduction in support overhead' },
@@ -64,8 +69,9 @@ const stories: CustomerStory[] = [
   {
     id: 4,
     companyName: 'Middlesex College',
+    logo: '/partered-with-companies/mcc.webp',
     headline: 'Middlesex College enhances campus technology and student experiences with',
-    highlightedText: "Juniper's reliable IT and AV solutions.",
+    highlightedText: "Arden's reliable IT and AV solutions.",
     stats: [
       { value: '13,000+', label: 'Students served annually' },
       { value: '100+', label: 'Classrooms & labs supported' },
@@ -133,24 +139,30 @@ export default function FeaturedStories() {
           Partnered With Companies Nationwide to Keep Their Technology Running Flawlessly
         </h2>
 
-        {/* Company Name Navigation Tabs */}
+        {/* Company Logo Navigation Tabs */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-12 md:mb-16">
           {stories.map((story, index) => (
             <button
               key={story.id}
               onClick={() => handleTabClick(index)}
               className={cn(
-                'relative py-5 px-4 text-left transition-all duration-300'
+                'relative py-5 px-4 flex items-center justify-center transition-all duration-300'
               )}
             >
-              <span className={cn(
-                'text-sm md:text-base font-medium transition-all duration-300',
+              <div className={cn(
+                'relative w-full h-12 md:h-16 transition-all duration-300',
                 index === currentStory 
-                  ? 'text-foreground' 
-                  : 'text-muted-foreground/60 hover:text-muted-foreground'
+                  ? 'opacity-100 scale-100' 
+                  : 'opacity-50 scale-95 grayscale hover:opacity-70 hover:scale-100'
               )}>
-                {story.companyName}
-              </span>
+                <Image
+                  src={story.logo}
+                  alt={story.companyName}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
               
               {/* Progress indicator for active tab */}
               {index === currentStory && (

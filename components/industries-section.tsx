@@ -67,7 +67,8 @@ const industries: Industry[] = [
     name: 'Healthcare',
     headline: 'Create smart, secure experiences for patients, staff, and partners.',
     description: 'Modernize healthcare IT infrastructure with HIPAA-compliant solutions that enhance patient care, streamline operations, and protect sensitive medical data.',
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop',
+    // Doctor using tablet for patient records - represents healthcare IT integration
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
     link: '/industries',
     testimonial: {
       companyName: 'ChenMed',
@@ -81,7 +82,8 @@ const industries: Industry[] = [
     name: 'Financial services',
     headline: 'Secure, compliant technology for modern financial operations.',
     description: 'Enable secure transactions, protect customer data, and meet regulatory requirements with enterprise-grade cybersecurity and network solutions.',
-    image: 'https://images.unsplash.com/photo-1560472355-536de3962603?q=80&w=800&auto=format&fit=crop',
+    // Secure credit card payment - represents secure financial transactions and data protection
+    image: '/industries-home-page/financial-services.jpeg',
     link: '/industries',
     testimonial: {
       companyName: 'First Bank',
@@ -95,7 +97,8 @@ const industries: Industry[] = [
     name: 'Education',
     headline: 'Empower learning with reliable, safe technology infrastructure.',
     description: 'Create connected campuses with robust networking, secure access controls, and managed IT services that support educators and students.',
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop',
+    // Students in modern classroom with laptops - represents campus IT/EdTech
+    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
     link: '/industries',
     testimonial: {
       companyName: 'Edu District',
@@ -109,7 +112,8 @@ const industries: Industry[] = [
     name: 'Retail',
     headline: 'Transform retail experiences with connected, secure technology.',
     description: 'Deliver seamless omnichannel experiences with reliable POS systems, secure payment processing, and integrated surveillance solutions.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
+    // Modern retail checkout/POS - represents retail technology solutions
+    image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop',
     link: '/industries',
     testimonial: {
       companyName: 'RetailPlus',
@@ -123,7 +127,8 @@ const industries: Industry[] = [
     name: 'Government',
     headline: 'Mission-critical technology for public sector organizations.',
     description: 'Deploy secure, compliant IT infrastructure that supports government operations, protects citizen data, and enables digital transformation.',
-    image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=800&auto=format&fit=crop',
+    // Government building with modern architecture - represents public sector IT
+    image: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=800&auto=format&fit=crop',
     link: '/industries',
     testimonial: {
       companyName: 'GovTech',

@@ -76,13 +76,14 @@ export default function IntegrationsSection() {
 const IntegrationCard = ({ title, description, image, alt, link }: { title: string; description: string; image: string; alt: string; link?: string }) => {
     return (
         <Card className="relative p-6">
-            <div className="h-8 flex items-center mb-6">
+            <div className="h-16 flex items-center justify-center mb-6">
                 <Image
                     src={image}
                     alt={alt}
-                    width={120}
-                    height={32}
-                    className="object-contain w-auto h-full"
+                    width={200}
+                    height={64}
+                    className="object-contain max-h-full max-w-full"
+                    style={{ maxHeight: '64px', maxWidth: '200px' }}
                 />
             </div>
 
