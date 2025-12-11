@@ -755,7 +755,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization. From conference rooms to campus-wide systems, we design, install, and support AV environments that work anywhere—and grow with you.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/services/audio-video.jpeg',
+            imageSrc: '/services/audio-visual.jpeg',
             imageAlt: 'Modern conference room with professional audio visual equipment',
         },
         sections: [
