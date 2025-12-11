@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
-import { DropdownIllustration } from "@/components/dropdown-illustration"
+import Image from 'next/image'
 import Link from 'next/link'
 import { SERVICE_CONTENT, SOLUTION_CONTENT } from '@/constants'
 
@@ -20,20 +20,21 @@ export default function FeaturesSection({ serviceKey, solutionKey }: FeaturesHer
     const description = content?.heroSection?.description || "Write code faster with the latest Large Language Models from Gemini, GooglePaLM, and Replit."
     const buttonText = content?.heroSection?.buttonText || "Learn more"
     const buttonLink = content?.heroSection?.buttonLink || "#"
-    const features = content?.features || []
+    const imageSrc = content?.heroSection?.imageSrc || "/arden-logo.png"
+    const imageAlt = content?.heroSection?.imageAlt || "Service illustration"
 
     return (
         <section className="overflow-hidden h-screen flex items-center">
             <div className="bg-zinc-50 py-24 w-full">
                 {/* Full-width hero content */}
-                <div className="mx-auto w-full max-w-[90rem] px-8 lg:px-16">
-                    <div className="grid items-center gap-16 md:grid-cols-2 lg:gap-24">
+                <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
+                    <div className="grid items-center gap-8 md:grid-cols-[1.2fr_2fr] lg:gap-12">
                         <div>
-                            <div className="w-full">
+                            <div className="w-full max-w-2xl">
                                 <h2 className="text-foreground text-balance text-5xl lg:text-6xl font-semibold leading-tight">{title}</h2>
                                 <p className="my-8 text-balance text-xl lg:text-2xl text-muted-foreground justify-between">{description}</p>
                                 <Button
-                                    className="mt-8 pr-3 text-base py-6 px-6"
+                                    className="mt-8 pr-3 text-base py-6 px-6 rounded-xl"
                                     variant="outline"
                                     asChild>
                                     <Link href={buttonLink}>
@@ -43,8 +44,17 @@ export default function FeaturesSection({ serviceKey, solutionKey }: FeaturesHer
                                 </Button>
                             </div>
                         </div>
-                        <div className="flex justify-center lg:justify-end">
-                            <DropdownIllustration className="scale-125 lg:scale-150 origin-center" />
+                        <div className="flex justify-end">
+                            <div className="relative w-full aspect-[3/4] lg:aspect-[4/3] overflow-hidden rounded-2xl pt-10">
+                                <Image
+                                    src={imageSrc}
+                                    alt={imageAlt}
+                                    className="w-[95%] h-[95%] object-cover rounded-2xl"
+                                    priority
+                                    width={1000}
+                                    height={1000}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

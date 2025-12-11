@@ -465,8 +465,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Ensure uptime, productivity, and long-term stability with fully managed IT support tailored to your organization. Arden Logics delivers proactive monitoring, expert guidance, and end-to-end technology management built to keep your operations running smoothly.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/arden-logo.png',
-            imageAlt: 'Modern IT management solutions',
+            imageSrc: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop',
+            imageAlt: 'IT professionals collaborating in a modern tech office',
         },
         sections: [
             {
@@ -610,8 +610,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Arden Logics builds fast, reliable, and scalable network infrastructure with structured cabling solutions designed to support your organization today and grow with you tomorrow.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/arden-logo.png',
-            imageAlt: 'Network infrastructure',
+            imageSrc: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
+            imageAlt: 'Data center with organized network cables and server infrastructure',
         },
         sections: [
             {
@@ -755,8 +755,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization. From conference rooms to campus-wide systems, we design, install, and support AV environments that work anywhere—and grow with you.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/arden-logo.png',
-            imageAlt: 'Professional AV setup',
+            imageSrc: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
+            imageAlt: 'Modern conference room with professional audio visual equipment',
         },
         sections: [
             {
@@ -948,8 +948,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Modern security isn\'t just cameras on walls — it\'s an integrated, intelligent system that keeps people safe, protects assets, and gives you real-time visibility across every facility.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/arden-logo.png',
-            imageAlt: 'Security camera system',
+            imageSrc: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2096&auto=format&fit=crop',
+            imageAlt: 'Professional security camera surveillance system monitoring',
         },
         sections: [
             {
@@ -1153,8 +1153,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Empower your organization with a modern cloud-based VoIP phone system designed for clarity, reliability, and scalability. Arden Logics delivers business-class voice, texting, and call management solutions that support remote teams, hybrid workforces, and fast-growing companies. Our cloud VoIP platform provides HD voice quality, mobile-ready softphones, and intelligent call routing features that keep your team connected from anywhere.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/arden-logo.png',
-            imageAlt: 'Business communication solutions',
+            imageSrc: 'https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=2070&auto=format&fit=crop',
+            imageAlt: 'Business professional using modern VoIP phone system',
         },
         sections: [
             {
@@ -1344,8 +1344,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Arden Logics delivers modern, adaptive cybersecurity built to defend your organization from today\'s threats and tomorrow\'s unknowns. From endpoint protection to full threat monitoring, we secure your systems, data, and people with solutions that scale effortlessly.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: '/arden-logo.png',
-            imageAlt: 'Enterprise cybersecurity solutions',
+            imageSrc: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+            imageAlt: 'Cybersecurity digital protection and network security visualization',
         },
         sections: [
             {
