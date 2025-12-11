@@ -1,14 +1,21 @@
-import { Beacon } from '@/components/logos/beacon'
-import { Bolt } from '@/components/logos/bolt'
-import Cisco from '@/components/logos/cisco'
-import { Hulu } from '@/components/logos/hulu'
-import { OpenAIFull } from '@/components/logos/open-ai'
-import { Primevideo } from '@/components/logos/prime'
-import { Stripe } from '@/components/logos/stripe'
-import VisualStudioCode from '@/components/logos/vs-code'
+import Image from 'next/image'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 
 export default function LogoCloud({ displayText = true }: { displayText?: boolean }) {
+    const clientLogos = [
+        { src: '/client-logos/Asendia_Organization_Logo.png', alt: 'Asendia' },
+        { src: '/client-logos/csbm-logo-190x128-R.svg', alt: 'CSBM' },
+        { src: '/client-logos/Logo+-+S&S.webp', alt: 'S&S' },
+        { src: '/client-logos/ParkOps-Parking-Management-Service.png', alt: 'ParkOps' },
+        { src: '/client-logos/PWi logo.jpg', alt: 'PWi' },
+        { src: '/client-logos/ra_logo.jpg', alt: 'RA' },
+        { src: '/client-logos/RAIN-Total-Care-Logo.jpg', alt: 'RAIN Total Care' },
+        { src: '/client-logos/rmgt_logo_1.jpg', alt: 'RMGT' },
+        { src: '/client-logos/TOCA_Social_Logo-08-removebg-preview_721x.webp', alt: 'TOCA Social' },
+        { src: '/client-logos/75cdc0e546512724773b08fb1d7e84bcx.avif', alt: 'Client Logo' },
+        { src: '/client-logos/unnamed.jpg', alt: 'Client Logo' },
+    ]
+
     return (
         <section className="overflow-hidden py-16">
             <div className="group relative w-full px-6 lg:px-12">
@@ -30,39 +37,17 @@ export default function LogoCloud({ displayText = true }: { displayText?: boolea
                             speedOnHover={20}
                             speed={40}
                             className="*:gap-12! md:*:gap-24! lg:*:gap-32! items-center">
-                            <Hulu
-                                height={24}
-                                width="auto"
-                            />
-                            <Beacon
-                                height={24}
-                                width="auto"
-                            />
-                            <Cisco
-                                height={24}
-                                width="auto"
-                            />
-                            <Primevideo
-                                height={32}
-                                width="auto"
-                            />
-                            <Stripe
-                                height={24}
-                                width="auto"
-                            />
-                            <OpenAIFull
-                                height={24}
-                                width="auto"
-                            />
-                            <VisualStudioCode
-                                height={24}
-                                width="auto"
-                            />
-
-                            <Bolt
-                                height={24}
-                                width="auto"
-                            />
+                            {clientLogos.map((logo, index) => (
+                                <div key={index} className="flex items-center justify-center h-16">
+                                    <Image
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        width={120}
+                                        height={64}
+                                        className="object-contain w-auto h-full"
+                                    />
+                                </div>
+                            ))}
                         </InfiniteSlider>
                     </div>
                 </div>

@@ -1,14 +1,48 @@
 import { Card } from '@/components/ui/card'
 import Link from 'next/link'
+import Image from 'next/image'
 import * as React from 'react'
-import VSCodium from '@/components/logos/VSCodium'
-import Replit from '@/components/logos/Replit'
-import GooglePaLM from '@/components/logos/GooglePaLM'
-import Gemini from '@/components/logos/Gemini'
-import MagicUI from '@/components/logos/MagicUI'
-import MediaWiki from '@/components/logos/MediaWiki'
 
 export default function IntegrationsSection() {
+    const partners = [
+        {
+            title: 'Microsoft',
+            description: 'Leading cloud and enterprise solutions provider.',
+            image: '/powered-by/Microsoft-logo.webp',
+            alt: 'Microsoft',
+        },
+        {
+            title: 'Google',
+            description: 'Innovative cloud computing and AI technology solutions.',
+            image: '/powered-by/Google_2015_logo.svg.webp',
+            alt: 'Google',
+        },
+        {
+            title: 'Cisco',
+            description: 'Networking and cybersecurity solutions for modern businesses.',
+            image: '/powered-by/Cisco_logo_blue_2016.svg.png',
+            alt: 'Cisco',
+        },
+        {
+            title: 'Fortinet',
+            description: 'Advanced cybersecurity and network security solutions.',
+            image: '/powered-by/FORTINET.png',
+            alt: 'Fortinet',
+        },
+        {
+            title: 'Lenovo',
+            description: 'Reliable hardware and technology solutions for enterprises.',
+            image: '/powered-by/Lenovo_logo_1.webp',
+            alt: 'Lenovo',
+        },
+        {
+            title: 'Datto',
+            description: 'Business continuity and data protection solutions.',
+            image: '/powered-by/Datto_logo.svg',
+            alt: 'Datto',
+        },
+    ]
+
     return (
         <section className="bg-background">
             <div className="bg-muted/50 py-24">
@@ -23,41 +57,15 @@ export default function IntegrationsSection() {
                         </p>
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        <IntegrationCard
-                            title="Google Gemini"
-                            description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.">
-                            <Gemini />
-                        </IntegrationCard>
-
-                        <IntegrationCard
-                            title="Replit"
-                            description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.">
-                            <Replit />
-                        </IntegrationCard>
-
-                        <IntegrationCard
-                            title="Magic UI"
-                            description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.">
-                            <MagicUI />
-                        </IntegrationCard>
-
-                        <IntegrationCard
-                            title="VSCodium"
-                            description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.">
-                            <VSCodium />
-                        </IntegrationCard>
-
-                        <IntegrationCard
-                            title="MediaWiki"
-                            description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.">
-                            <MediaWiki />
-                        </IntegrationCard>
-
-                        <IntegrationCard
-                            title="Google PaLM"
-                            description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.">
-                            <GooglePaLM />
-                        </IntegrationCard>
+                        {partners.map((partner, index) => (
+                            <IntegrationCard
+                                key={index}
+                                title={partner.title}
+                                description={partner.description}
+                                image={partner.image}
+                                alt={partner.alt}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -65,19 +73,31 @@ export default function IntegrationsSection() {
     )
 }
 
-const IntegrationCard = ({ title, description, children, link = 'https://github.com/meschacirung/cnblocks' }: { title: string; description: string; children: React.ReactNode; link?: string }) => {
+const IntegrationCard = ({ title, description, image, alt, link }: { title: string; description: string; image: string; alt: string; link?: string }) => {
     return (
         <Card className="relative p-6">
-            <div className="*:size-8">{children}</div>
+            <div className="h-8 flex items-center mb-6">
+                <Image
+                    src={image}
+                    alt={alt}
+                    width={120}
+                    height={32}
+                    className="object-contain w-auto h-full"
+                />
+            </div>
 
-            <div className="space-y-2 pt-6">
-                <h3 className="text-base font-medium">
-                    <Link
-                        href={link}
-                        className="before:absolute before:inset-0">
-                        {title}
-                    </Link>
-                </h3>
+            <div className="space-y-2">
+                {/* <h3 className="text-base font-medium">
+                    {link ? (
+                        <Link
+                            href={link}
+                            className="before:absolute before:inset-0">
+                            {title}
+                        </Link>
+                    ) : (
+                        title
+                    )}
+                </h3> */}
                 <p className="text-muted-foreground line-clamp-2">{description}</p>
             </div>
         </Card>
