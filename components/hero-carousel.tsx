@@ -67,27 +67,46 @@ export default function HeroCarousel() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const progressRef = useRef<NodeJS.Timeout | null>(null);
+  const isAnimatingRef = useRef(false);
+  const nextSlideRef = useRef<() => void>(() => {});
 
   const nextSlide = useCallback(() => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection("next");
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => {
+      const next = (prev + 1) % slides.length;
+      return next;
+    });
     setProgress(0);
-    setTimeout(() => setIsAnimating(false), 800);
-  }, [isAnimating]);
+    setTimeout(() => {
+      setIsAnimating(false);
+      isAnimatingRef.current = false;
+    }, 800);
+  }, []);
+
+  // Keep ref in sync
+  useEffect(() => {
+    nextSlideRef.current = nextSlide;
+  }, [nextSlide]);
 
   const prevSlide = useCallback(() => {
-    if (isAnimating) return;
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection("prev");
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setProgress(0);
-    setTimeout(() => setIsAnimating(false), 800);
-  }, [isAnimating]);
+    setTimeout(() => {
+      setIsAnimating(false);
+      isAnimatingRef.current = false;
+    }, 800);
+  }, []);
 
   const goToSlide = (index: number) => {
-    if (isAnimating || index === currentSlide) return;
+    if (isAnimatingRef.current || index === currentSlide) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setDirection(index > currentSlide ? "next" : "prev");
     setCurrentSlide(index);
@@ -95,6 +114,7 @@ export default function HeroCarousel() {
     setIsAutoPlaying(false);
     setTimeout(() => {
       setIsAnimating(false);
+      isAnimatingRef.current = false;
       setIsAutoPlaying(true);
     }, 800);
   };
@@ -103,16 +123,27 @@ export default function HeroCarousel() {
   useEffect(() => {
     if (!isAutoPlaying) {
       setProgress(0);
+      if (progressRef.current) {
+        clearInterval(progressRef.current);
+        progressRef.current = null;
+      }
       return;
     }
+
+    // Reset progress when slide changes
+    setProgress(0);
 
     const interval = 50;
     const increment = (interval / SLIDE_DURATION) * 100;
 
+    if (progressRef.current) {
+      clearInterval(progressRef.current);
+    }
+
     progressRef.current = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          nextSlide();
+          nextSlideRef.current?.();
           return 0;
         }
         return prev + increment;
@@ -122,9 +153,10 @@ export default function HeroCarousel() {
     return () => {
       if (progressRef.current) {
         clearInterval(progressRef.current);
+        progressRef.current = null;
       }
     };
-  }, [isAutoPlaying, nextSlide, currentSlide]);
+  }, [isAutoPlaying, currentSlide]);
 
   const getSlideClasses = (index: number) => {
     const isActive = index === currentSlide;

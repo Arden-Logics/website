@@ -755,7 +755,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization. From conference rooms to campus-wide systems, we design, install, and support AV environments that work anywhere—and grow with you.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
+            imageSrc: '/services/audio-video.jpeg',
             imageAlt: 'Modern conference room with professional audio visual equipment',
         },
         sections: [
@@ -948,7 +948,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Modern security isn\'t just cameras on walls — it\'s an integrated, intelligent system that keeps people safe, protects assets, and gives you real-time visibility across every facility.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2096&auto=format&fit=crop',
+            imageSrc: '/services/camera-access.jpeg',
             imageAlt: 'Professional security camera surveillance system monitoring',
         },
         sections: [
@@ -1344,7 +1344,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             description: 'Arden Logics delivers modern, adaptive cybersecurity built to defend your organization from today\'s threats and tomorrow\'s unknowns. From endpoint protection to full threat monitoring, we secure your systems, data, and people with solutions that scale effortlessly.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
-            imageSrc: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+            imageSrc: '/services/cybersecurity.jpeg',
             imageAlt: 'Cybersecurity digital protection and network security visualization',
         },
         sections: [

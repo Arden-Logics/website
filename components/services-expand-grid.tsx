@@ -20,7 +20,7 @@ const services: ServiceSquare[] = [
     href: "/services/msp-managed-it",
     description: "24/7 monitoring, proactive maintenance, and expert support for your entire IT infrastructure.",
     icon: <Cpu className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80",
+    bgImage: "/services/msp-ip.jpeg",
   },
   {
     id: "voip",
@@ -28,7 +28,7 @@ const services: ServiceSquare[] = [
     href: "/services/voip",
     description: "Crystal-clear voice communication with flexible cloud-based phone systems.",
     icon: <Phone className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80",
+    bgImage: "/services/voip.jpeg",
   },
   {
     id: "network",
@@ -36,7 +36,7 @@ const services: ServiceSquare[] = [
     href: "/services/network-cabling",
     description: "Structured cabling and robust network infrastructure built for reliability.",
     icon: <Network className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
+    bgImage: "/services/network-and-cabling.jpeg",
   },
   {
     id: "av",
@@ -44,7 +44,7 @@ const services: ServiceSquare[] = [
     href: "/services/audio-visual",
     description: "Professional AV systems for conference rooms, presentations, and digital signage.",
     icon: <MonitorPlay className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1200&q=80",
+    bgImage: "/services/audio-visual.jpeg",
   },
   {
     id: "security",
@@ -52,7 +52,7 @@ const services: ServiceSquare[] = [
     href: "/services/camera-access-security",
     description: "Advanced surveillance and access control to protect your premises.",
     icon: <Camera className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&q=80",
+    bgImage: "/services/camera-access.jpeg",
   },
   {
     id: "cyber",
@@ -60,7 +60,7 @@ const services: ServiceSquare[] = [
     href: "/services/cybersecurity",
     description: "Multi-layered protection against evolving cyber threats and vulnerabilities.",
     icon: <ShieldCheck className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    bgImage: "/services/cybersecurity.jpeg",
   },
 ]
 
@@ -88,31 +88,38 @@ export default function ServicesExpandGrid() {
                 flex: isHovered 
                   ? "2.5" 
                   : hasHover 
-                    ? "0.7" 
+                    ? "0.8" 
                     : "1",
                 transform: `skewX(${skewAngle}deg)`,
-                marginLeft: index === 0 ? "-4rem" : "-2rem",
-                marginRight: index === services.length - 1 ? "-4rem" : "0",
+                marginLeft: index === 0 
+                  ? "-3rem" 
+                  : "-4.5rem",
+                marginRight: index === services.length - 1 
+                  ? "-3rem" 
+                  : "-4.5rem",
                 zIndex: isHovered ? 10 : services.length - index,
               }}
               onMouseEnter={() => setHoveredId(service.id)}
             >
-              {/* Background Image - extended inset to cover skew gaps at bottom */}
+              {/* Background Image - extended inset to cover skew gaps */}
               <div 
                 className="absolute bg-cover bg-center transition-transform duration-700"
                 style={{
                   backgroundImage: `url(${service.bgImage})`,
-                  transform: `skewX(${-skewAngle}deg) scale(1.4)`,
-                  inset: "-25%",
+                  transform: `skewX(${-skewAngle}deg) scale(1.7)`,
+                  top: "-70%",
+                  bottom: "-50%",
+                  left: "-70%",
+                  right: "-50%",
                 }}
               />
               
               {/* Dark overlay for readability */}
-              <div className="absolute inset-0" />
+              <div className="absolute inset-0 bg-black/40" />
 
               {/* Inner container - counter-skew to straighten content */}
               <div 
-                className="absolute inset-0 flex flex-col justify-end p-6 md:p-10"
+                className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 overflow-hidden"
                 style={{
                   transform: `skewX(${-skewAngle}deg)`,
                 }}
