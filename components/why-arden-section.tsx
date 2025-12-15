@@ -214,29 +214,6 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
                 </>
               )}
             </div>
-            
-            {/* Floating stat cards */}
-            <StatCard
-              label="Security Incidents"
-              value="2"
-              className="top-4 right-4 lg:-right-8"
-            />
-            <StatCard
-              label="Threats Blocked"
-              value="5,283"
-              className="bottom-16 right-8 lg:-right-4"
-            />
-            
-            {/* Code/document decoration */}
-            <div className="absolute -left-6 top-1/4 bg-white rounded-lg shadow-xl border border-border/50 p-3 hidden lg:block">
-              <div className="space-y-2 w-32">
-                <div className="h-2 bg-muted rounded w-full" />
-                <div className="h-2 bg-muted rounded w-3/4" />
-                <div className="h-2 bg-muted rounded w-5/6" />
-                <div className="h-2 bg-primary/20 rounded w-2/3" />
-                <div className="h-2 bg-muted rounded w-4/5" />
-              </div>
-            </div>
           </div>
         </div>
         
@@ -271,26 +248,6 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
                   </div>
                 </>
               )}
-            </div>
-            
-            {/* Floating stat cards */}
-            <StatCard
-              label="Passing Tests"
-              value="9"
-              className="top-8 left-8 lg:-left-8"
-            />
-            <StatCard
-              label="Vulnerable Devices"
-              value="48"
-              className="bottom-24 left-12 lg:-left-4"
-            />
-            
-            {/* Completion indicator */}
-            <div className="absolute -right-6 bottom-8 bg-white rounded-lg shadow-xl border border-border/50 px-4 py-3 hidden lg:flex items-center gap-2">
-              <div className="size-8 rounded-full bg-emerald-500 flex items-center justify-center">
-                <Check className="size-4 text-white" strokeWidth={3} />
-              </div>
-              <span className="text-sm font-medium text-foreground">All Systems Go</span>
             </div>
           </div>
           
