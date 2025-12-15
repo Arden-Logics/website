@@ -50,7 +50,7 @@ export default function IntegrationsSection() {
                     {/* Section Title */}
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2">
-                            Powered by Partners
+                            Powered by partners
                         </h2>
                         <p className="text-muted-foreground text-lg">
                             Trusted by industry leaders to deliver exceptional solutions

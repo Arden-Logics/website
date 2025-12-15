@@ -19,7 +19,7 @@ export default function Home() {
       <div className="w-full py-16 md:py-20 px-8 sm:px-12 lg:px-24 xl:px-32">
         <div className="w-full">
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-center mb-4 font-bold">
-            Secure, Scalable Technology Services for Modern Businesses
+            Secure, scalable technology services for modern businesses
           </h2>
         </div>
       </div>

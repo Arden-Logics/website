@@ -68,7 +68,8 @@ export default function HeaderOne() {
                                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                     <Button
                                         asChild
-                                        size="sm">
+                                        size="lg"
+                                        className="font-bold">
                                         <Link href="#contact">
                                             <span>Contact Sales</span>
                                         </Link>

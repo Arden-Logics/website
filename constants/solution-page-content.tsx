@@ -114,7 +114,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Our enterprise solutions span managed IT services, cybersecurity, cloud infrastructure, networking, VoIP, AV, and physical security delivered by a single accountable partner.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/enterprise/enterprise-1.jpg',
             imageAlt: 'Enterprise IT solutions'
         },
         section2: {
@@ -145,13 +145,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Stay ahead of enterprise security, compliance, and operational risk',
             description: 'Enterprise environments face constant pressure from cyber threats, regulatory compliance requirements, and uptime expectations. Arden Logics helps organizations reduce risk with layered security, continuous monitoring, and proactive management across the entire IT stack.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/enterprise/enterprise-2.jpg',
             imageAlt: 'Enterprise security and compliance'
         },
         section4: {
             title: 'Enterprise IT that supports teams everywhere they work',
             description: "Today's enterprise workforce operates across offices, remote environments, and hybrid locations. Arden Logics ensures employees have secure, consistent access to systems and tools without added friction. We focus on simplicity for end users and visibility for leadership, enabling organizations to operate confidently across distributed environments.",
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/enterprise/enterprise-3.jpg',
             imageAlt: 'Enterprise distributed workforce'
         },
         section5: {
@@ -159,7 +159,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/enterprise/enterprise-1.jpg',
             imageAlt: 'Enterprise customer'
         },
         section6: {
@@ -196,7 +196,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Arden Logics helps small businesses stay productive and protected with managed IT services, VoIP phone systems, AV solutions, cybersecurity, network and cabling infrastructure, and camera and access control security all managed by a single team that understands your business.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/small-business/small-business-1.jpg',
             imageAlt: 'Small business IT solutions'
         },
         section2: {
@@ -227,13 +227,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protection for your business, data, and workspace',
             description: 'Small businesses are common targets for cyberattacks and theft. Arden Logics helps protect your operation with cybersecurity services, network protection, cameras, and access control systems, backed by proactive monitoring and support.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/small-business/small-business-2.jpg',
             imageAlt: 'Small business security'
         },
         section4: {
             title: 'Built for how small teams actually work',
             description: 'Small businesses move fast and rely on simple, dependable technology. Arden Logics ensures your team can log in, connect, meet, and work securely without jumping through unnecessary hoops. We focus on systems that are easy for employees to use and easy for owners and managers to oversee.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/small-business/small-business-3.jpg',
             imageAlt: 'Small business team collaboration'
         },
         section5: {
@@ -241,7 +241,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/small-business/small-business-1.jpg',
             imageAlt: 'Small business customer'
         },
         section6: {
@@ -278,7 +278,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Arden Logics helps startups launch and grow with managed IT services, cybersecurity, VoIP phone systems, AV solutions, network and cabling infrastructure, and camera and access control security delivered by a single partner who builds for today and plans for tomorrow.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/startups/startups-1.jpg',
             imageAlt: 'Startup IT solutions'
         },
         section2: {
@@ -309,13 +309,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect your startup from early security risks',
             description: 'Startups are frequent targets for cyber threats and data loss. Arden Logics helps protect your ideas, data, and systems with cybersecurity services, endpoint protection, network security, camera systems, and access controls without slowing your team down.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/startups/startups-2.jpg',
             imageAlt: 'Startup security protection'
         },
         section4: {
             title: 'Designed for fast-moving teams',
             description: 'Startups need technology that keeps up. Arden Logics ensures your team can onboard quickly, collaborate easily, and access systems securely without complex processes or unnecessary roadblocks. We design systems that are simple for users and flexible enough to change as your business evolves.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/startups/startups-3.jpg',
             imageAlt: 'Startup team agility'
         },
         section5: {
@@ -323,7 +323,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/startups/startups-1.jpg',
             imageAlt: 'Startup customer'
         },
         section6: {
@@ -360,7 +360,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Arden Logics supports technology-driven organizations with managed IT services, cybersecurity, VoIP phone systems, AV solutions, network and cabling infrastructure, and camera and access control security designed to keep engineering, product, and operations teams moving without interruption.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/tech/tech-1.jpg',
             imageAlt: 'Tech industry IT solutions'
         },
         section2: {
@@ -391,13 +391,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Security for data, systems, and intellectual property',
             description: 'Technology organizations are frequent targets for cyberattacks and data exposure. Arden Logics helps protect code, customer data, and internal systems with cybersecurity services, endpoint protection, network security, camera systems, and access control, backed by continuous monitoring and rapid response.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/tech/tech-2.jpg',
             imageAlt: 'Tech security and data protection'
         },
         section4: {
             title: 'Built for distributed and hybrid tech teams',
             description: 'Modern tech teams work across offices, home environments, and global locations. Arden Logics ensures secure access to systems, dependable connectivity, and consistent communications without adding complexity to development workflows. We focus on tools that engineers trust and platforms leadership can confidently oversee.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/tech/tech-3.jpg',
             imageAlt: 'Distributed tech teams'
         },
         section5: {
@@ -405,7 +405,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/tech/tech-1.jpg',
             imageAlt: 'Tech customer'
         },
         section6: {
@@ -442,7 +442,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Arden Logics supports manufacturing organizations with managed IT services, network and cabling infrastructure, VoIP phone systems, AV solutions, cybersecurity, and camera and access control security built to operate reliably across plants, warehouses, and administrative offices.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/manufacturing/manufacturing-1.jpg',
             imageAlt: 'Manufacturing IT solutions'
         },
         section2: {
@@ -473,13 +473,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect production systems, facilities, and people',
             description: 'Manufacturers face unique digital and physical risks. Arden Logics delivers cybersecurity services, endpoint and network protection, camera systems, and access control solutions to help protect production systems, intellectual property, and facility access points.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/manufacturing/manufacturing-2.jpg',
             imageAlt: 'Manufacturing security'
         },
         section4: {
             title: 'Designed for plant floors, warehouses, and offices',
             description: 'Manufacturing environments span office spaces, production floors, loading areas, and remote facilities. Arden Logics ensures secure access to systems, reliable connectivity, and clear communication designed specifically for industrial and mixed-use environments. We focus on solutions that are practical for operators and visible for leadership.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/manufacturing/manufacturing-3.jpg',
             imageAlt: 'Manufacturing environments'
         },
         section5: {
@@ -487,7 +487,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/manufacturing/manufacturing-1.jpg',
             imageAlt: 'Manufacturing customer'
         },
         section6: {
@@ -524,7 +524,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Arden Logics supports construction firms with managed IT services, network and cabling infrastructure, VoIP phone systems, AV solutions, cybersecurity, and camera and access control systems built to operate across headquarters, job trailers, and active project sites.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/construction/construction-1.jpg',
             imageAlt: 'Construction IT solutions'
         },
         section2: {
@@ -555,13 +555,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect people, equipment, materials, and data',
             description: 'Construction faces both physical and digital risks. Arden Logics provides cybersecurity protections, endpoint security, surveillance solutions, and controlled access systems that help safeguard job sites, trailers, project data, and high-value equipment.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/construction/construction-2.jpg',
             imageAlt: 'Construction site security'
         },
         section4: {
             title: 'Designed for trailers, job sites, warehouses, and offices',
             description: 'Construction operations span multiple environments onsite trailers, fabrication shops, staging yards, warehouses, and corporate HQ. Arden Logics ensures secure access to project systems, reliable connectivity, and clear communication across every location. We focus on solutions crews can use easily and leadership can rely on for visibility.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/construction/construction-3.jpg',
             imageAlt: 'Construction environments'
         },
         section5: {
@@ -569,7 +569,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/construction/construction-1.jpg',
             imageAlt: 'Construction customer'
         },
         section6: {
@@ -606,7 +606,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: "Real estate technology isn't about features it's about keeping buildings functional, tenants satisfied, and issues resolved quickly. Arden Logics supports property owners and operators with managed IT services, VoIP phone systems, AV solutions, cybersecurity, network and cabling infrastructure, and camera and access control security designed around how properties are actually run.",
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/real-estate/real-estate-1.jpg',
             imageAlt: 'Real estate IT solutions'
         },
         section2: {
@@ -637,13 +637,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect the asset, physically and digitally',
             description: 'Properties are valuable assets with real exposure. Arden Logics delivers cybersecurity, secure networking, camera systems, and access control that protect buildings, tenant information, and restricted areas without making properties feel locked down.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/real-estate/real-estate-2.jpg',
             imageAlt: 'Real estate asset protection'
         },
         section4: {
             title: 'Designed for owners, managers, and on-site staff',
             description: 'Real estate teams balance tenants, vendors, and ownership expectations every day. Arden Logics provides systems that are simple for on-site staff to manage and transparent for ownership to oversee without requiring technical expertise.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/real-estate/real-estate-3.jpg',
             imageAlt: 'Real estate team management'
         },
         section5: {
@@ -651,7 +651,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/real-estate/real-estate-1.jpg',
             imageAlt: 'Real estate customer'
         },
         section6: {
@@ -688,7 +688,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Nonprofits rely on trust, accountability, and efficiency to fulfill their mission. Arden Logics provides managed IT services, VoIP phone systems, AV solutions, cybersecurity, network and cabling infrastructure, and camera and access control security designed to support staff, volunteers, and communities without wasting limited resources.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/non-profit/non-profit-1.jpg',
             imageAlt: 'Nonprofit IT solutions'
         },
         section2: {
@@ -719,13 +719,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect donor data, client information, and facilities',
             description: 'Nonprofits handle sensitive donor, client, and community data and often operate in shared or public spaces. Arden Logics delivers cybersecurity, secure networking, camera systems, and access control solutions to help protect information, facilities, and the people you serve.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/non-profit/non-profit-2.jpg',
             imageAlt: 'Nonprofit data protection'
         },
         section4: {
             title: 'Designed for staff, volunteers, and leadership',
             description: 'Nonprofit environments include full-time staff, part-time workers, and volunteers with varying levels of technical experience. Arden Logics ensures systems are easy to use, easy to manage, and easy to secure while providing leadership with confidence and oversight.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/non-profit/non-profit-3.jpg',
             imageAlt: 'Nonprofit team support'
         },
         section5: {
@@ -733,7 +733,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/non-profit/non-profit-1.jpg',
             imageAlt: 'Nonprofit customer'
         },
         section6: {
@@ -770,7 +770,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Automotive businesses rely on technology to sell vehicles, service customers, and keep operations running smoothly. Arden Logics provides managed IT services, VoIP phone systems, AV solutions, cybersecurity, network and cabling infrastructure, and camera and access control security designed specifically for dealerships, service centers, and automotive operations.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/automotive/automotive-1.jpg',
             imageAlt: 'Automotive IT solutions'
         },
         section2: {
@@ -801,13 +801,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect customer data, inventory, and facilities',
             description: 'Automotive businesses handle sensitive customer information and valuable assets. Arden Logics delivers cybersecurity services, secure networking, camera systems, and access control solutions to help protect financial data, vehicle inventory, and restricted areas.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/automotive/automotive-2.jpg',
             imageAlt: 'Automotive security'
         },
         section4: {
             title: 'Designed for sales teams, service staff, and leadership',
             description: 'Arden Logics ensures secure system access, reliable connectivity, and clear communication for salespeople, technicians, service advisors, and management without slowing down operations. Our solutions are easy to use on the floor and simple to oversee at the management level.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/automotive/automotive-3.jpg',
             imageAlt: 'Automotive team support'
         },
         section5: {
@@ -815,7 +815,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/automotive/automotive-1.jpg',
             imageAlt: 'Automotive customer'
         },
         section6: {
@@ -852,7 +852,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             description: 'Transportation and logistics depend on timing, coordination, and uninterrupted systems. Arden Logics delivers managed IT services, VoIP phone systems, AV solutions, cybersecurity, network and cabling infrastructure, and camera and access control security built for terminals, dispatch centers, warehouses, and distributed operations.',
             ctaText: 'Contact Us',
             ctaLink: '/contact',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/logistics/logistics-1.jpg',
             imageAlt: 'Transportation and logistics IT solutions'
         },
         section2: {
@@ -883,13 +883,13 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
         section3: {
             title: 'Protect data, cargo, and facilities',
             description: 'Transportation and logistics environments face both cyber risk and physical exposure. Arden Logics provides cybersecurity services, network protection, camera systems, and access control solutions to help safeguard operational systems, sensitive data, vehicles, and facilities.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/logistics/logistics-2.jpg',
             imageAlt: 'Transportation security'
         },
         section4: {
             title: 'Designed for dispatch centers, warehouses, and mobile teams',
             description: 'Logistics teams operate across offices, yards, warehouses, and vehicles. Arden Logics ensures secure access to systems, reliable connectivity, and clear communications whether teams are at a terminal, on the road, or coordinating remotely. Our solutions are practical for frontline operations and visible to leadership without overcomplication.',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/logistics/logistics-3.jpg',
             imageAlt: 'Transportation team support'
         },
         section5: {
@@ -897,7 +897,7 @@ export const SOLUTION_PAGE_CONTENT: Record<string, SolutionPageContent> = {
             authorName: '',
             authorTitle: '',
             companyName: '',
-            imageSrc: '/arden-logo.png',
+            imageSrc: '/industries/logistics/logistics-1.jpg',
             imageAlt: 'Transportation customer'
         },
         section6: {

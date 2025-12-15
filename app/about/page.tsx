@@ -11,28 +11,40 @@ import FeaturesSectionNine from '@/components/features-9'
 
 const TEAM_MEMBERS = [
     {
-        name: 'John Anderson',
-        role: 'Chief Executive Officer',
-        image: '/arden-logo.png',
-        initials: 'JA',
+        name: 'Maxim Kulish',
+        role: 'Principal & VP Business Development',
+        image: '/people/Maxim-Kulish.jpg',
+        initials: 'MK',
     },
     {
-        name: 'Sarah Mitchell',
+        name: 'Andrew Bonner',
         role: 'Chief Technology Officer',
-        image: '/arden-logo.png',
-        initials: 'SM',
+        image: '/people/Andrew-Bonner.jpg',
+        initials: 'AB',
     },
     {
-        name: 'Michael Chen',
-        role: 'VP of Engineering',
-        image: '/arden-logo.png',
-        initials: 'MC',
+        name: 'Jimmy Mcmillan',
+        role: 'Director of IT',
+        image: '/people/Jimmy-Mcmillan.jpg',
+        initials: 'JM',
     },
     {
-        name: 'Emily Rodriguez',
-        role: 'VP of Client Success',
-        image: '/arden-logo.png',
-        initials: 'ER',
+        name: 'Michelle Fortunato',
+        role: 'Director of Operations',
+        image: '/people/Michelle-Fortunato.jpg',
+        initials: 'MF',
+    },
+    {
+        name: 'Brian Quaresima',
+        role: 'Director of Implementation & Support',
+        image: '/people/Brian-Quaresima.jpg',
+        initials: 'BQ',
+    },
+    {
+        name: 'Timothy Sinh',
+        role: 'Head of Growth and Revenue',
+        image: '/people/Timothy-Sinh.jpg',
+        initials: 'TS',
     },
 ]
 
@@ -73,32 +85,32 @@ const MILESTONES = [
     {
         year: '2010',
         title: 'Company Founded',
-        description: 'Arden Logics was established with a vision to transform business technology infrastructure.',
+        description: 'Arden Logics was founded to provide reliable IT services with a focus on long-term client relationships, operational stability, and practical technology solutions for growing organizations.',
     },
     {
         year: '2013',
-        title: 'Expanded Services',
-        description: 'Added cybersecurity and cloud solutions to our comprehensive service portfolio.',
+        title: 'Service Portfolio Expansion',
+        description: 'Expanded core services to include managed security and cloud-based solutions, responding to increasing demand for remote access, data protection, and scalable infrastructure.',
     },
     {
         year: '2016',
-        title: '500+ Clients',
-        description: 'Reached a milestone of serving over 500 businesses across multiple industries.',
+        title: 'Strategic Merger',
+        description: 'Merged with a sister technology firm to broaden engineering capabilities and expand offerings across VoIP, managed IT, infrastructure, and specialized technology services.',
     },
     {
         year: '2019',
-        title: 'Industry Recognition',
-        description: 'Awarded Top MSP Provider for excellence in managed IT services and customer satisfaction.',
+        title: 'Enterprise & Fortune 500 Partnerships',
+        description: 'Established partnerships and service engagements supporting large enterprise and Fortune 500 organizations, delivering technology solutions at scale across multi-site environments.',
     },
     {
         year: '2022',
-        title: 'Advanced Solutions',
-        description: 'Launched AI-powered security monitoring and predictive maintenance services.',
+        title: 'Modern Infrastructure & Workplace Solutions',
+        description: 'Expanded into modern workplace and infrastructure services, including collaboration systems, audiovisual integration, and secure hybrid work environments.',
     },
     {
         year: '2025',
-        title: 'Growing Strong',
-        description: 'Continuing to innovate and serve businesses with cutting-edge technology solutions.',
+        title: 'Continued Enterprise Growth',
+        description: 'Strengthened enterprise delivery standards with advanced security frameworks, standardized deployment practices, and expanded partner-led solutions to support complex, regulated environments.',
     },
 ]
 
@@ -382,7 +394,7 @@ export default function AboutPage() {
                             Experienced professionals committed to delivering exceptional technology solutions and service.
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {TEAM_MEMBERS.map((member, index) => (
                             <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                                 <CardHeader>

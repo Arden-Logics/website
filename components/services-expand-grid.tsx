@@ -20,7 +20,7 @@ const services: ServiceSquare[] = [
     href: "/services/msp-managed-it",
     description: "24/7 monitoring, proactive maintenance, and expert support for your entire IT infrastructure.",
     icon: <Cpu className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "/services/msp-ip.jpeg",
+    bgImage: "/services/msp/compressed-engineers-discussing-aluminum-window-frames-production-factory.jpg",
   },
   {
     id: "voip",
@@ -28,7 +28,7 @@ const services: ServiceSquare[] = [
     href: "/services/voip",
     description: "Crystal-clear voice communication with flexible cloud-based phone systems.",
     icon: <Phone className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "/services/voip.jpeg",
+    bgImage: "/services/voip/voip-1.jpg",
   },
   {
     id: "network",
@@ -36,7 +36,7 @@ const services: ServiceSquare[] = [
     href: "/services/network-cabling",
     description: "Structured cabling and robust network infrastructure built for reliability.",
     icon: <Network className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "/services/network-and-cabling.jpeg",
+    bgImage: "/services/network-and-cabling/network-and-cabling-1.webp",
   },
   {
     id: "av",
@@ -44,7 +44,7 @@ const services: ServiceSquare[] = [
     href: "/services/audio-visual",
     description: "Professional AV systems for conference rooms, presentations, and digital signage.",
     icon: <MonitorPlay className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "/services/audio-visual.jpeg",
+    bgImage: "/services/audio-visual/audio-visual-1.jpg",
   },
   {
     id: "security",
@@ -52,7 +52,7 @@ const services: ServiceSquare[] = [
     href: "/services/camera-access-security",
     description: "Advanced surveillance and access control to protect your premises.",
     icon: <Camera className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "/services/camera-access.jpeg",
+    bgImage: "/services/camera-access-and-security/camera-access-and-security-1.jpg",
   },
   {
     id: "cyber",
@@ -60,7 +60,7 @@ const services: ServiceSquare[] = [
     href: "/services/cybersecurity",
     description: "Multi-layered protection against evolving cyber threats and vulnerabilities.",
     icon: <ShieldCheck className="size-8 md:size-12" strokeWidth={1.5} />,
-    bgImage: "/services/cybersecurity.jpeg",
+    bgImage: "/services/cyber-security/cyber-security-1.jpg",
   },
 ]
 

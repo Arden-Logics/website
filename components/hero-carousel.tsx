@@ -18,7 +18,7 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    headline: "Your Trusted Partner for IT, Security & Business Communications",
+    headline: "Your trusted partner for It, security & business communications",
     description:
       "We provide fully managed IT services, cybersecurity protection, VoIP solutions, and expert support to help your business stay secure, efficient, and always connected.",
     buttonText: "Get Started",
@@ -28,7 +28,7 @@ const slides: CarouselSlide[] = [
   },
   {
     id: 2,
-    headline: "Managed IT Services That Power Your Business",
+    headline: "Managed it services that power your business",
     description:
       "Arden Logics delivers fully managed IT services, remote helpdesk support, proactive monitoring, patching, and strategic IT management for businesses of all sizes. Improve reliability, security, and performance with a dedicated MSP partner.",
     buttonText: "Learn More",
@@ -38,7 +38,7 @@ const slides: CarouselSlide[] = [
   },
   {
     id: 3,
-    headline: "Modern VoIP & Unified Communications for a Connected Workforce",
+    headline: "Modern voip & unified communications for a connected workforce",
     description:
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
     buttonText: "Explore VoIP Solutions",
@@ -48,7 +48,7 @@ const slides: CarouselSlide[] = [
   },
   {
     id: 4,
-    headline: "Cloud, Networking & Infrastructure Built for Reliability",
+    headline: "Cloud, networking & infrastructure built for reliability",
     description:
       "From Microsoft 365 and Azure to on-prem servers, networking, and disaster recovery we design, implement, and maintain infrastructure that keeps your business running.",
     buttonText: "View Cloud & Infrastructure",

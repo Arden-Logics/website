@@ -28,7 +28,7 @@ const stories: CustomerStory[] = [
     id: 1,
     companyName: 'Advocare Medical Group',
     logo: '/partered-with-companies/Advocare-Logo-Blue.png',
-    headline: 'Advocare Medical Group relies on Arden to',
+    headline: 'Advocare relies on Arden to',
     highlightedText: 'keep their practices secure, connected, and running smoothly across every location.',
     stats: [
       { value: '1998', label: 'Founded' },
@@ -135,8 +135,8 @@ export default function FeaturedStories() {
     <section className="py-20 md:py-28 bg-background">
       <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Section Header */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-12 md:mb-16">
-          Partnered With Companies Nationwide to Keep Their Technology Running Flawlessly
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-12 md:mb-16 text-center">
+          Partnered with companies nationwide
         </h2>
 
         {/* Company Logo Navigation Tabs */}
