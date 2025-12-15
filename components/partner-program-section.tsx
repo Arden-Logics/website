@@ -39,15 +39,17 @@ export default function PartnerProgramSection({
             <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="max-w-7xl mx-auto">
                     <div className="bg-background rounded-2xl overflow-hidden shadow-lg ring-1 ring-foreground/5">
-                        <div className="grid lg:grid-cols-2 gap-0 items-stretch">
+                        <div className="grid lg:grid-cols-2 gap-0">
                             {/* Image Side */}
-                            <div className={`relative ${imagePosition === 'right' ? 'lg:order-2' : ''}`}>
-                                <div className="relative aspect-[4/3] lg:h-full">
+                            <div className={`relative overflow-hidden ${imagePosition === 'right' ? 'lg:order-2' : ''}`}>
+                                <div className="relative aspect-[4/3] lg:absolute lg:inset-0">
                                     <Image
                                         src={imageSrc}
                                         alt={imageAlt}
-                                        fill
+                                        width={600}
+                                        height={600}
                                         className="object-cover"
+                                        
                                     />
                                 </div>
                             </div>
