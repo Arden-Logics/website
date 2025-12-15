@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { X, Check, Target, Wrench, Rocket, TrendingUp, ShieldAlert, AlertTriangle } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -56,6 +57,52 @@ const defaultFrameworkSteps = [
 
 const stepIcons = [Target, Wrench, Rocket, TrendingUp]
 
+// Map service keys to folder names in why-us directory
+const getWhyUsImagePaths = (serviceKey?: string): { image1: string; image2: string } | null => {
+  if (!serviceKey) return null
+  
+  const folderMap: Record<string, { folder: string; image1: string; image2: string }> = {
+    'msp-managed-it': {
+      folder: 'msp',
+      image1: 'msp-1.jpg',
+      image2: 'msp-2.jpg',
+    },
+    'voip': {
+      folder: 'voip',
+      image1: 'voip-1.jpg',
+      image2: 'voip-2.jpg',
+    },
+    'network-cabling': {
+      folder: 'network-and-cabling',
+      image1: 'network-and-cabling-1.jpg',
+      image2: 'network-and-cabling-2.jpg',
+    },
+    'audio-visual': {
+      folder: 'audio-visual',
+      image1: 'audio-visual-1.jpg',
+      image2: 'audio-visual-2.jpg',
+    },
+    'camera-access-security': {
+      folder: 'camera-access-and-security',
+      image1: 'camera-access-and-security-1.jpg',
+      image2: 'camera-access-and-security-2.jpg',
+    },
+    'cybersecurity': {
+      folder: 'cyber-security',
+      image1: 'cybersecurity-1.jpg',
+      image2: 'cybersecurity-2.jpeg',
+    },
+  }
+  
+  const mapping = folderMap[serviceKey]
+  if (!mapping) return null
+  
+  return {
+    image1: `/services/why-us/${mapping.folder}/${mapping.image1}`,
+    image2: `/services/why-us/${mapping.folder}/${mapping.image2}`,
+  }
+}
+
 // Floating stat card component
 function StatCard({ 
   label, 
@@ -86,6 +133,9 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
   // Get service-specific content if available
   const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
   const whyArdenContent = serviceContent?.whyArdenContent
+
+  // Get image paths for this service
+  const imagePaths = getWhyUsImagePaths(serviceKey)
 
   // Use service-specific content or defaults
   const problemTitle = whyArdenContent?.problemTitle || 'Working with technology should be simple.'
@@ -137,16 +187,32 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
           {/* Right - Image with floating cards */}
           <div className="relative order-1 lg:order-2">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-muted to-muted/50">
-              {/* Professional image placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-slate-600" />
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/20 to-transparent" />
+              {imagePaths?.image1 ? (
+                <>
+                  <Image
+                    src={imagePaths.image1}
+                    alt={`${serviceKey || 'Service'} problem illustration`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  {/* Decorative elements */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/20 to-transparent" />
+                </>
+              ) : (
+                <>
+                  {/* Fallback placeholder */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
+                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-slate-600" />
+                    </div>
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background/20 to-transparent" />
+                </>
+              )}
             </div>
             
             {/* Floating stat cards */}
@@ -179,17 +245,32 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
           {/* Left - Image with floating cards */}
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-muted to-muted/50">
-              {/* Professional image placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-emerald-200 to-teal-200 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-300 to-teal-300" />
-                </div>
-              </div>
-              
-              {/* Decorative laptop element */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 h-32 bg-slate-700 rounded-t-lg shadow-xl">
-                <div className="absolute inset-2 bg-gradient-to-br from-primary to-primary rounded-t-md" />
-              </div>
+              {imagePaths?.image2 ? (
+                <>
+                  <Image
+                    src={imagePaths.image2}
+                    alt={`${serviceKey || 'Service'} solution illustration`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  {/* Decorative overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
+                </>
+              ) : (
+                <>
+                  {/* Fallback placeholder */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center">
+                    <div className="w-40 h-40 rounded-full bg-gradient-to-br from-emerald-200 to-teal-200 flex items-center justify-center">
+                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-300 to-teal-300" />
+                    </div>
+                  </div>
+                  {/* Decorative laptop element */}
+                  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 h-32 bg-slate-700 rounded-t-lg shadow-xl">
+                    <div className="absolute inset-2 bg-gradient-to-br from-primary to-primary rounded-t-md" />
+                  </div>
+                </>
+              )}
             </div>
             
             {/* Floating stat cards */}
