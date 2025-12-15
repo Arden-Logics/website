@@ -1,5 +1,6 @@
 import { EnterpriseForm } from "@/components/enterprise-form";
 import SecondaryHero8 from "@/components/secondary-hero-8";
+import PartnerBenefits from "@/components/partner-benefits";
 
 export default function PartnersPage() {
     return (
@@ -12,6 +13,7 @@ export default function PartnersPage() {
             primaryCtaLink="#application"
             features={[]}
         />
+        <PartnerBenefits />
         <section id="application" className="py-24">
             <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="mb-12 text-center">

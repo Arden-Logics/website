@@ -50,7 +50,7 @@ export default function SecondaryHero8({
 }: SecondaryHero8Props) {
     return (
         <section>
-            <div className="bg-muted py-24">
+            <div className="bg-muted py-32 md:py-24">
                 <div className="mx-auto max-w-5xl px-6">
                     <div className="mx-auto max-w-4xl text-center">
                         {badge && (

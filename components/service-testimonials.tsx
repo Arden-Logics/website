@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -131,28 +132,13 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
                       : 'opacity-0 scale-105 translate-x-8'
                 )}
               >
-                {/* Placeholder image with gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200">
-                  {/* Abstract decorative pattern */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative">
-                      {/* Floating geometric shapes */}
-                      <div className="absolute -top-12 -left-16 size-24 rounded-full bg-primary/10 blur-xl" />
-                      <div className="absolute -bottom-8 -right-12 size-32 rounded-full bg-primary/10 blur-xl" />
-                      
-                      {/* Person silhouette placeholder */}
-                      <div className="relative z-10">
-                        <div className="size-40 md:size-52 rounded-full bg-gradient-to-br from-slate-300 to-slate-400 shadow-lg flex items-center justify-center">
-                          <div className="size-24 md:size-32 rounded-full bg-gradient-to-br from-slate-400 to-slate-500" />
-                        </div>
-                      </div>
-                      
-                      {/* Decorative elements */}
-                      <div className="absolute -right-6 top-4 size-3 rounded-full bg-primary/40" />
-                      <div className="absolute -left-4 bottom-8 size-2 rounded-full bg-primary/40" />
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src={testimonial.image}
+                  alt={`${testimonial.companyName} testimonial`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
