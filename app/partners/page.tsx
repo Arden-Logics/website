@@ -1,6 +1,7 @@
 import { EnterpriseForm } from "@/components/enterprise-form";
 import SecondaryHero8 from "@/components/secondary-hero-8";
 import PartnerBenefits from "@/components/partner-benefits";
+import PartnerProgramSection from "@/components/partner-program-section";
 
 export default function PartnersPage() {
     return (
@@ -14,6 +15,64 @@ export default function PartnersPage() {
             features={[]}
         />
         <PartnerBenefits />
+        
+        {/* Managed IT Partner Program */}
+        <PartnerProgramSection
+            title="Managed IT Partner Program"
+            headline="Scale your services with Arden Logics' Managed IT Partner Program"
+            description="Our program helps MSPs and service providers deliver full managed IT services without building a large support team. We provide the engineering, operations, and tooling behind the scenes so you can focus on client growth."
+            benefits={[
+                "Complete managed services stack (RMM, help desk, patching, security)",
+                "Infrastructure lifecycle support and escalation assistance",
+                "White-label or co-managed delivery options"
+            ]}
+            imageSrc="/partnership/msp-program.jpeg"
+            imageAlt="Managed IT Partner Program"
+            imagePosition="left"
+            primaryButtonText="Learn more about the program"
+            primaryButtonLink="#application"
+            secondaryButtonText="Become a Partner"
+            secondaryButtonLink="#application"
+        />
+        
+        {/* AV Partner Integrator Program */}
+        <PartnerProgramSection
+            title="AV Partner Integrator Program"
+            headline="Deliver professional AV without building an in-house AV team"
+            description="We help integrators and MSPs offer modern conference rooms, collaboration spaces, and digital signage backed by expert AV design, configuration, and deployment support."
+            benefits={[
+                "End-to-end AV design, product guidance, and installation support",
+                "Configuration, testing, documentation, and post-deployment assistance",
+                "White-label or co-branded engagement options"
+            ]}
+            imageSrc="/partnership/audio-visual-program.jpeg"
+            imageAlt="AV Partner Integrator Program"
+            imagePosition="right"
+            primaryButtonText="Learn more about the program"
+            primaryButtonLink="#application"
+            secondaryButtonText="Become an AV Partner"
+            secondaryButtonLink="#application"
+        />
+        
+        {/* VoIP Partner Program */}
+        <PartnerProgramSection
+            title="VoIP Partner Program"
+            headline="Offer enterprise-grade VoIP without managing the complexity"
+            description="Our VoIP Partner Program supports MSPs and IT providers with cloud voice, SIP, and communication solutions fully engineered, provisioned, and supported by Arden Logics."
+            benefits={[
+                "System design, provisioning, deployment, and number porting",
+                "Call quality management, troubleshooting, and carrier coordination",
+                "Flexible white-label or co-sell models with predictable margins"
+            ]}
+            imageSrc="/partnership/voip-program.jpeg"
+            imageAlt="VoIP Partner Program"
+            imagePosition="left"
+            primaryButtonText="Learn more about the program"
+            primaryButtonLink="#application"
+            secondaryButtonText="Become a VoIP Partner"
+            secondaryButtonLink="#application"
+        />
+        
         <section id="application" className="py-24">
             <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="mb-12 text-center">
