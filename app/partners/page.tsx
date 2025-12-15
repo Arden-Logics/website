@@ -1,10 +1,18 @@
 import { EnterpriseForm } from "@/components/enterprise-form";
-import SecondaryHero from "@/components/secondary-hero-10";
+import SecondaryHero8 from "@/components/secondary-hero-8";
+
 export default function PartnersPage() {
     return (
         <>
-        <SecondaryHero />
-        <section className="py-24">
+        <SecondaryHero8
+            title="Partnership Program"
+            subtitle="Grow Together"
+            description="A structured partner program for MSPs, integrators, and technology providers seeking a reliable delivery partner across IT, AV, and communications services. Designed to support long-term collaboration, the Arden Logics Partnership Program provides technical resources, operational support, and flexible engagement models that help partners deliver consistent outcomes at scale."
+            primaryCtaText="Start Partnership Application"
+            primaryCtaLink="#application"
+            features={[]}
+        />
+        <section id="application" className="py-24">
             <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 <div className="mb-12 text-center">
                     <h1 className="text-4xl font-bold mb-4">Partner With Us</h1>
