@@ -1,4 +1,4 @@
-import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle, Activity, Zap, Lock, CheckCircle, Fingerprint } from 'lucide-react'
+import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle, Activity, Zap, Lock, CheckCircle, Fingerprint, Car, Truck, Home, Wrench } from 'lucide-react'
 import React from 'react'
 
 export interface Service {
@@ -52,44 +52,220 @@ export interface Industry {
     href: string
     description: string
     icon: React.ReactElement
+    images: string[]
 }
 
 export const INDUSTRIES: Industry[] = [
     {
-        name: 'Healthcare',
-        href: '/industries#healthcare',
-        description: 'HIPAA-compliant IT solutions for medical practices and hospitals.',
-        icon: <Heart className="stroke-foreground fill-red-500/15" />,
+        name: 'Audio Visual',
+        href: '/industries#audio-visual',
+        description: 'Professional audio and visual systems for any environment.',
+        icon: <MonitorPlay className="stroke-foreground fill-purple-500/15" />,
+        images: [
+            '/industries/audio-visual/audio-visual-1.jpg',
+            '/industries/audio-visual/audio-visual-2.jpg',
+            '/industries/audio-visual/audio-visual-3.jpg',
+        ],
     },
     {
-        name: 'Retail',
-        href: '/industries#retail',
-        description: 'Point-of-sale systems and inventory management solutions.',
-        icon: <ShoppingBag className="stroke-foreground fill-blue-500/15" />,
+        name: 'Automotive',
+        href: '/industries#automotive',
+        description: 'IT solutions for automotive dealerships and service centers.',
+        icon: <Car className="stroke-foreground fill-blue-500/15" />,
+        images: [
+            '/industries/automotive/automotive-1.jpg',
+            '/industries/automotive/automotive-2.jpg',
+            '/industries/automotive/automotive-3.jpg',
+        ],
+    },
+    {
+        name: 'Camera Access & Security',
+        href: '/industries#camera-access-and-security',
+        description: 'Advanced surveillance cameras and access control systems.',
+        icon: <Camera className="stroke-foreground fill-red-500/15" />,
+        images: [
+            '/industries/camera-access-and-security/camera-access-and-security-1.jpg',
+            '/industries/camera-access-and-security/camera-access-and-security-2.jpg',
+            '/industries/camera-access-and-security/camera-access-and-security-3.jpg',
+        ],
+    },
+    {
+        name: 'Construction',
+        href: '/industries#construction',
+        description: 'Construction industry IT solutions and infrastructure.',
+        icon: <Wrench className="stroke-foreground fill-orange-500/15" />,
+        images: [
+            '/industries/construction/construction-1.jpg',
+            '/industries/construction/construction-2.jpg',
+            '/industries/construction/construction-3.jpg',
+        ],
+    },
+    {
+        name: 'Cyber Security',
+        href: '/industries#cyber-security',
+        description: 'Protect your digital assets with top-tier security measures.',
+        icon: <ShieldCheck className="stroke-foreground fill-indigo-500/15" />,
+        images: [
+            '/industries/cyber-security/cyber-security-1.jpg',
+            '/industries/cyber-security/cyber-security-2.jpg',
+            '/industries/cyber-security/cyber-security-3.jpg',
+        ],
     },
     {
         name: 'Education',
         href: '/industries#education',
         description: 'Technology infrastructure for schools and educational institutions.',
         icon: <GraduationCap className="stroke-foreground fill-green-500/15" />,
+        images: [],
     },
     {
-        name: 'Manufacturing',
-        href: '/industries#manufacturing',
-        description: 'Industrial automation and production line IT systems.',
-        icon: <Factory className="stroke-foreground fill-orange-500/15" />,
+        name: 'Enterprise',
+        href: '/industries#enterprise',
+        description: 'Enterprise-grade solutions for large organizations.',
+        icon: <Building2 className="stroke-foreground fill-purple-500/15" />,
+        images: [
+            '/industries/enterprise/enterprise-1.jpg',
+            '/industries/enterprise/enterprise-2.jpg',
+            '/industries/enterprise/enterprise-3.jpg',
+        ],
     },
     {
         name: 'Finance',
         href: '/industries#finance',
         description: 'Secure banking and financial technology solutions.',
         icon: <Building2 className="stroke-foreground fill-purple-500/15" />,
+        images: [],
+    },
+    {
+        name: 'Healthcare',
+        href: '/industries#healthcare',
+        description: 'HIPAA-compliant IT solutions for medical practices and hospitals.',
+        icon: <Heart className="stroke-foreground fill-red-500/15" />,
+        images: [],
+    },
+    {
+        name: 'Logistics',
+        href: '/industries#logistics',
+        description: 'IT solutions for logistics and supply chain management.',
+        icon: <Truck className="stroke-foreground fill-blue-500/15" />,
+        images: [
+            '/industries/logistics/logistics-1.jpg',
+            '/industries/logistics/logistics-2.jpg',
+            '/industries/logistics/logistics-3.jpg',
+        ],
+    },
+    {
+        name: 'Manufacturing',
+        href: '/industries#manufacturing',
+        description: 'Industrial automation and production line IT systems.',
+        icon: <Factory className="stroke-foreground fill-orange-500/15" />,
+        images: [
+            '/industries/manufacturing/manufacturing-1.jpg',
+            '/industries/manufacturing/manufacturing-2.jpg',
+            '/industries/manufacturing/manufacturing-3.jpg',
+        ],
+    },
+    {
+        name: 'MSP',
+        href: '/industries#msp',
+        description: 'Managed Service Provider solutions and IT management.',
+        icon: <Cpu className="stroke-foreground fill-blue-500/15" />,
+        images: [
+            '/industries/msp/compressed-engineers-discussing-aluminum-window-frames-production-factory.jpg',
+            '/industries/msp/compressed-full-shot-adults-walking-together.jpg',
+            '/industries/msp/compressed-mature-female-with-smartphone-paying-food-products-supermarket-while-standing-by-her-husband-front-happy-young-cashier.jpg',
+        ],
+    },
+    {
+        name: 'Network & Cabling',
+        href: '/industries#network-and-cabling',
+        description: 'Structured cabling and robust network infrastructure setup.',
+        icon: <Network className="stroke-foreground fill-orange-500/15" />,
+        images: [
+            '/industries/network-and-cabling/network-and-cabling-1.webp',
+            '/industries/network-and-cabling/network-and-cabling-2.jpg',
+            '/industries/network-and-cabling/network-and-cabling-3.jpg',
+        ],
+    },
+    {
+        name: 'Non-Profit',
+        href: '/industries#non-profit',
+        description: 'IT solutions tailored for non-profit organizations.',
+        icon: <Heart className="stroke-foreground fill-pink-500/15" />,
+        images: [
+            '/industries/non-profit/non-profit-1.jpg',
+            '/industries/non-profit/non-profit-2.jpg',
+            '/industries/non-profit/non-profit-3.jpg',
+        ],
     },
     {
         name: 'Professional Services',
         href: '/industries#professional-services',
         description: 'IT support for law firms, accounting, and consulting businesses.',
         icon: <Briefcase className="stroke-foreground fill-indigo-500/15" />,
+        images: [],
+    },
+    {
+        name: 'Real Estate',
+        href: '/industries#real-estate',
+        description: 'IT solutions for real estate agencies and property management.',
+        icon: <Home className="stroke-foreground fill-amber-500/15" />,
+        images: [
+            '/industries/real-estate/real-estate-1.jpg',
+            '/industries/real-estate/real-estate-2.jpg',
+            '/industries/real-estate/real-estate-3.jpg',
+        ],
+    },
+    {
+        name: 'Retail',
+        href: '/industries#retail',
+        description: 'Point-of-sale systems and inventory management solutions.',
+        icon: <ShoppingBag className="stroke-foreground fill-blue-500/15" />,
+        images: [],
+    },
+    {
+        name: 'Small Business',
+        href: '/industries#small-business',
+        description: 'Scalable solutions designed for growing businesses.',
+        icon: <Briefcase className="stroke-foreground fill-blue-500/15" />,
+        images: [
+            '/industries/small-business/small-business-1.jpg',
+            '/industries/small-business/small-business-2.jpg',
+            '/industries/small-business/small-business-3.jpg',
+        ],
+    },
+    {
+        name: 'Startups',
+        href: '/industries#startups',
+        description: 'Flexible solutions for innovative startups.',
+        icon: <Zap className="stroke-foreground fill-green-500/15" />,
+        images: [
+            '/industries/startups/startups-1.jpg',
+            '/industries/startups/startups-2.jpg',
+            '/industries/startups/startups-3.jpg',
+        ],
+    },
+    {
+        name: 'Tech',
+        href: '/industries#tech',
+        description: 'Technology-focused IT solutions.',
+        icon: <Cpu className="stroke-foreground fill-blue-500/15" />,
+        images: [
+            '/industries/tech/tech-1.jpg',
+            '/industries/tech/tech-2.jpg',
+            '/industries/tech/tech-3.jpg',
+        ],
+    },
+    {
+        name: 'VoIP',
+        href: '/industries#voip',
+        description: 'Reliable and clear Voice over IP communication solutions.',
+        icon: <Phone className="stroke-foreground fill-green-500/15" />,
+        images: [
+            '/industries/voip/voip-1.jpg',
+            '/industries/voip/voip-2.jpg',
+            '/industries/voip/voip-3.jpg',
+        ],
     },
 ]
 
