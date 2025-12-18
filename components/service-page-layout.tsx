@@ -21,7 +21,7 @@ export default function ServicePageLayout({ title, description, features, ctaLin
     return (
         <>
             <section className="overflow-hidden">
-                <div className="bg-zinc-50 py-24">
+                <div className="bg-zinc-50">
                     <div className="mx-auto w-full max-w-5xl px-6">
                         <div className="grid items-center gap-12 pb-12 md:grid-cols-2">
                             <div>
