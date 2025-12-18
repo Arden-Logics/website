@@ -20,11 +20,11 @@ export default function Home() {
       <div className="w-full py-16 md:py-20 px-8 sm:px-12 lg:px-24 xl:px-32">
         <div className="w-full">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2 text-center">
-          Secure, scalable, built for the way modern businesses operate
+        Solutions built for the way modern businesses operate
           </h2>
         </div>
       </div>
-      <ServicesExpandGrid />
+      <ServicesExpandGrid fullScreen={true} />
       <IntegrationsSection />
       <WhyUsStats />
       <FeaturedStories />

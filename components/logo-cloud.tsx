@@ -20,9 +20,6 @@ export default function LogoCloud({ displayText = true }: { displayText?: boolea
         <section className="overflow-hidden py-16">
             <div className="group relative w-full px-6 lg:px-12">
                 <div className="text-center">
-                    {displayText && <div className="mx-auto max-w-4xl text-balance">
-                        <h2 className="text-4xl font-semibold">Trusted by thousands of clients</h2>
-                    </div>}
 
                     <div className="mask-x-from-90% relative py-12">
                         <div

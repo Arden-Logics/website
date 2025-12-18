@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -33,7 +33,7 @@ const slides: CarouselSlide[] = [
       "Arden Logics delivers fully managed IT services, remote helpdesk support, proactive monitoring, patching, and strategic IT management for businesses of all sizes. Improve reliability, security, and performance with a dedicated MSP partner.",
     buttonText: "Learn More",
     buttonLink: "/services/msp-managed-it",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1534&auto=format&fit=crop",
+    image: "/hero-background-2.jpg",
     imageAlt: "Server room with modern IT infrastructure",
   },
   {
@@ -43,7 +43,7 @@ const slides: CarouselSlide[] = [
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
     buttonText: "Explore VoIP Solutions",
     buttonLink: "/services/voip",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1470&auto=format&fit=crop",
+    image: "/hero-background-3.jpg",
     imageAlt: "Business professionals in video conference meeting",
   },
   {
@@ -182,8 +182,32 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-secondary">
+      {/* Background images for slides 2 and 3 */}
+      {slides.map((slide, index) => {
+        // Only apply full-screen background for slides 2 and 3 (index 1 and 2)
+        if (index === 1 || index === 2) {
+          return (
+            <div
+              key={`bg-${slide.id}`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className="absolute inset-0 bg-black/40" />
+            </div>
+          );
+        }
+        return null;
+      })}
+
       {/* Decorative mesh pattern - bottom right */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] opacity-20 pointer-events-none">
+      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] opacity-20 pointer-events-none z-10">
         <svg
           viewBox="0 0 500 400"
           fill="none"
@@ -214,10 +238,26 @@ export default function HeroCarousel() {
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 pointer-events-none z-10" />
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/80 hover:bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/80 hover:bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+      </button>
 
       {/* Slides Container */}
-      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32 min-h-[400px]">
+      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32 min-h-[400px] z-20">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -281,36 +321,38 @@ export default function HeroCarousel() {
                 </div>
               </div>
 
-              {/* Image - Right Side */}
-              <div
-                className="hidden lg:block flex-1 lg:max-w-[45%]"
-                style={{
-                  opacity: index === currentSlide ? 1 : 0,
-                  transform: index === currentSlide ? "translateX(0) scale(1)" : "translateX(40px) scale(0.95)",
-                  transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1)",
-                  transitionDelay: index === currentSlide ? "150ms" : "0ms",
-                }}
-              >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
-                    src={slide.image}
-                    alt={slide.imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 0vw, 45vw"
-                    priority={index === 0}
-                  />
-                  {/* Subtle gradient overlay for better integration */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
+              {/* Image - Right Side - Only show for slides without background images */}
+              {index !== 1 && index !== 2 && (
+                <div
+                  className="hidden lg:block flex-1 lg:max-w-[45%]"
+                  style={{
+                    opacity: index === currentSlide ? 1 : 0,
+                    transform: index === currentSlide ? "translateX(0) scale(1)" : "translateX(40px) scale(0.95)",
+                    transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1)",
+                    transitionDelay: index === currentSlide ? "150ms" : "0ms",
+                  }}
+                >
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src={slide.image}
+                      alt={slide.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 0vw, 45vw"
+                      priority={index === 0}
+                    />
+                    {/* Subtle gradient overlay for better integration */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         ))}
       </div>
 
       {/* Bottom Indicators with Progress */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-30">
         {slides.map((_, index) => (
           <button
             key={index}

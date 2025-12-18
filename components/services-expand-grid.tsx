@@ -64,14 +64,18 @@ const services: ServiceSquare[] = [
   },
 ]
 
-export default function ServicesExpandGrid() {
+interface ServicesExpandGridProps {
+  fullScreen?: boolean
+}
+
+export default function ServicesExpandGrid({ fullScreen = false }: ServicesExpandGridProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
     <section className="relative w-full overflow-hidden bg-neutral-900">
       {/* Full-width diagonal grid */}
       <div 
-        className="relative flex h-[500px] md:h-[600px] w-full pb-8 -mb-8"
+        className={`relative flex w-full pb-8 -mb-8 ${fullScreen ? 'h-screen' : 'h-[500px] md:h-[600px]'}`}
         onMouseLeave={() => setHoveredId(null)}
       >
         {services.map((service, index) => {

@@ -45,7 +45,7 @@ export default function IntegrationsSection() {
 
     return (
         <section className="bg-background">
-            <div className="bg-muted/50 py-24">
+            <div className="py-24">
                 <div className="mx-auto max-w-5xl px-6">
                     {/* Section Title */}
                     <div className="text-center mb-12">

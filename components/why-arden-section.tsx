@@ -20,8 +20,6 @@ const defaultBenefits = [
   'Great people with deep experience',
   'Unlimited service and 24/7 US-based support',
   'Predictable, all-inclusive pricing',
-  'A 3-year technology roadmap',
-  'A cybersecurity service guarantee',
 ]
 
 const defaultFrameworkSteps = [
