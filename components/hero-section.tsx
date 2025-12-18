@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -6,6 +8,7 @@ import { ChevronRight, CirclePlay } from 'lucide-react'
 import { Spotify } from '@/components/logos/spotify'
 import { Supabase } from '@/components/logos/supabase'
 import { Beacon } from '@/components/logos/beacon'
+import { ContactSalesDialog } from '@/components/contact-sales-dialog'
 
 export default function HeroSection() {
     return (
@@ -33,16 +36,14 @@ export default function HeroSection() {
                                                 <ChevronRight className="opacity-50" />
                                             </Link>
                                         </Button>
-                                        <Button
-                                            key={2}
-                                            asChild
-                                            size="lg"
-                                            variant="outline"
-                                            className="pl-3.5 pr-4">
-                                            <Link href="#contact">
+                                        <ContactSalesDialog>
+                                            <Button
+                                                size="lg"
+                                                variant="outline"
+                                                className="pl-3.5 pr-4">
                                                 <span className="text-nowrap">Contact Us</span>
-                                            </Link>
-                                        </Button>
+                                            </Button>
+                                        </ContactSalesDialog>
                                     </div>
                                 </div>
                             </div>

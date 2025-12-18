@@ -41,7 +41,6 @@ export default function IndividualSolutionPage({ solutionKey }: IndividualSoluti
             <SolutionInlineCTA 
                 title="Experience Arden Logics in action"
                 buttonText="Contact us"
-                buttonLink="/#contact-us"
             />
             
             {/* Section 3: Content Split (Image Left) */}

@@ -1,18 +1,16 @@
 'use client'
 
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { ContactSalesDialog } from '@/components/contact-sales-dialog'
 
 interface SolutionInlineCTAProps {
     title?: string
     buttonText?: string
-    buttonLink?: string
 }
 
 export default function SolutionInlineCTA({
     title = "Experience Arden Logics in action",
-    buttonText = "Contact us",
-    buttonLink = "/#contact-us"
+    buttonText = "Contact us"
 }: SolutionInlineCTAProps) {
     return (
         <section className="w-full py-8 md:py-12">
@@ -70,15 +68,14 @@ export default function SolutionInlineCTA({
                             {title}
                         </h3>
                         
-                        <Button
-                            asChild
-                            size="lg"
-                            className="bg-white text-primary hover:bg-white/90 rounded-full px-10 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] shrink-0"
-                        >
-                            <Link href={buttonLink}>
+                        <ContactSalesDialog>
+                            <Button
+                                size="lg"
+                                className="bg-white text-primary hover:bg-white/90 rounded-full px-10 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] shrink-0"
+                            >
                                 {buttonText}
-                            </Link>
-                        </Button>
+                            </Button>
+                        </ContactSalesDialog>
                     </div>
                 </div>
             </div>

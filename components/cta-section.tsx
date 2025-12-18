@@ -1,12 +1,14 @@
+'use client'
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { ContactSalesDialog } from '@/components/contact-sales-dialog'
 
 interface CTASectionProps {
     title?: string
     description?: string
     primaryButtonText?: string
-    primaryButtonHref?: string
     secondaryButtonText?: string
     secondaryButtonHref?: string
 }
@@ -15,7 +17,6 @@ export default function CTASection({
     title = 'Ready to Partner With Us?',
     description = "Let's discuss how our expertise and dedication can help your business achieve its technology goals. Get in touch with our team today.",
     primaryButtonText = 'Contact Us',
-    primaryButtonHref = '/#contact',
     secondaryButtonText = 'Our Services',
     secondaryButtonHref = '/services',
 }: CTASectionProps) {
@@ -32,12 +33,13 @@ export default function CTASection({
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button
-                            asChild
-                            size="lg"
-                            className="min-w-[200px]">
-                            <Link href={primaryButtonHref}>{primaryButtonText}</Link>
-                        </Button>
+                        <ContactSalesDialog>
+                            <Button
+                                size="lg"
+                                className="min-w-[200px]">
+                                {primaryButtonText}
+                            </Button>
+                        </ContactSalesDialog>
                         <Button
                             asChild
                             variant="outline"

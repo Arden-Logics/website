@@ -2,8 +2,8 @@
 
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
-import Link from 'next/link'
 import Image from 'next/image'
+import { ContactSalesDialog } from './contact-sales-dialog'
 
 export default function CallToAction() {
   return (
@@ -33,16 +33,15 @@ export default function CallToAction() {
           
           {/* CTA Button */}
           <div className="flex justify-center pt-4">
-            <Button
-              asChild
-              variant="outline"
-              className="pr-3 text-base py-6 px-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
-            >
-              <Link href="#contact-form">
+            <ContactSalesDialog>
+              <Button
+                variant="outline"
+                className="pr-3 text-base py-6 px-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
+              >
                 Contact Us
                 <ChevronRight className="size-5 opacity-50" />
-              </Link>
-            </Button>
+              </Button>
+            </ContactSalesDialog>
           </div>
         </div>
       </div>

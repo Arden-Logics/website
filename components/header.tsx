@@ -9,6 +9,7 @@ import { useMedia } from '@/hooks/use-media'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { cn } from '@/lib/utils'
 import { SERVICES, INDUSTRIES, RESOURCES, SOLUTIONS } from '@/constants'
+import { ContactSalesDialog } from '@/components/contact-sales-dialog'
 
 export default function HeaderOne() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -66,14 +67,13 @@ export default function HeaderOne() {
 
                             <div className="max-lg:in-data-[state=active]:mt-6 in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        className="font-bold">
-                                        <Link href="#contact">
+                                    <ContactSalesDialog>
+                                        <Button
+                                            size="lg"
+                                            className="font-bold">
                                             <span>Contact Sales</span>
-                                        </Link>
-                                    </Button>
+                                        </Button>
+                                    </ContactSalesDialog>
                                 </div>
                             </div>
                         </div>

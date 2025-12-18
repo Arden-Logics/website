@@ -1,9 +1,9 @@
 'use client'
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { CheckCircle2, Target, Users, Award, Clock, Shield, Lightbulb, Heart, ArrowRight } from 'lucide-react'
-import CTASection from '@/components/cta-section'
+import { Target, Users, Award, Clock, Shield, Lightbulb, Heart, ArrowRight } from 'lucide-react'
+import CallToAction from '@/components/call-to-action'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import LogoCloud from '@/components/logo-cloud'
@@ -381,7 +381,7 @@ export default function AboutPage() {
             </section>
 
             {/* CTA Section */}
-            <CTASection />
+            <CallToAction />
         </>
     )
 }

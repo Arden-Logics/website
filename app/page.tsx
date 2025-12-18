@@ -1,4 +1,3 @@
-
 import HeroCarousel from "@/components/hero-carousel";
 import LogoCloud from "@/components/logo-cloud";
 import ServicesExpandGrid from "@/components/services-expand-grid";
@@ -6,9 +5,9 @@ import IntegrationsSection from "@/components/integrations-1";
 import WhyUsStats from "@/components/why-us-stats";
 import FeaturedStories from "@/components/featured-stories";
 import HomeFAQs from "@/components/home-faqs";
-import ContactForm from "@/components/secondary-hero-14";
 import Blog from "@/components/blog-4";
 import IndustriesSection from "@/components/industries-section";
+import CallToAction from "@/components/call-to-action";
 
 export default function Home() {
   return (
@@ -31,7 +30,7 @@ export default function Home() {
       <Blog showMoreArticles={false} />
       <IndustriesSection />
       <HomeFAQs />
-      <ContactForm />
+      <CallToAction />
     </>
   );
 }

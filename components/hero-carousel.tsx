@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 interface CarouselSlide {
   id: number;
@@ -11,7 +10,8 @@ interface CarouselSlide {
   description: string;
   buttonText: string;
   buttonLink: string;
-  image: string;
+  image?: string;
+  video?: string;
   imageAlt: string;
 }
 
@@ -23,7 +23,7 @@ const slides: CarouselSlide[] = [
       "We provide fully managed IT services, cybersecurity protection, VoIP solutions, and expert support to help your business stay secure, efficient, and always connected.",
     buttonText: "Get Started",
     buttonLink: "/services",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop",
+    video: "/hero-video.mp4",
     imageAlt: "Modern office team collaborating on technology solutions",
   },
   {
@@ -43,7 +43,7 @@ const slides: CarouselSlide[] = [
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
     buttonText: "Explore VoIP Solutions",
     buttonLink: "/services/voip",
-    image: "/hero-background-3.jpg",
+    video: "/hero-video.mp4",
     imageAlt: "Business professionals in video conference meeting",
   },
   {
@@ -53,7 +53,7 @@ const slides: CarouselSlide[] = [
       "From Microsoft 365 and Azure to on-prem servers, networking, and disaster recovery we design, implement, and maintain infrastructure that keeps your business running.",
     buttonText: "View Cloud & Infrastructure",
     buttonLink: "/services",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472&auto=format&fit=crop",
+    image: "/hero-background-4.jpg",
     imageAlt: "Global cloud network visualization",
   },
 ];
@@ -182,10 +182,33 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-secondary">
-      {/* Background images for slides 2 and 3 */}
+      {/* Background videos and images */}
       {slides.map((slide, index) => {
-        // Only apply full-screen background for slides 2 and 3 (index 1 and 2)
-        if (index === 1 || index === 2) {
+        // Video background for slides 1 and 3 (index 0 and 2)
+        if (slide.video) {
+          return (
+            <div
+              key={`bg-${slide.id}`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src={slide.video} type="video/mp4" />
+              </video>
+              {/* Dark overlay for better text readability */}
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+          );
+        }
+        // Image background for slides 2 and 4 (index 1 and 3)
+        if (slide.image) {
           return (
             <div
               key={`bg-${slide.id}`}
@@ -199,7 +222,6 @@ export default function HeroCarousel() {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <div className="absolute inset-0 bg-black/40" />
             </div>
           );
         }
@@ -321,31 +343,6 @@ export default function HeroCarousel() {
                 </div>
               </div>
 
-              {/* Image - Right Side - Only show for slides without background images */}
-              {index !== 1 && index !== 2 && (
-                <div
-                  className="hidden lg:block flex-1 lg:max-w-[45%]"
-                  style={{
-                    opacity: index === currentSlide ? 1 : 0,
-                    transform: index === currentSlide ? "translateX(0) scale(1)" : "translateX(40px) scale(0.95)",
-                    transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1)",
-                    transitionDelay: index === currentSlide ? "150ms" : "0ms",
-                  }}
-                >
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                    <Image
-                      src={slide.image}
-                      alt={slide.imageAlt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 0vw, 45vw"
-                      priority={index === 0}
-                    />
-                    {/* Subtle gradient overlay for better integration */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         ))}

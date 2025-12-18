@@ -1127,7 +1127,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         },
         metricsSection: {
             title: 'Security that delivers measurable protection',
-            description: '',
+            description: 'Threats don\'t announce themselves — and gaps in your physical security can lead to serious consequences',
             metrics: [
                 { value: '99.9%', label: 'System Uptime' },
                 { value: '72%', label: 'Faster Incident Response' },
@@ -1523,6 +1523,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         },
         metricsSection: {
             title: 'Security that delivers measurable resilience',
+            description: 'When your organization is protected the right way, you gain control, clarity, and confidence.',
             metrics: [
                 { value: '99.99%', label: 'Threat detection uptime across monitored environments.' },
                 { value: '24/7', label: 'Security operations monitoring & rapid-response availability.' },
