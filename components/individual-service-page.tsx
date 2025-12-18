@@ -30,11 +30,11 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
                     <div className="relative grid grid-cols-2 gap-x-8 gap-y-10 border-t pt-12 sm:gap-10 lg:grid-cols-4 lg:gap-16">
                         {content.features.length > 0 ? (
                             content.features.map((feature, index) => (
-                                <div key={index} className="space-y-3">
-                                    <div className="flex items-center gap-2">
+                                <div key={index} className="flex flex-col items-center space-y-4 text-center">
+                                    <div className="flex justify-center [&>svg]:size-8">
                                         {feature.icon}
-                                        <h3 className="text-sm font-medium">{feature.title}</h3>
                                     </div>
+                                    <h3 className="text-lg font-semibold">{feature.title}</h3>
                                     <p className="text-muted-foreground text-sm">{feature.description}</p>
                                 </div>
                             ))

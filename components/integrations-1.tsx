@@ -75,7 +75,7 @@ export default function IntegrationsSection() {
 
 const IntegrationCard = ({ title, description, image, alt, link }: { title: string; description: string; image: string; alt: string; link?: string }) => {
     return (
-        <Card className="relative p-6">
+        <Card className="relative p-6 transition-transform duration-200 hover:scale-[1.02] cursor-pointer">
             <div className="h-16 flex items-center justify-center mb-6">
                 <Image
                     src={image}

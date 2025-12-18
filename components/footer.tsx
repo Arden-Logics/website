@@ -56,7 +56,7 @@ export default function FooterSection() {
                         {links.map((link, index) => (
                             <div
                                 key={index}
-                                className="space-y-4 text-sm">
+                                className="space-y-4">
                                 <span className="block font-medium">{link.group}</span>
 
                                 <div className="flex flex-wrap gap-4 sm:flex-col">
@@ -64,7 +64,7 @@ export default function FooterSection() {
                                         <Link
                                             key={index}
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-primary block duration-150">
+                                            className="text-foreground hover:text-primary block duration-150">
                                             <span>{item.title}</span>
                                         </Link>
                                     ))}
@@ -76,10 +76,10 @@ export default function FooterSection() {
                             <span className="block font-medium">Community</span>
                             <div className="flex flex-wrap gap-3 text-sm">
                                 <Link
-                                    href="#"
+                                    href="https://www.facebook.com/junipertechnology"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label="X/Twitter"
+                                    aria-label="Facebook"
                                     className="text-muted-foreground hover:text-primary block">
                                     <svg
                                         className="size-5"
@@ -89,11 +89,11 @@ export default function FooterSection() {
                                         viewBox="0 0 24 24">
                                         <path
                                             fill="currentColor"
-                                            d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"></path>
+                                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12"></path>
                                     </svg>
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="https://www.linkedin.com/company/arden360/?viewAsMember=true"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"

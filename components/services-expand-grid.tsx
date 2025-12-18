@@ -68,7 +68,7 @@ interface ServicesExpandGridProps {
   fullScreen?: boolean
 }
 
-export default function ServicesExpandGrid({ fullScreen = false }: ServicesExpandGridProps) {
+export default function ServicesExpandGrid({ fullScreen = true }: ServicesExpandGridProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (

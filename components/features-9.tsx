@@ -17,22 +17,14 @@ export default function FeaturesSectionNine() {
                                     Arden Logics delivers forward-looking IT leadership backed by certified engineers across cybersecurity, cloud, AV, networking, and physical security. We proactively plan, prevent issues, and architect systems that keep organizations ahead of risk and ahead of change.
                                 </p>
                             </div>
-                            <div className="bg-linear-to-b relative -m-8 flex flex-col items-end justify-center from-transparent via-rose-50 to-amber-50 p-8">
-                                <MessageIllustration />
-                            </div>
                         </div>
                         <div className="bg-card ring-foreground/10 grid grid-rows-[auto_1fr] space-y-12 overflow-hidden rounded-2xl border border-transparent shadow-md shadow-black/5 ring-1">
                             <div>
                                 <Target className="fill-foreground/10 mb-5 size-4" />
                                 <h3 className="text-foreground text-lg font-semibold">Tailored Solutions Built Around Your Environment & Goals</h3>
                                 <p className="text-muted-foreground mt-3">
-                                    Every environment is unique — our solutions are designed around real workflows, business objectives, and long-term growth. With transparent, predictable pricing and no hidden fees, clients get clarity, scalability, and technology that truly fits their day-to-day operations.
+                                    Every environment is unique. Our solutions are designed around real workflows, business objectives, and long-term growth. With transparent, predictable pricing and no hidden fees, clients get clarity, scalability, and technology that truly fits their day-to-day operations.
                                 </p>
-                            </div>
-                            <div className="bg-linear-to-b -m-8 flex flex-col items-end justify-center from-transparent via-purple-50 to-emerald-50 p-8">
-                                <div className="mt-6 w-full">
-                                    <UptimeIllustration />
-                                </div>
                             </div>
                         </div>
                         <div className="bg-card ring-foreground/10 grid grid-rows-[auto_1fr] space-y-12 overflow-hidden rounded-2xl border border-transparent shadow-md shadow-black/5 ring-1">
@@ -42,11 +34,6 @@ export default function FeaturesSectionNine() {
                                 <p className="text-muted-foreground mt-3">
                                     Our U.S.-based support and real-time monitoring detect and resolve issues before they create impact. Arden Logics is trusted by organizations of all sizes to power mission-critical operations with reliability, speed, and a long-standing track record of customer success.
                                 </p>
-                            </div>
-                            <div className="bg-linear-to-b -m-8 flex flex-col items-end justify-center from-transparent via-indigo-50 to-rose-50 p-8">
-                                <div className="w-full px-2">
-                                    <PollIllustration />
-                                </div>
                             </div>
                         </div>
                     </div>

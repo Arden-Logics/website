@@ -5,7 +5,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea'
 import Link from 'next/link'
 
-export const EnterpriseForm = () => {
+interface EnterpriseFormProps {
+    isPartnerPage?: boolean
+}
+
+export const EnterpriseForm = ({ isPartnerPage = false }: EnterpriseFormProps) => {
     return (
         <div className="relative">
             <div className="mask-b-from-50% absolute -inset-6 px-6 pt-4">
@@ -35,46 +39,46 @@ export const EnterpriseForm = () => {
                 </div>
 
                 <div>
-                    <Label htmlFor="country">Country/Region</Label>
+                    <Label htmlFor="company">Company Name</Label>
+                    <Input
+                        type="text"
+                        id="company"
+                        required
+                    />
+                </div>
+
+                <div>
+                    <Label htmlFor="company-size">Company Size</Label>
                     <Select>
                         <SelectTrigger className="ring-foreground/10 bg-background border-transparent shadow-sm ring-1">
-                            <SelectValue placeholder="Select Country/Region" />
+                            <SelectValue placeholder="Select Company Size" />
                         </SelectTrigger>
                         <SelectContent className="ring-foreground/6 border-transparent ring-1">
-                            <SelectItem value="1">🇨🇩 DR Congo</SelectItem>
-                            <SelectItem value="2">🇺🇸 United States</SelectItem>
-                            <SelectItem value="3">🇫🇷 France</SelectItem>
+                            <SelectItem value="1-10">1-10 employees</SelectItem>
+                            <SelectItem value="11-50">11-50 employees</SelectItem>
+                            <SelectItem value="51-200">51-200 employees</SelectItem>
+                            <SelectItem value="201-500">201-500 employees</SelectItem>
+                            <SelectItem value="501-1000">501-1000 employees</SelectItem>
+                            <SelectItem value="1000+">1000+ employees</SelectItem>
                         </SelectContent>
                     </Select>
                 </div>
 
-                <div>
-                    <Label htmlFor="website">Company Website</Label>
-                    <div className="relative">
-                        <Input
-                            type="url"
-                            id="website"
-                            className="pl-16"
-                            placeholder="tailark.com"
-                        />
-                        <span className="text-muted-foreground pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm">https://</span>
+                {isPartnerPage && (
+                    <div>
+                        <Label htmlFor="partner-type">Partner Type</Label>
+                        <Select>
+                            <SelectTrigger className="ring-foreground/10 bg-background border-transparent shadow-sm ring-1">
+                                <SelectValue placeholder="Select Partner Type" />
+                            </SelectTrigger>
+                            <SelectContent className="ring-foreground/6 border-transparent ring-1">
+                                <SelectItem value="msp">Managed Service Provider</SelectItem>
+                                <SelectItem value="voip">VOIP System Integrator</SelectItem>
+                                <SelectItem value="av">AV Integrator</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
-                </div>
-
-                <div>
-                    <Label htmlFor="job">Job function</Label>
-                    <Select>
-                        <SelectTrigger className="ring-foreground/10 bg-background border-transparent shadow-sm ring-1">
-                            <SelectValue placeholder="Select Job Function" />
-                        </SelectTrigger>
-                        <SelectContent className="ring-foreground/6 border-transparent ring-1">
-                            <SelectItem value="1">Finance</SelectItem>
-                            <SelectItem value="2">Education</SelectItem>
-                            <SelectItem value="3">Legal</SelectItem>
-                            <SelectItem value="4">More</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
+                )}
 
                 <div>
                     <Label htmlFor="msg">Message</Label>

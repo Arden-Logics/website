@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import LogoCloud from '@/components/logo-cloud'
 import FeaturesSectionNine from '@/components/features-9'
+import SecondaryHero8 from '@/components/secondary-hero-8'
 
 const TEAM_MEMBERS = [
     {
@@ -143,56 +144,39 @@ const CUSTOMER_STATS = [
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-background pt-26">
-            {/* Hero Section with Image and Quote */}
-            <section className="relative w-full h-[500px] overflow-hidden">
-                {/* Background Image */}
-                <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: 'url("https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2069&auto=format&fit=crop")',
-                    }}
-                >
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-                </div>
-                
-                {/* Content */}
-                <div className="relative h-full flex items-start pt-16">
-                    <div className="w-full px-6 lg:px-12">
-                        <div className="max-w-xl">
-                            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-2xl">
-                                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                                    Technology that starts with people and scales with ambition
-                                </h1>
-                                <p className="text-gray-700 text-lg leading-relaxed">
-                                    At Arden Logics, everything begins with the people behind the technology: the teams who rely on it, the leaders who shape it, and the communities it protects. We support thousands of users across dozens of industries, and every relationship is built on one principle — <strong>trust first, technology second</strong>.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <>
+            <SecondaryHero8
+                title="Technology that starts with people and scales with ambition"
+                description={
+                    <>
+                        At Arden Logics, everything begins with the people behind the technology: the teams who rely on it, the leaders who shape it, and the communities it protects. We support thousands of users across dozens of industries, and every relationship is built on one principle — <strong>trust first, technology second</strong>.
+                    </>
+                }
+                primaryCtaText="See customer stories"
+                primaryCtaLink="/resources/client-success"
+                backgroundImageSrc="/company-background.jpg"
+                features={[]}
+            />
 
             {/* Mission Section */}
-            <section className="py-16 px-6 lg:px-12">
-                <div className="w-full">
+            <section className="py-16 px-6 lg:px-12 text-center">
+                <div className="max-w-4xl mx-auto">
                     <div>
-                        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto text-justify">
                             <Target className="w-4 h-4" />
                             Our Mission
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
                             Enabling organizations to grow with confidence
                         </h2>
-                        <p className="text-lg text-muted-foreground mb-6">
+                        <p className="text-lg text-foreground mb-6">
                             Our mission is simple: to give businesses the clarity, reliability, and security they need in a digital-first world. We believe technology is most powerful when it's thoughtfully implemented, expertly supported, and aligned to real business goals.
                         </p>
-                        <p className="text-lg text-muted-foreground mb-6">
+                        <p className="text-lg text-foreground mb-6">
                             Arden Logics partners with organizations across healthcare, education, financial services, government, fitness, manufacturing, and more. We take time to understand the challenges behind the scenes and deliver solutions that make operations smoother, teams more productive, and growth more achievable.
                         </p>
-                        <p className="text-lg text-muted-foreground">
-                            Whether it's modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security — <strong>we help businesses not just adapt to the future, but lead it.</strong>
+                        <p className="text-lg text-foreground">
+                            Whether it's modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security. <strong>We help businesses not just adapt to the future, but lead it.</strong>
                         </p>
                     </div>
                 </div>
@@ -214,16 +198,10 @@ export default function AboutPage() {
                                 <div className="col-span-5 row-span-2">
                                     <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
                                         <img 
-                                            src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=2070&auto=format&fit=crop"
-                                            alt="Ryder truck"
+                                            src="/company/company-image-1.jpeg"
+                                            alt="Company image 1"
                                             className="w-full h-full object-cover"
                                         />
-                                        <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-lg">
-                                            <div className="flex items-center gap-2">
-                                                <span className="font-semibold text-gray-900">Ryder</span>
-                                                <span className="text-gray-500 text-sm">Ever better.</span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 
@@ -231,18 +209,10 @@ export default function AboutPage() {
                                 <div className="col-span-7">
                                     <div className="relative h-[240px] rounded-2xl overflow-hidden shadow-xl">
                                         <img 
-                                            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop"
-                                            alt="Business professional"
+                                            src="/company/company-image-2.webp"
+                                            alt="Company image 2"
                                             className="w-full h-full object-cover"
                                         />
-                                        <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-lg">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">
-                                                    <span className="text-white font-bold text-xs">FB</span>
-                                                </div>
-                                                <span className="font-semibold text-gray-900 text-sm">FIRST BANK</span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 
@@ -250,15 +220,10 @@ export default function AboutPage() {
                                 <div className="col-span-7">
                                     <div className="relative h-[240px] rounded-2xl overflow-hidden shadow-xl">
                                         <img 
-                                            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                                            alt="Professional working"
+                                            src="/company/company-image-3.jpg"
+                                            alt="Company image 3"
                                             className="w-full h-full object-cover"
                                         />
-                                        <div className="absolute bottom-4 right-4 bg-gray-800/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                                            <div className="flex items-center gap-2">
-                                                <span className="text-white font-semibold text-sm">AUTOPAY</span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -417,6 +382,6 @@ export default function AboutPage() {
 
             {/* CTA Section */}
             <CTASection />
-        </div>
+        </>
     )
 }

@@ -56,7 +56,7 @@ export default function SolutionHeroSection({
                     </div>
                     
                     {/* Image Side */}
-                    <div className="relative">
+                    <div className="relative py-12">
                         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                             {imageSrc ? (
                                 <Image

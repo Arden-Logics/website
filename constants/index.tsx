@@ -345,6 +345,7 @@ export interface ServiceContent {
     }
     metricsSection?: {
         title: string
+        description: string
         metrics: Array<{
             value: string
             label: string
@@ -585,8 +586,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Strategic it guidance',
             },
         ],
-        featuresSectionTitle: 'Reliable IT management for secure, always-on operations',
-        featuresSectionDescription: 'Arden Logics provides proactive monitoring, security oversight, and infrastructure management to keep systems stable, secure, and performing as intended without added operational burden',
+        featuresSectionTitle: 'Managed IT that meets you where you are',
+        featuresSectionDescription: 'Arden Logics delivers comprehensive IT management and security solutions that protect your organization.',
         contentFeatures: [
             {
                 icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
@@ -642,12 +643,13 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             ]
         },
         metricsSection: {
-            title: 'Building the next generation of managed it & security services',
+            title: 'Reliable IT Management for Secure, Always-On Operations ',
+            description: 'Arden Logics provides proactive monitoring, security oversight, and infrastructure management to keep systems stable, secure, and performing as intended without added operational burden',
             metrics: [
                 { value: '99.9%', label: 'Guaranteed uptime across critical systems we manage.' },
                 { value: '24/7', label: 'Around-the-clock support and response for your business.' },
-                { value: '12x', label: 'Faster issue detection through automated monitoring and alerting.' },
-                { value: '12x', label: 'Faster remediation with intelligent automation and RMM workflows.' },
+                { value: '12x', label: 'Faster issue detection through automated monitoring and alerting' },
+                { value: '12x', label: 'Faster remediation with intelligent automation and RMM workflows' },
             ]
         }
     },
@@ -730,8 +732,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Growth-ready infrastructure',
             },
         ],
-        featuresSectionTitle: 'Network & cabling solutions that meet you where you are',
-        featuresSectionDescription: 'Arden Logics builds fast, reliable, and scalable network infrastructure with structured cabling solutions designed to support your organization today and grow with you tomorrow.',
+        featuresSectionTitle: 'Network & cabling solutions that support how you operate',
+        featuresSectionDescription: 'We design and install network infrastructure and structured cabling that aligns with real-world usage, performance needs, and future expansion',
         contentFeatures: [
             {
                 icon: <Network className="stroke-foreground fill-foreground/10" />,
@@ -787,7 +789,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             ]
         },
         metricsSection: {
-            title: 'Enterprise-grade network & cabling infrastructure',
+            title: 'Network Infrastructure Designed for Reliability and Growth',
+            description: 'Arden Logics designs and deploys network and structured cabling infrastructure that supports secure connectivity, consistent performance, and long-term scalability across offices, campuses, and enterprise environments',
             metrics: [
                 { value: '99.99%', label: 'Designed uptime with compliant, standards-based installations' },
                 { value: '24/7', label: 'Monitoring, support, and rapid dispatch for critical environments' },
@@ -875,8 +878,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'User-friendly AV',
             },
         ],
-        featuresSectionTitle: 'AV solutions that meet you where you are',
-        featuresSectionDescription: 'Arden Logics delivers modern, scalable audio-visual solutions that enhance communication, collaboration, and client experience across your organization.',
+        featuresSectionTitle: 'Technology that makes meetings easier',
+        featuresSectionDescription: 'From conference rooms to training spaces, we deploy AV solutions that remove friction and let teams focus on the conversation not the controls',
         contentFeatures: [
             {
                 icon: <Zap className="stroke-foreground fill-foreground/10" />,
@@ -931,7 +934,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             ]
         },
         metricsSection: {
-            title: 'Building the next generation of smart AV environments',
+            title: 'Room-ready AV, standardized across your spaces',
+            description: 'Arden Logics designs and deploys audio-visual systems that are consistent, predictable, and easy to operate so meeting rooms, training spaces, and collaboration areas work the same way every time',
             metrics: [
                 { value: '99.9%', label: 'System uptime' },
                 { value: '24/7', label: 'Live support & monitoring' },
@@ -957,8 +961,6 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 'Enterprise-grade hardware from Sony, Samsung, QSC, Shure, Poly, Logitech & more',
                 'Seamless integration with Zoom, Teams, Google Meet, Webex',
                 'Remote monitoring & instant support',
-                'Predictable, all-inclusive pricing & lifecycle planning',
-                'A 3-year AV roadmap tailored to your growth',
                 'Professional installation aligned with IT best practices',
             ],
             differenceText: 'This is the Arden AV difference.',
@@ -1068,8 +1070,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Credential control',
             },
         ],
-        featuresSectionTitle: 'Intelligent physical security solutions',
-        featuresSectionDescription: 'Arden Logics delivers comprehensive security systems that protect your people, assets, and facilities with modern technology.',
+        featuresSectionTitle: 'Integrated camera and access control systems',
+        featuresSectionDescription: 'Arden Logics designs and deploys physical security systems that unify video surveillance, access control, and monitoring into a single, manageable environment',
         contentFeatures: [
             {
                 icon: <Camera className="stroke-foreground fill-foreground/10" />,
@@ -1125,6 +1127,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         },
         metricsSection: {
             title: 'Security that delivers measurable protection',
+            description: '',
             metrics: [
                 { value: '99.9%', label: 'System Uptime' },
                 { value: '72%', label: 'Faster Incident Response' },
@@ -1273,8 +1276,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 imageAlt: 'Call analytics',
             },
         ],
-        featuresSectionTitle: 'Cloud VoIP phone systems for modern businesses',
-        featuresSectionDescription: 'Enterprise-Grade Cloud VoIP, Fully Managed. Arden Logics delivers secure, reliable cloud VoIP phone systems designed for modern business communication. Our solutions support desk phones, mobile devices, and softphones providing consistent call quality, flexibility, and uptime across locations.',
+        featuresSectionTitle: 'VoIP that works the way your business communicates',
+        featuresSectionDescription: 'Arden Logics delivers a flexible, cloud-based phone system designed to keep your team connected from anywhere. With intelligent routing, mobility tools, and crystal-clear call quality, our solution grows with your organization and adapts to how you work.',
         contentFeatures: [
             {
                 icon: <Zap className="stroke-foreground fill-foreground/10" />,
@@ -1320,7 +1323,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             },
         ],
         contentSection: {
-            title: 'Building the next generation of cloud-based communication tools',
+            title: 'Cloud VoIP phone systems for modern businesses',
             highlights: [
                 'Arden Logics delivers a modern VoIP platform engineered for reliability, mobility, and business-grade performance across all devices. Our cloud phone system enhances collaboration, improves responsiveness, and keeps teams connected from anywhere.',
                 'With intelligent call routing, mobility tools, and powerful automation, your team stays focused on customers not on managing outdated phone systems.',
@@ -1329,7 +1332,8 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             ]
         },
         metricsSection: {
-            title: 'Building the next generation of cloud communication tools',
+            title: 'Enterprise-grade cloud VoIP, fully managed',
+            description: 'Arden Logics delivers secure, reliable cloud VoIP phone systems designed for modern business communication. Our solutions support desk phones, mobile devices, and softphones providing consistent call quality, flexibility, and uptime across locations',
             metrics: [
                 { value: '99.99%', label: 'Network uptime across our cloud VoIP infrastructure.' },
                 { value: '24/7', label: 'VoIP support and monitoring available around the clock.' },
@@ -1546,8 +1550,6 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 'Endpoint protection across laptops, servers, and mobile devices',
                 'Secure cloud configuration and policy enforcement',
                 'Transparent pricing with no hidden fees',
-                'A year-round cybersecurity roadmap',
-                'A guarantee of continuous security improvement',
             ],
             differenceText: 'Security doesn\'t have to be this difficult — it just has to be done right.',
             differenceButtonText: 'Explore the features',
@@ -1612,6 +1614,7 @@ export interface SolutionContent {
     }
     metricsSection?: {
         title: string
+        description: string
         metrics: Array<{
             value: string
             label: string

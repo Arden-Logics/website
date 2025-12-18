@@ -12,6 +12,7 @@ export default function PartnersPage() {
             description="A structured partner program for MSPs, integrators, and technology providers seeking a reliable delivery partner across IT, AV, and communications services. Designed to support long-term collaboration, the Arden Logics Partnership Program provides technical resources, operational support, and flexible engagement models that help partners deliver consistent outcomes at scale."
             primaryCtaText="Start Partnership Application"
             primaryCtaLink="#application"
+            backgroundImageSrc="/partnership-program-background.jpeg"
             features={[]}
         />
         <PartnerBenefits />
@@ -83,7 +84,7 @@ export default function PartnersPage() {
                     </p>
                 </div>
                 <div className="max-w-3xl mx-auto">
-                    <EnterpriseForm />
+                    <EnterpriseForm isPartnerPage={true} />
                 </div>
             </div>
         </section>

@@ -29,6 +29,11 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [progress, setProgress] = useState(0)
 
+  // Reset progress whenever testimonial changes
+  useEffect(() => {
+    setProgress(0)
+  }, [currentTestimonial])
+
   const goToTestimonial = useCallback((index: number) => {
     setCurrentTestimonial(index)
     setProgress(0)
@@ -54,7 +59,10 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
   const handleLogoClick = (index: number) => {
     setIsAutoPlaying(false)
     goToTestimonial(index)
-    setTimeout(() => setIsAutoPlaying(true), 8000)
+    // Restart auto-play after a short delay
+    setTimeout(() => {
+      setIsAutoPlaying(true)
+    }, 100)
   }
 
   if (!testimonials || testimonials.length === 0) {
@@ -67,7 +75,7 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
         {/* Section Title */}
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4">
-            Partnered With Companies Nationwide to Keep Their Technology Running Flawlessly
+            Partnered with companies nationwide
           </h2>
         </div>
         
@@ -91,16 +99,14 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
               key={testimonial.id}
               onClick={() => handleLogoClick(index)}
               className={cn(
-                'relative py-6 px-4 flex items-center justify-center transition-all duration-300',
-                'border-b-2',
-                index === currentTestimonial 
-                  ? 'border-foreground text-foreground' 
-                  : 'border-border text-muted-foreground/60 hover:text-muted-foreground hover:border-muted-foreground/40'
+                'relative py-5 px-4 flex items-center justify-center transition-all duration-300'
               )}
             >
               <div className={cn(
-                'transition-all duration-300',
-                index === currentTestimonial ? 'opacity-100 scale-100' : 'opacity-50 scale-95 grayscale'
+                'relative w-full h-12 md:h-16 transition-all duration-300',
+                index === currentTestimonial 
+                  ? 'opacity-100 scale-100' 
+                  : 'opacity-50 scale-95 grayscale hover:opacity-70 hover:scale-100'
               )}>
                 {testimonial.logo}
               </div>

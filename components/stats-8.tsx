@@ -18,6 +18,7 @@ export default function StatsSection({ serviceKey, solutionKey }: StatsSectionPr
     const content = serviceContent || solutionContent
     
     const metricsTitle = content?.metricsSection?.title || 'Building the next generation of AI-powered Marketing Tools'
+    const metricsDescription = content?.metricsSection?.description || '';
     const metrics: Metric[] = content?.metricsSection?.metrics || [
         { value: '99.9', label: 'Uptime guarantee for all our services.', suffix: '%' },
         { value: '24/7', label: '24/7 support available around the clock.', suffix: '' },
@@ -35,9 +36,9 @@ export default function StatsSection({ serviceKey, solutionKey }: StatsSectionPr
                                 {metricsTitle}
                             </h2>
 
-                            {content?.contentSection?.highlights?.[0] && (
+                            {metricsDescription && (
                                 <p className="text-muted-foreground">
-                                    {content.contentSection.highlights[0]}
+                                    {metricsDescription}
                                 </p>
                             )}
                         </div>
