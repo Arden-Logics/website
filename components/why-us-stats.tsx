@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 
 const stats = [
   {
@@ -33,12 +34,19 @@ export default function WhyUsStats() {
     >
       {/* Background Image - covers 70% starting from 30% */}
       <div 
-        className="absolute inset-y-0 right-0 w-[70%] bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/background-stats.jpg)',
-          left: '30%',
-        }}
-      />
+        className="absolute inset-y-0 right-0 w-[70%] hidden md:block"
+        style={{ left: '30%' }}
+      >
+        <Image
+          src="/background-stats.jpg"
+          alt="Statistics background"
+          fill
+          sizes="70vw"
+          className="object-cover object-center"
+          loading="lazy"
+          quality={75}
+        />
+      </div>
       
       <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Content - Single Column Layout */}

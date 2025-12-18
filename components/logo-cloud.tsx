@@ -42,6 +42,8 @@ export default function LogoCloud({ displayText = true }: { displayText?: boolea
                                         width={120}
                                         height={64}
                                         className="object-contain w-auto h-full"
+                                        loading="lazy"
+                                        quality={75}
                                     />
                                 </div>
                             ))}

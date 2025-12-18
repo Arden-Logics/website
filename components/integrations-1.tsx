@@ -84,6 +84,8 @@ const IntegrationCard = ({ title, description, image, alt, link }: { title: stri
                     height={64}
                     className="object-contain max-h-full max-w-full"
                     style={{ maxHeight: '64px', maxWidth: '200px' }}
+                    loading="lazy"
+                    quality={75}
                 />
             </div>
 

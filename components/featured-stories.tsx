@@ -191,10 +191,14 @@ export default function FeaturedStories() {
                       : 'opacity-0 scale-105 translate-x-8'
                 )}
               >
-                <img
+                <Image
                   src={story.image}
                   alt={`${story.companyName}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  loading="lazy"
+                  quality={80}
                 />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />

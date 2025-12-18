@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, ArrowRight } from "lucide-react"
 
 interface ServiceSquare {
@@ -105,18 +106,27 @@ export default function ServicesExpandGrid({ fullScreen = true }: ServicesExpand
               }}
               onMouseEnter={() => setHoveredId(service.id)}
             >
-              {/* Background Image - extended inset to cover skew gaps */}
+              {/* Background Image - using Next.js Image for optimization */}
               <div 
-                className="absolute bg-cover bg-center transition-transform duration-700"
+                className="absolute transition-transform duration-700 overflow-hidden"
                 style={{
-                  backgroundImage: `url(${service.bgImage})`,
                   transform: `skewX(${-skewAngle}deg) scale(1.7)`,
                   top: "-70%",
                   bottom: "-50%",
                   left: "-70%",
                   right: "-50%",
                 }}
-              />
+              >
+                <Image
+                  src={service.bgImage}
+                  alt={service.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 20vw"
+                  className="object-cover object-center"
+                  loading="lazy"
+                  quality={75}
+                />
+              </div>
               
               {/* Dark overlay for readability */}
               <div className="absolute inset-0 bg-black/40" />

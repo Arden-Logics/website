@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { useMedia } from "@/hooks/use-media";
 
 interface CarouselSlide {
   id: number;
@@ -10,8 +12,8 @@ interface CarouselSlide {
   description: string;
   buttonText: string;
   buttonLink: string;
-  image?: string;
-  video?: string;
+  image: string; // Always have a fallback image
+  video?: string; // Optional video (desktop only)
   imageAlt: string;
 }
 
@@ -23,6 +25,7 @@ const slides: CarouselSlide[] = [
       "We provide fully managed IT services, cybersecurity protection, VoIP solutions, and expert support to help your business stay secure, efficient, and always connected.",
     buttonText: "Get Started",
     buttonLink: "/services",
+    image: "/hero-background-2.jpg", // Fallback image for mobile
     video: "/hero-video.mp4",
     imageAlt: "Modern office team collaborating on technology solutions",
   },
@@ -43,6 +46,7 @@ const slides: CarouselSlide[] = [
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
     buttonText: "Explore VoIP Solutions",
     buttonLink: "/services/voip",
+    image: "/hero-background-4.jpg", // Fallback image for mobile
     video: "/hero-video.mp4",
     imageAlt: "Business professionals in video conference meeting",
   },
@@ -180,54 +184,69 @@ export default function HeroCarousel() {
     };
   };
 
+  // Detect mobile devices - don't load heavy video on mobile
+  const isMobile = useMedia("(max-width: 768px)");
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  // Determine which slides should have their media loaded
+  // Only load current slide and adjacent slides for smooth transitions
+  const shouldLoadMedia = (index: number) => {
+    if (index === currentSlide) return true;
+    if (index === (currentSlide + 1) % slides.length) return true;
+    if (index === (currentSlide - 1 + slides.length) % slides.length) return true;
+    return false;
+  };
+
   return (
     <section className="relative h-[calc(100vh-104px)] flex items-center overflow-hidden bg-secondary">
       {/* Background videos and images */}
       {slides.map((slide, index) => {
-        // Video background for slides 1 and 3 (index 0 and 2)
-        if (slide.video) {
-          return (
-            <div
-              key={`bg-${slide.id}`}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
-            >
+        const isActive = index === currentSlide;
+        const shouldLoad = shouldLoadMedia(index);
+        const showVideo = slide.video && !isMobile && hasMounted && isActive;
+
+        return (
+          <div
+            key={`bg-${slide.id}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              isActive ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {/* Video background - only on desktop and only for active slide */}
+            {showVideo && (
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="auto"
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source src={slide.video} type="video/mp4" />
               </video>
-              {/* Overlay for better text visibility */}
-              <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/70 to-transparent lg:from-background/90 lg:via-background/40 lg:to-transparent z-10" />
-            </div>
-          );
-        }
-        // Image background for slides 2 and 4 (index 1 and 3)
-        if (slide.image) {
-          return (
-            <div
-              key={`bg-${slide.id}`}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
-              style={{
-                backgroundImage: `url(${slide.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              {/* Overlay for better text visibility */}
-              <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/70 to-transparent lg:from-background/90 lg:via-background/40 lg:to-transparent z-10" />
-            </div>
-          );
-        }
-        return null;
+            )}
+            
+            {/* Image background - always present as fallback, use Next.js Image */}
+            {(!showVideo && shouldLoad) && (
+              <Image
+                src={slide.image}
+                alt={slide.imageAlt}
+                fill
+                priority={index === 0}
+                quality={80}
+                sizes="100vw"
+                className="object-cover"
+              />
+            )}
+            
+            {/* Overlay for better text visibility */}
+            <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/70 to-transparent lg:from-background/90 lg:via-background/40 lg:to-transparent z-10" />
+          </div>
+        );
       })}
 
       {/* Navigation Arrows */}

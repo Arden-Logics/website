@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -183,10 +184,14 @@ export default function IndustriesSection() {
                       : 'opacity-0 scale-105'
                   )}
                 >
-                  <img
+                  <Image
                     src={industry.image}
                     alt={`${industry.name} industry`}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
+                    quality={80}
                   />
                   {/* Subtle warm overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
