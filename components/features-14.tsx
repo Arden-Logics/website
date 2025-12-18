@@ -25,7 +25,7 @@ export default function FeaturesSection({ serviceKey, solutionKey }: FeaturesHer
 
     return (
         <section className="overflow-hidden min-h-screen flex items-center sm:py-16 md:py-0">
-            <div className="bg-zinc-50 py-24 w-full">
+            <div className="bg-zinc-50 w-full">
                 {/* Full-width hero content */}
                 <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                     <div className="grid items-center gap-8 md:grid-cols-[1.2fr_2fr] lg:gap-12">

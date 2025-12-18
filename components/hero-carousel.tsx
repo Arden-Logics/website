@@ -237,7 +237,7 @@ export default function HeroCarousel() {
                 alt={slide.imageAlt}
                 fill
                 priority={index === 0}
-                quality={80}
+                quality={75}
                 sizes="100vw"
                 className="object-cover"
               />

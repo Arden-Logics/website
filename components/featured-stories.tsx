@@ -198,7 +198,7 @@ export default function FeaturedStories() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                   loading="lazy"
-                  quality={80}
+                  quality={75}
                 />
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />

@@ -21,7 +21,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
     }
 
     return (
-        <div className="min-h-screen flex flex-col py-12">
+        <div className="min-h-screen flex flex-col">
             {/* Hero section - Service-specific content */}
             <FeaturesHero serviceKey={serviceKey} />
 
