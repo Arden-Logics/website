@@ -23,7 +23,7 @@ export default function SolutionHeroSection({
     imageAlt = 'Solution illustration'
 }: SolutionHeroProps) {
     return (
-        <section className="">
+        <section className="py-6">
             <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                 
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
