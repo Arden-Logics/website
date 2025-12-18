@@ -110,13 +110,13 @@ export function BookMeetingForm({ open, onOpenChange }: BookMeetingFormProps) {
 
                     <div className="space-y-4">
                         <p className="text-sm text-muted-foreground">
-                            By clicking the button below, you consent to receiving calls and emails from Arden Logics.
+                        By clicking the button below, you consent to receiving calls and emails from ArdenLogics
                         </p>
                         
                         <div className="flex items-start space-x-2">
                             <Checkbox id="smsConsent" className="mt-1" />
                             <Label htmlFor="smsConsent" className="text-sm text-muted-foreground font-normal leading-relaxed">
-                                I consent to receive marketing SMS from Arden Logics about its services. Message and Data rates apply.
+                            I consent to receive marketing SMS from ArdenLogics about its services. Message and Data rates apply.
                             </Label>
                         </div>
                     </div>

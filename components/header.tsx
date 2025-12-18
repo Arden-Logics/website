@@ -50,7 +50,7 @@ export default function HeaderOne() {
                                     aria-label="home"
                                     className="flex items-center space-x-2 py-2">
                                     {/* <Logo /> */}
-                                    <span className="font-bold text-xl">Arden Logics</span>
+                                    <span className="font-bold text-xl text-black">Arden Logics</span>
                                 </Link>
 
                                 {isLarge && <NavMenu />}
@@ -71,7 +71,7 @@ export default function HeaderOne() {
                                         <Button
                                             size="lg"
                                             className="font-bold">
-                                            <span>Contact Sales</span>
+                                            <span>Contact us</span>
                                         </Button>
                                     </ContactSalesDialog>
                                 </div>
@@ -96,7 +96,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="services"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Services</AccordionTrigger>
+                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Services</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
                             {SERVICES.map((service, index) => (
@@ -104,13 +104,8 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                                     <Link
                                         href={service.href}
                                         onClick={closeMenu}
-                                        className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2">
-                                        <div
-                                            aria-hidden
-                                            className="flex items-center justify-center *:size-4">
-                                            {service.icon}
-                                        </div>
-                                        <div className="text-base">{service.name}</div>
+                                        className="px-4 py-2">
+                                        <div className="text-base text-black">{service.name}</div>
                                     </Link>
                                 </li>
                             ))}
@@ -120,7 +115,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="resources"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Resources</AccordionTrigger>
+                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Resources</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
                             {RESOURCES.map((resource, index) => (
@@ -128,13 +123,8 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                                     <Link
                                         href={resource.href}
                                         onClick={closeMenu}
-                                        className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-4 py-2">
-                                        <div
-                                            aria-hidden
-                                            className="flex items-center justify-center *:size-4">
-                                            {resource.icon}
-                                        </div>
-                                        <div className="text-base">{resource.name}</div>
+                                        className="px-4 py-2">
+                                        <div className="text-base text-black">{resource.name}</div>
                                     </Link>
                                 </li>
                             ))}
@@ -144,25 +134,20 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="solutions"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg">Solutions</AccordionTrigger>
+                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Solutions</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
                             {SOLUTIONS.map((category, categoryIndex) => (
                                 <li key={categoryIndex}>
-                                    <div className="px-4 py-2 text-sm font-semibold text-muted-foreground">{category.title}</div>
+                                    <div className="px-4 py-2 text-sm font-semibold text-black">{category.title}</div>
                                     <ul className="space-y-0">
                                         {category.items.map((item, index) => (
                                             <li key={index}>
                                                 <Link
                                                     href={item.href}
                                                     onClick={closeMenu}
-                                                    className="grid grid-cols-[auto_1fr] items-center gap-2.5 px-6 py-2">
-                                                    <div
-                                                        aria-hidden
-                                                        className="flex items-center justify-center *:size-4">
-                                                        {item.icon}
-                                                    </div>
-                                                    <div className="text-base">{item.name}</div>
+                                                    className="px-6 py-2">
+                                                    <div className="text-base text-black">{item.name}</div>
                                                 </Link>
                                             </li>
                                         ))}
@@ -178,7 +163,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                     <Link
                         href="/partners"
                         onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        className="flex items-center justify-between px-4 py-3 text-lg text-black">
                         Partnership Program
                     </Link>
                 </AccordionItem>
@@ -188,7 +173,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                     <Link
                         href="/about"
                         onClick={closeMenu}
-                        className="flex items-center justify-between px-4 py-3 text-lg">
+                        className="flex items-center justify-between px-4 py-3 text-lg text-black">
                         Company
                     </Link>
                 </AccordionItem>
@@ -223,7 +208,7 @@ const NavMenu = () => {
             className="**:data-[slot=navigation-menu-viewport]:bg-transparent **:data-[slot=navigation-menu-viewport]:rounded-none **:data-[slot=navigation-menu-viewport]:ring-0 **:data-[slot=navigation-menu-viewport]:border-0 **:data-[slot=navigation-menu-viewport]:shadow-none [--color-muted:color-mix(in_oklch,var(--color-foreground)_5%,transparent)] [--viewport-outer-px:2rem] max-lg:hidden">
             <NavigationMenuList className="gap-3">
                 <NavigationMenuItem value="services">
-                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="text-black">Services</NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
                         <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {SERVICES.map((service, index) => (
@@ -239,7 +224,7 @@ const NavMenu = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem value="resources">
-                    <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="text-black">Resources</NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
                         <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {RESOURCES.map((resource, index) => (
@@ -255,12 +240,12 @@ const NavMenu = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem value="solutions">
-                    <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="text-black">Solutions</NavigationMenuTrigger>
                     <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
                         <div className="w-[700px] grid grid-cols-2 gap-6 p-6">
                             {SOLUTIONS.map((category, categoryIndex) => (
                                 <div key={categoryIndex}>
-                                    <h3 className="text-sm font-semibold text-foreground mb-4 px-2">{category.title}</h3>
+                                    <h3 className="text-sm font-semibold text-black mb-4 px-2">{category.title}</h3>
                                     <ul className="space-y-2">
                                         {category.items.map((item, index) => (
                                             <ListItem
@@ -279,14 +264,14 @@ const NavMenu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                        <Link href="/partners" className={navigationMenuTriggerStyle()}>
+                        <Link href="/partners" className={cn(navigationMenuTriggerStyle(), "text-black")}>
                             Partnership Program
                         </Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                        <Link href="/about" className={navigationMenuTriggerStyle()}>
+                        <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-black")}>
                             Company
                         </Link>
                     </NavigationMenuLink>
@@ -302,10 +287,9 @@ function ListItem({ title, description, children, href, ...props }: React.Compon
             <NavigationMenuLink asChild>
                 <Link
                     href={href}
-                    className="grid grid-cols-[auto_1fr] gap-3.5 p-3 hover:bg-muted rounded-md transition-colors">
-                    <div className="bg-background ring-foreground/10 relative flex size-9 items-center justify-center rounded border border-transparent shadow-sm ring-1">{children}</div>
+                    className="block p-3 hover:bg-muted rounded-md transition-colors">
                     <div className="space-y-0.5">
-                        <div className="text-foreground text-sm font-medium">{title}</div>
+                        <div className="text-black text-sm font-medium">{title}</div>
                         <p className="text-muted-foreground line-clamp-2 text-xs">{description}</p>
                     </div>
                 </Link>

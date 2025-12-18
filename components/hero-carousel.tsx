@@ -181,7 +181,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-secondary">
+    <section className="relative h-[calc(100vh-104px)] flex items-center overflow-hidden bg-secondary">
       {/* Background videos and images */}
       {slides.map((slide, index) => {
         // Video background for slides 1 and 3 (index 0 and 2)
@@ -202,8 +202,8 @@ export default function HeroCarousel() {
               >
                 <source src={slide.video} type="video/mp4" />
               </video>
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-black/30" />
+              {/* Overlay for better text visibility */}
+              <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/70 to-transparent lg:from-background/90 lg:via-background/40 lg:to-transparent z-10" />
             </div>
           );
         }
@@ -222,64 +222,32 @@ export default function HeroCarousel() {
                 backgroundRepeat: "no-repeat",
               }}
             >
+              {/* Overlay for better text visibility */}
+              <div className="absolute inset-0 bg-linear-to-r from-background/95 via-background/70 to-transparent lg:from-background/90 lg:via-background/40 lg:to-transparent z-10" />
             </div>
           );
         }
         return null;
       })}
 
-      {/* Decorative mesh pattern - bottom right */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] opacity-20 pointer-events-none z-10">
-        <svg
-          viewBox="0 0 500 400"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
-        >
-          {Array.from({ length: 25 }).map((_, i) => (
-            <path
-              key={`h-${i}`}
-              d={`M 0 ${350 - i * 12} Q ${150 + i * 8} ${320 - i * 10}, ${300 + i * 5} ${280 - i * 8} T 500 ${200 - i * 6}`}
-              className="stroke-primary"
-              strokeWidth="1"
-              fill="none"
-              opacity={0.3 + i * 0.02}
-            />
-          ))}
-          {Array.from({ length: 20 }).map((_, i) => (
-            <path
-              key={`v-${i}`}
-              d={`M ${200 + i * 15} 400 Q ${220 + i * 14} ${300 - i * 5}, ${250 + i * 12} ${200 - i * 3} T ${300 + i * 10} 0`}
-              className="stroke-primary"
-              strokeWidth="1"
-              fill="none"
-              opacity={0.2 + i * 0.025}
-            />
-          ))}
-        </svg>
-      </div>
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 pointer-events-none z-10" />
-
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/80 hover:bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-background/80 hover:bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+        <ChevronLeft className="size-5 sm:size-6 text-foreground group-hover:text-primary transition-colors" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-background/80 hover:bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
+        className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-background/80 hover:bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-xl group"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+        <ChevronRight className="size-5 sm:size-6 text-foreground group-hover:text-primary transition-colors" />
       </button>
 
       {/* Slides Container */}
-      <div className="relative w-full px-8 sm:px-12 lg:px-24 xl:px-32 min-h-[400px] z-20">
+      <div className="relative w-full px-6 sm:px-12 lg:px-24 xl:px-32 min-h-[300px] sm:min-h-[400px] z-20">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -288,10 +256,10 @@ export default function HeroCarousel() {
           >
             <div className="w-full container mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-20">
               {/* Text Content - Left Side */}
-              <div className="flex-1 flex flex-col lg:max-w-[55%]">
-                <div className="flex items-start gap-4 mb-2">
+              <div className="flex-1 flex flex-col lg:max-w-[60%]">
+                <div className="flex items-start gap-3 sm:gap-4 mb-2">
                   <div
-                    className="flex-shrink-0 mt-3 transition-all duration-700 border-y-[12px] border-y-transparent border-l-[18px] border-l-primary"
+                    className="shrink-0 mt-2 sm:mt-3 transition-all duration-700 border-y-8 sm:border-y-12 border-y-transparent border-l-12 sm:border-l-18 border-l-primary"
                     style={{
                       opacity: index === currentSlide ? 1 : 0,
                       transform: index === currentSlide ? "translateX(0)" : "translateX(-20px)",
@@ -299,7 +267,7 @@ export default function HeroCarousel() {
                     }}
                   />
                   <h1
-                    className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-foreground leading-[1.1] tracking-tight"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-foreground leading-[1.1] tracking-tight"
                     style={{
                       opacity: index === currentSlide ? 1 : 0,
                       transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
@@ -312,7 +280,7 @@ export default function HeroCarousel() {
                 </div>
 
                 <p
-                  className="text-muted-foreground text-lg md:text-xl mt-6 mb-8 max-w-2xl ml-[34px] leading-relaxed"
+                  className="text-muted-foreground text-base sm:text-lg md:text-xl mt-4 sm:mt-6 mb-6 sm:mb-8 max-w-2xl ml-[24px] sm:ml-[34px] leading-relaxed"
                   style={{
                     opacity: index === currentSlide ? 1 : 0,
                     transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
@@ -325,7 +293,7 @@ export default function HeroCarousel() {
 
                 {/* CTA Button */}
                 <div
-                  className="ml-[34px]"
+                  className="ml-[24px] sm:ml-[34px]"
                   style={{
                     opacity: index === currentSlide ? 1 : 0,
                     transform: index === currentSlide ? "translateY(0)" : "translateY(20px)",
@@ -335,10 +303,10 @@ export default function HeroCarousel() {
                 >
                   <Link
                     href={slide.buttonLink}
-                    className="inline-flex items-center justify-between gap-8 px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[180px] rounded-md"
+                    className="inline-flex items-center justify-between gap-6 sm:gap-8 px-5 sm:px-6 py-2.5 sm:py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group min-w-[160px] sm:min-w-[180px] rounded-md"
                   >
-                    <span className="font-medium">{slide.buttonText}</span>
-                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="font-medium text-sm sm:text-base">{slide.buttonText}</span>
+                    <ArrowRight className="size-4 sm:size-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -349,7 +317,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Bottom Indicators with Progress */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4 z-30">
+      <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 sm:gap-4 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
