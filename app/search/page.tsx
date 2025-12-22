@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { Search as SearchIcon, FileText, Network, Shield, Mic, Video, Globe } from 'lucide-react'
+import { FileText, Network, Shield, Mic, Video, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
@@ -156,7 +156,7 @@ export default function SearchPage() {
                         ) : (
                             <div className="text-center py-12">
                                 <p className="text-muted-foreground">
-                                    No results found for "{searchQuery}". Try a different search term.
+                                    No results found for &quot;{searchQuery}&quot;. Try a different search term.
                                 </p>
                             </div>
                         )}

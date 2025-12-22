@@ -1,4 +1,4 @@
-import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, ShoppingBag, GraduationCap, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle, Activity, Zap, Lock, CheckCircle, Fingerprint, Car, Truck, Home, Wrench } from 'lucide-react'
+import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle, Activity, Zap, Lock, CheckCircle, Fingerprint, Car, Truck, Home, Wrench } from 'lucide-react'
 import React from 'react'
 
 export interface Service {

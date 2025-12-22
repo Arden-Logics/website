@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import LogoCloud from '@/components/logo-cloud'
 import FeaturesSectionNine from '@/components/features-9'
 import SecondaryHero8 from '@/components/secondary-hero-8'
+import Image from 'next/image'
 
 const TEAM_MEMBERS = [
     {
@@ -170,13 +171,13 @@ export default function AboutPage() {
                             Enabling organizations to grow with confidence
                         </h2>
                         <p className="text-lg text-foreground mb-6">
-                            Our mission is simple: to give businesses the clarity, reliability, and security they need in a digital-first world. We believe technology is most powerful when it's thoughtfully implemented, expertly supported, and aligned to real business goals.
+                            Our mission is simple: to give businesses the clarity, reliability, and security they need in a digital-first world. We believe technology is most powerful when it&apos;s thoughtfully implemented, expertly supported, and aligned to real business goals.
                         </p>
                         <p className="text-lg text-foreground mb-6">
                             Arden Logics partners with organizations across healthcare, education, financial services, government, fitness, manufacturing, and more. We take time to understand the challenges behind the scenes and deliver solutions that make operations smoother, teams more productive, and growth more achievable.
                         </p>
                         <p className="text-lg text-foreground">
-                            Whether it's modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security. <strong>We help businesses not just adapt to the future, but lead it.</strong>
+                            Whether it&apos;s modernizing infrastructure, securing critical systems, simplifying communication, or unifying physical and digital security. <strong>We help businesses not just adapt to the future, but lead it.</strong>
                         </p>
                     </div>
                 </div>
@@ -197,10 +198,11 @@ export default function AboutPage() {
                                 {/* Large image - left */}
                                 <div className="col-span-5 row-span-2">
                                     <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
-                                        <img 
+                                        <Image 
                                             src="/company/company-image-1.jpeg"
                                             alt="Company image 1"
-                                            className="w-full h-full object-cover"
+                                            fill
+                                            className="object-cover"
                                         />
                                     </div>
                                 </div>
@@ -208,10 +210,11 @@ export default function AboutPage() {
                                 {/* Top right image */}
                                 <div className="col-span-7">
                                     <div className="relative h-[240px] rounded-2xl overflow-hidden shadow-xl">
-                                        <img 
+                                        <Image 
                                             src="/company/company-image-2.webp"
                                             alt="Company image 2"
-                                            className="w-full h-full object-cover"
+                                            fill
+                                            className="object-cover"
                                         />
                                     </div>
                                 </div>
@@ -219,10 +222,11 @@ export default function AboutPage() {
                                 {/* Bottom right image */}
                                 <div className="col-span-7">
                                     <div className="relative h-[240px] rounded-2xl overflow-hidden shadow-xl">
-                                        <img 
+                                        <Image 
                                             src="/company/company-image-3.jpg"
                                             alt="Company image 3"
-                                            className="w-full h-full object-cover"
+                                            fill
+                                            className="object-cover"
                                         />
                                     </div>
                                 </div>
@@ -313,7 +317,7 @@ export default function AboutPage() {
                             Our Journey
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                            From our founding to today, we've been committed to innovation and excellence in technology services.
+                            From our founding to today, we&apos;ve been committed to innovation and excellence in technology services.
                         </p>
                     </div>
                     <div className="relative">

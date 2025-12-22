@@ -84,7 +84,7 @@ export default function ClientPortalsPage() {
                             <CardHeader>
                                 <CardTitle>Need Help?</CardTitle>
                                 <CardDescription>
-                                    If you're having trouble accessing any of our portals or need assistance with your account, please don't hesitate to contact our support team.
+                                    If you&apos;re having trouble accessing any of our portals or need assistance with your account, please don&apos;t hesitate to contact our support team.
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
