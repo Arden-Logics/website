@@ -3,10 +3,10 @@ import Image from 'next/image'
 export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
     return (
         <Image 
-            src="/arden-logo.png" 
+            src="/arden-logics-logo.png" 
             alt="Arden Logics Logo" 
-            width={150} 
-            height={40}
+            width={180} 
+            height={48}
             className="object-contain"
             priority
         />
@@ -16,7 +16,7 @@ export const Logo = ({ className, uniColor }: { className?: string; uniColor?: b
 export const LogoIcon = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
     return (
         <Image 
-            src="/arden-logo.png" 
+            src="/arden-logics-logo.png" 
             alt="Arden Logics Logo" 
             width={40} 
             height={40}

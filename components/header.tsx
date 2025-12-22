@@ -30,27 +30,22 @@ export default function HeaderOne() {
                 role="banner"
                 data-state={isMobileMenuOpen ? 'active' : 'inactive'}
                 {...(isScrolled && { 'data-scrolled': true })}
-                className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 top-10 z-50">
+                className="has-data-[state=open]:h-screen has-data-[state=open]:backdrop-blur has-data-[state=open]:bg-background/50 fixed inset-x-0 z-50">
                 <div
                     className={cn(
-                        'h-16 absolute inset-x-0 top-0 z-50 border-b-4 border-foreground/20 ring-1 ring-transparent transition-all duration-300 pb-8',
+                        'h-42 absolute inset-x-0 top-0 z-50 border-b-4 border-foreground/20 ring-1 ring-transparent transition-all duration-300 pb-8',
                         'in-data-scrolled:border-foreground/20 in-data-scrolled:border-b-2 in-data-scrolled:bg-background/75 in-data-scrolled:backdrop-blur in-data-scrolled:pb-8',
                         'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:bg-card/75 has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur has-data-[state=open]:border-b has-data-[state=open]:shadow-black/10 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)]',
-                        'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-16 max-lg:overflow-hidden max-lg:border-b'
+                        'max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:bg-background/75 max-lg:in-data-[state=active]:backdrop-blur max-lg:h-16 max-lg:overflow-hidden max-lg:border-b bg-background'
                     )}>
                     <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
                         <div className="relative flex flex-wrap items-center justify-between lg:py-4">
-                            <div
-                                aria-hidden
-                                className="in-has-data-[state=open]:block absolute inset-x-0 bottom-0 hidden h-px bg-[length:4px_1px] bg-repeat-x opacity-20 [background-image:linear-gradient(90deg,var(--color-foreground)_1px,transparent_1px)]"
-                            />
                             <div className="flex justify-between gap-8 max-lg:h-16 max-lg:w-full max-lg:border-b">
                                 <Link
                                     href="/"
                                     aria-label="home"
                                     className="flex items-center space-x-2 py-2">
-                                    {/* <Logo /> */}
-                                    <span className="font-bold text-xl text-black">Arden Logics</span>
+                                    <Logo/>
                                 </Link>
 
                                 {isLarge && <NavMenu />}
@@ -195,11 +190,47 @@ const NavMenu = () => {
             if (openContent) {
                 const height = openContent.scrollHeight
                 document.documentElement.style.setProperty('--navigation-menu-viewport-height', `${height}px`)
+                
+                // Calculate the right position of the navigation menu
+                const rect = menuNode.getBoundingClientRect()
+                const viewportParent = document.querySelector('[data-slot="navigation-menu-viewport-parent"]')
+                if (viewportParent) {
+                    const parentRect = viewportParent.getBoundingClientRect()
+                    // Calculate right position relative to the viewport parent's content area
+                    const rightPosition = window.innerWidth - rect.right - (window.innerWidth - parentRect.right)
+                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
+                } else {
+                    const rightPosition = window.innerWidth - rect.right
+                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
+                }
             } else {
                 document.documentElement.style.removeProperty('--navigation-menu-viewport-height')
+                document.documentElement.style.removeProperty('--navigation-menu-right')
             }
         })
     }
+    
+    React.useEffect(() => {
+        const updatePosition = () => {
+            if (menuRef.current) {
+                const rect = menuRef.current.getBoundingClientRect()
+                const viewportParent = document.querySelector('[data-slot="navigation-menu-viewport-parent"]')
+                if (viewportParent) {
+                    const parentRect = viewportParent.getBoundingClientRect()
+                    // Calculate right position relative to the viewport parent's content area
+                    const rightPosition = window.innerWidth - rect.right - (window.innerWidth - parentRect.right)
+                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
+                } else {
+                    const rightPosition = window.innerWidth - rect.right
+                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
+                }
+            }
+        }
+        
+        updatePosition()
+        window.addEventListener('resize', updatePosition)
+        return () => window.removeEventListener('resize', updatePosition)
+    }, [])
 
     return (
         <NavigationMenu
@@ -209,7 +240,7 @@ const NavMenu = () => {
             <NavigationMenuList className="gap-3">
                 <NavigationMenuItem value="services">
                     <NavigationMenuTrigger className="text-black">Services</NavigationMenuTrigger>
-                    <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
+                    <NavigationMenuContent className="mt-24 origin-top pb-14 pt-5 shadow-none ring-0">
                         <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {SERVICES.map((service, index) => (
                                 <ListItem
@@ -225,7 +256,7 @@ const NavMenu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem value="resources">
                     <NavigationMenuTrigger className="text-black">Resources</NavigationMenuTrigger>
-                    <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
+                    <NavigationMenuContent className="mt-24 origin-top pb-14 pt-5 shadow-none ring-0">
                         <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {RESOURCES.map((resource, index) => (
                                 <ListItem
@@ -241,7 +272,7 @@ const NavMenu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem value="solutions">
                     <NavigationMenuTrigger className="text-black">Solutions</NavigationMenuTrigger>
-                    <NavigationMenuContent className="mt-4.5 origin-top pb-14 pt-5 shadow-none ring-0">
+                    <NavigationMenuContent className="mt-24 origin-top pb-14 pt-5 shadow-none ring-0">
                         <div className="w-[700px] grid grid-cols-2 gap-6 p-6">
                             {SOLUTIONS.map((category, categoryIndex) => (
                                 <div key={categoryIndex}>
