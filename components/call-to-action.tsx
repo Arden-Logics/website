@@ -23,12 +23,12 @@ export default function CallToAction() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Headline */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Get started with Arden 360 today
+            Get started with Arden Logics
           </h2>
           
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Run, grow, and manage your business communications with enterprise-grade VoIP and unified technology solutions
+            Enterprise technology solutions that support how your business operates today and where it’s headed next.
           </p>
           
           {/* CTA Button */}

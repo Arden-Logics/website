@@ -213,16 +213,23 @@ const NavMenu = () => {
             if (!menuNode) return
 
             const openContent = document.querySelector<HTMLElement>('[data-slot="navigation-menu-viewport"][data-state="open"]')
+            const activeTrigger = document.querySelector<HTMLElement>('[data-slot="navigation-menu-trigger"][data-state="open"]')
 
-            if (openContent) {
+            if (openContent && activeTrigger) {
                 const height = openContent.scrollHeight
                 document.documentElement.style.setProperty('--navigation-menu-viewport-height', `${height}px`)
                 
-                // Set right position to 0 to align with the right edge of the container
-                document.documentElement.style.setProperty('--navigation-menu-right', `0px`)
+                // Calculate left position based on the trigger's position
+                const viewportParent = document.querySelector<HTMLElement>('[data-slot="navigation-menu-viewport-parent"]')
+                if (viewportParent) {
+                    const triggerRect = activeTrigger.getBoundingClientRect()
+                    const parentRect = viewportParent.getBoundingClientRect()
+                    const leftPosition = triggerRect.left - parentRect.left
+                    document.documentElement.style.setProperty('--navigation-menu-left', `${leftPosition}px`)
+                }
             } else {
                 document.documentElement.style.removeProperty('--navigation-menu-viewport-height')
-                document.documentElement.style.removeProperty('--navigation-menu-right')
+                document.documentElement.style.removeProperty('--navigation-menu-left')
             }
         })
     }
@@ -230,8 +237,15 @@ const NavMenu = () => {
     React.useEffect(() => {
         const updatePosition = () => {
             if (menuRef.current) {
-                // Set right position to 0 to align with the right edge of the container
-                document.documentElement.style.setProperty('--navigation-menu-right', `0px`)
+                const activeTrigger = document.querySelector<HTMLElement>('[data-slot="navigation-menu-trigger"][data-state="open"]')
+                const viewportParent = document.querySelector<HTMLElement>('[data-slot="navigation-menu-viewport-parent"]')
+                
+                if (activeTrigger && viewportParent) {
+                    const triggerRect = activeTrigger.getBoundingClientRect()
+                    const parentRect = viewportParent.getBoundingClientRect()
+                    const leftPosition = triggerRect.left - parentRect.left
+                    document.documentElement.style.setProperty('--navigation-menu-left', `${leftPosition}px`)
+                }
             }
         }
         
