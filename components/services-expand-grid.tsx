@@ -108,28 +108,29 @@ export default function ServicesExpandGrid({ fullScreen = true }: ServicesExpand
             >
               {/* Background Image - using Next.js Image for optimization */}
               <div 
-                className="absolute transition-transform duration-700 overflow-hidden"
+                className="absolute inset-0 transition-transform duration-700 overflow-hidden"
                 style={{
-                  transform: `skewX(${-skewAngle}deg) scale(1.7)`,
-                  top: "-70%",
-                  bottom: "-50%",
-                  left: "-70%",
-                  right: "-50%",
+                  transform: `skewX(${-skewAngle}deg)`,
+                  // Extend slightly beyond bounds to cover skew gaps
+                  margin: "-10%",
+                  width: "120%",
+                  height: "120%",
+                  willChange: 'transform',
                 }}
               >
                 <Image
                   src={service.bgImage}
                   alt={service.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 20vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover object-center"
-                  loading="lazy"
-                  quality={75}
+                  quality={90}
+                  priority={false}
                 />
               </div>
               
               {/* Dark overlay for readability */}
-              <div className="absolute inset-0 bg-black/40" />
+              {/* <div className="absolute inset-0 bg-black/40" /> */}
 
               {/* Inner container - counter-skew to straighten content */}
               <div 
