@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import StatsSection from './stats-8'
 import { SERVICE_CONTENT, SOLUTION_CONTENT } from '@/constants'
+import { ContactSalesDialog } from './contact-sales-dialog'
 
 interface ContentSectionProps {
     serviceKey?: string
@@ -46,16 +47,15 @@ export default function ContentSection({ serviceKey, solutionKey }: ContentSecti
                                 {highlight}
                             </p>
                         ))}
-                        <Button
-                            asChild
-                            variant="outline"
-                            size="sm"
-                            className="gap-1 pr-1.5">
-                            <Link href="#">
-                                <span>Explore Features</span>
+                        <ContactSalesDialog>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className="gap-1 pr-1.5">
+                                <span>Contact Us</span>
                                 <ChevronRight className="size-2" />
-                            </Link>
-                        </Button>
+                            </Button>
+                        </ContactSalesDialog>
                     </div>
                 </div>
             </div>

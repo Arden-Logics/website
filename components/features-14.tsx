@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SERVICE_CONTENT, SOLUTION_CONTENT } from '@/constants'
+import { ContactSalesDialog } from './contact-sales-dialog'
 
 interface FeaturesHeroProps {
     serviceKey?: string
@@ -33,15 +34,26 @@ export default function FeaturesSection({ serviceKey, solutionKey }: FeaturesHer
                             <div className="w-full max-w-2xl">
                                 <h2 className="text-foreground text-balance text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">{title}</h2>
                                 <p className="my-8 text-balance text-lg sm:text-xl lg:text-2xl text-muted-foreground justify-between">{description}</p>
-                                <Button
-                                    className="mt-8 pr-3 text-base py-6 px-6 rounded-xl"
-                                    variant="outline"
-                                    asChild>
-                                    <Link href={buttonLink}>
-                                        {buttonText}
-                                        <ChevronRight className="size-5 opacity-50" />
-                                    </Link>
-                                </Button>
+                                {buttonText.toLowerCase().includes('contact') ? (
+                                    <ContactSalesDialog>
+                                        <Button
+                                            className="mt-8 pr-3 text-base py-6 px-6 rounded-xl"
+                                            variant="outline">
+                                            {buttonText}
+                                            <ChevronRight className="size-5 opacity-50" />
+                                        </Button>
+                                    </ContactSalesDialog>
+                                ) : (
+                                    <Button
+                                        className="mt-8 pr-3 text-base py-6 px-6 rounded-xl"
+                                        variant="outline"
+                                        asChild>
+                                        <Link href={buttonLink}>
+                                            {buttonText}
+                                            <ChevronRight className="size-5 opacity-50" />
+                                        </Link>
+                                    </Button>
+                                )}
                             </div>
                         </div>
                         <div className="flex justify-end">

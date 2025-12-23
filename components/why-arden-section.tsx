@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { X, Check, Target, Wrench, Rocket, TrendingUp, ShieldAlert, AlertTriangle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SERVICE_CONTENT } from '@/constants'
+import { ContactSalesDialog } from './contact-sales-dialog'
 
 const defaultPainPoints = [
   'Unpredictable billing',
@@ -145,7 +146,7 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
   const benefits = whyArdenContent?.benefits || defaultBenefits
   
   const differenceText = whyArdenContent?.differenceText || 'This is the Arden Difference.'
-  const differenceButtonText = whyArdenContent?.differenceButtonText || 'Explore the Arden Difference'
+  const differenceButtonText = whyArdenContent?.differenceButtonText || 'Contact Us'
   
   const frameworkTitle = whyArdenContent?.frameworkTitle || 'Our Proven, Flexible Framework'
   const frameworkSubtitle = whyArdenContent?.frameworkSubtitle || 'We start with structure, but we\'re ready to adapt to your needs.'
@@ -271,11 +272,19 @@ export default function WhyArdenSection({ serviceKey }: WhyArdenSectionProps) {
             
             <p className="text-primary font-semibold mb-6">{differenceText}</p>
             
-            <Button asChild size="lg" className="px-8">
-              <Link href="#contact-form">
-                {differenceButtonText}
-              </Link>
-            </Button>
+            {differenceButtonText.toLowerCase().includes('contact') ? (
+              <ContactSalesDialog>
+                <Button size="lg" className="px-8">
+                  {differenceButtonText}
+                </Button>
+              </ContactSalesDialog>
+            ) : (
+              <Button asChild size="lg" className="px-8">
+                <Link href="#contact-form">
+                  {differenceButtonText}
+                </Link>
+              </Button>
+            )}
           </div>
         </div>
         

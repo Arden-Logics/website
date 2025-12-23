@@ -7,7 +7,6 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   title: "Arden Logics | MSP, VoIP, Security & AV Solutions",
   description: "Professional IT managed services, VoIP, network cabling, audio visual, and security solutions for your business.",
-  icons: '/arden-logics-logo.png',
 };
 
 export default function RootLayout({

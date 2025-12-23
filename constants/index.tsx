@@ -968,7 +968,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 'Professional installation aligned with IT best practices',
             ],
             differenceText: 'This is the Arden AV difference.',
-            differenceButtonText: 'Explore the Arden AV difference',
+            differenceButtonText: 'Contact Us',
             frameworkTitle: 'Our proven AV deployment framework',
             frameworkSubtitle: 'We start with structure but tailor every system to your space.',
             frameworkSteps: [

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { ContactSalesDialog } from './contact-sales-dialog'
 
 export interface ServiceSectionProps {
     id: string
@@ -35,12 +36,20 @@ export default function ServiceSection({
                             {description}
                         </p>
                         {linkText && linkHref && (
-                            <Link
-                                href={linkHref}
-                                className="inline-flex items-center text-green-700 font-medium hover:underline"
-                            >
-                                {linkText} →
-                            </Link>
+                            linkText.toLowerCase().includes('contact') ? (
+                                <ContactSalesDialog>
+                                    <button className="inline-flex items-center text-green-700 font-medium hover:underline">
+                                        {linkText} →
+                                    </button>
+                                </ContactSalesDialog>
+                            ) : (
+                                <Link
+                                    href={linkHref}
+                                    className="inline-flex items-center text-green-700 font-medium hover:underline"
+                                >
+                                    {linkText} →
+                                </Link>
+                            )
                         )}
                     </div>
 

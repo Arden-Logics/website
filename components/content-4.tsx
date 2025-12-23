@@ -21,7 +21,7 @@ export default function ContentSection() {
                             size="sm"
                             className="gap-1 pr-1.5">
                             <Link href="#">
-                                <span>Explore Features</span>
+                                <span>Contact Us</span>
                                 <ChevronRight className="size-2" />
                             </Link>
                         </Button>
