@@ -73,103 +73,83 @@ export default function ServicesExpandGrid({ fullScreen = true }: ServicesExpand
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section className="relative w-full overflow-hidden bg-neutral-900">
-      {/* Full-width diagonal grid */}
+    <section className="relative w-full overflow-hidden">
+      {/* Vertical rectangular grid */}
       <div 
-        className={`relative flex w-full pb-8 -mb-8 ${fullScreen ? 'h-screen' : 'h-[500px] md:h-[600px]'}`}
+        className={`relative w-full ${fullScreen ? 'min-h-screen py-12 md:py-16' : 'py-8 md:py-12'}`}
         onMouseLeave={() => setHoveredId(null)}
       >
-        {services.map((service, index) => {
-          const isHovered = hoveredId === service.id
-          const hasHover = hoveredId !== null
-          const skewAngle = -8
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {services.map((service) => {
+              const isHovered = hoveredId === service.id
+              const hasHover = hoveredId !== null
 
-          return (
-            <Link
-              key={service.id}
-              href={service.href}
-              className="relative flex flex-col justify-end text-white overflow-hidden transition-all duration-500 ease-out group cursor-pointer"
-              style={{
-                flex: isHovered 
-                  ? "2.5" 
-                  : hasHover 
-                    ? "0.8" 
-                    : "1",
-                transform: `skewX(${skewAngle}deg)`,
-                marginLeft: index === 0 
-                  ? "-3rem" 
-                  : "-4.5rem",
-                marginRight: index === services.length - 1 
-                  ? "-3rem" 
-                  : "-4.5rem",
-                zIndex: isHovered ? 10 : services.length - index,
-              }}
-              onMouseEnter={() => setHoveredId(service.id)}
-            >
-              {/* Background Image - using Next.js Image for optimization */}
-              <div 
-                className="absolute inset-0 transition-transform duration-700 overflow-hidden"
-                style={{
-                  transform: `skewX(${-skewAngle}deg)`,
-                  // Extend slightly beyond bounds to cover skew gaps
-                  margin: "-10%",
-                  width: "120%",
-                  height: "120%",
-                  willChange: 'transform',
-                }}
-              >
-                <Image
-                  src={service.bgImage}
-                  alt={service.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover object-center"
-                  quality={90}
-                  priority={false}
-                />
-              </div>
-              
-              {/* Dark overlay for readability */}
-              {/* <div className="absolute inset-0 bg-black/40" /> */}
-
-              {/* Inner container - counter-skew to straighten content */}
-              <div 
-                className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 overflow-hidden"
-                style={{
-                  transform: `skewX(${-skewAngle}deg)`,
-                }}
-              >
-                {/* Gradient Overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Animated light beam on hover */}
-                <div 
+              return (
+                <Link
+                  key={service.id}
+                  href={service.href}
                   className={`
-                    absolute inset-0 transition-opacity duration-500
-                    bg-gradient-to-br from-white/10 via-transparent to-transparent
-                    ${isHovered ? "opacity-100" : "opacity-0"}
+                    relative flex flex-col justify-end text-white overflow-hidden 
+                    transition-all duration-500 ease-out group cursor-pointer
+                    rounded-lg aspect-[4/5] md:aspect-[3/4]
+                    ${isHovered ? 'scale-105 shadow-2xl z-20' : hasHover ? 'opacity-60 scale-95' : 'opacity-100'}
                   `}
-                />
+                  style={{
+                    zIndex: isHovered ? 20 : hasHover ? 10 : 1,
+                  }}
+                  onMouseEnter={() => setHoveredId(service.id)}
+                >
+                  {/* Background Image - no skew, clean rectangular */}
+                  <div className="absolute inset-0 transition-transform duration-700 overflow-hidden">
+                    <Image
+                      src={service.bgImage}
+                      alt={service.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className={`
+                        object-cover object-center transition-transform duration-700
+                        ${isHovered ? 'scale-110' : 'scale-100'}
+                      `}
+                      quality={90}
+                      priority={false}
+                    />
+                  </div>
+                  
+                  {/* Gradient Overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                {/* Content Container */}
-                <div className="relative z-10 flex flex-col h-full justify-between items-center text-center px-1 md:px-2">
+                  {/* Animated overlay on hover */}
+                  <div 
+                    className={`
+                      absolute inset-0 transition-opacity duration-500
+                      bg-gradient-to-br from-white/10 via-transparent to-transparent
+                      ${isHovered ? "opacity-100" : "opacity-0"}
+                    `}
+                  />
 
-                  {/* Text Content at bottom */}
-                  <div className="mt-auto w-full flex flex-col items-center">
-                    {/* Title - always visible, centered */}
-                    <h3 className="font-bold text-white text-sm md:text-lg lg:text-xl mb-2 text-center leading-tight">
+                  {/* Content Container */}
+                  <div className="relative z-10 flex flex-col h-full justify-end p-6 md:p-8">
+                    {/* Icon */}
+                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
+                      <div className="text-white/90">
+                        {service.icon}
+                      </div>
+                    </div>
+
+                    {/* Title - always visible */}
+                    <h3 className="font-bold text-white text-xl md:text-2xl lg:text-3xl mb-3 leading-tight">
                       {service.name}
                     </h3>
 
                     {/* Description - visible on hover */}
                     <p 
                       className={`
-                        text-white/85 text-sm md:text-base leading-relaxed max-w-sm mx-auto
-                        transition-opacity duration-300 overflow-hidden
-                        ${isHovered ? "opacity-100" : "opacity-0 h-0"}
+                        text-white/90 text-sm md:text-base leading-relaxed
+                        transition-all duration-300 overflow-hidden
+                        ${isHovered ? "opacity-100 max-h-32" : "opacity-0 max-h-0"}
                       `}
                       style={{ 
-                        height: isHovered ? 'auto' : 0,
                         marginBottom: isHovered ? '1rem' : 0 
                       }}
                     >
@@ -180,31 +160,30 @@ export default function ServicesExpandGrid({ fullScreen = true }: ServicesExpand
                     <div 
                       className={`
                         inline-flex items-center gap-2 text-sm font-semibold
-                        bg-white/15 backdrop-blur-sm px-4 py-2.5 rounded-full
-                        transition-opacity duration-300
-                        hover:bg-white/25
-                        ${isHovered ? "opacity-100" : "opacity-0 pointer-events-none"}
+                        bg-white/20 backdrop-blur-sm px-4 py-2.5 rounded-full
+                        transition-all duration-300
+                        hover:bg-white/30
+                        ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"}
                       `}
                     >
                       <span>Explore</span>
                       <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Edge highlight */}
-              <div 
-                className={`
-                  absolute inset-y-0 right-0 w-px
-                  bg-gradient-to-b from-transparent via-white/20 to-transparent
-                  transition-opacity duration-300
-                  ${isHovered ? "opacity-100" : "opacity-20"}
-                `}
-              />
-            </Link>
-          )
-        })}
+                  {/* Border highlight on hover */}
+                  <div 
+                    className={`
+                      absolute inset-0 rounded-lg border-2 border-white/30
+                      transition-opacity duration-300 pointer-events-none
+                      ${isHovered ? "opacity-100" : "opacity-0"}
+                    `}
+                  />
+                </Link>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </section>
   )
