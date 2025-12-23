@@ -130,12 +130,6 @@ export default function ServicesExpandGrid({ fullScreen = true }: ServicesExpand
 
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col h-full justify-end p-6 md:p-8">
-                    {/* Icon */}
-                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
-                      <div className="text-white/90">
-                        {service.icon}
-                      </div>
-                    </div>
 
                     {/* Title - always visible */}
                     <h3 className="font-bold text-white text-xl md:text-2xl lg:text-3xl mb-3 leading-tight">

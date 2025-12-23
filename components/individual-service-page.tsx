@@ -87,7 +87,7 @@ export default function IndividualServicePage({ serviceKey }: IndividualServiceP
                 />
             </div>
             <div id="other-services" className="scroll-mt-32">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2 text-center">Other services we offer</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-2 text-center">Solutions built around the way modern businesses operate today</h2>
                 <ServicesExpandGrid />
             </div>
             <div id="contact" className="scroll-mt-32"> 
