@@ -56,11 +56,11 @@ const dummyResults = [
         href: '/blog'
     },
     {
-        title: 'Industry Solutions',
-        description: 'Tailored IT solutions for your specific industry. We understand the unique challenges and compliance requirements of various sectors.',
-        category: 'Industries',
+        title: 'Sector Solutions',
+        description: 'Tailored IT solutions for your specific sector. We understand the unique challenges and compliance requirements of various markets.',
+        category: 'Solutions',
         icon: Network,
-        href: '/industries'
+        href: '/solutions'
     }
 ]
 

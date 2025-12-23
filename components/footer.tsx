@@ -1,6 +1,6 @@
 import { Logo } from '@/components/logo'
 import Link from 'next/link'
-import { SERVICES, RESOURCES, INDUSTRIES } from '@/constants'
+import { SERVICES, RESOURCES, SOLUTIONS_DATA } from '@/constants'
 
 const links = [
     {
@@ -18,10 +18,10 @@ const links = [
         })),
     },
     {
-        group: 'Industries',
-        items: INDUSTRIES.map(industry => ({
-            title: industry.name,
-            href: industry.href,
+        group: 'Solutions',
+        items: SOLUTIONS_DATA.map(solution => ({
+            title: solution.name,
+            href: solution.href,
         })),
     },
     {
@@ -64,7 +64,7 @@ export default function FooterSection() {
                                         <Link
                                             key={index}
                                             href={item.href}
-                                            className="text-foreground hover:text-primary block duration-150">
+                                            className="text-foreground hover:text-primary block text-sm duration-150">
                                             <span>{item.title}</span>
                                         </Link>
                                     ))}

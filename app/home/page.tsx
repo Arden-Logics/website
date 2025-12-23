@@ -7,7 +7,7 @@ import WhyUsStats from "@/components/why-us-stats";
 import FeaturedStories from "@/components/featured-stories";
 import ContactForm from "@/components/secondary-hero-14";
 import Blog from "@/components/blog-4";
-import IndustriesSection from "@/components/industries-section";
+import SolutionsSection from "@/components/solutions-section";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
       <WhyUsStats />
       <FeaturedStories />
       <Blog showMoreArticles={false} />
-      <IndustriesSection />
+      <SolutionsSection />
       <ContactForm />
     </>
   );

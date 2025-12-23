@@ -1,21 +1,21 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { Search, X, Download, FileText, FileCheck, FileCode, Shield, BookOpen, Wrench } from 'lucide-react'
+import { useState, useMemo, useEffect } from 'react'
+import { Search, X, Download, FileText, FileCheck, FileCode, Shield, BookOpen, Wrench, Loader2, CheckCircle2 } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import Link from 'next/link'
 
-type DocumentCategory = 'all' | 'whitepapers' | 'guides' | 'technical' | 'compliance' | 'case-studies'
+type DocumentCategory = 'all' | 'whitepapers' | 'guides' | 'technical' | 'compliance' | 'legal'
 type SortOption = 'popular' | 'newest' | 'alphabetical'
 
 interface Document {
     id: string
     title: string
     description: string
-    category: string
+    category: DocumentCategory
     type: string
     size: string
     downloadUrl: string
@@ -26,118 +26,143 @@ interface Document {
 const DOCUMENTS: Document[] = [
     {
         id: '1',
-        title: 'IT Security Best Practices Guide',
-        description: 'Comprehensive guide covering cybersecurity fundamentals, threat prevention, and incident response strategies for businesses.',
-        category: 'guides',
+        title: 'Master Service Agreement (MSA)',
+        description: 'The foundational agreement governing the long-term relationship between Arden Logic and our clients, outlining general terms and conditions.',
+        category: 'legal',
         type: 'PDF',
-        size: '2.4 MB',
-        downloadUrl: '#',
-        featured: true,
-        icon: <Shield className="w-5 h-5" />,
-    },
-    {
-        id: '2',
-        title: 'Network Infrastructure Whitepaper',
-        description: 'Deep dive into modern network architecture, structured cabling standards, and best practices for scalable infrastructure.',
-        category: 'whitepapers',
-        type: 'PDF',
-        size: '3.1 MB',
-        downloadUrl: '#',
+        size: '450 KB',
+        downloadUrl: 'https://cdn.pandadoc.com/cms/templates/Master-Service-Agreement-MSA-Template-PandaDoc.pdf',
         featured: true,
         icon: <FileText className="w-5 h-5" />,
     },
     {
         id: '3',
-        title: 'VoIP Implementation Checklist',
-        description: 'Step-by-step checklist for planning and deploying VoIP systems, including network requirements and quality assurance.',
-        category: 'guides',
+        title: 'Cybersecurity Incident Response Plan',
+        description: 'A comprehensive framework for identifying, containing, and recovering from security incidents, based on NIST SP 800-61 standards.',
+        category: 'technical',
         type: 'PDF',
         size: '1.2 MB',
-        downloadUrl: '#',
-        featured: false,
-        icon: <FileCheck className="w-5 h-5" />,
-    },
-    {
-        id: '4',
-        title: 'HIPAA Compliance Documentation',
-        description: 'Essential documentation for healthcare organizations to maintain HIPAA compliance with IT systems and data handling.',
-        category: 'compliance',
-        type: 'PDF',
-        size: '2.8 MB',
-        downloadUrl: '#',
+        downloadUrl: 'https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf',
         featured: true,
         icon: <Shield className="w-5 h-5" />,
     },
     {
+        id: '4',
+        title: 'HIPAA Compliance Statement',
+        description: 'Official guidance for healthcare organizations to ensure PHI security within managed IT environments, compliant with HHS regulations.',
+        category: 'compliance',
+        type: 'PDF',
+        size: '890 KB',
+        downloadUrl: 'https://www.hhs.gov/sites/default/files/ocr/privacy/hipaa/administrative/securityrule/securityrulepdf.pdf',
+        featured: false,
+        icon: <Shield className="w-5 h-5" />,
+    },
+    {
         id: '5',
-        title: 'Camera System Technical Specifications',
-        description: 'Technical documentation covering IP camera specifications, network requirements, and storage calculations.',
+        title: 'VoIP Network Readiness Checklist',
+        description: 'Technical requirements and network optimization steps to ensure crystal-clear voice communications across your infrastructure.',
         category: 'technical',
         type: 'PDF',
-        size: '1.9 MB',
-        downloadUrl: '#',
+        size: '620 KB',
+        downloadUrl: 'https://www.ringcentral.com/content/dam/ringcentral/en-us/pdf/whitepaper/voip-network-readiness-checklist.pdf',
         featured: false,
         icon: <FileCode className="w-5 h-5" />,
     },
     {
         id: '6',
-        title: 'Cloud Migration Strategy Guide',
-        description: 'Complete guide to planning and executing cloud migrations with minimal disruption and maximum efficiency.',
+        title: 'Managed IT Onboarding Guide',
+        description: 'A professional roadmap for new clients transitioning to Arden Logic\'s Managed IT ecosystem, covering discovery to full management.',
         category: 'guides',
         type: 'PDF',
-        size: '2.6 MB',
-        downloadUrl: '#',
+        size: '2.1 MB',
+        downloadUrl: 'https://www.kaseya.com/wp-content/uploads/2021/04/New-Client-Onboarding-Checklist.pdf',
         featured: true,
         icon: <BookOpen className="w-5 h-5" />,
     },
     {
         id: '7',
-        title: 'Access Control Systems Comparison',
-        description: 'Comparative analysis of access control technologies including keycards, biometrics, and mobile credentials.',
-        category: 'whitepapers',
+        title: 'Acceptable Use Policy (AUP)',
+        description: 'Standard guidelines for the appropriate use of network resources, communications systems, and technology infrastructure.',
+        category: 'legal',
         type: 'PDF',
-        size: '2.2 MB',
-        downloadUrl: '#',
+        size: '320 KB',
+        downloadUrl: 'https://www.sans.org/media/score/checklists/acceptable-use-policy.pdf',
         featured: false,
         icon: <FileText className="w-5 h-5" />,
     },
     {
         id: '8',
-        title: 'Network Maintenance Procedures',
-        description: 'Standard operating procedures for network maintenance, troubleshooting, and performance optimization.',
+        title: 'IP Camera Storage & Bandwidth Calculator',
+        description: 'A technical tool for planning surveillance storage needs and network capacity for modern security camera systems.',
         category: 'technical',
-        type: 'PDF',
-        size: '1.7 MB',
-        downloadUrl: '#',
+        type: 'WEB',
+        size: 'N/A',
+        downloadUrl: 'https://www.calculator.net/ip-camera-bandwidth-storage-calculator.html',
         featured: false,
         icon: <Wrench className="w-5 h-5" />,
     },
     {
         id: '9',
-        title: 'Disaster Recovery Planning',
-        description: 'Framework for creating comprehensive disaster recovery and business continuity plans for IT infrastructure.',
+        title: 'The State of Cybersecurity Report',
+        description: 'Analysis of emerging threats and defensive strategies tailored for the US small and medium business landscape.',
+        category: 'whitepapers',
+        type: 'PDF',
+        size: '3.5 MB',
+        downloadUrl: 'https://www.isaca.org/-/media/files/isacadp/project/isaca/resources/white-papers/state-of-cybersecurity-2024-part-1.pdf',
+        featured: true,
+        icon: <FileText className="w-5 h-5" />,
+    },
+    {
+        id: '10',
+        title: 'Structured Cabling Standards Reference',
+        description: 'Overview of TIA/EIA-568 cabling standards for high-performance network infrastructure in commercial environments.',
+        category: 'technical',
+        type: 'PDF',
+        size: '1.8 MB',
+        downloadUrl: 'https://www.anixter.com/content/dam/anixter/resources/white-papers/standard-compliance-guide-tia-568-d.pdf',
+        featured: false,
+        icon: <FileCode className="w-5 h-5" />,
+    },
+    {
+        id: '11',
+        title: 'Audio-Visual Operations Manual',
+        description: 'Professional standards for managing complex AV environments, conference room technology, and integrated systems.',
         category: 'guides',
         type: 'PDF',
-        size: '3.4 MB',
-        downloadUrl: '#',
-        featured: true,
+        size: '2.4 MB',
+        downloadUrl: 'https://www.avixa.org/docs/default-source/standards-docs/av-standards-overview.pdf',
+        featured: false,
         icon: <BookOpen className="w-5 h-5" />,
+    },
+    {
+        id: '12',
+        title: 'SOC 2 Type II User Guide',
+        description: 'Official overview of security controls and independent audit results ensuring data integrity and reliability.',
+        category: 'compliance',
+        type: 'PDF',
+        size: '540 KB',
+        downloadUrl: 'https://www.aicpa-cima.com/resources/download/soc-2-report-user-guide.pdf',
+        featured: true,
+        icon: <Shield className="w-5 h-5" />,
     },
 ]
 
 const CATEGORIES = [
     { value: 'all', label: 'All Categories' },
-    { value: 'whitepapers', label: 'Whitepapers' },
-    { value: 'guides', label: 'Guides & Tutorials' },
-    { value: 'technical', label: 'Technical Docs' },
+    { value: 'legal', label: 'Legal & Agreements' },
     { value: 'compliance', label: 'Compliance' },
-    { value: 'case-studies', label: 'Case Studies' },
+    { value: 'technical', label: 'Technical Docs' },
+    { value: 'guides', label: 'Guides & Checklists' },
+    { value: 'whitepapers', label: 'Whitepapers' },
 ]
 
 export default function DocumentsPage() {
     const [selectedCategory, setSelectedCategory] = useState<DocumentCategory>('all')
     const [searchQuery, setSearchQuery] = useState('')
     const [sortBy, setSortBy] = useState<SortOption>('popular')
+    const [downloadingId, setDownloadingId] = useState<string | null>(null)
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState('')
 
     // Filter documents
     const filteredDocuments = useMemo(() => {
@@ -175,17 +200,53 @@ export default function DocumentsPage() {
         setSearchQuery('')
     }
 
+    const handleDownload = (doc: Document) => {
+        setDownloadingId(doc.id)
+        
+        // Simulate a small preparation delay for better UX
+        setTimeout(() => {
+            setDownloadingId(null)
+            
+            if (doc.downloadUrl === '#') {
+                setToastMessage(`${doc.title} will be available for download soon.`)
+                setShowToast(true)
+                setTimeout(() => setShowToast(false), 3000)
+            } else {
+                // For real links, open in new tab or trigger download
+                window.open(doc.downloadUrl, '_blank', 'noopener,noreferrer')
+                setToastMessage(`Downloading ${doc.title}...`)
+                setShowToast(true)
+                setTimeout(() => setShowToast(false), 3000)
+            }
+        }, 800)
+    }
+
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background relative">
+            {/* Simple Toast Notification */}
+            {showToast && (
+                <div className="fixed bottom-8 right-8 z-50 animate-in fade-in slide-in-from-bottom-4 duration-300">
+                    <div className="bg-primary text-primary-foreground px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 border border-primary-foreground/20 backdrop-blur-sm">
+                        <div className="bg-green-400/20 p-2 rounded-full">
+                            <CheckCircle2 className="w-5 h-5 text-green-400" />
+                        </div>
+                        <span className="font-medium text-sm">{toastMessage}</span>
+                        <button onClick={() => setShowToast(false)} className="ml-2 hover:opacity-70 p-1">
+                            <X className="w-4 h-4" />
+                        </button>
+                    </div>
+                </div>
+            )}
+
             {/* Hero Section */}
             <section className="relative pt-32 pb-12 px-6 lg:px-12">
                 <div className="w-full">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Technical Resources & Documentation
+                            Resources & Documentation
                         </h1>
                         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                            Access our comprehensive library of whitepapers, guides, technical documentation, and compliance resources. Download the information you need to make informed technology decisions.
+                            Access our comprehensive library of legal agreements, technical guides, and industry whitepapers tailored for US-based organizations. Download the documentation you need to support your technology infrastructure.
                         </p>
                     </div>
 
@@ -337,14 +398,22 @@ export default function DocumentsPage() {
                                     </CardHeader>
                                     <CardContent className="mt-auto">
                                         <Button
-                                            asChild
+                                            onClick={() => handleDownload(doc)}
                                             variant="outline"
-                                            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                                            disabled={downloadingId === doc.id}
+                                            className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors relative overflow-hidden"
                                         >
-                                            <Link href={doc.downloadUrl}>
-                                                <Download className="w-4 h-4 mr-2" />
-                                                Download
-                                            </Link>
+                                            {downloadingId === doc.id ? (
+                                                <>
+                                                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                                                    Preparing...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Download className="w-4 h-4 mr-2" />
+                                                    {doc.type === 'WEB' ? 'Open Calculator' : 'Download'}
+                                                </>
+                                            )}
                                         </Button>
                                     </CardContent>
                                 </Card>
@@ -394,4 +463,3 @@ export default function DocumentsPage() {
         </div>
     )
 }
-

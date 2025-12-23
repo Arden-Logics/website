@@ -6,11 +6,12 @@ export interface Service {
     href: string
     description: string
     icon: React.ReactElement
+    comingSoon?: boolean
 }
 
 export const SERVICES: Service[] = [
     {
-        name: 'MSP Managed IT',
+        name: 'Managed IT',
         href: '/services/msp-managed-it',
         description: 'Comprehensive IT management and support for your business.',
         icon: <Cpu className="stroke-foreground fill-blue-500/15" />,
@@ -47,7 +48,7 @@ export const SERVICES: Service[] = [
     },
 ]
 
-export interface Industry {
+export interface SolutionDetail {
     name: string
     href: string
     description: string
@@ -55,115 +56,115 @@ export interface Industry {
     images: string[]
 }
 
-export const INDUSTRIES: Industry[] = [
+export const SOLUTIONS_DATA: SolutionDetail[] = [
     {
         name: 'Automotive',
-        href: '/industries#automotive',
+        href: '/solutions#automotive',
         description: 'IT solutions for automotive dealerships and service centers.',
         icon: <Car className="stroke-foreground fill-blue-500/15" />,
         images: [
-            '/industries/automotive/automotive-1.jpg',
-            '/industries/automotive/automotive-2.jpg',
-            '/industries/automotive/automotive-3.jpg',
+            '/solutions/automotive/automotive-1.jpg',
+            '/solutions/automotive/automotive-2.jpg',
+            '/solutions/automotive/automotive-3.jpg',
         ],
     },
     {
         name: 'Construction',
-        href: '/industries#construction',
-        description: 'Construction industry IT solutions and infrastructure.',
+        href: '/solutions#construction',
+        description: 'Construction sector IT solutions and infrastructure.',
         icon: <Wrench className="stroke-foreground fill-orange-500/15" />,
         images: [
-            '/industries/construction/construction-1.jpg',
-            '/industries/construction/construction-2.jpg',
-            '/industries/construction/construction-3.jpg',
+            '/solutions/construction/construction-1.jpg',
+            '/solutions/construction/construction-2.jpg',
+            '/solutions/construction/construction-3.jpg',
         ],
     },
     {
         name: 'Enterprise',
-        href: '/industries#enterprise',
+        href: '/solutions#enterprise',
         description: 'Enterprise-grade solutions for large organizations.',
         icon: <Building2 className="stroke-foreground fill-purple-500/15" />,
         images: [
-            '/industries/enterprise/enterprise-1.jpg',
-            '/industries/enterprise/enterprise-2.jpg',
-            '/industries/enterprise/enterprise-3.jpg',
+            '/solutions/enterprise/enterprise-1.jpg',
+            '/solutions/enterprise/enterprise-2.jpg',
+            '/solutions/enterprise/enterprise-3.jpg',
         ],
     },
     {
         name: 'Logistics',
-        href: '/industries#logistics',
+        href: '/solutions#logistics',
         description: 'IT solutions for logistics and supply chain management.',
         icon: <Truck className="stroke-foreground fill-blue-500/15" />,
         images: [
-            '/industries/logistics/logistics-1.jpg',
-            '/industries/logistics/logistics-2.jpg',
-            '/industries/logistics/logistics-3.jpg',
+            '/solutions/logistics/logistics-1.jpg',
+            '/solutions/logistics/logistics-2.jpg',
+            '/solutions/logistics/logistics-3.jpg',
         ],
     },
     {
         name: 'Manufacturing',
-        href: '/industries#manufacturing',
+        href: '/solutions#manufacturing',
         description: 'Industrial automation and production line IT systems.',
         icon: <Factory className="stroke-foreground fill-orange-500/15" />,
         images: [
-            '/industries/manufacturing/manufacturing-1.jpg',
-            '/industries/manufacturing/manufacturing-2.jpg',
-            '/industries/manufacturing/manufacturing-3.jpg',
+            '/solutions/manufacturing/manufacturing-1.jpg',
+            '/solutions/manufacturing/manufacturing-2.jpg',
+            '/solutions/manufacturing/manufacturing-3.jpg',
         ],
     },
     {
         name: 'Non-Profit',
-        href: '/industries#non-profit',
+        href: '/solutions#non-profit',
         description: 'IT solutions tailored for non-profit organizations.',
         icon: <Heart className="stroke-foreground fill-pink-500/15" />,
         images: [
-            '/industries/non-profit/non-profit-1.jpg',
-            '/industries/non-profit/non-profit-2.jpg',
-            '/industries/non-profit/non-profit-3.jpg',
+            '/solutions/non-profit/non-profit-1.jpg',
+            '/solutions/non-profit/non-profit-2.jpg',
+            '/solutions/non-profit/non-profit-3.jpg',
         ],
     },
     {
         name: 'Real Estate',
-        href: '/industries#real-estate',
+        href: '/solutions#real-estate',
         description: 'IT solutions for real estate agencies and property management.',
         icon: <Home className="stroke-foreground fill-amber-500/15" />,
         images: [
-            '/industries/real-estate/real-estate-1.jpg',
-            '/industries/real-estate/real-estate-2.jpg',
-            '/industries/real-estate/real-estate-3.jpg',
+            '/solutions/real-estate/real-estate-1.jpg',
+            '/solutions/real-estate/real-estate-2.jpg',
+            '/solutions/real-estate/real-estate-3.jpg',
         ],
     },
     {
         name: 'Small Business',
-        href: '/industries#small-business',
+        href: '/solutions#small-business',
         description: 'Scalable solutions designed for growing businesses.',
         icon: <Briefcase className="stroke-foreground fill-blue-500/15" />,
         images: [
-            '/industries/small-business/small-business-1.jpg',
-            '/industries/small-business/small-business-2.jpg',
-            '/industries/small-business/small-business-3.jpg',
+            '/solutions/small-business/small-business-1.jpg',
+            '/solutions/small-business/small-business-2.jpg',
+            '/solutions/small-business/small-business-3.jpg',
         ],
     },
     {
         name: 'Startups',
-        href: '/industries#startups',
+        href: '/solutions#startups',
         description: 'Flexible solutions for innovative startups.',
         icon: <Zap className="stroke-foreground fill-green-500/15" />,
         images: [
-            '/industries/startups/startups-1.jpg',
-            '/industries/startups/startups-2.jpg',
-            '/industries/startups/startups-3.jpg',
+            '/solutions/startups/startups-1.jpg',
+            '/solutions/startups/startups-2.jpg',
+            '/solutions/startups/startups-3.jpg',
         ],
     },
     {
         name: 'Tech',
-        href: '/industries#tech',
+        href: '/solutions#tech',
         description: 'Technology-focused IT solutions.',
         icon: <Cpu className="stroke-foreground fill-blue-500/15" />,
         images: [
-            '/industries/tech/tech-1.jpg',
-            '/industries/tech/tech-2.jpg',
-            '/industries/tech/tech-3.jpg',
+            '/solutions/tech/tech-1.jpg',
+            '/solutions/tech/tech-2.jpg',
+            '/solutions/tech/tech-3.jpg',
         ],
     },
 ]
@@ -173,6 +174,7 @@ export interface SolutionItem {
     href: string
     description: string
     icon: React.ReactElement
+    comingSoon?: boolean
 }
 
 export interface SolutionCategory {
@@ -205,7 +207,7 @@ export const SOLUTIONS: SolutionCategory[] = [
         ],
     },
     {
-        title: 'By Industry',
+        title: 'By Sector',
         items: [
             {
                 name: 'Tech',
@@ -222,13 +224,13 @@ export const SOLUTIONS: SolutionCategory[] = [
             {
                 name: 'Construction',
                 href: '/solutions/construction',
-                description: 'Construction industry IT solutions.',
+                description: 'Construction sector IT solutions.',
                 icon: <Building2 className="stroke-foreground fill-yellow-500/15" />,
             },
             {
                 name: 'Real Estate',
                 href: '/solutions/real-estate',
-                description: 'Real estate industry solutions.',
+                description: 'Real estate sector solutions.',
                 icon: <Building2 className="stroke-foreground fill-red-500/15" />,
             },
             {
@@ -240,7 +242,7 @@ export const SOLUTIONS: SolutionCategory[] = [
             {
                 name: 'Automotive',
                 href: '/solutions/automotive',
-                description: 'Automotive industry IT solutions.',
+                description: 'Automotive sector IT solutions.',
                 icon: <Cpu className="stroke-foreground fill-indigo-500/15" />,
             },
             {
@@ -258,6 +260,7 @@ export interface Resource {
     href: string
     description: string
     icon: React.ReactElement
+    comingSoon?: boolean
 }
 
 export const RESOURCES: Resource[] = [
@@ -266,6 +269,7 @@ export const RESOURCES: Resource[] = [
         href: '/resources/client-success',
         description: 'Dedicated support and resources for our valued clients.',
         icon: <BookOpen className="stroke-foreground fill-blue-500/15" />,
+        comingSoon: true,
     },
     {
         name: 'Documents',
@@ -386,7 +390,7 @@ export interface SuccessStory {
     id: string
     title: string
     company: string
-    industry: string
+    solution: string
     services: string[]
     description: string
     imageSrc: string
@@ -400,7 +404,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '1',
         title: 'Healthcare network transformation',
         company: 'City medical center',
-        industry: 'Healthcare',
+        solution: 'Healthcare',
         services: ['MSP Managed IT', 'Cyber Security', 'Network & Cabling'],
         description: 'How city medical center transformed their IT infrastructure to support 500+ users with HIPAA-compliant solutions, reducing downtime by 85%.',
         imageSrc: '/arden-logo.png',
@@ -412,7 +416,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '2',
         title: 'Retail chain VoIP deployment',
         company: 'Metro retail group',
-        industry: 'Retail',
+        solution: 'Retail',
         services: ['VoIP', 'Network & Cabling'],
         description: 'Metro retail group deployed cloud-based VoIP across 50 locations, reducing communication costs by 60% while improving customer service.',
         imageSrc: '/arden-logo.png',
@@ -424,7 +428,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '3',
         title: 'Education campus security upgrade',
         company: 'Westside academy',
-        industry: 'Education',
+        solution: 'Education',
         services: ['Camera Access & Security', 'Network & Cabling'],
         description: 'Westside academy enhanced campus safety with integrated surveillance and access control systems protecting 2,000+ students.',
         imageSrc: '/arden-logo.png',
@@ -436,7 +440,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '4',
         title: 'Manufacturing floor connectivity',
         company: 'TechFab industries',
-        industry: 'Manufacturing',
+        solution: 'Manufacturing',
         services: ['Network & Cabling', 'MSP Managed IT'],
         description: 'TechFab industries achieved 99.9% uptime with fiber optic infrastructure supporting industrial IoT devices and production systems.',
         imageSrc: '/arden-logo.png',
@@ -448,7 +452,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '5',
         title: 'Financial services security overhaul',
         company: 'Premier capital advisors',
-        industry: 'Finance',
+        solution: 'Finance',
         services: ['Cyber Security', 'MSP Managed IT'],
         description: 'Premier capital advisors implemented multi-layered security protecting sensitive financial data and ensuring regulatory compliance.',
         imageSrc: '/arden-logo.png',
@@ -460,7 +464,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '6',
         title: 'Law firm collaboration suite',
         company: 'Anderson & partners LLP',
-        industry: 'Professional services',
+        solution: 'Professional services',
         services: ['VoIP', 'Audio & Visual', 'MSP Managed IT'],
         description: 'Anderson & partners transformed client meetings with state-of-the-art AV systems and integrated communication platforms.',
         imageSrc: '/arden-logo.png',
@@ -472,7 +476,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '7',
         title: 'Hospital emergency network',
         company: 'Memorial regional hospital',
-        industry: 'Healthcare',
+        solution: 'Healthcare',
         services: ['Network & Cabling', 'MSP Managed IT', 'Cyber Security'],
         description: 'Memorial regional hospital deployed redundant network infrastructure ensuring 24/7 availability for critical healthcare operations.',
         imageSrc: '/arden-logo.png',
@@ -484,7 +488,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '8',
         title: 'Restaurant chain digital signage',
         company: 'Fresh bites restaurants',
-        industry: 'Retail',
+        solution: 'Retail',
         services: ['Audio & Visual', 'Network & Cabling'],
         description: 'Fresh bites deployed digital menu boards and kitchen display systems across 30 locations improving order accuracy.',
         imageSrc: '/arden-logo.png',
@@ -496,7 +500,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
         id: '9',
         title: 'University cloud migration',
         company: 'State university',
-        industry: 'Education',
+        solution: 'Education',
         services: ['MSP Managed IT', 'Network & Cabling'],
         description: 'State university migrated to cloud infrastructure supporting 10,000+ students with scalable, secure access to resources.',
         imageSrc: '/arden-logo.png',
@@ -1739,7 +1743,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
         },
     },
     'tech': {
-        title: 'Tech Industry Solutions',
+        title: 'Tech Sector Solutions',
         subtitle: 'Technology-Focused IT Solutions',
         description: 'Specialized IT solutions for technology companies. We understand the unique needs of tech businesses and deliver solutions that keep you ahead of the curve.',
         ctaText: 'Contact Us',
@@ -1767,13 +1771,13 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
             },
         ],
         heroSection: {
-            breadcrumb: 'Solutions / Tech Industry',
+            breadcrumb: 'Solutions / Tech Sector',
             title: 'Technology-Focused IT Solutions',
             description: 'Specialized IT solutions for technology companies. We understand the unique needs of tech businesses and deliver solutions that keep you ahead of the curve.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
             imageSrc: '/arden-logo.png',
-            imageAlt: 'Tech industry IT solutions',
+            imageAlt: 'Tech sector IT solutions',
         },
     },
     'manufacturing': {
@@ -1816,7 +1820,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
     },
     'construction': {
         title: 'Construction Solutions',
-        subtitle: 'Construction Industry IT Solutions',
+        subtitle: 'Construction Sector IT Solutions',
         description: 'Technology solutions tailored for construction companies. From job site connectivity to project management systems, we support your construction operations.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
@@ -1844,7 +1848,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
         ],
         heroSection: {
             breadcrumb: 'Solutions / Construction',
-            title: 'Construction Industry IT Solutions',
+            title: 'Construction Sector IT Solutions',
             description: 'Technology solutions tailored for construction companies. From job site connectivity to project management systems, we support your construction operations.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
@@ -1854,7 +1858,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
     },
     'real-estate': {
         title: 'Real Estate Solutions',
-        subtitle: 'Real Estate Industry Solutions',
+        subtitle: 'Real Estate Sector Solutions',
         description: 'Comprehensive IT solutions for real estate professionals. From property management systems to client communication tools, we support your real estate business.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
@@ -1882,7 +1886,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
         ],
         heroSection: {
             breadcrumb: 'Solutions / Real Estate',
-            title: 'Real Estate Industry Solutions',
+            title: 'Real Estate Sector Solutions',
             description: 'Comprehensive IT solutions for real estate professionals. From property management systems to client communication tools, we support your real estate business.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',
@@ -1930,7 +1934,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
     },
     'automotive': {
         title: 'Automotive Solutions',
-        subtitle: 'Automotive Industry IT Solutions',
+        subtitle: 'Automotive Sector IT Solutions',
         description: 'Specialized IT solutions for automotive businesses. From dealership management to service center operations, we support your automotive business.',
         ctaText: 'Contact Us',
         ctaLink: '#contact',
@@ -1958,7 +1962,7 @@ export const SOLUTION_CONTENT: Record<string, SolutionContent> = {
         ],
         heroSection: {
             breadcrumb: 'Solutions / Automotive',
-            title: 'Automotive Industry IT Solutions',
+            title: 'Automotive Sector IT Solutions',
             description: 'Specialized IT solutions for automotive businesses. From dealership management to service center operations, we support your automotive business.',
             buttonText: 'Contact Us',
             buttonLink: '#contact',

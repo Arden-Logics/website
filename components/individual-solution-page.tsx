@@ -64,7 +64,7 @@ export default function IndividualSolutionPage({ solutionKey }: IndividualSoluti
             />
             
             {/* Section 5: Testimonial */}
-            <SolutionTestimonial
+            {/* <SolutionTestimonial
                 quote={content.section5.quote}
                 authorName={content.section5.authorName}
                 authorTitle={content.section5.authorTitle}
@@ -72,7 +72,7 @@ export default function IndividualSolutionPage({ solutionKey }: IndividualSoluti
                 companyLogo={content.section5.companyLogo}
                 imageSrc={content.section5.imageSrc}
                 imageAlt={content.section5.imageAlt}
-            />
+            /> */}
             
             {/* Section 6: Security Features */}
             <SolutionSecurityFeatures

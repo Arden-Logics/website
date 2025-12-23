@@ -31,7 +31,7 @@ export default function FAQs() {
                     },
                     {
                         id: 'item-2',
-                        question: 'What industries do you support?',
+                        question: 'What solutions do you provide?',
                         answer: 'Healthcare, education, finance, retail, law firms, manufacturing, nonprofits, and multi-location businesses.',
                     },
                     {

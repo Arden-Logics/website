@@ -20,18 +20,18 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    headline: "Your trusted partner for It, security & business communications",
+    headline: "Your trusted partner for IT, security & business communications",
     description:
       "We provide fully managed IT services, cybersecurity protection, VoIP solutions, and expert support to help your business stay secure, efficient, and always connected.",
     buttonText: "Get Started",
-    buttonLink: "/services",
+    buttonLink: "/services/cybersecurity",
     image: "/hero-background-2.jpg", // Fallback image for mobile
     video: "/hero-video.mp4",
     imageAlt: "Modern office team collaborating on technology solutions",
   },
   {
     id: 2,
-    headline: "Managed it services that power your business",
+    headline: "Managed IT services that power your business",
     description:
       "Arden Logics delivers fully managed IT services, remote helpdesk support, proactive monitoring, patching, and strategic IT management for businesses of all sizes. Improve reliability, security, and performance with a dedicated MSP partner.",
     buttonText: "Learn More",
@@ -41,7 +41,7 @@ const slides: CarouselSlide[] = [
   },
   {
     id: 3,
-    headline: "Modern voip & unified communications for a connected workforce",
+    headline: "Modern VoIP & unified communications for a connected workforce",
     description:
       "Enterprise-grade calling, texting, video, and contact center solutions built for reliability and clarity. Streamline communication across locations with advanced call flows, analytics, and seamless integrations.",
     buttonText: "Explore VoIP Solutions",
@@ -56,7 +56,7 @@ const slides: CarouselSlide[] = [
     description:
       "From Microsoft 365 and Azure to on-prem servers, networking, and disaster recovery we design, implement, and maintain infrastructure that keeps your business running.",
     buttonText: "View Cloud & Infrastructure",
-    buttonLink: "/services",
+    buttonLink: "/services/network-cabling",
     image: "/hero-background-4.jpg",
     imageAlt: "Global cloud network visualization",
   },

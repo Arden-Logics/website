@@ -203,7 +203,7 @@ export default function FeaturedStories() {
                 {/* Subtle overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                 {/* CTA Button - Bottom Right */}
-                {index === currentStory && (
+                {/* {index === currentStory && (
                   <div className="absolute bottom-4 right-4 z-10">
                     <Link
                       href={story.link}
@@ -213,7 +213,7 @@ export default function FeaturedStories() {
                       <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                     </Link>
                   </div>
-                )}
+                )} */}
               </div>
             ))}
           </div>

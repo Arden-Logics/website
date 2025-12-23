@@ -80,7 +80,7 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
         </div>
         
         {/* Header with CTA */}
-        <div className="flex items-center justify-center mb-12">
+        {/* <div className="flex items-center justify-center mb-12">
           <Link 
             href={ctaLink}
             className="group inline-flex items-center gap-3 text-foreground font-medium hover:text-primary transition-colors"
@@ -90,7 +90,7 @@ export default function ServiceTestimonials({ testimonials, ctaLink = '/resource
               <ArrowRight className="size-5" />
             </div>
           </Link>
-        </div>
+        </div> */}
 
         {/* Logo Navigation Tabs */}
         <div className="grid grid-cols-3 gap-0 mb-16">

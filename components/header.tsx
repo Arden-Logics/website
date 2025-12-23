@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 import { useMedia } from '@/hooks/use-media'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { cn } from '@/lib/utils'
-import { SERVICES, INDUSTRIES, RESOURCES, SOLUTIONS } from '@/constants'
+import { SERVICES, RESOURCES, SOLUTIONS } from '@/constants'
 import { ContactSalesDialog } from '@/components/contact-sales-dialog'
 
 export default function HeaderOne() {
@@ -91,17 +91,26 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="services"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Services</AccordionTrigger>
+                    <AccordionTrigger className="**:font-normal! data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Services</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
                             {SERVICES.map((service, index) => (
                                 <li key={index}>
-                                    <Link
-                                        href={service.href}
-                                        onClick={closeMenu}
-                                        className="px-4 py-2">
-                                        <div className="text-base text-black">{service.name}</div>
-                                    </Link>
+                                    {service.comingSoon ? (
+                                        <div className="px-4 py-2 opacity-60 flex items-center gap-2">
+                                            <div className="text-base text-black">{service.name}</div>
+                                            <span className="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                                                Coming soon
+                                            </span>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            href={service.href}
+                                            onClick={closeMenu}
+                                            className="px-4 py-2">
+                                            <div className="text-base text-black">{service.name}</div>
+                                        </Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -110,17 +119,26 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="resources"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Resources</AccordionTrigger>
+                    <AccordionTrigger className="**:font-normal! data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Resources</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
                             {RESOURCES.map((resource, index) => (
                                 <li key={index}>
-                                    <Link
-                                        href={resource.href}
-                                        onClick={closeMenu}
-                                        className="px-4 py-2">
-                                        <div className="text-base text-black">{resource.name}</div>
-                                    </Link>
+                                    {resource.comingSoon ? (
+                                        <div className="px-4 py-2 opacity-60 flex items-center gap-2">
+                                            <div className="text-base text-black">{resource.name}</div>
+                                            <span className="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                                                Coming soon
+                                            </span>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            href={resource.href}
+                                            onClick={closeMenu}
+                                            className="px-4 py-2">
+                                            <div className="text-base text-black">{resource.name}</div>
+                                        </Link>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -129,7 +147,7 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                 <AccordionItem
                     value="solutions"
                     className="group relative border-b-0 before:pointer-events-none before:absolute before:inset-x-4 before:bottom-0 before:border-b">
-                    <AccordionTrigger className="**:!font-normal data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Solutions</AccordionTrigger>
+                    <AccordionTrigger className="**:font-normal! data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg text-black">Solutions</AccordionTrigger>
                     <AccordionContent className="pb-5">
                         <ul>
                             {SOLUTIONS.map((category, categoryIndex) => (
@@ -138,12 +156,21 @@ const MobileMenu = ({ closeMenu }: { closeMenu: () => void }) => {
                                     <ul className="space-y-0">
                                         {category.items.map((item, index) => (
                                             <li key={index}>
-                                                <Link
-                                                    href={item.href}
-                                                    onClick={closeMenu}
-                                                    className="px-6 py-2">
-                                                    <div className="text-base text-black">{item.name}</div>
-                                                </Link>
+                                                {item.comingSoon ? (
+                                                    <div className="px-6 py-2 opacity-60 flex items-center gap-2">
+                                                        <div className="text-base text-black">{item.name}</div>
+                                                        <span className="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                                                            Coming soon
+                                                        </span>
+                                                    </div>
+                                                ) : (
+                                                    <Link
+                                                        href={item.href}
+                                                        onClick={closeMenu}
+                                                        className="px-6 py-2">
+                                                        <div className="text-base text-black">{item.name}</div>
+                                                    </Link>
+                                                )}
                                             </li>
                                         ))}
                                     </ul>
@@ -228,7 +255,8 @@ const NavMenu = () => {
                                     key={index}
                                     href={service.href}
                                     title={service.name}
-                                    description={service.description}>
+                                    description={service.description}
+                                    comingSoon={service.comingSoon}>
                                     {service.icon}
                                 </ListItem>
                             ))}
@@ -244,7 +272,8 @@ const NavMenu = () => {
                                     key={index}
                                     href={resource.href}
                                     title={resource.name}
-                                    description={resource.description}>
+                                    description={resource.description}
+                                    comingSoon={resource.comingSoon}>
                                     {resource.icon}
                                 </ListItem>
                             ))}
@@ -256,7 +285,7 @@ const NavMenu = () => {
                     <NavigationMenuContent className="mt-8 origin-top pb-14 pt-5 shadow-none ring-0">
                         <div className="w-[1100px] grid grid-cols-4 gap-3 p-4">
                             {SOLUTIONS.map((category, categoryIndex) => {
-                                if (category.title === 'By Industry') {
+                                if (category.title === 'By Sector') {
                                     const col1 = category.items.slice(0, 2);
                                     const col2 = category.items.slice(2, 4);
                                     const col3 = category.items.slice(4);
@@ -270,7 +299,8 @@ const NavMenu = () => {
                                                             key={index}
                                                             href={item.href}
                                                             title={item.name}
-                                                            description={item.description}>
+                                                            description={item.description}
+                                                            comingSoon={item.comingSoon}>
                                                             {item.icon}
                                                         </ListItem>
                                                     ))}
@@ -283,7 +313,8 @@ const NavMenu = () => {
                                                             key={index + 2}
                                                             href={item.href}
                                                             title={item.name}
-                                                            description={item.description}>
+                                                            description={item.description}
+                                                            comingSoon={item.comingSoon}>
                                                             {item.icon}
                                                         </ListItem>
                                                     ))}
@@ -296,7 +327,8 @@ const NavMenu = () => {
                                                             key={index + 4}
                                                             href={item.href}
                                                             title={item.name}
-                                                            description={item.description}>
+                                                            description={item.description}
+                                                            comingSoon={item.comingSoon}>
                                                             {item.icon}
                                                         </ListItem>
                                                     ))}
@@ -314,7 +346,8 @@ const NavMenu = () => {
                                                     key={index}
                                                     href={item.href}
                                                     title={item.name}
-                                                    description={item.description}>
+                                                    description={item.description}
+                                                    comingSoon={item.comingSoon}>
                                                     {item.icon}
                                                 </ListItem>
                                             ))}
@@ -344,18 +377,34 @@ const NavMenu = () => {
     )
 }
 
-function ListItem({ title, description, children, href, ...props }: React.ComponentPropsWithoutRef<'li'> & { href: string; title: string; description?: string }) {
+function ListItem({ title, description, children, href, comingSoon, ...props }: React.ComponentPropsWithoutRef<'li'> & { href: string; title: string; description?: string; comingSoon?: boolean }) {
     return (
         <li {...props}>
             <NavigationMenuLink asChild>
-                <Link
-                    href={href}
-                    className="block p-3 hover:bg-muted rounded-md transition-colors">
-                    <div className="space-y-0.5">
-                        <div className="text-black text-sm font-medium">{title}</div>
-                        <p className="text-muted-foreground line-clamp-2 text-xs">{description}</p>
+                {comingSoon ? (
+                    <div className="flex gap-3 p-3 opacity-60 cursor-not-allowed">
+                        {children}
+                        <div className="space-y-0.5">
+                            <div className="flex items-center gap-2">
+                                <div className="text-black text-sm font-medium">{title}</div>
+                                <span className="bg-primary/10 text-primary text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap">
+                                    Coming soon
+                                </span>
+                            </div>
+                            <p className="text-muted-foreground line-clamp-2 text-xs">{description}</p>
+                        </div>
                     </div>
-                </Link>
+                ) : (
+                    <Link
+                        href={href}
+                        className="flex gap-3 p-3 hover:bg-muted rounded-md transition-colors">
+                        {children}
+                        <div className="space-y-0.5">
+                            <div className="text-black text-sm font-medium">{title}</div>
+                            <p className="text-muted-foreground line-clamp-2 text-xs">{description}</p>
+                        </div>
+                    </Link>
+                )}
             </NavigationMenuLink>
         </li>
     )

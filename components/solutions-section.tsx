@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-interface Industry {
+interface Solution {
   id: string
   name: string
   headline: string
@@ -62,7 +62,7 @@ const GovTechLogo = () => (
   </svg>
 )
 
-const industries: Industry[] = [
+const solutions: Solution[] = [
   {
     id: 'healthcare',
     name: 'Healthcare',
@@ -70,7 +70,7 @@ const industries: Industry[] = [
     description: 'Modernize healthcare IT infrastructure with HIPAA-compliant solutions that enhance patient care, streamline operations, and protect sensitive medical data.',
     // Doctor using tablet for patient records - represents healthcare IT integration
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
-    link: '/industries',
+    link: '/solutions',
     testimonial: {
       companyName: 'ChenMed',
       logo: <ChenMedLogo />,
@@ -84,8 +84,8 @@ const industries: Industry[] = [
     headline: 'Secure, compliant technology for modern financial operations.',
     description: 'Enable secure transactions, protect customer data, and meet regulatory requirements with enterprise-grade cybersecurity and network solutions.',
     // Secure credit card payment - represents secure financial transactions and data protection
-    image: '/industries-home-page/financial-services.jpeg',
-    link: '/industries',
+    image: '/solutions-home-page/financial-services.jpeg',
+    link: '/solutions',
     testimonial: {
       companyName: 'First Bank',
       logo: <FirstBankLogo />,
@@ -100,7 +100,7 @@ const industries: Industry[] = [
     description: 'Create connected campuses with robust networking, secure access controls, and managed IT services that support educators and students.',
     // Students in modern classroom with laptops - represents campus IT/EdTech
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
-    link: '/industries',
+    link: '/solutions',
     testimonial: {
       companyName: 'Edu District',
       logo: <EduDistrictLogo />,
@@ -115,7 +115,7 @@ const industries: Industry[] = [
     description: 'Deliver seamless omnichannel experiences with reliable POS systems, secure payment processing, and integrated surveillance solutions.',
     // Modern retail checkout/POS - represents retail technology solutions
     image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop',
-    link: '/industries',
+    link: '/solutions',
     testimonial: {
       companyName: 'RetailPlus',
       logo: <RetailPlusLogo />,
@@ -130,7 +130,7 @@ const industries: Industry[] = [
     description: 'Deploy secure, compliant IT infrastructure that supports government operations, protects citizen data, and enables digital transformation.',
     // Government building with modern architecture - represents public sector IT
     image: 'https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=800&auto=format&fit=crop',
-    link: '/industries',
+    link: '/solutions',
     testimonial: {
       companyName: 'GovTech',
       logo: <GovTechLogo />,
@@ -140,31 +140,31 @@ const industries: Industry[] = [
   },
 ]
 
-export default function IndustriesSection() {
-  const [activeIndustry, setActiveIndustry] = useState(industries[0])
+export default function SolutionsSection() {
+  const [activeSolution, setActiveSolution] = useState(solutions[0])
 
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="w-full px-8 sm:px-12 lg:px-24 xl:px-32">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-8 md:mb-12">
-          Solutions for every industry
+          Tailored solutions for every need
         </h2>
 
-        {/* Industry Tabs */}
+        {/* Solution Tabs */}
         <div className="flex flex-wrap gap-3 mb-12 md:mb-16">
-          {industries.map((industry) => (
+          {solutions.map((solution) => (
             <button
-              key={industry.id}
-              onClick={() => setActiveIndustry(industry)}
+              key={solution.id}
+              onClick={() => setActiveSolution(solution)}
               className={cn(
                 'px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border-2',
-                activeIndustry.id === industry.id
+                activeSolution.id === solution.id
                   ? 'border-primary text-foreground bg-background shadow-sm'
                   : 'border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground/50 bg-background'
               )}
             >
-              {industry.name}
+              {solution.name}
             </button>
           ))}
         </div>
@@ -174,19 +174,19 @@ export default function IndustriesSection() {
           {/* Image Side */}
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 shadow-lg">
-              {industries.map((industry) => (
+              {solutions.map((solution) => (
                 <div
-                  key={industry.id}
+                  key={solution.id}
                   className={cn(
                     'absolute inset-0 transition-all duration-500 ease-out',
-                    activeIndustry.id === industry.id
+                    activeSolution.id === solution.id
                       ? 'opacity-100 scale-100'
                       : 'opacity-0 scale-105'
                   )}
                 >
                   <Image
-                    src={industry.image}
-                    alt={`${industry.name} industry`}
+                    src={solution.image}
+                    alt={`${solution.name} solution`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -202,29 +202,29 @@ export default function IndustriesSection() {
 
           {/* Content Side */}
           <div className="relative min-h-[200px]">
-            {industries.map((industry) => (
+            {solutions.map((solution) => (
               <div
-                key={industry.id}
+                key={solution.id}
                 className={cn(
                   'transition-all duration-500 ease-out',
-                  activeIndustry.id === industry.id
+                  activeSolution.id === solution.id
                     ? 'opacity-100 translate-y-0 relative'
                     : 'opacity-0 translate-y-4 absolute inset-0 pointer-events-none'
                 )}
               >
                 {/* Headline */}
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground leading-snug mb-4">
-                  {industry.headline}
+                  {solution.headline}
                 </h3>
 
                 {/* Description */}
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8">
-                  {industry.description}
+                  {solution.description}
                 </p>
 
                 {/* Learn More Link */}
                 <Link
-                  href={industry.link}
+                  href={solution.link}
                   className="group inline-flex items-center gap-3 text-foreground font-medium hover:text-primary transition-colors"
                 >
                   <span className="text-base">Learn more</span>
@@ -239,28 +239,28 @@ export default function IndustriesSection() {
 
         {/* Testimonial/Case Study */}
         <div className="mt-16 md:mt-20 pt-8 border-t border-border">
-          {industries.map((industry) => (
+          {solutions.map((solution) => (
             <div
-              key={industry.id}
+              key={solution.id}
               className={cn(
                 'flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 transition-all duration-500',
-                activeIndustry.id === industry.id
+                activeSolution.id === solution.id
                   ? 'opacity-100'
                   : 'opacity-0 hidden'
               )}
             >
               {/* Company Logo */}
               <div className="flex-shrink-0">
-                {industry.testimonial.logo}
+                {solution.testimonial.logo}
               </div>
 
               {/* Stat & Description */}
               <div className="flex items-baseline gap-2 flex-wrap">
                 <span className="text-xl md:text-2xl font-bold text-foreground">
-                  {industry.testimonial.stat}
+                  {solution.testimonial.stat}
                 </span>
                 <span className="text-muted-foreground text-base">
-                  {industry.testimonial.description}
+                  {solution.testimonial.description}
                 </span>
               </div>
             </div>

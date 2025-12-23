@@ -150,7 +150,7 @@ export default function AboutPage() {
                 title="Technology that starts with people and scales with ambition"
                 description={
                     <>
-                        At Arden Logics, everything begins with the people behind the technology: the teams who rely on it, the leaders who shape it, and the communities it protects. We support thousands of users across dozens of industries, and every relationship is built on one principle — <strong>trust first, technology second</strong>.
+                        At Arden Logics, everything begins with the people behind the technology: the teams who rely on it, the leaders who shape it, and the communities it protects. We support thousands of users across dozens of sectors, and every relationship is built on one principle — <strong>trust first, technology second</strong>.
                     </>
                 }
                 primaryCtaText="See customer stories"
@@ -190,8 +190,8 @@ export default function AboutPage() {
 
             {/* Why Customers Choose Us Section */}
             <section className="py-20 px-6 lg:px-12">
-                <div className="w-full">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Left Side - Images */}
                         <div className="relative">
                             <div className="grid grid-cols-12 gap-4">
@@ -236,7 +236,7 @@ export default function AboutPage() {
                         {/* Right Side - Stats */}
                         <div>
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                Trusted by Industry Leaders Nationwide
+                                Trusted by Business Leaders Nationwide
                             </h2>
                             <p className="text-lg text-muted-foreground mb-12">
                                 More than 1,000 organizations from regional enterprises to national brands rely on Arden Logics to modernize their technology, strengthen security, and improve operational efficiency.
@@ -284,7 +284,7 @@ export default function AboutPage() {
 
             {/* Values Section */}
             <section className="py-16 px-6 lg:px-12 bg-muted/50">
-                <div className="w-full">
+                <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Core Values
@@ -293,15 +293,15 @@ export default function AboutPage() {
                             These principles define how we serve our clients, support our team, and build long-lasting partnerships.
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {VALUES.map((value, index) => (
-                            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                                <CardHeader>
-                                    <div className="bg-primary/10 text-primary p-3 rounded-lg w-fit mb-4">
+                            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-none bg-background shadow-sm">
+                                <CardHeader className="p-8">
+                                    <div className="bg-primary/10 text-primary p-4 rounded-xl w-fit mb-6">
                                         {value.icon}
                                     </div>
-                                    <CardTitle className="text-xl mb-2">{value.title}</CardTitle>
-                                    <CardDescription>{value.description}</CardDescription>
+                                    <CardTitle className="text-xl mb-3 font-bold">{value.title}</CardTitle>
+                                    <CardDescription className="text-base leading-relaxed text-muted-foreground/90">{value.description}</CardDescription>
                                 </CardHeader>
                             </Card>
                         ))}
@@ -311,8 +311,8 @@ export default function AboutPage() {
 
             {/* Timeline Section */}
             <section className="py-16 px-6 lg:px-12">
-                <div className="w-full">
-                    <div className="text-center mb-12">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
                             Our Journey
                         </h2>
@@ -324,23 +324,23 @@ export default function AboutPage() {
                         {/* Timeline line */}
                         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/20 max-md:hidden" />
                         
-                        <div className="space-y-8">
+                        <div className="space-y-12">
                             {MILESTONES.map((milestone, index) => (
                                 <div key={index} className="relative flex gap-8 items-start">
                                     {/* Timeline dot */}
-                                    <div className="flex-shrink-0 w-16 max-md:hidden">
-                                        <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-primary rounded-full text-primary-foreground font-bold">
+                                    <div className="shrink-0 w-16 max-md:hidden">
+                                        <div className="relative z-10 flex items-center justify-center w-16 h-16 bg-primary rounded-full text-primary-foreground font-bold shadow-lg shadow-primary/20">
                                             {milestone.year}
                                         </div>
                                     </div>
                                     
-                                    <Card className="flex-1 hover:shadow-lg transition-shadow">
-                                        <CardHeader>
+                                    <Card className="flex-1 hover:shadow-xl transition-all duration-300 border-none bg-muted/30 shadow-sm">
+                                        <CardHeader className="p-8">
                                             <div className="md:hidden text-sm font-bold text-primary mb-2">
                                                 {milestone.year}
                                             </div>
-                                            <CardTitle className="text-xl">{milestone.title}</CardTitle>
-                                            <CardDescription className="text-base">
+                                            <CardTitle className="text-2xl font-bold mb-3">{milestone.title}</CardTitle>
+                                            <CardDescription className="text-base leading-relaxed text-muted-foreground/90">
                                                 {milestone.description}
                                             </CardDescription>
                                         </CardHeader>
@@ -363,20 +363,32 @@ export default function AboutPage() {
                             Experienced professionals committed to delivering exceptional technology solutions and service.
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {TEAM_MEMBERS.map((member, index) => (
-                            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                                <CardHeader>
-                                    <div className="flex justify-center mb-4">
-                                        <Avatar className="w-24 h-24 ring-4 ring-primary/10">
-                                            <AvatarImage src={member.image} alt={member.name} />
-                                            <AvatarFallback className="text-xl font-bold bg-primary/10 text-primary">
-                                                {member.initials}
-                                            </AvatarFallback>
-                                        </Avatar>
+                            <Card key={index} className="group text-center hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-none bg-background shadow-sm overflow-hidden">
+                                <CardHeader className="pt-12 pb-10 px-8">
+                                    <div className="flex justify-center mb-10">
+                                        <div className="relative">
+                                            <Avatar className="w-48 h-48 relative z-10">
+                                                <AvatarImage 
+                                                    src={member.image} 
+                                                    alt={member.name} 
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                                />
+                                                <AvatarFallback className="text-4xl font-bold bg-muted text-primary">
+                                                    {member.initials}
+                                                </AvatarFallback>
+                                            </Avatar>
+                                        </div>
                                     </div>
-                                    <CardTitle className="text-lg">{member.name}</CardTitle>
-                                    <CardDescription>{member.role}</CardDescription>
+                                    <div className="space-y-1 relative z-10">
+                                        <CardTitle className="text-xl font-bold text-foreground">
+                                            {member.name}
+                                        </CardTitle>
+                                        <CardDescription className="text-base text-muted-foreground">
+                                            {member.role}
+                                        </CardDescription>
+                                    </div>
                                 </CardHeader>
                             </Card>
                         ))}

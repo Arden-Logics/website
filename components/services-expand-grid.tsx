@@ -17,7 +17,7 @@ interface ServiceSquare {
 const services: ServiceSquare[] = [
   {
     id: "msp",
-    name: "MSP Managed IT",
+    name: "Managed IT",
     href: "/services/msp-managed-it",
     description: "24/7 monitoring, proactive maintenance, and expert support for your entire IT infrastructure.",
     icon: <Cpu className="size-8 md:size-12" strokeWidth={1.5} />,

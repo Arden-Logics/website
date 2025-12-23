@@ -63,7 +63,9 @@ export default function SecondaryHero8({
                             className="object-cover"
                             priority
                         />
-                        
+                        {/* Dark overlay for readability */}
+                        <div className="absolute inset-0 bg-black/50 lg:bg-black/40" />
+                        <div className="absolute inset-0 bg-linear-to-b from-black/20 via-transparent to-black/20" />
                     </div>
                 </>
             )}

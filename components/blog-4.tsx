@@ -56,9 +56,9 @@ export default function Blog({ showMoreArticles = true }: BlogProps) {
                 ],
             },
             {
-                title: 'The Top Industries and Business Models Using AI for Fraud Prevention and Detection',
-                description: 'Discover how various industries leverage AI tools to enhance fraud prevention and detection.',
-                summary: 'Discover how various industries leverage AI tools to enhance fraud prevention and detection. Gain insights into the leading sectors and business models adopting AI technologies and learn about the effectiveness of these approaches.',
+                title: 'The Top Solutions and Business Models Using AI for Fraud Prevention and Detection',
+                description: 'Discover how various sectors leverage AI tools to enhance fraud prevention and detection.',
+                summary: 'Discover how various sectors leverage AI tools to enhance fraud prevention and detection. Gain insights into the leading sectors and business models adopting AI technologies and learn about the effectiveness of these approaches.',
                 category: 'marketing',
                 image: 'https://res.cloudinary.com/dohqjvu9k/image/upload/v1755597459/blog-1_roo7z2.png',
                 date: 'Sep 10, 2025',
@@ -114,7 +114,7 @@ export default function Blog({ showMoreArticles = true }: BlogProps) {
             {
                 title: 'Big Data as a Strategic Asset',
                 description: 'See how big data analytics can unlock new opportunities.',
-                summary: 'Big data has become a cornerstone of modern business strategy. This article explains how organizations harness massive data sets to uncover patterns, predict trends, and personalize customer experiences. Discover real-world use cases across industries, the technologies enabling big data analytics, and practical ways businesses can unlock new opportunities, improve efficiency, and gain a competitive advantage.',
+                summary: 'Big data has become a cornerstone of modern business strategy. This article explains how organizations harness massive data sets to uncover patterns, predict trends, and personalize customer experiences. Discover real-world use cases across sectors, the technologies enabling big data analytics, and practical ways businesses can unlock new opportunities, improve efficiency, and gain a competitive advantage.',
                 category: 'newsroom',
                 image: 'https://res.cloudinary.com/dohqjvu9k/image/upload/v1755171590/time_djv8te.webp',
                 date: 'Dec 5, 2025',
@@ -170,7 +170,7 @@ export default function Blog({ showMoreArticles = true }: BlogProps) {
             {
                 title: 'Emerging Trends in Data Analytics',
                 description: 'Learn about the latest trends in data analytics and how they can drive business growth.',
-                summary: 'Data analytics is evolving at a rapid pace, introducing innovative solutions that empower businesses to unlock deeper insights. This article examines the most cutting-edge innovations, including real-time analytics, natural language processing, and AI-driven forecasting. See how these advancements are revolutionizing industries, enabling companies to improve efficiency, and providing a roadmap for sustained growth.',
+                summary: 'Data analytics is evolving at a rapid pace, introducing innovative solutions that empower businesses to unlock deeper insights. This article examines the most cutting-edge innovations, including real-time analytics, natural language processing, and AI-driven forecasting. See how these advancements are revolutionizing sectors, enabling companies to improve efficiency, and providing a roadmap for sustained growth.',
                 category: 'company',
                 image: 'https://res.cloudinary.com/dohqjvu9k/image/upload/v1755171585/dots-pattern_yfnqcy.jpg',
                 date: 'Oct 5, 2025',
@@ -213,7 +213,7 @@ export default function Blog({ showMoreArticles = true }: BlogProps) {
             {
                 title: 'Big Data Driving Innovation',
                 description: 'See how big data analytics can unlock new opportunities.',
-                summary: 'Big data analytics continues to be a driver of growth and innovation across industries. This article examines how organizations are using data to transform customer experiences, optimize operations, and develop new business models. Learn how to unlock the power of data responsibly and effectively to achieve long-term business success.',
+                summary: 'Big data analytics continues to be a driver of growth and innovation across sectors. This article examines how organizations are using data to transform customer experiences, optimize operations, and develop new business models. Learn how to unlock the power of data responsibly and effectively to achieve long-term business success.',
                 category: 'newsroom',
                 image: 'https://res.cloudinary.com/dohqjvu9k/image/upload/v1755171590/time_djv8te.webp',
                 date: 'Dec 5, 2025',
@@ -223,7 +223,7 @@ export default function Blog({ showMoreArticles = true }: BlogProps) {
             {
                 title: 'Real-Time Insights with Big Data',
                 description: 'See how big data analytics can unlock new opportunities.',
-                summary: 'This article explores the transformative power of big data in reshaping industries. Discover how predictive analytics, machine learning, and AI are helping businesses gain real-time insights, forecast demand, and identify opportunities. Learn how organizations are scaling their data infrastructure to remain competitive in a rapidly changing market.',
+                summary: 'This article explores the transformative power of big data in reshaping sectors. Discover how predictive analytics, machine learning, and AI are helping businesses gain real-time insights, forecast demand, and identify opportunities. Learn how organizations are scaling their data infrastructure to remain competitive in a rapidly changing market.',
                 category: 'newsroom',
                 image: 'https://res.cloudinary.com/dohqjvu9k/image/upload/v1755525573/article-3_tettwd.png',
                 date: 'Dec 5, 2025',
