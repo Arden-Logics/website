@@ -191,18 +191,8 @@ const NavMenu = () => {
                 const height = openContent.scrollHeight
                 document.documentElement.style.setProperty('--navigation-menu-viewport-height', `${height}px`)
                 
-                // Calculate the right position of the navigation menu
-                const rect = menuNode.getBoundingClientRect()
-                const viewportParent = document.querySelector('[data-slot="navigation-menu-viewport-parent"]')
-                if (viewportParent) {
-                    const parentRect = viewportParent.getBoundingClientRect()
-                    // Calculate right position relative to the viewport parent's content area
-                    const rightPosition = window.innerWidth - rect.right - (window.innerWidth - parentRect.right)
-                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
-                } else {
-                    const rightPosition = window.innerWidth - rect.right
-                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
-                }
+                // Set right position to 0 to align with the right edge of the container
+                document.documentElement.style.setProperty('--navigation-menu-right', `0px`)
             } else {
                 document.documentElement.style.removeProperty('--navigation-menu-viewport-height')
                 document.documentElement.style.removeProperty('--navigation-menu-right')
@@ -213,17 +203,8 @@ const NavMenu = () => {
     React.useEffect(() => {
         const updatePosition = () => {
             if (menuRef.current) {
-                const rect = menuRef.current.getBoundingClientRect()
-                const viewportParent = document.querySelector('[data-slot="navigation-menu-viewport-parent"]')
-                if (viewportParent) {
-                    const parentRect = viewportParent.getBoundingClientRect()
-                    // Calculate right position relative to the viewport parent's content area
-                    const rightPosition = window.innerWidth - rect.right - (window.innerWidth - parentRect.right)
-                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
-                } else {
-                    const rightPosition = window.innerWidth - rect.right
-                    document.documentElement.style.setProperty('--navigation-menu-right', `${rightPosition}px`)
-                }
+                // Set right position to 0 to align with the right edge of the container
+                document.documentElement.style.setProperty('--navigation-menu-right', `0px`)
             }
         }
         
@@ -240,7 +221,7 @@ const NavMenu = () => {
             <NavigationMenuList className="gap-3">
                 <NavigationMenuItem value="services">
                     <NavigationMenuTrigger className="text-black">Services</NavigationMenuTrigger>
-                    <NavigationMenuContent className="mt-24 origin-top pb-14 pt-5 shadow-none ring-0">
+                    <NavigationMenuContent className="mt-8 origin-top pb-14 pt-5 shadow-none ring-0">
                         <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {SERVICES.map((service, index) => (
                                 <ListItem
@@ -256,7 +237,7 @@ const NavMenu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem value="resources">
                     <NavigationMenuTrigger className="text-black">Resources</NavigationMenuTrigger>
-                    <NavigationMenuContent className="mt-24 origin-top pb-14 pt-5 shadow-none ring-0">
+                    <NavigationMenuContent className="mt-8 origin-top pb-14 pt-5 shadow-none ring-0">
                         <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
                             {RESOURCES.map((resource, index) => (
                                 <ListItem
@@ -272,24 +253,75 @@ const NavMenu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem value="solutions">
                     <NavigationMenuTrigger className="text-black">Solutions</NavigationMenuTrigger>
-                    <NavigationMenuContent className="mt-24 origin-top pb-14 pt-5 shadow-none ring-0">
-                        <div className="w-[700px] grid grid-cols-2 gap-6 p-6">
-                            {SOLUTIONS.map((category, categoryIndex) => (
-                                <div key={categoryIndex}>
-                                    <h3 className="text-sm font-semibold text-black mb-4 px-2">{category.title}</h3>
-                                    <ul className="space-y-2">
-                                        {category.items.map((item, index) => (
-                                            <ListItem
-                                                key={index}
-                                                href={item.href}
-                                                title={item.name}
-                                                description={item.description}>
-                                                {item.icon}
-                                            </ListItem>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
+                    <NavigationMenuContent className="mt-8 origin-top pb-14 pt-5 shadow-none ring-0">
+                        <div className="w-[1100px] grid grid-cols-4 gap-3 p-4">
+                            {SOLUTIONS.map((category, categoryIndex) => {
+                                if (category.title === 'By Industry') {
+                                    const col1 = category.items.slice(0, 2);
+                                    const col2 = category.items.slice(2, 4);
+                                    const col3 = category.items.slice(4);
+                                    return (
+                                        <React.Fragment key={categoryIndex}>
+                                            <div>
+                                                <h3 className="text-sm font-semibold text-black mb-4 px-2">{category.title}</h3>
+                                                <ul className="space-y-2">
+                                                    {col1.map((item, index) => (
+                                                        <ListItem
+                                                            key={index}
+                                                            href={item.href}
+                                                            title={item.name}
+                                                            description={item.description}>
+                                                            {item.icon}
+                                                        </ListItem>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="pt-9">
+                                                <ul className="space-y-2">
+                                                    {col2.map((item, index) => (
+                                                        <ListItem
+                                                            key={index + 2}
+                                                            href={item.href}
+                                                            title={item.name}
+                                                            description={item.description}>
+                                                            {item.icon}
+                                                        </ListItem>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="pt-9">
+                                                <ul className="space-y-2">
+                                                    {col3.map((item, index) => (
+                                                        <ListItem
+                                                            key={index + 4}
+                                                            href={item.href}
+                                                            title={item.name}
+                                                            description={item.description}>
+                                                            {item.icon}
+                                                        </ListItem>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </React.Fragment>
+                                    );
+                                }
+                                return (
+                                    <div key={categoryIndex}>
+                                        <h3 className="text-sm font-semibold text-black mb-4 px-2">{category.title}</h3>
+                                        <ul className="space-y-2">
+                                            {category.items.map((item, index) => (
+                                                <ListItem
+                                                    key={index}
+                                                    href={item.href}
+                                                    title={item.name}
+                                                    description={item.description}>
+                                                    {item.icon}
+                                                </ListItem>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>

@@ -1,4 +1,4 @@
-import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle, Activity, Zap, Lock, CheckCircle, Fingerprint, Car, Truck, Home, Wrench } from 'lucide-react'
+import { Cpu, Phone, Network, MonitorPlay, Camera, ShieldCheck, Building2, Heart, Factory, Briefcase, BookOpen, FileText, Users, Newspaper, KeyRound, HelpCircle, Activity, Zap, Lock, CheckCircle, Fingerprint, Car, Truck, Home, Wrench, Share2, Smartphone, LineChart, Cable, Server, Layout, Video, MousePointerClick, Headset, Lightbulb, Globe, Settings } from 'lucide-react'
 import React from 'react'
 
 export interface Service {
@@ -509,7 +509,7 @@ export const SUCCESS_STORIES: SuccessStory[] = [
 export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     'msp-managed-it': {
         title: 'MSP managed IT',
-        subtitle: 'Modern it management for a more reliable business',
+        subtitle: 'Modern IT management for a more reliable business',
         description: 'Ensure uptime, productivity, and long-term stability with fully managed IT support tailored to your organization. Arden Logics delivers proactive monitoring, expert guidance, and end-to-end technology management built to keep your operations running smoothly.',
         ctaText: 'Contact us',
         ctaLink: '#contact',
@@ -522,7 +522,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             {
                 title: 'Fully managed support',
                 description: 'Helpdesk, endpoint management, and infrastructure support all included.',
-                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                icon: <Headset className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'Security-driven approach',
@@ -532,12 +532,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             {
                 title: 'Strategic it guidance',
                 description: 'Technology roadmaps and planning to align IT with your long-term goals.',
-                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                icon: <Lightbulb className="stroke-foreground fill-foreground/10" />,
             },
         ],
         heroSection: {
-            breadcrumb: 'Solutions / it management',
-            title: 'Modern it management for a more reliable business',
+            breadcrumb: 'Solutions / IT management',
+            title: 'Modern IT management for a more reliable business',
             description: 'Ensure uptime, productivity, and long-term stability with fully managed IT support tailored to your organization. Arden Logics delivers proactive monitoring, expert guidance, and end-to-end technology management built to keep your operations running smoothly.',
             buttonText: 'Contact us',
             buttonLink: '#contact',
@@ -590,7 +590,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         featuresSectionDescription: 'Arden Logics delivers comprehensive IT management and security solutions that protect your organization.',
         contentFeatures: [
             {
-                icon: <ShieldCheck className="stroke-foreground fill-foreground/10" />,
+                icon: <Activity className="stroke-foreground fill-foreground/10" />,
                 title: 'Remote monitoring & management (RMM)',
                 description: 'Arden Logics continuously monitors your entire environment—servers, workstations, network devices, and cloud platforms—to detect issues before they become outages. Our RMM platform provides proactive maintenance, real-time alerts, and automated remediation without requiring extra effort from your team.',
                 linkText: 'Keep your systems healthy',
@@ -604,14 +604,14 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 linkHref: '#',
             },
             {
-                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                icon: <Server className="stroke-foreground fill-foreground/10" />,
                 title: 'Email infrastructure management',
                 description: 'Ensure reliable, secure communication across your organization. We support and manage Microsoft 365, Google Workspace, and hybrid email environments—handling security policies, spam filtering, authentication (DMARC, SPF, DKIM), and performance optimization so your users stay connected.',
                 linkText: 'Optimize your email systems',
                 linkHref: '#',
             },
             {
-                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                icon: <Lock className="stroke-foreground fill-foreground/10" />,
                 title: 'Business continuity & disaster recovery',
                 description: 'Stay operational even during unexpected downtime. Arden Logics designs and manages comprehensive backup, failover, and recovery strategies to protect critical data and applications. From ransomware resilience to cloud-based DR solutions, we keep your business running no matter what.',
                 linkText: 'Protect your data & uptime',
@@ -625,7 +625,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 linkHref: '#',
             },
             {
-                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                icon: <Settings className="stroke-foreground fill-foreground/10" />,
                 title: 'Updates & patch management',
                 description: 'Stay ahead of vulnerabilities with automated, centralized patching for operating systems, applications, and third-party software. Arden Logics tests, schedules, and deploys updates in a way that minimizes disruptions while maximizing security and performance.',
                 linkText: 'Automate updates with confidence',
@@ -663,7 +663,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             {
                 title: 'Structured cabling',
                 description: 'Clean, standards-based installations for dependable performance.',
-                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                icon: <Cable className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'High-speed networking',
@@ -673,12 +673,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             {
                 title: 'Organized cable management',
                 description: 'Clear labeling, documentation, and routing for future maintenance.',
-                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                icon: <Server className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'Built for growth',
                 description: 'Infrastructure designed to support new users, devices, and applications.',
-                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                icon: <Zap className="stroke-foreground fill-foreground/10" />,
             },
         ],
         heroSection: {
@@ -736,7 +736,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         featuresSectionDescription: 'We design and install network infrastructure and structured cabling that aligns with real-world usage, performance needs, and future expansion',
         contentFeatures: [
             {
-                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                icon: <Cable className="stroke-foreground fill-foreground/10" />,
                 title: 'Seamless cabling integration',
                 description: 'Our cabling solutions connect cleanly with your existing environments from offices to warehouses, clinics, classrooms, and multi-site enterprises. Fast installation, clean routing, and zero workflow disruption.',
                 linkText: 'Explore cabling integrations',
@@ -750,7 +750,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 linkHref: '#',
             },
             {
-                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                icon: <Layout className="stroke-foreground fill-foreground/10" />,
                 title: 'Adaptive network design',
                 description: 'Every environment is different. We engineer cabling paths and network layouts based on location, building structure, usage patterns, and device density to ensure stable, high-performance connectivity.',
                 linkText: 'Learn more about adaptive network design',
@@ -814,12 +814,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             {
                 title: 'Scalable multi-location',
                 description: 'Add rooms, displays, or conference systems anytime without re-engineering.',
-                icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
+                icon: <Video className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'Intelligent automation',
                 description: 'Automated controls for lighting, audio, displays, and conferencing.',
-                icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
+                icon: <MousePointerClick className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'Future-ready designs',
@@ -882,21 +882,21 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
         featuresSectionDescription: 'From conference rooms to training spaces, we deploy AV solutions that remove friction and let teams focus on the conversation not the controls',
         contentFeatures: [
             {
-                icon: <Zap className="stroke-foreground fill-foreground/10" />,
+                icon: <MonitorPlay className="stroke-foreground fill-foreground/10" />,
                 title: 'Unified AV integration',
                 description: 'Our AV systems seamlessly integrate with your existing hardware, conferencing platforms, and room technologies. Fast deployment, minimal downtime, and engineered for long-term reliability.',
                 linkText: 'Explore AV integrations',
                 linkHref: '#',
             },
             {
-                icon: <Network className="stroke-foreground fill-foreground/10" />,
+                icon: <Video className="stroke-foreground fill-foreground/10" />,
                 title: 'Scalable AV for multi-location growth',
                 description: 'Whether you\'re outfitting a single boardroom or standardizing across dozens of sites, our AV designs scale effortlessly. Add rooms, displays, or conference systems anytime without re-engineering your entire setup.',
                 linkText: 'See scalable AV solutions',
                 linkHref: '#',
             },
             {
-                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                icon: <MousePointerClick className="stroke-foreground fill-foreground/10" />,
                 title: 'Intelligent room automation',
                 description: 'Automated controls for lighting, audio, displays, and conferencing ensure every meeting starts smoothly. Touchless options, presets, and monitoring reduce support tickets and improve the user experience.',
                 linkText: 'Learn about room automation',
@@ -1212,17 +1212,17 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
             {
                 title: 'Advanced call routing',
                 description: 'Auto-attendants, queues, ring groups, and intelligent call flows.',
-                icon: <Phone className="stroke-foreground fill-foreground/10" />,
+                icon: <Share2 className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'Work anywhere',
                 description: 'A unified communication platform accessible from any device.',
-                icon: <Cpu className="stroke-foreground fill-foreground/10" />,
+                icon: <Smartphone className="stroke-foreground fill-foreground/10" />,
             },
             {
                 title: 'Call analytics',
                 description: 'Monitor performance, drive efficiency, and improve customer experience.',
-                icon: <Phone className="stroke-foreground fill-foreground/10" />,
+                icon: <LineChart className="stroke-foreground fill-foreground/10" />,
             },
         ],
         heroSection: {
@@ -1294,7 +1294,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 linkHref: '#',
             },
             {
-                icon: <CheckCircle className="stroke-foreground fill-foreground/10" />,
+                icon: <Share2 className="stroke-foreground fill-foreground/10" />,
                 title: 'Smarter call handling for better experiences',
                 description: 'Create customized call paths with auto-attendants, queues, ring strategies, and role-based routing. Ensure customers reach the right person quickly and reliably every time.',
                 linkText: 'Explore intelligent call routing',
@@ -1308,14 +1308,14 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
                 linkHref: '#',
             },
             {
-                icon: <Lock className="stroke-foreground fill-foreground/10" />,
+                icon: <Smartphone className="stroke-foreground fill-foreground/10" />,
                 title: 'Unified communication from any device',
                 description: 'Work from your office, home, or on the go. Our platform supports calling, texting, voicemail, presence, and collaboration tools all accessible from any device your team prefers.',
                 linkText: 'See unified communication in action',
                 linkHref: '#',
             },
             {
-                icon: <Activity className="stroke-foreground fill-foreground/10" />,
+                icon: <LineChart className="stroke-foreground fill-foreground/10" />,
                 title: 'Insightful analytics for stronger performance',
                 description: 'Track call metrics, monitor service levels, and uncover trends that help you refine operations. Our analytics suite gives you visibility into performance and customer engagement.',
                 linkText: 'Review VoIP analytics features',

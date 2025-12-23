@@ -34,6 +34,7 @@ export default function PartnersPage() {
             primaryButtonLink="#application"
             secondaryButtonText="Become a Partner"
             secondaryButtonLink="#application"
+            priority={true}
         />
         
         {/* AV Partner Integrator Program */}
@@ -53,6 +54,7 @@ export default function PartnersPage() {
             primaryButtonLink="#application"
             secondaryButtonText="Become an AV Partner"
             secondaryButtonLink="#application"
+            backgroundColor="muted"
         />
         
         {/* VoIP Partner Program */}

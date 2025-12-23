@@ -77,12 +77,12 @@ function NavigationMenuViewport({ className, ...props }: React.ComponentProps<ty
     return (
         <div
             data-slot="navigation-menu-viewport-parent"
-            className={cn('fixed inset-x-0 top-0 isolate z-50 px-8 sm:px-12 lg:px-24 xl:px-32')}
+            className={cn('fixed inset-x-0 top-0 isolate z-50 px-8 sm:px-12 lg:px-24 xl:px-32 pointer-events-none')}
             style={{ paddingTop: 'var(--header-height, 4rem)' }}>
             <NavigationMenuPrimitive.Viewport
                 data-slot="navigation-menu-viewport"
                 style={{ right: 'var(--navigation-menu-right, 0px)', left: 'auto' }}
-                className={cn('bg-popover text-popover-foreground h-(--radix-navigation-menu-viewport-height) ring-foreground/10 rounded-(--radius) md:w-(--radix-navigation-menu-viewport-width) absolute w-full origin-top overflow-hidden border border-transparent p-0.5 shadow-xl shadow-black/10 ring-1 transition-[width,height] duration-200', 'data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in', className)}
+                className={cn('bg-popover text-popover-foreground h-(--radix-navigation-menu-viewport-height) ring-foreground/10 rounded-(--radius) md:w-(--radix-navigation-menu-viewport-width) absolute w-full origin-top overflow-hidden border border-transparent p-0.5 shadow-xl shadow-black/10 ring-1 transition-[width,height] duration-200 pointer-events-auto', 'data-[state=closed]:animate-scale-out data-[state=open]:animate-scale-in', className)}
                 {...props}
             />
         </div>
