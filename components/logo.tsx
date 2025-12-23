@@ -2,14 +2,19 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 export const Logo = ({ className, uniColor }: { className?: string; uniColor?: boolean }) => {
     return (
-        <Image 
-            src="/arden-logics-logo.png" 
-            alt="Arden Logics Logo" 
-            width={180} 
-            height={48}
-            className="object-contain"
-            priority
-        />
+        <div className="flex items-center gap-3">
+            <Image 
+                src="/arden-logics-logo.png" 
+                alt="Arden Logics Logo" 
+                width={90} 
+                height={24}
+                className="object-contain"
+                priority
+            />
+            <span className="text-2xl font-bold ml-[-20px]" style={{ fontFamily: 'Impact, sans-serif' }}>
+                Arden Logics
+            </span>
+        </div>
     )
 }
 
