@@ -270,9 +270,8 @@ const NavMenu = () => {
                                     href={service.href}
                                     title={service.name}
                                     description={service.description}
-                                    comingSoon={service.comingSoon}>
-                                    {service.icon}
-                                </ListItem>
+                                    comingSoon={service.comingSoon}
+                                />
                             ))}
                         </ul>
                     </NavigationMenuContent>
@@ -287,9 +286,8 @@ const NavMenu = () => {
                                     href={resource.href}
                                     title={resource.name}
                                     description={resource.description}
-                                    comingSoon={resource.comingSoon}>
-                                    {resource.icon}
-                                </ListItem>
+                                    comingSoon={resource.comingSoon}
+                                />
                             ))}
                         </ul>
                     </NavigationMenuContent>
@@ -314,9 +312,8 @@ const NavMenu = () => {
                                                             href={item.href}
                                                             title={item.name}
                                                             description={item.description}
-                                                            comingSoon={item.comingSoon}>
-                                                            {item.icon}
-                                                        </ListItem>
+                                                            comingSoon={item.comingSoon}
+                                                        />
                                                     ))}
                                                 </ul>
                                             </div>
@@ -328,9 +325,8 @@ const NavMenu = () => {
                                                             href={item.href}
                                                             title={item.name}
                                                             description={item.description}
-                                                            comingSoon={item.comingSoon}>
-                                                            {item.icon}
-                                                        </ListItem>
+                                                            comingSoon={item.comingSoon}
+                                                        />
                                                     ))}
                                                 </ul>
                                             </div>
@@ -342,9 +338,8 @@ const NavMenu = () => {
                                                             href={item.href}
                                                             title={item.name}
                                                             description={item.description}
-                                                            comingSoon={item.comingSoon}>
-                                                            {item.icon}
-                                                        </ListItem>
+                                                            comingSoon={item.comingSoon}
+                                                        />
                                                     ))}
                                                 </ul>
                                             </div>
@@ -361,9 +356,8 @@ const NavMenu = () => {
                                                     href={item.href}
                                                     title={item.name}
                                                     description={item.description}
-                                                    comingSoon={item.comingSoon}>
-                                                    {item.icon}
-                                                </ListItem>
+                                                    comingSoon={item.comingSoon}
+                                                />
                                             ))}
                                         </ul>
                                     </div>
@@ -391,13 +385,12 @@ const NavMenu = () => {
     )
 }
 
-function ListItem({ title, description, children, href, comingSoon, ...props }: React.ComponentPropsWithoutRef<'li'> & { href: string; title: string; description?: string; comingSoon?: boolean }) {
+function ListItem({ title, description, href, comingSoon, ...props }: React.ComponentPropsWithoutRef<'li'> & { href: string; title: string; description?: string; comingSoon?: boolean }) {
     return (
         <li {...props}>
             <NavigationMenuLink asChild>
                 {comingSoon ? (
-                    <div className="flex gap-3 p-3 opacity-60 cursor-not-allowed">
-                        {children}
+                    <div className="p-3 opacity-60 cursor-not-allowed">
                         <div className="space-y-0.5">
                             <div className="flex items-center gap-2">
                                 <div className="text-black text-sm font-medium">{title}</div>
@@ -411,8 +404,7 @@ function ListItem({ title, description, children, href, comingSoon, ...props }: 
                 ) : (
                     <Link
                         href={href}
-                        className="flex gap-3 p-3 hover:bg-muted rounded-md transition-colors">
-                        {children}
+                        className="p-3 hover:bg-muted rounded-md transition-colors">
                         <div className="space-y-0.5">
                             <div className="text-black text-sm font-medium">{title}</div>
                             <p className="text-muted-foreground line-clamp-2 text-xs">{description}</p>
