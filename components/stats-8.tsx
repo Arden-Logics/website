@@ -1,0 +1,61 @@
+import { SERVICE_CONTENT, SOLUTION_CONTENT } from "@/constants"
+
+interface StatsSectionProps {
+    serviceKey?: string
+    solutionKey?: string
+}
+
+interface Metric {
+    value: string
+    label: string
+    suffix?: string
+}
+
+export default function StatsSection({ serviceKey, solutionKey }: StatsSectionProps) {
+    const serviceContent = serviceKey ? SERVICE_CONTENT[serviceKey] : null
+    const solutionContent = solutionKey ? SOLUTION_CONTENT[solutionKey] : null
+    const content = serviceContent || solutionContent
+    
+    const metricsTitle = content?.metricsSection?.title || 'Proven performance and trusted expertise'
+    const metricsDescription = content?.metricsSection?.description || '';
+    const metrics: Metric[] = content?.metricsSection?.metrics || [
+        { value: '99.9', label: 'Uptime guarantee for all our services.', suffix: '%' },
+        { value: '24/7', label: 'Support available around the clock.', suffix: '' },
+        { value: '15+', label: 'Years of industry experience.', suffix: '' },
+        { value: '500+', label: 'Organizations supported.', suffix: '' },
+    ]
+
+    return (
+        <section className="bg-transparent @container">
+            <div className="relative py-0">
+                <div className="mx-auto max-w-full px-0">
+                    <div className="md:max-w-full lg:max-w-full bg-card ring-border-illustration relative rounded-xl p-6 shadow-xl shadow-black/10 ring-1 sm:p-10">
+                        <div className="mb-8 space-y-4">
+                            <h2 className="text-muted-foreground text-balance text-3xl font-semibold">
+                                {metricsTitle}
+                            </h2>
+
+                            {metricsDescription && (
+                                <p className="text-muted-foreground">
+                                    {metricsDescription}
+                                </p>
+                            )}
+                        </div>
+                        <div className="**:text-center *:bg-muted/50 grid grid-cols-2 gap-1 *:rounded-md *:p-4">
+                            {metrics.map((metric, index) => (
+                                <div key={index} className="space-y-3 *:block">
+                                    <span className="text-3xl font-semibold">
+                                        {metric.value} {metric.suffix ? <span className="text-muted-foreground text-lg">{metric.suffix}</span> : null}
+                                    </span>
+                                    <p className="text-muted-foreground text-balance text-sm">
+                                        {metric.label}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
